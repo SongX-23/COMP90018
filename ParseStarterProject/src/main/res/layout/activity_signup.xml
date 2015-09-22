@@ -25,7 +25,7 @@
         android:inputType="textEmailAddress"
         android:ems="10"
         android:id="@+id/emailEditText"
-        android:background="#ebebeb"
+        android:background="#e0e0e0"
         android:height="40dp"
         android:layout_below="@+id/emailTextView"
         android:layout_centerHorizontal="true"
@@ -41,7 +41,7 @@
         android:ems="10"
         android:id="@+id/passwordEditText"
         android:height="40dp"
-        android:background="#EBEBEB"
+        android:background="#e0e0e0"
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
         android:layout_below="@+id/passwordTextView"
@@ -81,18 +81,18 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
         android:ems="10"
         android:id="@+id/firstNameEditText"
         android:height="40dp"
-        android:background="#EBEBEB"
+        android:background="#e0e0e0"
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
         android:layout_below="@+id/firstNameTextView"
         android:layout_alignLeft="@+id/firstNameTextView"
         android:layout_alignStart="@+id/firstNameTextView"
         android:layout_marginTop="3dp"
-        android:layout_marginBottom="3dp" />
+        android:layout_marginBottom="3dp"
+        android:inputType="text" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -106,18 +106,18 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
         android:ems="10"
         android:id="@+id/lastNameEditText"
         android:height="40dp"
-        android:background="#EBEBEB"
+        android:background="#e0e0e0"
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
         android:layout_below="@+id/lastNameTextView"
         android:layout_alignLeft="@+id/lastNameTextView"
         android:layout_alignStart="@+id/lastNameTextView"
         android:layout_marginTop="3dp"
-        android:layout_marginBottom="3dp" />
+        android:layout_marginBottom="3dp"
+        android:inputType="text" />
 
     <TextView
         android:layout_width="wrap_content"
