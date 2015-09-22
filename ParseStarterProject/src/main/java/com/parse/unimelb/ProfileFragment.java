@@ -1,12 +1,14 @@
 package com.parse.unimelb;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.parse.unimelb.R;
 
@@ -23,7 +25,7 @@ public class ProfileFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
+    Button editProfile;
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -59,6 +61,15 @@ public class ProfileFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        //editProfile = (Button) this.findViewById(R.id.editProfileButton);
+        editProfile.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View arg0) {
+                //Intent intent = new Intent(EditProfileActivity.this, EditProfileActivity.class);
+                //startActivity(intent);
+            }
+        });
+
     }
 
     @Override
