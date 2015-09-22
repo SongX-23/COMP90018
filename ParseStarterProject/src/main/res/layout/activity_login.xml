@@ -24,15 +24,15 @@
         android:id="@+id/emailTextView"
         android:layout_marginTop="60dp"
         android:layout_below="@+id/titleTextView"
-        android:layout_alignLeft="@+id/editText"
-        android:layout_alignStart="@+id/editText" />
+        android:layout_alignLeft="@+id/emailEditText"
+        android:layout_alignStart="@+id/emailEditText" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:ems="10"
-        android:id="@+id/editText"
+        android:id="@+id/emailEditText"
         android:layout_below="@+id/emailTextView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="3dp"
@@ -47,16 +47,16 @@
         android:layout_height="wrap_content"
         android:text="Password"
         android:id="@+id/passwordTextView"
-        android:layout_below="@+id/editText"
-        android:layout_alignLeft="@+id/editText"
-        android:layout_alignStart="@+id/editText" />
+        android:layout_below="@+id/emailEditText"
+        android:layout_alignLeft="@+id/emailEditText"
+        android:layout_alignStart="@+id/emailEditText" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:id="@+id/editText2"
+        android:id="@+id/passwordEditText"
         android:layout_below="@+id/passwordTextView"
         android:layout_alignLeft="@+id/passwordTextView"
         android:layout_alignStart="@+id/passwordTextView"
@@ -72,9 +72,9 @@
         android:layout_height="wrap_content"
         android:text="Don&apos;t have an account?"
         android:id="@+id/signTextView"
-        android:layout_below="@+id/editText2"
-        android:layout_alignLeft="@+id/editText2"
-        android:layout_alignStart="@+id/editText2"
+        android:layout_below="@+id/passwordEditText"
+        android:layout_alignLeft="@+id/passwordEditText"
+        android:layout_alignStart="@+id/passwordEditText"
         android:layout_marginTop="5dp" />
 
     <TextView
@@ -82,9 +82,9 @@
         android:layout_height="wrap_content"
         android:text="Sign up"
         android:id="@+id/signupTextView"
-        android:layout_below="@+id/editText2"
-        android:layout_alignRight="@+id/editText2"
-        android:layout_alignEnd="@+id/editText2"
+        android:layout_below="@+id/passwordEditText"
+        android:layout_alignRight="@+id/passwordEditText"
+        android:layout_alignEnd="@+id/passwordEditText"
         android:layout_marginTop="5dp"
         android:textColor="@android:color/holo_blue_dark" />
 

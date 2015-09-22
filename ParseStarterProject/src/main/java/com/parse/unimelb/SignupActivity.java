@@ -10,14 +10,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.parse.ParseACL;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 import com.parse.unimelb.R;
 
 public class SignupActivity extends AppCompatActivity {
-
+    Button signupButton;
+    EditText first_name, last_name, email, password;
+    String firstname, lastname, email_str, psw, username;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,39 +37,54 @@ public class SignupActivity extends AppCompatActivity {
             }
         });
         //signup 
-        Button signupButton = (Button) this.findViewById(R.id.signupButton);
-        EditText first_name = (EditText) this.findViewById(R.id.firstNameEditText);
-        EditText last_name = (EditText) this.findViewById(R.id.lastNameEditText);
-        EditText email = (EditText) this.findViewById(R.id.emailEditText);
-        EditText password = (EditText) this.findViewById(R.id.passwordEditText);
-        String firstname = first_name.getText().toString();
-        String lastname = last_name.getText().toString();
-        final String email_str = email.getText().toString();
-        final String psw = password.getText().toString();
-        final String username = firstname + " " + lastname;
+        signupButton = (Button) this.findViewById(R.id.signupButton);
+        first_name = (EditText) this.findViewById(R.id.firstNameEditText);
+        last_name = (EditText) this.findViewById(R.id.lastNameEditText);
+        email = (EditText) this.findViewById(R.id.emailEditText);
+        password = (EditText) this.findViewById(R.id.passwordEditText);
+
         signupButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
         public void onClick(View v){
-                // Dummy user
-                ParseUser user = new ParseUser();
-                user.setUsername(username);
-                user.setPassword(psw);
-                user.setEmail(email_str);
+                //retreive the text input
+                firstname = first_name.getText().toString();
+                lastname = last_name.getText().toString();
+                email_str = email.getText().toString();
+                psw = password.getText().toString();
+                // create user
 
-                user.signUpInBackground(new SignUpCallback() {
-                    public void done(ParseException e) {
-                        if (e == null) {
-                            // Hooray! Let them use the app now.
-                            Log.v("Sign up successfully.", e.toString());
-                        } else {
-                            // Sign up didn't succeed. Look at the ParseException
-                            // to figure out what went wrong
+                if (email_str.equals("") && password.equals("")) {
+                    Toast.makeText(getApplicationContext(),
+                            "Please complete the sign up form",
+                            Toast.LENGTH_LONG).show();
+
+                }else{
+                    ParseUser user = new ParseUser();
+                    user.setUsername(email_str);
+                    user.setPassword(psw);
+                    user.setEmail(email_str);
+                    user.signUpInBackground(new SignUpCallback() {
+                        public void done(ParseException e) {
+                            if (e == null) {
+                                // Hooray! Let them use the app now.
+                                // Show a simple Toast message upon successful registration
+                                Toast.makeText(getApplicationContext(),
+                                        "Successfully Signed up, please log in.",
+                                        Toast.LENGTH_LONG).show();
+                            } else {
+                                // Sign up didn't succeed. Look at the ParseException
+                                // to figure out what went wrong
+                                Toast.makeText(getApplicationContext(),
+                                        "Sign up Error", Toast.LENGTH_LONG)
+                                        .show();
+                            }
                         }
-                    }
-                });
-                Intent intent = new Intent(SignupActivity.this, MainActivity.class);
-                startActivity(intent);
+                    });
+                    Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                }
+
             }
         });
     }

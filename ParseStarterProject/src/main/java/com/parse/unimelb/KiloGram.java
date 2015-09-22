@@ -9,6 +9,7 @@
 package com.parse.unimelb;
 
 import android.app.Application;
+import android.util.Log;
 
 import com.parse.Parse;
 import com.parse.ParseACL;
