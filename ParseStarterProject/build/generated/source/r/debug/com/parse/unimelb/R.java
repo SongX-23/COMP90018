@@ -2068,7 +2068,7 @@ containing a value of this type.
             0x7f01001a, 0x7f01001b, 0x7f01007d
         };
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#background}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#background}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2078,7 +2078,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int ActionBar_background = 10;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#backgroundSplit}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#backgroundSplit}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2090,7 +2090,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int ActionBar_backgroundSplit = 12;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#backgroundStacked}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#backgroundStacked}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2102,7 +2102,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int ActionBar_backgroundStacked = 11;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#contentInsetEnd}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#contentInsetEnd}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2118,7 +2118,7 @@ containing a value of this type.
         */
         public static final int ActionBar_contentInsetEnd = 21;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#contentInsetLeft}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#contentInsetLeft}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2134,7 +2134,7 @@ containing a value of this type.
         */
         public static final int ActionBar_contentInsetLeft = 22;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#contentInsetRight}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#contentInsetRight}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2150,7 +2150,7 @@ containing a value of this type.
         */
         public static final int ActionBar_contentInsetRight = 23;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#contentInsetStart}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#contentInsetStart}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2166,7 +2166,7 @@ containing a value of this type.
         */
         public static final int ActionBar_contentInsetStart = 20;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#customNavigationLayout}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#customNavigationLayout}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2176,7 +2176,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int ActionBar_customNavigationLayout = 13;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#displayOptions}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#displayOptions}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2198,7 +2198,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int ActionBar_displayOptions = 3;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#divider}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#divider}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2208,7 +2208,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int ActionBar_divider = 9;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#elevation}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#elevation}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2224,7 +2224,7 @@ containing a value of this type.
         */
         public static final int ActionBar_elevation = 24;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#height}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#height}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2240,7 +2240,7 @@ containing a value of this type.
         */
         public static final int ActionBar_height = 0;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#hideOnContentScroll}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#hideOnContentScroll}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2254,7 +2254,7 @@ containing a value of this type.
         */
         public static final int ActionBar_hideOnContentScroll = 19;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#homeAsUpIndicator}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#homeAsUpIndicator}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2264,7 +2264,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int ActionBar_homeAsUpIndicator = 26;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#homeLayout}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#homeLayout}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2274,7 +2274,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int ActionBar_homeLayout = 14;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#icon}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#icon}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2284,7 +2284,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int ActionBar_icon = 7;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#indeterminateProgressStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#indeterminateProgressStyle}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2294,7 +2294,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int ActionBar_indeterminateProgressStyle = 16;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#itemPadding}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#itemPadding}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2310,7 +2310,7 @@ containing a value of this type.
         */
         public static final int ActionBar_itemPadding = 18;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#logo}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#logo}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2320,7 +2320,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int ActionBar_logo = 8;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#navigationMode}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#navigationMode}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2338,7 +2338,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int ActionBar_navigationMode = 2;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#popupTheme}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#popupTheme}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2348,7 +2348,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int ActionBar_popupTheme = 25;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#progressBarPadding}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#progressBarPadding}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2364,7 +2364,7 @@ containing a value of this type.
         */
         public static final int ActionBar_progressBarPadding = 17;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#progressBarStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#progressBarStyle}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2374,7 +2374,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int ActionBar_progressBarStyle = 15;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#subtitle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#subtitle}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2388,7 +2388,7 @@ containing a value of this type.
         */
         public static final int ActionBar_subtitle = 4;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#subtitleTextStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#subtitleTextStyle}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2398,7 +2398,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int ActionBar_subtitleTextStyle = 6;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#title}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#title}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2412,7 +2412,7 @@ containing a value of this type.
         */
         public static final int ActionBar_title = 1;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#titleTextStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#titleTextStyle}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2489,7 +2489,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f01000e, 0x7f01001c
         };
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#background}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#background}
           attribute's value can be found in the {@link #ActionMode} array.
 
 
@@ -2499,7 +2499,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int ActionMode_background = 3;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#backgroundSplit}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#backgroundSplit}
           attribute's value can be found in the {@link #ActionMode} array.
 
 
@@ -2511,7 +2511,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int ActionMode_backgroundSplit = 4;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#closeItemLayout}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#closeItemLayout}
           attribute's value can be found in the {@link #ActionMode} array.
 
 
@@ -2521,7 +2521,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int ActionMode_closeItemLayout = 5;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#height}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#height}
           attribute's value can be found in the {@link #ActionMode} array.
 
 
@@ -2537,7 +2537,7 @@ containing a value of this type.
         */
         public static final int ActionMode_height = 0;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#subtitleTextStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#subtitleTextStyle}
           attribute's value can be found in the {@link #ActionMode} array.
 
 
@@ -2547,7 +2547,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int ActionMode_subtitleTextStyle = 2;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#titleTextStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#titleTextStyle}
           attribute's value can be found in the {@link #ActionMode} array.
 
 
@@ -2572,7 +2572,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f01001d, 0x7f01001e
         };
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#expandActivityOverflowButtonDrawable}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#expandActivityOverflowButtonDrawable}
           attribute's value can be found in the {@link #ActivityChooserView} array.
 
 
@@ -2582,7 +2582,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int ActivityChooserView_expandActivityOverflowButtonDrawable = 1;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#initialActivityCount}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#initialActivityCount}
           attribute's value can be found in the {@link #ActivityChooserView} array.
 
 
@@ -2626,7 +2626,7 @@ containing a value of this type.
         */
         public static final int AlertDialog_android_layout = 0;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#buttonPanelSideLayout}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#buttonPanelSideLayout}
           attribute's value can be found in the {@link #AlertDialog} array.
 
 
@@ -2636,7 +2636,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int AlertDialog_buttonPanelSideLayout = 1;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#listItemLayout}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#listItemLayout}
           attribute's value can be found in the {@link #AlertDialog} array.
 
 
@@ -2646,7 +2646,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int AlertDialog_listItemLayout = 5;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#listLayout}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#listLayout}
           attribute's value can be found in the {@link #AlertDialog} array.
 
 
@@ -2656,7 +2656,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int AlertDialog_listLayout = 2;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#multiChoiceItemLayout}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#multiChoiceItemLayout}
           attribute's value can be found in the {@link #AlertDialog} array.
 
 
@@ -2666,7 +2666,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int AlertDialog_multiChoiceItemLayout = 3;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#singleChoiceItemLayout}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#singleChoiceItemLayout}
           attribute's value can be found in the {@link #AlertDialog} array.
 
 
@@ -2697,7 +2697,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int AppCompatTextView_android_textAppearance = 0;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#textAllCaps}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#textAllCaps}
           attribute's value can be found in the {@link #AppCompatTextView} array.
 
 
@@ -2736,7 +2736,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f010029, 0x7f01002a, 0x7f01002b, 0x7f01002c
         };
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#barSize}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#barSize}
           attribute's value can be found in the {@link #DrawerArrowToggle} array.
 
 
@@ -2752,7 +2752,7 @@ containing a value of this type.
         */
         public static final int DrawerArrowToggle_barSize = 6;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#color}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#color}
           attribute's value can be found in the {@link #DrawerArrowToggle} array.
 
 
@@ -2767,7 +2767,7 @@ containing a value of this type.
         */
         public static final int DrawerArrowToggle_color = 0;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#drawableSize}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#drawableSize}
           attribute's value can be found in the {@link #DrawerArrowToggle} array.
 
 
@@ -2783,7 +2783,7 @@ containing a value of this type.
         */
         public static final int DrawerArrowToggle_drawableSize = 2;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#gapBetweenBars}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#gapBetweenBars}
           attribute's value can be found in the {@link #DrawerArrowToggle} array.
 
 
@@ -2799,7 +2799,7 @@ containing a value of this type.
         */
         public static final int DrawerArrowToggle_gapBetweenBars = 3;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#middleBarArrowSize}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#middleBarArrowSize}
           attribute's value can be found in the {@link #DrawerArrowToggle} array.
 
 
@@ -2815,7 +2815,7 @@ containing a value of this type.
         */
         public static final int DrawerArrowToggle_middleBarArrowSize = 5;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#spinBars}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#spinBars}
           attribute's value can be found in the {@link #DrawerArrowToggle} array.
 
 
@@ -2829,7 +2829,7 @@ containing a value of this type.
         */
         public static final int DrawerArrowToggle_spinBars = 1;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#thickness}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#thickness}
           attribute's value can be found in the {@link #DrawerArrowToggle} array.
 
 
@@ -2845,7 +2845,7 @@ containing a value of this type.
         */
         public static final int DrawerArrowToggle_thickness = 7;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#topBottomBarArrowSize}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#topBottomBarArrowSize}
           attribute's value can be found in the {@link #DrawerArrowToggle} array.
 
 
@@ -2922,7 +2922,7 @@ containing a value of this type.
         */
         public static final int LinearLayoutCompat_android_weightSum = 4;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#divider}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#divider}
           attribute's value can be found in the {@link #LinearLayoutCompat} array.
 
 
@@ -2932,7 +2932,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int LinearLayoutCompat_divider = 5;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#dividerPadding}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#dividerPadding}
           attribute's value can be found in the {@link #LinearLayoutCompat} array.
 
 
@@ -2948,7 +2948,7 @@ containing a value of this type.
         */
         public static final int LinearLayoutCompat_dividerPadding = 8;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#measureWithLargestChild}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#measureWithLargestChild}
           attribute's value can be found in the {@link #LinearLayoutCompat} array.
 
 
@@ -2962,7 +2962,7 @@ containing a value of this type.
         */
         public static final int LinearLayoutCompat_measureWithLargestChild = 6;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#showDividers}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#showDividers}
           attribute's value can be found in the {@link #LinearLayoutCompat} array.
 
 
@@ -3160,7 +3160,7 @@ containing a value of this type.
             0x7f010033
         };
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#actionLayout}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#actionLayout}
           attribute's value can be found in the {@link #MenuItem} array.
 
 
@@ -3170,7 +3170,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int MenuItem_actionLayout = 14;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#actionProviderClass}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#actionProviderClass}
           attribute's value can be found in the {@link #MenuItem} array.
 
 
@@ -3184,7 +3184,7 @@ containing a value of this type.
         */
         public static final int MenuItem_actionProviderClass = 16;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#actionViewClass}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#actionViewClass}
           attribute's value can be found in the {@link #MenuItem} array.
 
 
@@ -3276,7 +3276,7 @@ containing a value of this type.
         */
         public static final int MenuItem_android_visible = 4;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#showAsAction}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#showAsAction}
           attribute's value can be found in the {@link #MenuItem} array.
 
 
@@ -3366,7 +3366,7 @@ containing a value of this type.
         */
         public static final int MenuView_android_windowAnimationStyle = 0;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#preserveIconSpacing}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#preserveIconSpacing}
           attribute's value can be found in the {@link #MenuView} array.
 
 
@@ -3401,7 +3401,7 @@ containing a value of this type.
         */
         public static final int PopupWindow_android_popupBackground = 0;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#overlapAnchor}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#overlapAnchor}
           attribute's value can be found in the {@link #PopupWindow} array.
 
 
@@ -3428,7 +3428,7 @@ containing a value of this type.
             0x7f010036
         };
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#state_above_anchor}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#state_above_anchor}
           attribute's value can be found in the {@link #PopupWindowBackgroundState} array.
 
 
@@ -3515,7 +3515,7 @@ containing a value of this type.
         */
         public static final int SearchView_android_maxWidth = 1;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#closeIcon}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#closeIcon}
           attribute's value can be found in the {@link #SearchView} array.
 
 
@@ -3525,7 +3525,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int SearchView_closeIcon = 8;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#commitIcon}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#commitIcon}
           attribute's value can be found in the {@link #SearchView} array.
 
 
@@ -3535,7 +3535,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int SearchView_commitIcon = 13;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#defaultQueryHint}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#defaultQueryHint}
           attribute's value can be found in the {@link #SearchView} array.
 
 
@@ -3549,7 +3549,7 @@ containing a value of this type.
         */
         public static final int SearchView_defaultQueryHint = 7;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#goIcon}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#goIcon}
           attribute's value can be found in the {@link #SearchView} array.
 
 
@@ -3559,7 +3559,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int SearchView_goIcon = 9;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#iconifiedByDefault}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#iconifiedByDefault}
           attribute's value can be found in the {@link #SearchView} array.
 
 
@@ -3573,7 +3573,7 @@ containing a value of this type.
         */
         public static final int SearchView_iconifiedByDefault = 5;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#layout}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#layout}
           attribute's value can be found in the {@link #SearchView} array.
 
 
@@ -3583,7 +3583,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int SearchView_layout = 4;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#queryBackground}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#queryBackground}
           attribute's value can be found in the {@link #SearchView} array.
 
 
@@ -3593,7 +3593,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int SearchView_queryBackground = 15;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#queryHint}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#queryHint}
           attribute's value can be found in the {@link #SearchView} array.
 
 
@@ -3607,7 +3607,7 @@ containing a value of this type.
         */
         public static final int SearchView_queryHint = 6;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#searchHintIcon}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#searchHintIcon}
           attribute's value can be found in the {@link #SearchView} array.
 
 
@@ -3617,7 +3617,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int SearchView_searchHintIcon = 11;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#searchIcon}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#searchIcon}
           attribute's value can be found in the {@link #SearchView} array.
 
 
@@ -3627,7 +3627,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int SearchView_searchIcon = 10;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#submitBackground}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#submitBackground}
           attribute's value can be found in the {@link #SearchView} array.
 
 
@@ -3637,7 +3637,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int SearchView_submitBackground = 16;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#suggestionRowLayout}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#suggestionRowLayout}
           attribute's value can be found in the {@link #SearchView} array.
 
 
@@ -3647,7 +3647,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int SearchView_suggestionRowLayout = 14;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#voiceIcon}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#voiceIcon}
           attribute's value can be found in the {@link #SearchView} array.
 
 
@@ -3734,7 +3734,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Spinner_android_popupBackground = 3;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#disableChildrenWhenDisabled}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#disableChildrenWhenDisabled}
           attribute's value can be found in the {@link #Spinner} array.
 
 
@@ -3748,7 +3748,7 @@ containing a value of this type.
         */
         public static final int Spinner_disableChildrenWhenDisabled = 10;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#popupPromptView}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#popupPromptView}
           attribute's value can be found in the {@link #Spinner} array.
 
 
@@ -3758,7 +3758,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Spinner_popupPromptView = 9;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#prompt}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#prompt}
           attribute's value can be found in the {@link #Spinner} array.
 
 
@@ -3768,7 +3768,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Spinner_prompt = 7;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#spinnerMode}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#spinnerMode}
           attribute's value can be found in the {@link #Spinner} array.
 
 
@@ -3836,7 +3836,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int SwitchCompat_android_thumb = 2;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#showText}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#showText}
           attribute's value can be found in the {@link #SwitchCompat} array.
 
 
@@ -3850,7 +3850,7 @@ containing a value of this type.
         */
         public static final int SwitchCompat_showText = 9;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#splitTrack}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#splitTrack}
           attribute's value can be found in the {@link #SwitchCompat} array.
 
 
@@ -3864,7 +3864,7 @@ containing a value of this type.
         */
         public static final int SwitchCompat_splitTrack = 8;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#switchMinWidth}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#switchMinWidth}
           attribute's value can be found in the {@link #SwitchCompat} array.
 
 
@@ -3880,7 +3880,7 @@ containing a value of this type.
         */
         public static final int SwitchCompat_switchMinWidth = 6;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#switchPadding}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#switchPadding}
           attribute's value can be found in the {@link #SwitchCompat} array.
 
 
@@ -3896,7 +3896,7 @@ containing a value of this type.
         */
         public static final int SwitchCompat_switchPadding = 7;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#switchTextAppearance}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#switchTextAppearance}
           attribute's value can be found in the {@link #SwitchCompat} array.
 
 
@@ -3906,7 +3906,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int SwitchCompat_switchTextAppearance = 5;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#thumbTextPadding}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#thumbTextPadding}
           attribute's value can be found in the {@link #SwitchCompat} array.
 
 
@@ -3922,7 +3922,7 @@ containing a value of this type.
         */
         public static final int SwitchCompat_thumbTextPadding = 4;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#track}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#track}
           attribute's value can be found in the {@link #SwitchCompat} array.
 
 
@@ -3978,7 +3978,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int TextAppearance_android_typeface = 1;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#textAllCaps}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#textAllCaps}
           attribute's value can be found in the {@link #TextAppearance} array.
 
 
@@ -4240,7 +4240,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f0100b5, 0x7f0100b6, 0x7f0100b7
         };
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#actionBarDivider}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#actionBarDivider}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4250,7 +4250,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_actionBarDivider = 23;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#actionBarItemBackground}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#actionBarItemBackground}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4260,7 +4260,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_actionBarItemBackground = 24;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#actionBarPopupTheme}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#actionBarPopupTheme}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4270,7 +4270,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_actionBarPopupTheme = 17;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#actionBarSize}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#actionBarSize}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4294,7 +4294,7 @@ containing a value of this type.
         */
         public static final int Theme_actionBarSize = 22;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#actionBarSplitStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#actionBarSplitStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4304,7 +4304,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_actionBarSplitStyle = 19;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#actionBarStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#actionBarStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4314,7 +4314,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_actionBarStyle = 18;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#actionBarTabBarStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#actionBarTabBarStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4324,7 +4324,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_actionBarTabBarStyle = 13;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#actionBarTabStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#actionBarTabStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4334,7 +4334,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_actionBarTabStyle = 12;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#actionBarTabTextStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#actionBarTabTextStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4344,7 +4344,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_actionBarTabTextStyle = 14;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#actionBarTheme}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#actionBarTheme}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4354,7 +4354,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_actionBarTheme = 20;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#actionBarWidgetTheme}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#actionBarWidgetTheme}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4364,7 +4364,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_actionBarWidgetTheme = 21;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#actionButtonStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#actionButtonStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4374,7 +4374,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_actionButtonStyle = 49;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#actionDropDownStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#actionDropDownStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4384,7 +4384,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_actionDropDownStyle = 45;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#actionMenuTextAppearance}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#actionMenuTextAppearance}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4394,7 +4394,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_actionMenuTextAppearance = 25;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#actionMenuTextColor}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#actionMenuTextColor}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4406,7 +4406,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_actionMenuTextColor = 26;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#actionModeBackground}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#actionModeBackground}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4416,7 +4416,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_actionModeBackground = 29;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#actionModeCloseButtonStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#actionModeCloseButtonStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4426,7 +4426,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_actionModeCloseButtonStyle = 28;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#actionModeCloseDrawable}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#actionModeCloseDrawable}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4436,7 +4436,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_actionModeCloseDrawable = 31;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#actionModeCopyDrawable}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#actionModeCopyDrawable}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4446,7 +4446,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_actionModeCopyDrawable = 33;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#actionModeCutDrawable}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#actionModeCutDrawable}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4456,7 +4456,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_actionModeCutDrawable = 32;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#actionModeFindDrawable}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#actionModeFindDrawable}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4466,7 +4466,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_actionModeFindDrawable = 37;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#actionModePasteDrawable}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#actionModePasteDrawable}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4476,7 +4476,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_actionModePasteDrawable = 34;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#actionModePopupWindowStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#actionModePopupWindowStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4486,7 +4486,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_actionModePopupWindowStyle = 39;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#actionModeSelectAllDrawable}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#actionModeSelectAllDrawable}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4496,7 +4496,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_actionModeSelectAllDrawable = 35;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#actionModeShareDrawable}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#actionModeShareDrawable}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4506,7 +4506,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_actionModeShareDrawable = 36;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#actionModeSplitBackground}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#actionModeSplitBackground}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4516,7 +4516,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_actionModeSplitBackground = 30;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#actionModeStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#actionModeStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4526,7 +4526,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_actionModeStyle = 27;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#actionModeWebSearchDrawable}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#actionModeWebSearchDrawable}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4536,7 +4536,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_actionModeWebSearchDrawable = 38;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#actionOverflowButtonStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#actionOverflowButtonStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4546,7 +4546,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_actionOverflowButtonStyle = 15;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#actionOverflowMenuStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#actionOverflowMenuStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4556,7 +4556,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_actionOverflowMenuStyle = 16;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#activityChooserViewStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#activityChooserViewStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4566,7 +4566,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_activityChooserViewStyle = 57;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#alertDialogButtonGroupStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#alertDialogButtonGroupStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4576,7 +4576,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_alertDialogButtonGroupStyle = 90;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#alertDialogCenterButtons}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#alertDialogCenterButtons}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4590,7 +4590,7 @@ containing a value of this type.
         */
         public static final int Theme_alertDialogCenterButtons = 91;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#alertDialogStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#alertDialogStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4600,7 +4600,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_alertDialogStyle = 89;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#alertDialogTheme}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#alertDialogTheme}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4622,7 +4622,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_android_windowIsFloating = 0;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#autoCompleteTextViewStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#autoCompleteTextViewStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4632,7 +4632,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_autoCompleteTextViewStyle = 97;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#borderlessButtonStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#borderlessButtonStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4642,7 +4642,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_borderlessButtonStyle = 54;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#buttonBarButtonStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#buttonBarButtonStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4652,7 +4652,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_buttonBarButtonStyle = 51;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#buttonBarNegativeButtonStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#buttonBarNegativeButtonStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4662,7 +4662,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_buttonBarNegativeButtonStyle = 95;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#buttonBarNeutralButtonStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#buttonBarNeutralButtonStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4672,7 +4672,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_buttonBarNeutralButtonStyle = 96;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#buttonBarPositiveButtonStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#buttonBarPositiveButtonStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4682,7 +4682,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_buttonBarPositiveButtonStyle = 94;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#buttonBarStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#buttonBarStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4692,7 +4692,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_buttonBarStyle = 50;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#buttonStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#buttonStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4702,7 +4702,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_buttonStyle = 98;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#buttonStyleSmall}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#buttonStyleSmall}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4712,7 +4712,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_buttonStyleSmall = 99;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#checkboxStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#checkboxStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4722,7 +4722,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_checkboxStyle = 100;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#checkedTextViewStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#checkedTextViewStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4732,7 +4732,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_checkedTextViewStyle = 101;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#colorAccent}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#colorAccent}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4747,7 +4747,7 @@ containing a value of this type.
         */
         public static final int Theme_colorAccent = 83;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#colorButtonNormal}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#colorButtonNormal}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4762,7 +4762,7 @@ containing a value of this type.
         */
         public static final int Theme_colorButtonNormal = 87;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#colorControlActivated}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#colorControlActivated}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4777,7 +4777,7 @@ containing a value of this type.
         */
         public static final int Theme_colorControlActivated = 85;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#colorControlHighlight}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#colorControlHighlight}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4792,7 +4792,7 @@ containing a value of this type.
         */
         public static final int Theme_colorControlHighlight = 86;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#colorControlNormal}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#colorControlNormal}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4807,7 +4807,7 @@ containing a value of this type.
         */
         public static final int Theme_colorControlNormal = 84;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#colorPrimary}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#colorPrimary}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4822,7 +4822,7 @@ containing a value of this type.
         */
         public static final int Theme_colorPrimary = 81;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#colorPrimaryDark}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#colorPrimaryDark}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4837,7 +4837,7 @@ containing a value of this type.
         */
         public static final int Theme_colorPrimaryDark = 82;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#colorSwitchThumbNormal}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#colorSwitchThumbNormal}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4852,7 +4852,7 @@ containing a value of this type.
         */
         public static final int Theme_colorSwitchThumbNormal = 88;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#dialogPreferredPadding}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#dialogPreferredPadding}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4868,7 +4868,7 @@ containing a value of this type.
         */
         public static final int Theme_dialogPreferredPadding = 43;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#dialogTheme}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#dialogTheme}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4878,7 +4878,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_dialogTheme = 42;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#dividerHorizontal}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#dividerHorizontal}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4888,7 +4888,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_dividerHorizontal = 56;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#dividerVertical}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#dividerVertical}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4898,7 +4898,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_dividerVertical = 55;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#dropDownListViewStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#dropDownListViewStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4908,7 +4908,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_dropDownListViewStyle = 73;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#dropdownListPreferredItemHeight}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#dropdownListPreferredItemHeight}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4924,7 +4924,7 @@ containing a value of this type.
         */
         public static final int Theme_dropdownListPreferredItemHeight = 46;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#editTextBackground}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#editTextBackground}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4934,7 +4934,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_editTextBackground = 63;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#editTextColor}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#editTextColor}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4946,7 +4946,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_editTextColor = 62;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#editTextStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#editTextStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4956,7 +4956,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_editTextStyle = 102;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#homeAsUpIndicator}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#homeAsUpIndicator}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4966,7 +4966,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_homeAsUpIndicator = 48;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#listChoiceBackgroundIndicator}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#listChoiceBackgroundIndicator}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4976,7 +4976,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_listChoiceBackgroundIndicator = 80;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#listDividerAlertDialog}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#listDividerAlertDialog}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4986,7 +4986,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_listDividerAlertDialog = 44;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#listPopupWindowStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#listPopupWindowStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4996,7 +4996,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_listPopupWindowStyle = 74;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#listPreferredItemHeight}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#listPreferredItemHeight}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5012,7 +5012,7 @@ containing a value of this type.
         */
         public static final int Theme_listPreferredItemHeight = 68;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#listPreferredItemHeightLarge}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#listPreferredItemHeightLarge}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5028,7 +5028,7 @@ containing a value of this type.
         */
         public static final int Theme_listPreferredItemHeightLarge = 70;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#listPreferredItemHeightSmall}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#listPreferredItemHeightSmall}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5044,7 +5044,7 @@ containing a value of this type.
         */
         public static final int Theme_listPreferredItemHeightSmall = 69;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#listPreferredItemPaddingLeft}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#listPreferredItemPaddingLeft}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5060,7 +5060,7 @@ containing a value of this type.
         */
         public static final int Theme_listPreferredItemPaddingLeft = 71;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#listPreferredItemPaddingRight}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#listPreferredItemPaddingRight}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5076,7 +5076,7 @@ containing a value of this type.
         */
         public static final int Theme_listPreferredItemPaddingRight = 72;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#panelBackground}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#panelBackground}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5086,7 +5086,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_panelBackground = 77;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#panelMenuListTheme}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#panelMenuListTheme}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5096,7 +5096,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_panelMenuListTheme = 79;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#panelMenuListWidth}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#panelMenuListWidth}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5112,7 +5112,7 @@ containing a value of this type.
         */
         public static final int Theme_panelMenuListWidth = 78;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#popupMenuStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#popupMenuStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5122,7 +5122,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_popupMenuStyle = 60;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#popupWindowStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#popupWindowStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5132,7 +5132,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_popupWindowStyle = 61;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#radioButtonStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#radioButtonStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5142,7 +5142,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_radioButtonStyle = 103;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#ratingBarStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#ratingBarStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5152,7 +5152,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_ratingBarStyle = 104;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#searchViewStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#searchViewStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5162,7 +5162,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_searchViewStyle = 67;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#selectableItemBackground}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#selectableItemBackground}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5172,7 +5172,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_selectableItemBackground = 52;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#selectableItemBackgroundBorderless}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#selectableItemBackgroundBorderless}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5182,7 +5182,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_selectableItemBackgroundBorderless = 53;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#spinnerDropDownItemStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#spinnerDropDownItemStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5192,7 +5192,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_spinnerDropDownItemStyle = 47;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#spinnerStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#spinnerStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5202,7 +5202,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_spinnerStyle = 105;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#switchStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#switchStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5212,7 +5212,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_switchStyle = 106;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#textAppearanceLargePopupMenu}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#textAppearanceLargePopupMenu}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5222,7 +5222,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_textAppearanceLargePopupMenu = 40;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#textAppearanceListItem}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#textAppearanceListItem}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5232,7 +5232,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_textAppearanceListItem = 75;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#textAppearanceListItemSmall}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#textAppearanceListItemSmall}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5242,7 +5242,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_textAppearanceListItemSmall = 76;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#textAppearanceSearchResultSubtitle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#textAppearanceSearchResultSubtitle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5252,7 +5252,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_textAppearanceSearchResultSubtitle = 65;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#textAppearanceSearchResultTitle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#textAppearanceSearchResultTitle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5262,7 +5262,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_textAppearanceSearchResultTitle = 64;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#textAppearanceSmallPopupMenu}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#textAppearanceSmallPopupMenu}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5272,7 +5272,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_textAppearanceSmallPopupMenu = 41;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#textColorAlertDialogListItem}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#textColorAlertDialogListItem}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5284,7 +5284,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_textColorAlertDialogListItem = 93;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#textColorSearchUrl}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#textColorSearchUrl}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5296,7 +5296,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_textColorSearchUrl = 66;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#toolbarNavigationButtonStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#toolbarNavigationButtonStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5306,7 +5306,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_toolbarNavigationButtonStyle = 59;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#toolbarStyle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#toolbarStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5316,7 +5316,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_toolbarStyle = 58;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#windowActionBar}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#windowActionBar}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5330,7 +5330,7 @@ containing a value of this type.
         */
         public static final int Theme_windowActionBar = 2;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#windowActionBarOverlay}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#windowActionBarOverlay}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5344,7 +5344,7 @@ containing a value of this type.
         */
         public static final int Theme_windowActionBarOverlay = 4;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#windowActionModeOverlay}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#windowActionModeOverlay}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5358,7 +5358,7 @@ containing a value of this type.
         */
         public static final int Theme_windowActionModeOverlay = 5;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#windowFixedHeightMajor}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#windowFixedHeightMajor}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5377,7 +5377,7 @@ containing a value of this type.
         */
         public static final int Theme_windowFixedHeightMajor = 9;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#windowFixedHeightMinor}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#windowFixedHeightMinor}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5396,7 +5396,7 @@ containing a value of this type.
         */
         public static final int Theme_windowFixedHeightMinor = 7;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#windowFixedWidthMajor}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#windowFixedWidthMajor}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5415,7 +5415,7 @@ containing a value of this type.
         */
         public static final int Theme_windowFixedWidthMajor = 6;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#windowFixedWidthMinor}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#windowFixedWidthMinor}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5434,7 +5434,7 @@ containing a value of this type.
         */
         public static final int Theme_windowFixedWidthMinor = 8;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#windowMinWidthMajor}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#windowMinWidthMajor}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5453,7 +5453,7 @@ containing a value of this type.
         */
         public static final int Theme_windowMinWidthMajor = 10;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#windowMinWidthMinor}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#windowMinWidthMinor}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5472,7 +5472,7 @@ containing a value of this type.
         */
         public static final int Theme_windowMinWidthMinor = 11;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#windowNoTitle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#windowNoTitle}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5556,7 +5556,7 @@ containing a value of this type.
         */
         public static final int Toolbar_android_minHeight = 1;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#collapseContentDescription}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#collapseContentDescription}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -5570,7 +5570,7 @@ containing a value of this type.
         */
         public static final int Toolbar_collapseContentDescription = 18;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#collapseIcon}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#collapseIcon}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -5580,7 +5580,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Toolbar_collapseIcon = 17;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#contentInsetEnd}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#contentInsetEnd}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -5596,7 +5596,7 @@ containing a value of this type.
         */
         public static final int Toolbar_contentInsetEnd = 5;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#contentInsetLeft}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#contentInsetLeft}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -5612,7 +5612,7 @@ containing a value of this type.
         */
         public static final int Toolbar_contentInsetLeft = 6;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#contentInsetRight}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#contentInsetRight}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -5628,7 +5628,7 @@ containing a value of this type.
         */
         public static final int Toolbar_contentInsetRight = 7;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#contentInsetStart}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#contentInsetStart}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -5644,7 +5644,7 @@ containing a value of this type.
         */
         public static final int Toolbar_contentInsetStart = 4;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#maxButtonHeight}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#maxButtonHeight}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -5660,7 +5660,7 @@ containing a value of this type.
         */
         public static final int Toolbar_maxButtonHeight = 16;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#navigationContentDescription}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#navigationContentDescription}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -5674,7 +5674,7 @@ containing a value of this type.
         */
         public static final int Toolbar_navigationContentDescription = 20;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#navigationIcon}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#navigationIcon}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -5684,7 +5684,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Toolbar_navigationIcon = 19;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#popupTheme}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#popupTheme}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -5694,7 +5694,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Toolbar_popupTheme = 8;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#subtitle}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#subtitle}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -5708,7 +5708,7 @@ containing a value of this type.
         */
         public static final int Toolbar_subtitle = 3;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#subtitleTextAppearance}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#subtitleTextAppearance}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -5718,7 +5718,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Toolbar_subtitleTextAppearance = 10;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#title}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#title}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -5732,7 +5732,7 @@ containing a value of this type.
         */
         public static final int Toolbar_title = 2;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#titleMarginBottom}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#titleMarginBottom}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -5748,7 +5748,7 @@ containing a value of this type.
         */
         public static final int Toolbar_titleMarginBottom = 15;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#titleMarginEnd}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#titleMarginEnd}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -5764,7 +5764,7 @@ containing a value of this type.
         */
         public static final int Toolbar_titleMarginEnd = 13;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#titleMarginStart}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#titleMarginStart}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -5780,7 +5780,7 @@ containing a value of this type.
         */
         public static final int Toolbar_titleMarginStart = 12;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#titleMarginTop}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#titleMarginTop}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -5796,7 +5796,7 @@ containing a value of this type.
         */
         public static final int Toolbar_titleMarginTop = 14;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#titleMargins}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#titleMargins}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -5812,7 +5812,7 @@ containing a value of this type.
         */
         public static final int Toolbar_titleMargins = 11;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#titleTextAppearance}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#titleTextAppearance}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -5860,7 +5860,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int View_android_theme = 0;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#backgroundTint}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#backgroundTint}
           attribute's value can be found in the {@link #View} array.
 
 
@@ -5875,7 +5875,7 @@ containing a value of this type.
         */
         public static final int View_backgroundTint = 5;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#backgroundTintMode}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#backgroundTintMode}
           attribute's value can be found in the {@link #View} array.
 
 
@@ -5895,7 +5895,7 @@ containing a value of this type.
         */
         public static final int View_backgroundTintMode = 6;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#paddingEnd}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#paddingEnd}
           attribute's value can be found in the {@link #View} array.
 
 
@@ -5911,7 +5911,7 @@ containing a value of this type.
         */
         public static final int View_paddingEnd = 3;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#paddingStart}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#paddingStart}
           attribute's value can be found in the {@link #View} array.
 
 
@@ -5927,7 +5927,7 @@ containing a value of this type.
         */
         public static final int View_paddingStart = 2;
         /**
-          <p>This symbol is the offset where the {@link com.parse.unimelb.R.attr#theme}
+          <p>This symbol is the offset where the {@link com.parse.starter.R.attr#theme}
           attribute's value can be found in the {@link #View} array.
 
 
