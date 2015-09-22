@@ -36,6 +36,7 @@ public class HomeActivity extends AppCompatActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     ViewPager mViewPager;
+    //declare the tabs
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
