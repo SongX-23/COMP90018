@@ -212,9 +212,11 @@
     <string name="title_activity_home">HomeActivity</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_signup">SignupActivity</string>
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
+    <string name="title_section1">Browse</string>
+    <string name="title_section2">Discover</string>
+    <string name="title_section3">Photo</string>
+    <string name="title_section4">Notification</string>
+    <string name="title_section5">Profile</string>
     <!-- From: file:/Users/songxue/Documents/Mobile%20Dev/Instagram/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
