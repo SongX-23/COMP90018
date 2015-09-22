@@ -55,6 +55,8 @@ public class LoginActivity extends AppCompatActivity {
                                     Toast.makeText(getApplicationContext(),
                                             "Successfully Logged in",
                                             Toast.LENGTH_LONG).show();
+                                    Intent indent = new Intent(LoginActivity.this, HomeActivity.class);
+                                    startActivity(indent);
                                     finish();
                                 } else {
                                     Toast.makeText(

@@ -49,6 +49,10 @@
             android:name="com.parse.unimelb.SignupActivity"
             android:label="@string/title_activity_signup" >
         </activity>
+        <activity
+            android:name="com.parse.unimelb.HomeActivity"
+            android:label="@string/title_activity_home" >
+        </activity>
     </application>
 
 </manifest>

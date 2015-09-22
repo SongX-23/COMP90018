@@ -43,6 +43,10 @@
             android:name=".SignupActivity"
             android:label="@string/title_activity_signup" >
         </activity>
+        <activity
+            android:name=".HomeActivity"
+            android:label="@string/title_activity_home" >
+        </activity>
     </application>
 
 </manifest>
