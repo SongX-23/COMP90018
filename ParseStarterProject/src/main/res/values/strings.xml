@@ -8,8 +8,8 @@
   ~ of patent rights can be found in the PATENTS file in the same directory.
   -->
 <resources>
-    <string name="parse_app_id">YOUR_APPLICATION_ID</string>
-    <string name="parse_client_key">YOUR_CLIENT_KEY</string>
+    <string name="parse_app_id">ZBVTjeG5g4gqFsoP9ta7cZ9a3XbiSrM61ly7XqPl</string>
+    <string name="parse_client_key">k2gpuWav8qnp6udvQHkROJXkZVWF4JWnH6Pe8reW</string>
 
     <string name="app_name">KiloGram</string>
 
