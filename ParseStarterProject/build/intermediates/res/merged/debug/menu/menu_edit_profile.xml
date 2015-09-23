@@ -5,4 +5,4 @@
     <item android:id="@+id/action_settings" android:title="@string/action_settings"
         android:orderInCategory="100" app:showAsAction="never" />
 </menu>
-<!-- From: file:/Users/songxue/Documents/Mobile%20Dev/Instagram/ParseStarterProject/src/main/res/menu/menu_edit_profile.xml -->
+<!-- From: file:/D:/GitHub/COMP90018/ParseStarterProject/src/main/res/menu/menu_edit_profile.xml -->

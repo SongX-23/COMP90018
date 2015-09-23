@@ -1,4 +1,5 @@
-package com.parse.unimelb;
+//This is the package name
+ackage com.parse.unimelb;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

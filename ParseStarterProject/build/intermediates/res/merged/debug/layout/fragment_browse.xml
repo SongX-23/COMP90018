@@ -11,4 +11,4 @@
         android:id="@+id/textView"
         android:layout_gravity="center" />
 </FrameLayout>
-<!-- From: file:/Users/songxue/Documents/Mobile%20Dev/Instagram/ParseStarterProject/src/main/res/layout/fragment_browse.xml -->
+<!-- From: file:/D:/GitHub/COMP90018/ParseStarterProject/src/main/res/layout/fragment_browse.xml -->
