@@ -61,6 +61,7 @@ public class ProfileFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        /***
         editProfile = (Button) getView().findViewById(R.id.editProfileButton);
         editProfile.setOnClickListener(new View.OnClickListener() {
 
@@ -69,6 +70,7 @@ public class ProfileFragment extends Fragment {
                 startActivity(intent);
             }
         });
+         ***/
 
     }
 
