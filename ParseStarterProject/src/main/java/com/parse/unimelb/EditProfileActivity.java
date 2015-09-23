@@ -1,18 +1,41 @@
 package com.parse.unimelb;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.parse.unimelb.R;
 
-public class EditProfileActivity extends ActionBarActivity {
-
+public class EditProfileActivity extends AppCompatActivity {
+    Button updateProfile, cancelUpdate;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
+
+        updateProfile = (Button) this.findViewById(R.id.updateButton);
+        cancelUpdate = (Button) this.findViewById(R.id.cancelButton);
+        updateProfile.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View arg0) {
+                //update user info
+                Intent intent = new Intent(EditProfileActivity.this, HomeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        cancelUpdate.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View arg0) {
+                Intent intent = new Intent(EditProfileActivity.this, HomeActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

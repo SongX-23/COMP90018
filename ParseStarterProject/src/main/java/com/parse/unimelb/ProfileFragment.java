@@ -61,12 +61,12 @@ public class ProfileFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        //editProfile = (Button) this.findViewById(R.id.editProfileButton);
+        editProfile = (Button) getView().findViewById(R.id.editProfileButton);
         editProfile.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View arg0) {
-                //Intent intent = new Intent(EditProfileActivity.this, EditProfileActivity.class);
-                //startActivity(intent);
+                Intent intent = new Intent(getActivity(), EditProfileActivity.class);
+                startActivity(intent);
             }
         });
 

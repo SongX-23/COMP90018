@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:10:1-52:12
+ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:10:1-56:12
 	package
 		ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:11:5-32
 		INJECTED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml
@@ -22,7 +22,7 @@ ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src
 	android:name
 		ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:14:22-76
 application
-ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:16:5-50:19
+ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:16:5-54:19
 MERGED from [com.android.support:appcompat-v7:22.2.0] /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:22.2.0] /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/AndroidManifest.xml:22:5-20
 	android:label
@@ -81,6 +81,12 @@ ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src
 		ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:48:13-56
 	android:name
 		ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:47:13-41
+activity#com.parse.unimelb.EditProfileActivity
+ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:50:9-53:20
+	android:label
+		ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:52:13-64
+	android:name
+		ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:51:13-48
 uses-sdk
 INJECTED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:22.2.0] /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/AndroidManifest.xml:20:5-43
