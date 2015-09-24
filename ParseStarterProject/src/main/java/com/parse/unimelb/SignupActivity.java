@@ -64,14 +64,21 @@ public class SignupActivity extends AppCompatActivity {
                     user.setUsername(email_str);
                     user.setPassword(psw);
                     user.setEmail(email_str);
+                    user.put("FullName", (firstname + " " + lastname));
+                    user.put("Bio", "Blank");
+                    user.put("Phone","Blank");
+                    user.put("City", "Blank");
+                    user.put("Gender", "Blank");
                     user.signUpInBackground(new SignUpCallback() {
                         public void done(ParseException e) {
                             if (e == null) {
                                 // Hooray! Let them use the app now.
                                 // Show a simple Toast message upon successful registration
                                 Toast.makeText(getApplicationContext(),
-                                        "Successfully Signed up, please log in.",
+                                        "Successfully Signed up, logging in now.",
                                         Toast.LENGTH_LONG).show();
+                                Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+                                startActivity(intent);
                             } else {
                                 // Sign up didn't succeed. Look at the ParseException
                                 // to figure out what went wrong
@@ -81,8 +88,7 @@ public class SignupActivity extends AppCompatActivity {
                             }
                         }
                     });
-                    Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
-                    startActivity(intent);
+
                 }
 
             }
@@ -104,7 +110,7 @@ public class SignupActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_log_out) {
             return true;
         }
 

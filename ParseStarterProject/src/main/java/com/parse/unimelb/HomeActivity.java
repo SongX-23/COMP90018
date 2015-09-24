@@ -2,6 +2,7 @@ package com.parse.unimelb;
 
 import java.util.Locale;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -15,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.util.Locale;
 
+import com.parse.ParseUser;
 import com.parse.unimelb.R;
 
 public class HomeActivity extends AppCompatActivity {
@@ -67,13 +69,20 @@ public class HomeActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_log_out) {
+            logout();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
-
+    public void logout(){
+        ParseUser.logOut();
+        ParseUser currentUser = ParseUser.getCurrentUser();
+        currentUser = null;
+        Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
+        startActivity(intent);
+    }
 
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to

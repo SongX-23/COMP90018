@@ -156,7 +156,7 @@
         android:id="@+id/cityEditText"
         android:background="#e0e0e0"
         android:height="40dp"
-        android:inputType="phone"
+        android:inputType="text"
         android:paddingBottom="5dp"
         android:paddingTop="5dp"
         android:layout_below="@+id/liveInextView"
