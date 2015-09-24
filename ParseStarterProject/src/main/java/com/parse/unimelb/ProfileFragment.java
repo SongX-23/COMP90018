@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.LayoutInflater;
@@ -21,11 +22,19 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.parse.GetDataCallback;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
 
@@ -50,6 +59,7 @@ public class ProfileFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
     private ImageButton imageButton;
     private ParseUser currentUser;
+    int postNumber, followerNumber, followingNumber;
     static final int REQUEST_IMAGE_CAPTURE = 1;
     /**
      * Use this factory method to create a new instance of
@@ -92,21 +102,7 @@ public class ProfileFragment extends Fragment {
         postNum = (TextView) view.findViewById(R.id.postNumTextView);
         followerNum = (TextView) view.findViewById(R.id.followerNumTextView);
         followingNum = (TextView) view.findViewById(R.id.followingNumTextView);
-        /***
-        set post number
-         GET FROM DB
-        ***/
-        //postNum.setText();
-        /***
-         set follower number
-         GET FROM API
-         ***/
-        //followerNum.setText();
-        /***
-         set following number
-         GET FROM API
-         ***/
-        //followingNum.setText();
+        getUserCountResponse();
         //set the username
         currentUser = ParseUser.getCurrentUser();
         username.setText(currentUser.get("FullName").toString());
@@ -236,6 +232,46 @@ public class ProfileFragment extends Fragment {
                 }
             });
         }
+    }
+
+    public void getUserCountResponse(){
+        // request url
+        String request_url = getResources().getString(R.string.instagram_api_url)
+                + getResources().getString(R.string.instagram_api_users_method)
+                + getResources().getString(R.string.instagram_user_id)
+                + "?access_token=" + getResources().getString(R.string.instagram_access_token);
+        System.out.println("Response" + request_url);
+        // request a json response
+
+        JsonObjectRequest jsonRequest = new JsonObjectRequest
+                (Request.Method.GET, request_url, (String)null, new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        // the response is already constructed as a JSONObject!
+                        try {
+                            response = response.getJSONObject("data");
+                            JSONObject count = response.getJSONObject("counts");
+                            postNumber = count.getInt("media");
+                            followerNumber = count.getInt("followed_by");
+                            followingNumber = count.getInt("follows");
+                            System.out.println("Response" + postNumber);
+                            postNum.setText(String.valueOf(postNumber));
+                            followerNum.setText(String.valueOf(followerNumber));
+                            followingNum.setText(String.valueOf(followingNumber));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        error.printStackTrace();
+                    }
+                });
+
+        Volley.newRequestQueue(getActivity()).add(jsonRequest);
+
     }
 
 
