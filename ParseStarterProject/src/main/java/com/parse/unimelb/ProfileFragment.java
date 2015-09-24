@@ -5,10 +5,16 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.LayoutInflater;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.parse.Parse;
@@ -34,6 +40,7 @@ public class ProfileFragment extends Fragment {
     private String mParam2;
     private TextView username;
     private OnFragmentInteractionListener mListener;
+    private ImageButton imageButton;
 
     /**
      * Use this factory method to create a new instance of
@@ -85,8 +92,38 @@ public class ProfileFragment extends Fragment {
                 startActivity(intent);
             }
         });
+        imageButton = (ImageButton) view.findViewById(R.id.profileImageButton);
+        registerForContextMenu(imageButton);
+        imageButton.setOnClickListener(new ImageButton.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.showContextMenu();
+            }
+        });
         return view;
     }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        MenuInflater inflater = getActivity().getMenuInflater();
+        inflater.inflate(R.menu.menu_profile_img, menu);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.profile_img_button_remove:
+                // your first action code
+                return true;
+            case R.id.profile_img_button_new:
+                // your second action code
+                return true;
+            default:
+                return super.onContextItemSelected(item);
+        }
+    }
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
@@ -94,6 +131,8 @@ public class ProfileFragment extends Fragment {
             mListener.onFragmentInteraction(uri);
         }
     }
+
+
 
 //    @Override
 //    public void onAttach(Activity activity) {

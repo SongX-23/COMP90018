@@ -30,6 +30,8 @@
         <item>Male</item>
         <item>Female</item>
     </string-array>
+    <string name="profile_img_button_remove">Remove current photo</string>
+    <string name="profile_img_button_new">Take photo</string>
     <string name="gender_prompt">Choose a gender</string>
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

@@ -213,6 +213,8 @@
     <string name="hello_world">Hello World!</string>
     <string name="parse_app_id">ZBVTjeG5g4gqFsoP9ta7cZ9a3XbiSrM61ly7XqPl</string>
     <string name="parse_client_key">k2gpuWav8qnp6udvQHkROJXkZVWF4JWnH6Pe8reW</string>
+    <string name="profile_img_button_new">Take photo</string>
+    <string name="profile_img_button_remove">Remove current photo</string>
     <!-- From: file:/Users/songxue/Documents/Mobile%20Dev/Instagram/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <string name="status_bar_notification_info_overflow">999+</string>

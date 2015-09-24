@@ -1526,7 +1526,8 @@ containing a value of this type.
         public static final int abc_textfield_search_activated_mtrl_alpha=0x7f020038;
         public static final int abc_textfield_search_default_mtrl_alpha=0x7f020039;
         public static final int abc_textfield_search_material=0x7f02003a;
-        public static final int notification_template_icon_bg=0x7f02003b;
+        public static final int default_profile_image=0x7f02003b;
+        public static final int notification_template_icon_bg=0x7f02003c;
     }
     public static final class id {
         public static final int action0=0x7f0d0079;
@@ -1615,6 +1616,8 @@ containing a value of this type.
         public static final int postNumTextView=0x7f0d0072;
         public static final int postTextView=0x7f0d0075;
         public static final int profileImageButton=0x7f0d006f;
+        public static final int profile_img_button_new=0x7f0d0088;
+        public static final int profile_img_button_remove=0x7f0d0087;
         public static final int progress_circular=0x7f0d0005;
         public static final int progress_horizontal=0x7f0d0006;
         public static final int radio=0x7f0d003a;
@@ -1727,7 +1730,8 @@ containing a value of this type.
         public static final int menu_home=0x7f0e0001;
         public static final int menu_login=0x7f0e0002;
         public static final int menu_main=0x7f0e0003;
-        public static final int menu_signup=0x7f0e0004;
+        public static final int menu_profile_img=0x7f0e0004;
+        public static final int menu_signup=0x7f0e0005;
     }
     public static final class mipmap {
         public static final int ic_launcher=0x7f030000;
@@ -1758,16 +1762,18 @@ containing a value of this type.
         public static final int hello_world=0x7f060016;
         public static final int parse_app_id=0x7f060017;
         public static final int parse_client_key=0x7f060018;
-        public static final int status_bar_notification_info_overflow=0x7f060019;
-        public static final int title_activity_edit_profile=0x7f06001a;
-        public static final int title_activity_home=0x7f06001b;
-        public static final int title_activity_login=0x7f06001c;
-        public static final int title_activity_signup=0x7f06001d;
-        public static final int title_section1=0x7f06001e;
-        public static final int title_section2=0x7f06001f;
-        public static final int title_section3=0x7f060020;
-        public static final int title_section4=0x7f060021;
-        public static final int title_section5=0x7f060022;
+        public static final int profile_img_button_new=0x7f060019;
+        public static final int profile_img_button_remove=0x7f06001a;
+        public static final int status_bar_notification_info_overflow=0x7f06001b;
+        public static final int title_activity_edit_profile=0x7f06001c;
+        public static final int title_activity_home=0x7f06001d;
+        public static final int title_activity_login=0x7f06001e;
+        public static final int title_activity_signup=0x7f06001f;
+        public static final int title_section1=0x7f060020;
+        public static final int title_section2=0x7f060021;
+        public static final int title_section3=0x7f060022;
+        public static final int title_section4=0x7f060023;
+        public static final int title_section5=0x7f060024;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat=0x7f080073;
