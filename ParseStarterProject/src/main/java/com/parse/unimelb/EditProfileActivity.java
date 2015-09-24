@@ -1,6 +1,9 @@
 package com.parse.unimelb;
 
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.content.Intent;
+import android.provider.ContactsContract;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -19,23 +22,15 @@ public class EditProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit_profile);
 
         updateProfile = (Button) this.findViewById(R.id.updateButton);
-        cancelUpdate = (Button) this.findViewById(R.id.cancelButton);
         updateProfile.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View arg0) {
                 //update user info
-                Intent intent = new Intent(EditProfileActivity.this, HomeActivity.class);
-                startActivity(intent);
+
             }
         });
 
-        cancelUpdate.setOnClickListener(new View.OnClickListener() {
 
-            public void onClick(View arg0) {
-                Intent intent = new Intent(EditProfileActivity.this, HomeActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 
     @Override
