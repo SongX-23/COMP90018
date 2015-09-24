@@ -1,6 +1,7 @@
 package com.parse.unimelb;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -18,10 +19,18 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.parse.Parse;
+import com.parse.ParseException;
+import com.parse.ParseFile;
 import com.parse.ParseUser;
+import com.parse.SaveCallback;
 import com.parse.unimelb.R;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -43,6 +52,7 @@ public class ProfileFragment extends Fragment {
     private TextView username;
     private OnFragmentInteractionListener mListener;
     private ImageButton imageButton;
+    private ParseUser currentUser;
     static final int REQUEST_IMAGE_CAPTURE = 1;
     /**
      * Use this factory method to create a new instance of
@@ -83,7 +93,7 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
-        ParseUser currentUser = ParseUser.getCurrentUser();
+        currentUser = ParseUser.getCurrentUser();
         username = (TextView) view.findViewById(R.id.usernameTextView);
         username.setText(currentUser.get("FullName").toString());
         editProfile = (Button) view.findViewById(R.id.editProfileButton);
@@ -153,6 +163,42 @@ public class ProfileFragment extends Fragment {
             Bitmap imageBitmap = (Bitmap) extras.get("data");
             imageButton.setBackground(null);
             imageButton.setImageBitmap(imageBitmap);
+            File f = new File(getActivity().getCacheDir(), "Profile_image");
+            try{
+                f.createNewFile();
+            }catch (Exception e){
+
+            }
+//Convert bitmap to byte array
+            Bitmap bitmap = imageBitmap;
+            ByteArrayOutputStream bos = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.PNG, 0 /*ignored for PNG*/, bos);
+            byte[] bitmapdata = bos.toByteArray();
+
+//write the bytes in file
+            try (FileOutputStream fos = new FileOutputStream(f)) {
+                fos.write(bitmapdata);
+                fos.flush();
+                fos.close();
+            } catch (Exception e){
+
+            }
+            ParseFile image = new ParseFile("profile_pic.jpg", bitmapdata);
+            currentUser.put("Image",image);
+            currentUser.saveInBackground(new SaveCallback() {
+                public void done(ParseException e) {
+                    if (e == null) {
+                        Toast.makeText(getActivity().getApplicationContext(),
+                                "Profile image successfully updated",
+                                Toast.LENGTH_LONG).show();
+                    } else {
+                        // ParseException
+                        Toast.makeText(getActivity().getApplicationContext(),
+                                "Network failure",
+                                Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
         }
     }
 
