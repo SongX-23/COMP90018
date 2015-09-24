@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -43,9 +44,17 @@ public class EditProfileActivity extends AppCompatActivity {
         // fetch the basic user info
         emailText.setText(currentUser.getEmail().toString());
         fullNameText.setText(currentUser.get("FullName").toString());
-        Log.i("Full Name: ", currentUser.get("FullName").toString());
-
-
+        phoneText.setText(currentUser.get("Phone").toString());
+        bioText.setText(currentUser.get("Bio").toString());
+        cityText.setText(currentUser.get("City").toString());
+        String compareValue = currentUser.get("Gender").toString();
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.gender_arrays, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        genderSpinner.setAdapter(adapter);
+        if (!compareValue.equals(null)) {
+            int spinnerPosition = adapter.getPosition(compareValue);
+            genderSpinner.setSelection(spinnerPosition);
+        }
         //set the spinner
         genderSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
         {
