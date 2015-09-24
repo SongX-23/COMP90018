@@ -87,15 +87,7 @@ public class ProfileFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-<<<<<<< HEAD
-        /***
-        editProfile = (Button) getView().findViewById(R.id.editProfileButton);
-=======
-
-
-
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -105,7 +97,7 @@ public class ProfileFragment extends Fragment {
         username = (TextView) view.findViewById(R.id.usernameTextView);
         username.setText(currentUser.get("FullName").toString());
         editProfile = (Button) view.findViewById(R.id.editProfileButton);
->>>>>>> Song
+
         editProfile.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View arg0) {
@@ -113,9 +105,7 @@ public class ProfileFragment extends Fragment {
                 startActivity(intent);
             }
         });
-<<<<<<< HEAD
-         ***/
-=======
+
         imageButton = (ImageButton) view.findViewById(R.id.profileImageButton);
         ParseFile imageFile = (ParseFile) currentUser.get("Image");
         if (imageFile != null) {
@@ -151,7 +141,7 @@ public class ProfileFragment extends Fragment {
         });
         return view;
     }
->>>>>>> Song
+
 
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
