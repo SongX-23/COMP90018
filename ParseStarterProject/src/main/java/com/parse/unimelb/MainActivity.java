@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     setContentView(R.layout.activity_main);
 
     ParseAnalytics.trackAppOpenedInBackground(getIntent());
-    Intent intent = new Intent(MainActivity.this, SignupActivity.class);
+    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
     startActivity(intent);
 
   }
@@ -50,10 +50,16 @@ public class MainActivity extends AppCompatActivity {
     int id = item.getItemId();
 
     //noinspection SimplifiableIfStatement
-    if (id == R.id.action_settings) {
+    if (id == R.id.action_log_out) {
+      logout();
       return true;
     }
 
     return super.onOptionsItemSelected(item);
+  }
+  public void logout(){
+    ParseUser.logOut();
+    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+    startActivity(intent);
   }
 }

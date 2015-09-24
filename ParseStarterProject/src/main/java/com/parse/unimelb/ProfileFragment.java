@@ -1,16 +1,40 @@
 package com.parse.unimelb;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
+import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.LayoutInflater;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.parse.GetDataCallback;
+import com.parse.Parse;
+import com.parse.ParseException;
+import com.parse.ParseFile;
+import com.parse.ParseUser;
+import com.parse.SaveCallback;
 import com.parse.unimelb.R;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -29,9 +53,11 @@ public class ProfileFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    private TextView username;
     private OnFragmentInteractionListener mListener;
-
+    private ImageButton imageButton;
+    private ParseUser currentUser;
+    static final int REQUEST_IMAGE_CAPTURE = 1;
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -61,16 +87,12 @@ public class ProfileFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+<<<<<<< HEAD
         /***
         editProfile = (Button) getView().findViewById(R.id.editProfileButton);
-        editProfile.setOnClickListener(new View.OnClickListener() {
+=======
 
-            public void onClick(View arg0) {
-                Intent intent = new Intent(getActivity(), EditProfileActivity.class);
-                startActivity(intent);
-            }
-        });
-         ***/
+
 
     }
 
@@ -78,8 +100,82 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        View view = inflater.inflate(R.layout.fragment_profile, container, false);
+        currentUser = ParseUser.getCurrentUser();
+        username = (TextView) view.findViewById(R.id.usernameTextView);
+        username.setText(currentUser.get("FullName").toString());
+        editProfile = (Button) view.findViewById(R.id.editProfileButton);
+>>>>>>> Song
+        editProfile.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View arg0) {
+                Intent intent = new Intent(getActivity(), EditProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+<<<<<<< HEAD
+         ***/
+=======
+        imageButton = (ImageButton) view.findViewById(R.id.profileImageButton);
+        ParseFile imageFile = (ParseFile) currentUser.get("Image");
+        if (imageFile != null) {
+            imageFile.getDataInBackground(new GetDataCallback() {
+                public void done(byte[] data, ParseException e) {
+                    if (e == null) {
+                        Bitmap bitmapImage = BitmapFactory.decodeByteArray(data, 0, data.length);
+                        imageButton.setImageBitmap(bitmapImage);
+                        imageButton.setBackground(null);
+                    } else {
+                        // something went wrong
+                    }
+                }
+            });
+        }else{
+            Drawable myDrawable = getResources().getDrawable(R.drawable.default_profile_image);
+            Bitmap defaultImg = ((BitmapDrawable) myDrawable).getBitmap();
+            ByteArrayOutputStream bos = new ByteArrayOutputStream();
+            defaultImg.compress(Bitmap.CompressFormat.PNG, 0 /*ignored for PNG*/, bos);
+            byte[] bitmapdata = bos.toByteArray();
+            ParseFile image = new ParseFile("profile_pic.jpg", bitmapdata);
+            currentUser.put("Image", image);
+            currentUser.saveInBackground();
+            imageButton.setImageBitmap(defaultImg);
+            imageButton.setBackground(null);
+        }
+        registerForContextMenu(imageButton);
+        imageButton.setOnClickListener(new ImageButton.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.showContextMenu();
+            }
+        });
+        return view;
     }
+>>>>>>> Song
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        MenuInflater inflater = getActivity().getMenuInflater();
+        inflater.inflate(R.menu.menu_profile_img, menu);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.profile_img_button_remove:
+                // your first action code
+                resetProfileImage();
+                return true;
+            case R.id.profile_img_button_new:
+                // your second action code
+                dispatchTakePictureIntent();
+                return true;
+            default:
+                return super.onContextItemSelected(item);
+        }
+    }
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
@@ -87,23 +183,60 @@ public class ProfileFragment extends Fragment {
             mListener.onFragmentInteraction(uri);
         }
     }
+    private void resetProfileImage(){
+        Drawable myDrawable = getResources().getDrawable(R.drawable.default_profile_image);
+        Bitmap defaultImg = ((BitmapDrawable) myDrawable).getBitmap();
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        defaultImg.compress(Bitmap.CompressFormat.PNG, 0 /*ignored for PNG*/, bos);
+        byte[] bitmapdata = bos.toByteArray();
+        ParseFile image = new ParseFile("profile_pic.jpg", bitmapdata);
+        currentUser.put("Image", image);
+        currentUser.saveInBackground();
+        imageButton.setImageBitmap(defaultImg);
+        imageButton.setBackground(null);
+    }
 
-//    @Override
-//    public void onAttach(Activity activity) {
-//        super.onAttach(activity);
-//        try {
-//            mListener = (OnFragmentInteractionListener) activity;
-//        } catch (ClassCastException e) {
-//            throw new ClassCastException(activity.toString()
-//                    + " must implement OnFragmentInteractionListener");
-//        }
-//    }
-//
-//    @Override
-//    public void onDetach() {
-//        super.onDetach();
-//        mListener = null;
-//    }
+    private void dispatchTakePictureIntent() {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (takePictureIntent.resolveActivity(getActivity().getPackageManager()) != null) {
+            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == getActivity().RESULT_OK) {
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            imageButton.setBackground(null);
+            imageButton.setImageBitmap(imageBitmap);
+
+//Convert bitmap to byte array
+            Bitmap bitmap = imageBitmap;
+            ByteArrayOutputStream bos = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.PNG, 0 /*ignored for PNG*/, bos);
+            byte[] bitmapdata = bos.toByteArray();
+
+//write the bytes in file
+            ParseFile image = new ParseFile("profile_pic.jpg", bitmapdata);
+            currentUser.put("Image",image);
+            currentUser.saveInBackground(new SaveCallback() {
+                public void done(ParseException e) {
+                    if (e == null) {
+                        Toast.makeText(getActivity().getApplicationContext(),
+                                "Profile image successfully updated",
+                                Toast.LENGTH_LONG).show();
+                    } else {
+                        // ParseException
+                        Toast.makeText(getActivity().getApplicationContext(),
+                                "Network failure",
+                                Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
+        }
+    }
+
 
     /**
      * This interface must be implemented by activities that contain this

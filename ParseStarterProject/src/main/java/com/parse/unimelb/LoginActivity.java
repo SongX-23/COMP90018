@@ -27,47 +27,61 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //link to Sign up
         setContentView(R.layout.activity_login);
-        TextView signupTextView = (TextView) this.findViewById(R.id.signupTextView);
-        signupTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
-                startActivity(intent);
-            }
-        });
-        // login
-        loginbutton = (Button) this.findViewById(R.id.loginButton);
-        email_str = (EditText) this.findViewById(R.id.emailEditText);
-        psw = (EditText) this.findViewById(R.id.passwordEditText);
+        ParseUser currentUser = ParseUser.getCurrentUser();
+        if (currentUser != null) {
+            Intent indent = new Intent(LoginActivity.this, HomeActivity.class);
+            startActivity(indent);
+            TextView signupTextView = (TextView) this.findViewById(R.id.signupTextView);
+            signupTextView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
+                    startActivity(intent);
+                }
+            });
+        } else {
+            TextView signupTextView = (TextView) this.findViewById(R.id.signupTextView);
+            signupTextView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
+                    startActivity(intent);
+                }
+            });
+            // login
+            loginbutton = (Button) this.findViewById(R.id.loginButton);
+            email_str = (EditText) this.findViewById(R.id.emailEditText);
+            psw = (EditText) this.findViewById(R.id.passwordEditText);
 
-        loginbutton.setOnClickListener(new View.OnClickListener() {
+            loginbutton.setOnClickListener(new View.OnClickListener() {
 
-            public void onClick(View arg0) {
-                // Retrieve the text entered from the EditText
-                email = email_str.getText().toString();
-                password = psw.getText().toString();
-                // Send data to Parse.com for verification
-                ParseUser.logInInBackground(email, password,
-                        new LogInCallback() {
-                            public void done(ParseUser user, ParseException e) {
-                                if (user != null) {
-                                    // If user exist and authenticated, send user to Welcome.class
-                                    Toast.makeText(getApplicationContext(),
-                                            "Successfully Logged in",
-                                            Toast.LENGTH_LONG).show();
-                                    Intent indent = new Intent(LoginActivity.this, HomeActivity.class);
-                                    startActivity(indent);
-                                    finish();
-                                } else {
-                                    Toast.makeText(
-                                            getApplicationContext(),
-                                            "No such user exist, please signup",
-                                            Toast.LENGTH_LONG).show();
+                public void onClick(View arg0) {
+                    // Retrieve the text entered from the EditText
+                    email = email_str.getText().toString();
+                    password = psw.getText().toString();
+                    // Send data to Parse.com for verification
+                    ParseUser.logInInBackground(email, password,
+                            new LogInCallback() {
+                                public void done(ParseUser user, ParseException e) {
+                                    if (user != null) {
+                                        // If user exist and authenticated, send user to Welcome.class
+                                        Toast.makeText(getApplicationContext(),
+                                                "Successfully Logged in",
+                                                Toast.LENGTH_LONG).show();
+                                        Intent indent = new Intent(LoginActivity.this, HomeActivity.class);
+                                        startActivity(indent);
+                                        finish();
+                                    } else {
+                                        Toast.makeText(
+                                                getApplicationContext(),
+                                                "No such user exist, please signup",
+                                                Toast.LENGTH_LONG).show();
+                                    }
                                 }
-                            }
-                        });
-            }
-        });
+                            });
+                }
+            });
+        }
     }
 
 
@@ -87,7 +101,7 @@ public class LoginActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_log_out) {
             return true;
         }
 

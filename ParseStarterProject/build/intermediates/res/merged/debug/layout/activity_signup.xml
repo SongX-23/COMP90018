@@ -48,7 +48,9 @@
         android:layout_alignLeft="@+id/emailEditText"
         android:layout_alignStart="@+id/emailEditText"
         android:layout_marginTop="3dp"
-        android:layout_marginBottom="3dp" />
+        android:layout_marginBottom="3dp"
+        android:layout_alignRight="@+id/emailEditText"
+        android:layout_alignEnd="@+id/emailEditText"/>
 
     <TextView
         android:layout_width="wrap_content"
