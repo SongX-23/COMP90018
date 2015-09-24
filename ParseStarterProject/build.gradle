@@ -35,6 +35,7 @@ dependencies {
 
     compile 'com.parse.bolts:bolts-android:1.2.1'
     compile 'com.parse:parse-android:1.10.2'
+    compile 'com.mcxiaoke.volley:library:1.0.18'
 }
 
 /* Uncomment if you enable ProGuard and you want to automatically upload symbols on build.
