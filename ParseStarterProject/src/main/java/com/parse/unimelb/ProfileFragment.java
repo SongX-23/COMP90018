@@ -2,8 +2,10 @@ package com.parse.unimelb;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
@@ -41,7 +43,7 @@ public class ProfileFragment extends Fragment {
     private TextView username;
     private OnFragmentInteractionListener mListener;
     private ImageButton imageButton;
-
+    static final int REQUEST_IMAGE_CAPTURE = 1;
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -115,9 +117,11 @@ public class ProfileFragment extends Fragment {
         switch (item.getItemId()) {
             case R.id.profile_img_button_remove:
                 // your first action code
+                resetProfileImage();
                 return true;
             case R.id.profile_img_button_new:
                 // your second action code
+                dispatchTakePictureIntent();
                 return true;
             default:
                 return super.onContextItemSelected(item);
@@ -131,25 +135,27 @@ public class ProfileFragment extends Fragment {
             mListener.onFragmentInteraction(uri);
         }
     }
+    private void resetProfileImage(){
+        imageButton.setImageResource(R.drawable.default_profile_image);
+    }
 
+    private void dispatchTakePictureIntent() {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (takePictureIntent.resolveActivity(getActivity().getPackageManager()) != null) {
+            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+        }
+    }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == getActivity().RESULT_OK) {
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            imageButton.setBackground(null);
+            imageButton.setImageBitmap(imageBitmap);
+        }
+    }
 
-//    @Override
-//    public void onAttach(Activity activity) {
-//        super.onAttach(activity);
-//        try {
-//            mListener = (OnFragmentInteractionListener) activity;
-//        } catch (ClassCastException e) {
-//            throw new ClassCastException(activity.toString()
-//                    + " must implement OnFragmentInteractionListener");
-//        }
-//    }
-//
-//    @Override
-//    public void onDetach() {
-//        super.onDetach();
-//        mListener = null;
-//    }
 
     /**
      * This interface must be implemented by activities that contain this
