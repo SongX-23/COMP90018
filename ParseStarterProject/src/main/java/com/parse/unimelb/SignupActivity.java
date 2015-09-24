@@ -76,6 +76,8 @@ public class SignupActivity extends AppCompatActivity {
                     user.put("Phone", "Blank");
                     user.put("City", "Blank");
                     user.put("Gender", "Blank");
+                    user.put("CLIENT_ID", "87eeeb7fb3cf483383804764844aa501");
+                    user.put("CLIENT_SECRET", " f757bd921b184176b14ad02fcb58ea00");
                     user.signUpInBackground(new SignUpCallback() {
                         public void done(ParseException e) {
                             if (e == null) {
