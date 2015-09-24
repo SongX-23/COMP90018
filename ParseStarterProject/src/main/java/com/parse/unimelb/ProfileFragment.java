@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -108,16 +110,30 @@ public class ProfileFragment extends Fragment {
         });
         imageButton = (ImageButton) view.findViewById(R.id.profileImageButton);
         ParseFile imageFile = (ParseFile) currentUser.get("Image");
-        imageFile.getDataInBackground(new GetDataCallback() {
-            public void done(byte[] data, ParseException e) {
-                if (e == null) {
-                    Bitmap bitmapImage = BitmapFactory.decodeByteArray(data, 0, data.length);
-                    imageButton.setImageBitmap(bitmapImage);
-                    imageButton.setBackground(null);
-                } else {
-                    // something went wrong
-                } } });
-
+        if (imageFile != null) {
+            imageFile.getDataInBackground(new GetDataCallback() {
+                public void done(byte[] data, ParseException e) {
+                    if (e == null) {
+                        Bitmap bitmapImage = BitmapFactory.decodeByteArray(data, 0, data.length);
+                        imageButton.setImageBitmap(bitmapImage);
+                        imageButton.setBackground(null);
+                    } else {
+                        // something went wrong
+                    }
+                }
+            });
+        }else{
+            Drawable myDrawable = getResources().getDrawable(R.drawable.default_profile_image);
+            Bitmap defaultImg = ((BitmapDrawable) myDrawable).getBitmap();
+            ByteArrayOutputStream bos = new ByteArrayOutputStream();
+            defaultImg.compress(Bitmap.CompressFormat.PNG, 0 /*ignored for PNG*/, bos);
+            byte[] bitmapdata = bos.toByteArray();
+            ParseFile image = new ParseFile("profile_pic.jpg", bitmapdata);
+            currentUser.put("Image", image);
+            currentUser.saveInBackground();
+            imageButton.setImageBitmap(defaultImg);
+            imageButton.setBackground(null);
+        }
         registerForContextMenu(imageButton);
         imageButton.setOnClickListener(new ImageButton.OnClickListener() {
             @Override
@@ -159,7 +175,16 @@ public class ProfileFragment extends Fragment {
         }
     }
     private void resetProfileImage(){
-        imageButton.setImageResource(R.drawable.default_profile_image);
+        Drawable myDrawable = getResources().getDrawable(R.drawable.default_profile_image);
+        Bitmap defaultImg = ((BitmapDrawable) myDrawable).getBitmap();
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        defaultImg.compress(Bitmap.CompressFormat.PNG, 0 /*ignored for PNG*/, bos);
+        byte[] bitmapdata = bos.toByteArray();
+        ParseFile image = new ParseFile("profile_pic.jpg", bitmapdata);
+        currentUser.put("Image", image);
+        currentUser.saveInBackground();
+        imageButton.setImageBitmap(defaultImg);
+        imageButton.setBackground(null);
     }
 
     private void dispatchTakePictureIntent() {
@@ -176,12 +201,7 @@ public class ProfileFragment extends Fragment {
             Bitmap imageBitmap = (Bitmap) extras.get("data");
             imageButton.setBackground(null);
             imageButton.setImageBitmap(imageBitmap);
-            File f = new File(getActivity().getCacheDir(), "Profile_image");
-            try{
-                f.createNewFile();
-            }catch (Exception e){
 
-            }
 //Convert bitmap to byte array
             Bitmap bitmap = imageBitmap;
             ByteArrayOutputStream bos = new ByteArrayOutputStream();
@@ -189,13 +209,6 @@ public class ProfileFragment extends Fragment {
             byte[] bitmapdata = bos.toByteArray();
 
 //write the bytes in file
-            try (FileOutputStream fos = new FileOutputStream(f)) {
-                fos.write(bitmapdata);
-                fos.flush();
-                fos.close();
-            } catch (Exception e){
-
-            }
             ParseFile image = new ParseFile("profile_pic.jpg", bitmapdata);
             currentUser.put("Image",image);
             currentUser.saveInBackground(new SaveCallback() {

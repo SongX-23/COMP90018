@@ -1,6 +1,9 @@
 package com.parse.unimelb;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,9 +17,13 @@ import android.widget.Toast;
 
 import com.parse.ParseACL;
 import com.parse.ParseException;
+import com.parse.ParseFile;
 import com.parse.ParseUser;
+import com.parse.SaveCallback;
 import com.parse.SignUpCallback;
 import com.parse.unimelb.R;
+
+import java.io.ByteArrayOutputStream;
 
 public class SignupActivity extends AppCompatActivity {
     Button signupButton;
@@ -60,13 +67,13 @@ public class SignupActivity extends AppCompatActivity {
                             Toast.LENGTH_LONG).show();
 
                 }else{
-                    ParseUser user = new ParseUser();
+                    final ParseUser user = new ParseUser();
                     user.setUsername(email_str);
                     user.setPassword(psw);
                     user.setEmail(email_str);
                     user.put("FullName", (firstname + " " + lastname));
                     user.put("Bio", "Blank");
-                    user.put("Phone","Blank");
+                    user.put("Phone", "Blank");
                     user.put("City", "Blank");
                     user.put("Gender", "Blank");
                     user.signUpInBackground(new SignUpCallback() {
