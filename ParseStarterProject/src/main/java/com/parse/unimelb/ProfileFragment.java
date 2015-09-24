@@ -1,7 +1,5 @@
 package com.parse.unimelb;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -18,23 +16,18 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.parse.GetDataCallback;
-import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
-import com.parse.unimelb.R;
 
 import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -53,7 +46,7 @@ public class ProfileFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private TextView username;
+    private TextView username, postNum, followerNum, followingNum;
     private OnFragmentInteractionListener mListener;
     private ImageButton imageButton;
     private ParseUser currentUser;
@@ -93,20 +86,38 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
-        currentUser = ParseUser.getCurrentUser();
         username = (TextView) view.findViewById(R.id.usernameTextView);
-        username.setText(currentUser.get("FullName").toString());
         editProfile = (Button) view.findViewById(R.id.editProfileButton);
-
+        imageButton = (ImageButton) view.findViewById(R.id.profileImageButton);
+        postNum = (TextView) view.findViewById(R.id.postNumTextView);
+        followerNum = (TextView) view.findViewById(R.id.followerNumTextView);
+        followingNum = (TextView) view.findViewById(R.id.followingNumTextView);
+        /***
+        set post number
+         GET FROM DB
+        ***/
+        //postNum.setText();
+        /***
+         set follower number
+         GET FROM API
+         ***/
+        //followerNum.setText();
+        /***
+         set following number
+         GET FROM API
+         ***/
+        //followingNum.setText();
+        //set the username
+        currentUser = ParseUser.getCurrentUser();
+        username.setText(currentUser.get("FullName").toString());
+        //add listener to button
         editProfile.setOnClickListener(new View.OnClickListener() {
-
             public void onClick(View arg0) {
                 Intent intent = new Intent(getActivity(), EditProfileActivity.class);
                 startActivity(intent);
             }
         });
-
-        imageButton = (ImageButton) view.findViewById(R.id.profileImageButton);
+        //set profile image
         ParseFile imageFile = (ParseFile) currentUser.get("Image");
         if (imageFile != null) {
             imageFile.getDataInBackground(new GetDataCallback() {

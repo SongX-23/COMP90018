@@ -42,7 +42,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="postNum"
+        android:text="50"
         android:id="@+id/postNumTextView"
         android:layout_gravity="center_horizontal|top"
         android:layout_marginTop="30dp"
@@ -51,20 +51,20 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="follNum"
+        android:text="135"
         android:id="@+id/followerNumTextView"
         android:layout_gravity="center_horizontal|top"
-        android:layout_marginLeft="52dp"
+        android:layout_marginLeft="50dp"
         android:layout_marginTop="30dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="folinNum"
+        android:text="20"
         android:id="@+id/followingNumTextView"
         android:layout_gravity="right|top"
         android:layout_marginTop="30dp"
-        android:layout_marginRight="25dp" />
+        android:layout_marginRight="50dp" />
 
     <TextView
         android:layout_width="wrap_content"
