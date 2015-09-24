@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -21,6 +22,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.parse.GetDataCallback;
 import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseFile;
@@ -105,6 +107,17 @@ public class ProfileFragment extends Fragment {
             }
         });
         imageButton = (ImageButton) view.findViewById(R.id.profileImageButton);
+        ParseFile imageFile = (ParseFile) currentUser.get("Image");
+        imageFile.getDataInBackground(new GetDataCallback() {
+            public void done(byte[] data, ParseException e) {
+                if (e == null) {
+                    Bitmap bitmapImage = BitmapFactory.decodeByteArray(data, 0, data.length);
+                    imageButton.setImageBitmap(bitmapImage);
+                    imageButton.setBackground(null);
+                } else {
+                    // something went wrong
+                } } });
+
         registerForContextMenu(imageButton);
         imageButton.setOnClickListener(new ImageButton.OnClickListener() {
             @Override
