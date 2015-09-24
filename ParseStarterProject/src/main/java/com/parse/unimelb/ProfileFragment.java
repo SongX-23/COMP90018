@@ -9,7 +9,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
+import com.parse.Parse;
+import com.parse.ParseUser;
 import com.parse.unimelb.R;
 
 /**
@@ -29,7 +32,7 @@ public class ProfileFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    private TextView username;
     private OnFragmentInteractionListener mListener;
 
     /**
@@ -61,6 +64,9 @@ public class ProfileFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
+
     }
 
     @Override
@@ -68,6 +74,9 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
+        ParseUser currentUser = ParseUser.getCurrentUser();
+        username = (TextView) view.findViewById(R.id.usernameTextView);
+        username.setText(currentUser.get("FullName").toString());
         editProfile = (Button) view.findViewById(R.id.editProfileButton);
         editProfile.setOnClickListener(new View.OnClickListener() {
 
