@@ -1551,7 +1551,7 @@ containing a value of this type.
         public static final int always=0x7f0d0016;
         public static final int beginning=0x7f0d0013;
         public static final int bioEditText=0x7f0d0059;
-        public static final int bioTextView=0x7f0d0058;
+        public static final int bioTextView=0x7f0d005c;
         public static final int buttonPanel=0x7f0d0036;
         public static final int cancel_action=0x7f0d007a;
         public static final int checkbox=0x7f0d0038;
@@ -1598,7 +1598,7 @@ containing a value of this type.
         public static final int line3=0x7f0d0082;
         public static final int listMode=0x7f0d0009;
         public static final int list_item=0x7f0d002a;
-        public static final int liveInextView=0x7f0d005c;
+        public static final int liveInextView=0x7f0d005a;
         public static final int loginButton=0x7f0d0063;
         public static final int loginTextView=0x7f0d0068;
         public static final int media_actions=0x7f0d007c;
@@ -1662,7 +1662,7 @@ containing a value of this type.
         public static final int title_template=0x7f0d002f;
         public static final int topPanel=0x7f0d002e;
         public static final int up=0x7f0d0008;
-        public static final int updateButton=0x7f0d005a;
+        public static final int updateButton=0x7f0d0058;
         public static final int useLogo=0x7f0d0012;
         public static final int usernameTextView=0x7f0d0070;
         public static final int withText=0x7f0d001a;

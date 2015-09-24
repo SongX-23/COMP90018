@@ -432,7 +432,7 @@ int id alertTitle 0x7f0d0030
 int id always 0x7f0d0016
 int id beginning 0x7f0d0013
 int id bioEditText 0x7f0d0059
-int id bioTextView 0x7f0d0058
+int id bioTextView 0x7f0d005c
 int id buttonPanel 0x7f0d0036
 int id cancel_action 0x7f0d007a
 int id checkbox 0x7f0d0038
@@ -479,7 +479,7 @@ int id line1 0x7f0d007e
 int id line3 0x7f0d0082
 int id listMode 0x7f0d0009
 int id list_item 0x7f0d002a
-int id liveInextView 0x7f0d005c
+int id liveInextView 0x7f0d005a
 int id loginButton 0x7f0d0063
 int id loginTextView 0x7f0d0068
 int id media_actions 0x7f0d007c
@@ -543,7 +543,7 @@ int id titleTextView 0x7f0d005e
 int id title_template 0x7f0d002f
 int id topPanel 0x7f0d002e
 int id up 0x7f0d0008
-int id updateButton 0x7f0d005a
+int id updateButton 0x7f0d0058
 int id useLogo 0x7f0d0012
 int id usernameTextView 0x7f0d0070
 int id withText 0x7f0d001a

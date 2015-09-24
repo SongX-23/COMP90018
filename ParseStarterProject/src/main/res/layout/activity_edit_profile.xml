@@ -107,37 +107,12 @@
         android:paddingTop="3dp"
         android:paddingBottom="3dp"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Bio"
-        android:id="@+id/bioTextView"
-        android:layout_below="@+id/genderSpinner"
-        android:layout_alignLeft="@+id/genderSpinner"
-        android:layout_alignStart="@+id/genderSpinner" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:ems="10"
-        android:id="@+id/bioEditText"
-        android:layout_below="@+id/bioTextView"
-        android:layout_alignLeft="@+id/bioTextView"
-        android:layout_alignStart="@+id/bioTextView"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        android:background="#e0e0e0"
-        android:layout_alignRight="@+id/genderSpinner"
-        android:layout_alignEnd="@+id/genderSpinner"
-        android:height="50dp" />
-
     <Button
         android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:text="Update Profile"
         android:id="@+id/updateButton"
-        android:layout_below="@+id/cityEditText"
+        android:layout_below="@+id/bioEditText"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"/>
 
@@ -146,9 +121,9 @@
         android:layout_height="wrap_content"
         android:text="Live in "
         android:id="@+id/liveInextView"
-        android:layout_below="@+id/bioEditText"
-        android:layout_alignLeft="@+id/bioEditText"
-        android:layout_alignStart="@+id/bioEditText"/>
+        android:layout_below="@+id/genderSpinner"
+        android:layout_alignLeft="@+id/genderSpinner"
+        android:layout_alignStart="@+id/genderSpinner"/>
 
     <EditText
         android:layout_width="275dp"
@@ -162,5 +137,28 @@
         android:layout_below="@+id/liveInextView"
         android:layout_alignLeft="@+id/liveInextView"
         android:layout_alignStart="@+id/liveInextView"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bio"
+        android:id="@+id/bioTextView"
+        android:layout_below="@+id/cityEditText"
+        android:layout_alignLeft="@+id/cityEditText"
+        android:layout_alignStart="@+id/cityEditText"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/bioEditText"
+        android:background="#e0e0e0"
+        android:height="50dp"
+        android:layout_below="@+id/bioTextView"
+        android:layout_alignLeft="@+id/bioTextView"
+        android:layout_alignStart="@+id/bioTextView"
+        android:layout_alignRight="@+id/cityEditText"
+        android:layout_alignEnd="@+id/cityEditText"/>
 
 </RelativeLayout>
