@@ -273,7 +273,9 @@ public class ProfileFragment extends Fragment {
         Volley.newRequestQueue(getActivity()).add(jsonRequest);
 
     }
+    public void getUserPhoto(){
 
+    }
 
     /**
      * This interface must be implemented by activities that contain this

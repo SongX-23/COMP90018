@@ -8,7 +8,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.parse.unimelb.R;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,6 +68,7 @@ public class BrowseFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        getFeedResponse();
     }
 
     @Override
@@ -75,22 +85,37 @@ public class BrowseFragment extends Fragment {
         }
     }
 
-//    @Override
-//    public void onAttach(Activity activity) {
-//        super.onAttach(activity);
-//        try {
-//            mListener = (OnFragmentInteractionListener) activity;
-//        } catch (ClassCastException e) {
-//            throw new ClassCastException(activity.toString()
-//                    + " must implement OnFragmentInteractionListener");
-//        }
-//    }
-//
-//    @Override
-//    public void onDetach() {
-//        super.onDetach();
-//        mListener = null;
-//    }
+    public void getFeedResponse(){
+        String request_url = getResources().getString(R.string.instagram_api_url)
+                + getResources().getString(R.string.instagram_api_users_method)
+                + "self/feed?access_token="
+                + getResources().getString(R.string.instagram_access_token);
+        System.out.println("Response" + request_url);
+        // request a json response
+
+        JsonObjectRequest jsonRequest = new JsonObjectRequest
+                (Request.Method.GET, request_url, (String)null, new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        // the response is already constructed as a JSONObject!
+                        try {
+                            response = response.getJSONObject("data");
+                            System.out.println("Response: "+response);
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        error.printStackTrace();
+                    }
+                });
+
+        Volley.newRequestQueue(getActivity()).add(jsonRequest);
+    }
 
     /**
      * This interface must be implemented by activities that contain this

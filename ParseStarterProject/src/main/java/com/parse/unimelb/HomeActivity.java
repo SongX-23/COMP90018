@@ -78,10 +78,10 @@ public class HomeActivity extends AppCompatActivity {
     }
     public void logout(){
         ParseUser.logOut();
-        ParseUser currentUser = ParseUser.getCurrentUser();
-        currentUser = null;
         Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
+        intent.putExtra("currentUser","Logout");
         startActivity(intent);
+
     }
 
     /**
