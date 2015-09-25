@@ -34,11 +34,9 @@ public class LoginActivity extends AppCompatActivity {
         if (bundle != null) {
             flag = bundle.getString("currentUser");
         }
-        System.out.println("Logout?" + flag);
+        System.out.println("Logout?" + currentUser.get("FullName"));
 
-        if (currentUser != null && !flag.equals("Logout")) {
-            Intent indent = new Intent(LoginActivity.this, HomeActivity.class);
-            startActivity(indent);
+        if (currentUser.get("FullName") != null && !flag.equals("Logout")) {
             TextView signupTextView = (TextView) this.findViewById(R.id.signupTextView);
             signupTextView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -47,6 +45,8 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
+            Intent indent = new Intent(LoginActivity.this, HomeActivity.class);
+            startActivity(indent);
         } else {
             System.out.println("Logout?true");
             TextView signupTextView = (TextView) this.findViewById(R.id.signupTextView);
