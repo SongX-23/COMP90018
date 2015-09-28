@@ -18,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,6 +26,8 @@ import android.widget.Toast;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.ImageRequest;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.parse.GetDataCallback;
@@ -33,10 +36,12 @@ import com.parse.ParseFile;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -103,6 +108,8 @@ public class ProfileFragment extends Fragment {
         followerNum = (TextView) view.findViewById(R.id.followerNumTextView);
         followingNum = (TextView) view.findViewById(R.id.followingNumTextView);
         getUserCountResponse();
+        //get the user photos
+        getUserPhoto();
         //set the username
         currentUser = ParseUser.getCurrentUser();
         username.setText(currentUser.get("FullName").toString());
@@ -146,6 +153,9 @@ public class ProfileFragment extends Fragment {
                 v.showContextMenu();
             }
         });
+        //set up the grid view
+        GridView gridView = (GridView) view.findViewById(R.id.gridView);
+        gridView.setAdapter(new ImageAdapter(this));
         return view;
     }
 
@@ -240,7 +250,8 @@ public class ProfileFragment extends Fragment {
                 + getResources().getString(R.string.instagram_api_users_method)
                 + getResources().getString(R.string.instagram_user_id)
                 + "?access_token=" + getResources().getString(R.string.instagram_access_token);
-        System.out.println("Response" + request_url);
+        //DEBUG
+        System.out.println("Requesting from: " + request_url);
         // request a json response
 
         JsonObjectRequest jsonRequest = new JsonObjectRequest
@@ -254,7 +265,6 @@ public class ProfileFragment extends Fragment {
                             postNumber = count.getInt("media");
                             followerNumber = count.getInt("followed_by");
                             followingNumber = count.getInt("follows");
-                            System.out.println("Response" + postNumber);
                             postNum.setText(String.valueOf(postNumber));
                             followerNum.setText(String.valueOf(followerNumber));
                             followingNum.setText(String.valueOf(followingNumber));
@@ -273,8 +283,47 @@ public class ProfileFragment extends Fragment {
         Volley.newRequestQueue(getActivity()).add(jsonRequest);
 
     }
-    public void getUserPhoto(){
+    public ArrayList<String> getUserPhoto(){
+        // request url
+        String request_url = getResources().getString(R.string.instagram_api_url)
+                + getResources().getString(R.string.instagram_api_users_method)
+                + getResources().getString(R.string.instagram_user_id)
+                + "/" + getResources().getString(R.string.instagram_api_media_method)
+                + "recent?access_token="
+                + getResources().getString(R.string.instagram_access_token);
+        //DEBUG
+        System.out.println("Requesting from: " + request_url);
+        //request a json response
+        final ArrayList<String> url_array= new ArrayList<>();
+        JsonObjectRequest jsonRequest = new JsonObjectRequest
+                (Request.Method.GET, request_url, (String)null, new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                       try {
+                            //response = response.getJSONObject("data");
+                           JSONArray array = response.getJSONArray("data");
+                           for (int i = 0; i < array.length(); i++){
+                               JSONObject objectJSON = array.getJSONObject(i);
+                               JSONObject imageJSON = objectJSON.getJSONObject("images");
+                               JSONObject thumbnailJSON = imageJSON.getJSONObject("thumbnail");
+                               String thumbnail_url = thumbnailJSON.getString("url");
+                               System.out.println("JSON: " + thumbnail_url);
+                               url_array.add(thumbnail_url);
+                           }
 
+
+                       } catch (JSONException e) {
+                           e.printStackTrace();
+                       }
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        error.printStackTrace();
+                    }
+                });
+        Volley.newRequestQueue(getActivity()).add(jsonRequest);
+        return url_array;
     }
 
     /**
