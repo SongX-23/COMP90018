@@ -5,23 +5,26 @@ import android.graphics.Bitmap;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.view.ViewGroup.LayoutParams;
-import android.support.v7.widget.GridLayout;
+import android.widget.GridLayout;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
+
+import java.util.ArrayList;
 
 /**
  * Created by songxue on 29/09/2015.
  */
 public class ImageAdapter extends BaseAdapter {
     private Context mContext;
-
-    public ImageAdapter(Context c){
+    private ArrayList<Bitmap> image_array;
+    public ImageAdapter(Context c, ArrayList<Bitmap> data){
         mContext = c;
+        image_array = data;
     }
 
     public int getCount(){
-        return thumbnails.length;
+        return image_array.size();
     }
 
     @Override
@@ -39,7 +42,7 @@ public class ImageAdapter extends BaseAdapter {
         ImageView imageView;
         if (convertView == null){
             imageView = new ImageView(mContext);
-            imageView.setLayoutParams(new GridLayout.LayoutParams(85, 85));
+            imageView.setLayoutParams(new GridView.LayoutParams(85, 85));
 
             imageView.setPadding(8, 8, 8, 8);
         } else {
@@ -51,5 +54,6 @@ public class ImageAdapter extends BaseAdapter {
     }
 
     //get the bitmaps
-    private Bitmap[] thumbnails = {};
+
+
 }
