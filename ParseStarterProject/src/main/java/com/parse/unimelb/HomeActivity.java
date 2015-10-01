@@ -50,11 +50,31 @@ public class HomeActivity extends AppCompatActivity {
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+        mViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
+            public void onPageSelected(int pageNumber) {
+                // Just define a callback method in your fragment and call it like this!
+                if (pageNumber == 4) {
+                  //  ProfileFragment profileFragment = (ProfileFragment) mSectionsPagerAdapter.getItem(4);
+                  //  profileFragment.getUserPhoto();
+                }
+
+            }
+
+            public void onPageScrolled(int arg0, float arg1, int arg2) {
+                // TODO Auto-generated method stub
+
+            }
+
+            public void onPageScrollStateChanged(int arg0) {
+                // TODO Auto-generated method stub
+
+            }
+
+        });
     }
 
-
-    @Override
+        @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_home, menu);
@@ -111,7 +131,9 @@ public class HomeActivity extends AppCompatActivity {
                 return new NotificationFragment();
             }
             else if(position == 4) {
-                return new ProfileFragment();
+               ProfileFragment profileFragment= new ProfileFragment();
+               // profileFragment.getUserPhoto();
+                return profileFragment;
             }
             return new BrowseFragment();
         }

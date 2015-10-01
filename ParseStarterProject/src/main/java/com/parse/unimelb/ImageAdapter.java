@@ -2,6 +2,8 @@ package com.parse.unimelb;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -18,9 +20,13 @@ import java.util.ArrayList;
 public class ImageAdapter extends BaseAdapter {
     private Context mContext;
     private ArrayList<Bitmap> image_array;
+
     public ImageAdapter(Context c, ArrayList<Bitmap> data){
-        mContext = c;
-        image_array = data;
+            mContext = c;
+            image_array = data;
+//            Drawable myDrawable = c.getResources().getDrawable(R.drawable.default_profile_image);
+//            Bitmap defaultImg = ((BitmapDrawable) myDrawable).getBitmap();
+//            image_array.add(defaultImg);
     }
 
     public int getCount(){
@@ -49,11 +55,18 @@ public class ImageAdapter extends BaseAdapter {
             imageView = (ImageView) convertView;
         }
         //set picture
-        //imageView.setImageBitmap();
+        imageView.setImageBitmap(image_array.get(position));
         return imageView;
     }
 
     //get the bitmaps
 
 
+    public ArrayList<Bitmap> getImage_array() {
+        return image_array;
+    }
+
+    public void setImage_array(ArrayList<Bitmap> image_array) {
+        this.image_array = image_array;
+    }
 }

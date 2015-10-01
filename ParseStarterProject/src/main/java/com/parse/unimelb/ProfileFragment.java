@@ -67,12 +67,14 @@ public class ProfileFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
     private ImageButton imageButton;
     private ParseUser currentUser;
-    private ArrayList<String> url_array;
-    private ArrayList<Bitmap> image_array;
+    static ArrayList<String> url_array;
+    static ArrayList<Bitmap> image_array;
     int postNumber, followerNumber, followingNumber;
     private ImageLoader mImageLoader;
     private NetworkImageView mNetworkImageView;
     static final int REQUEST_IMAGE_CAPTURE = 1;
+    ImageAdapter imgAdapter;
+    GridView gridView;
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -115,15 +117,26 @@ public class ProfileFragment extends Fragment {
         followerNum = (TextView) view.findViewById(R.id.followerNumTextView);
         followingNum = (TextView) view.findViewById(R.id.followingNumTextView);
         getUserCountResponse();
-        getUserPhoto();
+
+        //
+        url_array = new ArrayList<String>();
+        image_array = new ArrayList<Bitmap>();
+
+        gridView = (GridView) view.findViewById(R.id.gridView);
+        imgAdapter = new ImageAdapter(getActivity(),getData());
+        gridView.setAdapter(imgAdapter);
+        //
+
+       // getUserPhoto();
         //set the username
         currentUser = ParseUser.getCurrentUser();
         username.setText(currentUser.get("FullName").toString());
         //add listener to button
         editProfile.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                Intent intent = new Intent(getActivity(), EditProfileActivity.class);
-                startActivity(intent);
+                //Intent intent = new Intent(getActivity(), EditProfileActivity.class);
+                //startActivity(intent);
+
             }
         });
         //set profile image
@@ -161,11 +174,16 @@ public class ProfileFragment extends Fragment {
         });
         //set up the grid view
 
-        GridView gridView = (GridView) view.findViewById(R.id.gridView);
-        gridView.setAdapter(new ImageAdapter(getActivity(),getData()));
+
         return view;
     }
 
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (isVisibleToUser) { getUserPhoto(); }
+        else {  }
+    }
 
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
@@ -291,9 +309,8 @@ public class ProfileFragment extends Fragment {
 
     }
 
-    public ArrayList<Bitmap> getUserPhoto(){
-        url_array = new ArrayList<String>();
-        image_array = new ArrayList<Bitmap>();
+    public void getUserPhoto(){
+
         // request url
         String request_url = getResources().getString(R.string.instagram_api_url)
                 + getResources().getString(R.string.instagram_api_users_method)
@@ -325,6 +342,11 @@ public class ProfileFragment extends Fragment {
                                                 image_array.add(response);
                                                 System.out.println("Image old: " + response);
                                                 getData();
+
+                                                if(imgAdapter != null) {
+                                                    imgAdapter.notifyDataSetChanged();
+                                                }
+
                                             }
                                         },0,0, ImageView.ScaleType.FIT_XY, Bitmap.Config.ARGB_8888,
                                         new Response.ErrorListener(){
@@ -332,7 +354,13 @@ public class ProfileFragment extends Fragment {
                                             public void onErrorResponse(VolleyError error) {
                                                 error.printStackTrace();
                                             }
-                                        });
+                                        }
+                                );
+                                //imgAdapter.setImage_array(image_array);
+                              //  gridView.setAdapter(imgAdapter);
+        //                        imgAdapter.notifyDataSetChanged();
+          //                      gridView.notifyAll();
+                                System.out.println(imgAdapter.getImage_array());
                                 Volley.newRequestQueue(getActivity()).add(imgRequest);
                             }
                         } catch (JSONException e) {
@@ -347,7 +375,6 @@ public class ProfileFragment extends Fragment {
                 });
         Volley.newRequestQueue(getActivity()).add(jsonRequest);
         System.out.println("Image: "+getData());
-        return getData();
     }
 
     private ArrayList<Bitmap> getData(){

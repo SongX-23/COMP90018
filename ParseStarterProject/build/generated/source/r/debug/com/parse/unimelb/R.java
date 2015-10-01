@@ -1597,6 +1597,7 @@ containing a value of this type.
         public static final int line1=0x7f0d007e;
         public static final int line3=0x7f0d0082;
         public static final int listMode=0x7f0d0009;
+        public static final int listView=0x7f0d006a;
         public static final int list_item=0x7f0d002a;
         public static final int liveInextView=0x7f0d005a;
         public static final int loginButton=0x7f0d0063;
@@ -1652,7 +1653,6 @@ containing a value of this type.
         public static final int text=0x7f0d0083;
         public static final int text2=0x7f0d0081;
         public static final int textSpacerNoButtons=0x7f0d0033;
-        public static final int textView=0x7f0d006a;
         public static final int textView2=0x7f0d006b;
         public static final int textView3=0x7f0d006d;
         public static final int textView4=0x7f0d006e;
