@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -16,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.util.Locale;
 
+import com.astuetz.PagerSlidingTabStrip;
 import com.parse.ParseUser;
 import com.parse.unimelb.R;
 
@@ -50,28 +52,8 @@ public class HomeActivity extends AppCompatActivity {
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
-        mViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-
-            public void onPageSelected(int pageNumber) {
-                // Just define a callback method in your fragment and call it like this!
-                if (pageNumber == 4) {
-                  //  ProfileFragment profileFragment = (ProfileFragment) mSectionsPagerAdapter.getItem(4);
-                  //  profileFragment.getUserPhoto();
-                }
-
-            }
-
-            public void onPageScrolled(int arg0, float arg1, int arg2) {
-                // TODO Auto-generated method stub
-
-            }
-
-            public void onPageScrollStateChanged(int arg0) {
-                // TODO Auto-generated method stub
-
-            }
-
-        });
+        PagerSlidingTabStrip tabs = (PagerSlidingTabStrip) findViewById(R.id.tabs);
+        tabs.setViewPager(mViewPager);
     }
 
         @Override

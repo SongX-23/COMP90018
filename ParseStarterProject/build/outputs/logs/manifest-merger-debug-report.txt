@@ -31,6 +31,8 @@ application
 ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:17:5-55:19
 MERGED from [com.android.support:appcompat-v7:22.2.0] /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:22.2.0] /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/AndroidManifest.xml:22:5-20
+MERGED from [com.jpardogo.materialtabstrip:library:1.1.0] /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/build/intermediates/exploded-aar/com.jpardogo.materialtabstrip/library/1.1.0/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:support-v4:22.2.0] /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/AndroidManifest.xml:22:5-20
 	android:label
 		ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:21:9-41
 	android:allowBackup
@@ -96,6 +98,8 @@ ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src
 uses-sdk
 INJECTED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:22.2.0] /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:22.2.0] /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/AndroidManifest.xml:20:5-43
+MERGED from [com.jpardogo.materialtabstrip:library:1.1.0] /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/build/intermediates/exploded-aar/com.jpardogo.materialtabstrip/library/1.1.0/AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support:support-v4:22.2.0] /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/AndroidManifest.xml:20:5-43
 	android:targetSdkVersion
 		INJECTED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml
