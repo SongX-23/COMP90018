@@ -12,8 +12,8 @@ public class Feed {
     private String displayName;
     private String userProfileImgURL;
     private String photoURL;
-    private ImageView userProfileImg;
-    private ImageView photo;
+    private Bitmap userProfileImg;
+    private Bitmap photo;
     private String location;
     private ArrayList<String> comment;
     private ArrayList<String> like;
@@ -25,6 +25,9 @@ public class Feed {
         this.location = location;
         this.comment = comment;
         this.like = like;
+    }
+    public Feed(){
+
     }
 
     public String getDisplayName() {
@@ -52,19 +55,19 @@ public class Feed {
         this.photoURL = photoURL;
     }
 
-    public ImageView getUserProfileImg() {
+    public Bitmap getUserProfileImg() {
         return userProfileImg;
     }
 
-    public void setUserProfileImg(ImageView userProfileImg) {
+    public void setUserProfileImg(Bitmap userProfileImg) {
         this.userProfileImg = userProfileImg;
     }
 
-    public ImageView getPhoto() {
+    public Bitmap getPhoto() {
         return photo;
     }
 
-    public void setPhoto(ImageView photo) {
+    public void setPhoto(Bitmap photo) {
         this.photo = photo;
     }
 

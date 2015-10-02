@@ -49,6 +49,7 @@ public class BrowseFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
     private RequestQueue mRequestQueue;
+    private ArrayList<Feed> feeds_array;
 
     /**
      * Use this factory method to create a new instance of
@@ -157,6 +158,8 @@ public class BrowseFragment extends Fragment {
         String request_url = "https://api.instagram.com/v1/users/self/feed?access_token=25846960.1fb234f.1c7c1f3a4843498f88d0f559ff690eb2";
         //DEBUG
         System.out.println("Requesting from: " + request_url);
+        //create a feed array list
+        feeds_array = new ArrayList<>();
         //request a json response
         JsonObjectRequest jsonRequest = new JsonObjectRequest
                 (Request.Method.GET, request_url, (String)null, new Response.Listener<JSONObject>() {
@@ -166,6 +169,8 @@ public class BrowseFragment extends Fragment {
                             //get the feed array
                             JSONArray array = response.getJSONArray("data");
                             for (int i = 0; i < array.length(); i++) {
+                                //create one feed obj
+                                Feed feedObj = new Feed();
                                 //get one feed
                                 JSONObject oneFeed = array.getJSONObject(i);
                                 //get the location block
@@ -174,9 +179,12 @@ public class BrowseFragment extends Fragment {
                                     //get the location string
                                     if (locationJSON != null) {
                                         String location = locationJSON.getString("name");
+                                        feedObj.setLocation(location);
                                         //DEBUG
                                         System.out.println("FEED: location = " + location);
                                     }
+                                }else{
+                                    feedObj.setLocation("");
                                 }
 
                                 //get the comment block
@@ -199,6 +207,7 @@ public class BrowseFragment extends Fragment {
                                         System.out.println("FEED: comment = " + comment);
                                         comments.add(comment);
                                     }
+                                    feedObj.setComment(comments);
                                 }
                                 //get the likes block
                                 JSONObject likesJSON = oneFeed.getJSONObject("likes");
@@ -217,6 +226,7 @@ public class BrowseFragment extends Fragment {
                                         //DEBUG
                                         System.out.println("FEED: like = " + likeName);
                                     }
+                                    feedObj.setLike(likes);
                                 }
                                 //get the image block
                                 JSONObject imageJSON = oneFeed.getJSONObject("images");
@@ -226,8 +236,18 @@ public class BrowseFragment extends Fragment {
                                 String imageURL = standardResolution.getString("url");
                                 //DEBUG
                                 System.out.println("FEED: image = " + imageURL);
+                                feedObj.setPhotoURL(imageURL);
                                 //fetch the image
                                 getFeedImage(imageURL);
+                                //get the media id
+                                String mediaID = oneFeed.getString("id");
+                                //DEBUG
+                                System.out.println("FEED: id = " + mediaID);
+                                //get user name
+                                JSONObject userJSON = oneFeed.getJSONObject("user");
+                                String userName = userJSON.getString("full_name");
+                                //DEBUG
+                                System.out.println("FEED: name = " + userName);
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
