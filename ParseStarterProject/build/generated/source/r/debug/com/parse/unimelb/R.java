@@ -1715,6 +1715,7 @@ containing a value of this type.
         public static final int bioEditText=0x7f0d005b;
         public static final int bioTextView=0x7f0d005e;
         public static final int bold=0x7f0d001b;
+        public static final int browseListView=0x7f0d0077;
         public static final int buttonPanel=0x7f0d0038;
         public static final int cancel_action=0x7f0d0087;
         public static final int checkbox=0x7f0d003a;
@@ -1756,7 +1757,6 @@ containing a value of this type.
         public static final int icon=0x7f0d002d;
         public static final int ifRoom=0x7f0d0018;
         public static final int image=0x7f0d002a;
-        public static final int imageView=0x7f0d0070;
         public static final int info=0x7f0d0091;
         public static final int italic=0x7f0d001c;
         public static final int lastNameEditText=0x7f0d006a;
@@ -1766,7 +1766,6 @@ containing a value of this type.
         public static final int line1=0x7f0d008b;
         public static final int line3=0x7f0d008f;
         public static final int listMode=0x7f0d0009;
-        public static final int listView=0x7f0d0077;
         public static final int list_item=0x7f0d002c;
         public static final int liveInextView=0x7f0d005c;
         public static final int locationTextView=0x7f0d006f;
@@ -1784,6 +1783,7 @@ containing a value of this type.
         public static final int passwordTextView=0x7f0d0062;
         public static final int phoneEditText=0x7f0d0057;
         public static final int phoneTextView=0x7f0d0056;
+        public static final int photoImageView=0x7f0d0070;
         public static final int postNumTextView=0x7f0d007f;
         public static final int postTextView=0x7f0d0082;
         public static final int profileImageButton=0x7f0d007c;

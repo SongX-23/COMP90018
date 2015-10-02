@@ -3,9 +3,8 @@
     android:layout_height="match_parent" tools:context="com.parse.unimelb.BrowseFragment"
     android:id="@+id/content_frame">
 
-    <!-- TODO: Update blank fragment layout -->
     <ListView
-        android:id="@+id/listView"
+        android:id="@+id/browseListView"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:divider="#b5b5b5"

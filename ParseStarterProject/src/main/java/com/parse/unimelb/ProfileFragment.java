@@ -70,8 +70,6 @@ public class ProfileFragment extends Fragment {
     static ArrayList<String> url_array;
     static ArrayList<Bitmap> image_array;
     int postNumber, followerNumber, followingNumber;
-    private ImageLoader mImageLoader;
-    private NetworkImageView mNetworkImageView;
     static final int REQUEST_IMAGE_CAPTURE = 1;
     ImageAdapter imgAdapter;
     GridView gridView;

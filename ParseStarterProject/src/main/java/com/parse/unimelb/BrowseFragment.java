@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ListView;
 
 import com.android.volley.Cache;
 import com.android.volley.Request;
@@ -48,8 +49,9 @@ public class BrowseFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
-    private RequestQueue mRequestQueue;
-    private ArrayList<Feed> feeds_array;
+    private static ArrayList<Feed> feeds_array;
+    private ListView listView;
+    private BrowseAdapter browseAdapter;
 
     /**
      * Use this factory method to create a new instance of
@@ -87,13 +89,19 @@ public class BrowseFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        Cache cache = new DiskBasedCache(getActivity().getCacheDir(), 1024*1024);
-        BasicNetwork network = new BasicNetwork(new HurlStack());
+        View view = inflater.inflate(R.layout.fragment_browse, container, false);
+        listView = (ListView) view.findViewById(R.id.browseListView);
+        browseAdapter = new BrowseAdapter(getActivity(),getData());
+        listView.setAdapter(browseAdapter);
 
-        mRequestQueue = new RequestQueue(cache, network);
-        mRequestQueue.start();
-        loadFeeds();
-        return inflater.inflate(R.layout.fragment_browse, container, false);
+        return view;
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (isVisibleToUser) { loadFeeds(); }
+        else {  }
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -170,7 +178,7 @@ public class BrowseFragment extends Fragment {
                             JSONArray array = response.getJSONArray("data");
                             for (int i = 0; i < array.length(); i++) {
                                 //create one feed obj
-                                Feed feedObj = new Feed();
+                                final Feed feedObj = new Feed();
                                 //get one feed
                                 JSONObject oneFeed = array.getJSONObject(i);
                                 //get the location block
@@ -208,6 +216,8 @@ public class BrowseFragment extends Fragment {
                                         comments.add(comment);
                                     }
                                     feedObj.setComment(comments);
+                                } else {
+                                    feedObj.setComment(null);
                                 }
                                 //get the likes block
                                 JSONObject likesJSON = oneFeed.getJSONObject("likes");
@@ -227,6 +237,8 @@ public class BrowseFragment extends Fragment {
                                         System.out.println("FEED: like = " + likeName);
                                     }
                                     feedObj.setLike(likes);
+                                } else {
+                                    feedObj.setLike(null);
                                 }
                                 //get the image block
                                 JSONObject imageJSON = oneFeed.getJSONObject("images");
@@ -238,16 +250,61 @@ public class BrowseFragment extends Fragment {
                                 System.out.println("FEED: image = " + imageURL);
                                 feedObj.setPhotoURL(imageURL);
                                 //fetch the image
-                                getFeedImage(imageURL);
+                                ImageRequest imgRequest = new ImageRequest(imageURL, new Response.Listener<Bitmap>() {
+                                    @Override
+                                    public void onResponse(Bitmap response) {
+                                        //do something with the bitmap
+                                        feedObj.setPhoto(response);
+                                        if(browseAdapter != null) {
+                                            browseAdapter.notifyDataSetChanged();
+                                        }
+                                    }
+                                },0,0, ImageView.ScaleType.FIT_XY, Bitmap.Config.ARGB_8888,
+                                        new Response.ErrorListener(){
+                                            @Override
+                                            public void onErrorResponse(VolleyError error) {
+                                                error.printStackTrace();
+                                            }
+
+                                        });
+                                Volley.newRequestQueue(getActivity()).add(imgRequest);
                                 //get the media id
                                 String mediaID = oneFeed.getString("id");
+                                feedObj.setMediaID(mediaID);
                                 //DEBUG
                                 System.out.println("FEED: id = " + mediaID);
                                 //get user name
                                 JSONObject userJSON = oneFeed.getJSONObject("user");
                                 String userName = userJSON.getString("full_name");
+                                String userProfileImageURL = userJSON.getString("profile_picture");
+                                feedObj.setDisplayName(userName);
                                 //DEBUG
                                 System.out.println("FEED: name = " + userName);
+                                ImageRequest profileImgRequest =
+                                        new ImageRequest(userProfileImageURL, new Response.Listener<Bitmap>() {
+                                    @Override
+                                    public void onResponse(Bitmap response) {
+                                        //do something with the bitmap
+                                        feedObj.setUserProfileImg(response);
+                                        if(browseAdapter != null) {
+                                            browseAdapter.notifyDataSetChanged();
+                                        }
+                                    }
+                                },0,0, ImageView.ScaleType.FIT_XY, Bitmap.Config.ARGB_8888,
+                                        new Response.ErrorListener(){
+                                            @Override
+                                            public void onErrorResponse(VolleyError error) {
+                                                error.printStackTrace();
+                                            }
+
+                                        });
+                                Volley.newRequestQueue(getActivity()).add(profileImgRequest);
+                                //add feed object into arraylist
+                                feeds_array.add(feedObj);
+
+                                if(browseAdapter != null) {
+                                    browseAdapter.notifyDataSetChanged();
+                                }
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -259,24 +316,11 @@ public class BrowseFragment extends Fragment {
                         error.printStackTrace();
                     }
                 });
-        mRequestQueue.add(jsonRequest);
+        Volley.newRequestQueue(getActivity()).add(jsonRequest);
     }
 
-    private void getFeedImage(String imageURL) {
-        ImageRequest imgRequest = new ImageRequest(imageURL, new Response.Listener<Bitmap>() {
-            @Override
-            public void onResponse(Bitmap response) {
-                //do something with the bitmap
-            }
-        },0,0, ImageView.ScaleType.FIT_XY, Bitmap.Config.ARGB_8888,
-                new Response.ErrorListener(){
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        error.printStackTrace();
-                    }
-
-                });
-        mRequestQueue.add(imgRequest);
+    public ArrayList<Feed> getData(){
+        return feeds_array;
     }
 
 }

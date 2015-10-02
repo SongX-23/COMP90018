@@ -15,6 +15,7 @@ public class Feed {
     private Bitmap userProfileImg;
     private Bitmap photo;
     private String location;
+    private String mediaID;
     private ArrayList<String> comment;
     private ArrayList<String> like;
 
@@ -94,4 +95,13 @@ public class Feed {
     public void setLike(ArrayList<String> like) {
         this.like = like;
     }
+
+    public String getMediaID() {
+        return mediaID;
+    }
+
+    public void setMediaID(String mediaID) {
+        this.mediaID = mediaID;
+    }
+
 }

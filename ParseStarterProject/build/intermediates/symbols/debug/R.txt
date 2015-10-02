@@ -455,6 +455,7 @@ int id beginning 0x7f0d0013
 int id bioEditText 0x7f0d005b
 int id bioTextView 0x7f0d005e
 int id bold 0x7f0d001b
+int id browseListView 0x7f0d0077
 int id buttonPanel 0x7f0d0038
 int id cancel_action 0x7f0d0087
 int id checkbox 0x7f0d003a
@@ -496,7 +497,6 @@ int id homeAsUp 0x7f0d000d
 int id icon 0x7f0d002d
 int id ifRoom 0x7f0d0018
 int id image 0x7f0d002a
-int id imageView 0x7f0d0070
 int id info 0x7f0d0091
 int id italic 0x7f0d001c
 int id lastNameEditText 0x7f0d006a
@@ -506,7 +506,6 @@ int id likedTextView 0x7f0d0074
 int id line1 0x7f0d008b
 int id line3 0x7f0d008f
 int id listMode 0x7f0d0009
-int id listView 0x7f0d0077
 int id list_item 0x7f0d002c
 int id liveInextView 0x7f0d005c
 int id locationTextView 0x7f0d006f
@@ -524,6 +523,7 @@ int id passwordEditText 0x7f0d0063
 int id passwordTextView 0x7f0d0062
 int id phoneEditText 0x7f0d0057
 int id phoneTextView 0x7f0d0056
+int id photoImageView 0x7f0d0070
 int id postNumTextView 0x7f0d007f
 int id postTextView 0x7f0d0082
 int id profileImageButton 0x7f0d007c
