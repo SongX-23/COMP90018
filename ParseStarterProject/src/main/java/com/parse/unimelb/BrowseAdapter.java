@@ -39,7 +39,7 @@ public class BrowseAdapter extends BaseAdapter{
 
     @Override
     public View getView(int position, View view, ViewGroup viewGroup) {
-        LayoutInflater inflater = (LayoutInflater) mContext.getSystemService( Context.LAYOUT_INFLATER_SERVICE );
+        LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.feed, null, true);
 
         ImageView userProfileImg = (ImageView) rowView.findViewById(R.id.userProfileImageView);
@@ -55,9 +55,12 @@ public class BrowseAdapter extends BaseAdapter{
         userName.setText(oneFeed.getDisplayName());
         locationName.setText(oneFeed.getLocation());
         photoImg.setImageBitmap(oneFeed.getPhoto());
-        likedText.setText(oneFeed.getLike().toString());
-        commentText.setText(oneFeed.getComment().toString());
-
+        if (oneFeed.getLike() != null) {
+            likedText.setText(oneFeed.getLike().toString().replace(',',' '));
+        }
+        if (oneFeed.getComment() != null) {
+            commentText.setText(oneFeed.getComment().toString().replace(',',' '));
+        }
         return rowView;
     }
 }

@@ -110,38 +110,7 @@ public class BrowseFragment extends Fragment {
             mListener.onFragmentInteraction(uri);
         }
     }
-
-    public void getFeedResponse(){
-        String request_url = getResources().getString(R.string.instagram_api_url)
-                + getResources().getString(R.string.instagram_api_users_method)
-                + "self/feed?access_token="
-                + getResources().getString(R.string.instagram_access_token);
-        System.out.println("Response" + request_url);
-        // request a json response
-
-        JsonObjectRequest jsonRequest = new JsonObjectRequest
-                (Request.Method.GET, request_url, (String)null, new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        // the response is already constructed as a JSONObject!
-                        try {
-                            response = response.getJSONObject("data");
-                            System.out.println("Response: "+response);
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }, new Response.ErrorListener() {
-
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        error.printStackTrace();
-                    }
-                });
-
-        Volley.newRequestQueue(getActivity()).add(jsonRequest);
-    }
+    
 
     /**
      * This interface must be implemented by activities that contain this
@@ -209,8 +178,8 @@ public class BrowseFragment extends Fragment {
                                         //get comment text
                                         String commentText = oneComment.getString("text");
                                         JSONObject commentFrom = oneComment.getJSONObject("from");
-                                        String commentName = commentFrom.getString("full_name");
-                                        String comment = commentName + ": " + commentText;
+                                        String commentName = commentFrom.getString("username");
+                                        String comment = commentName + ": " + commentText + "\n";
                                         //DEBUG
                                         System.out.println("FEED: comment = " + comment);
                                         comments.add(comment);
@@ -231,7 +200,7 @@ public class BrowseFragment extends Fragment {
                                     for (int k = 0; k < likeArray.length(); k++) {
                                         JSONObject oneLike = likeArray.getJSONObject(k);
                                         //get like name
-                                        String likeName = oneLike.getString("full_name");
+                                        String likeName = oneLike.getString("username");
                                         likes.add(likeName);
                                         //DEBUG
                                         System.out.println("FEED: like = " + likeName);
@@ -275,7 +244,7 @@ public class BrowseFragment extends Fragment {
                                 System.out.println("FEED: id = " + mediaID);
                                 //get user name
                                 JSONObject userJSON = oneFeed.getJSONObject("user");
-                                String userName = userJSON.getString("full_name");
+                                String userName = userJSON.getString("username");
                                 String userProfileImageURL = userJSON.getString("profile_picture");
                                 feedObj.setDisplayName(userName);
                                 //DEBUG

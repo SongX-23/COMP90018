@@ -4,8 +4,11 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.BaseAdapter;
 import android.widget.GridLayout;
 import android.widget.GridView;
@@ -20,10 +23,16 @@ import java.util.ArrayList;
 public class ImageAdapter extends BaseAdapter {
     private Context mContext;
     private ArrayList<Bitmap> image_array;
+    private int width;
 
     public ImageAdapter(Context c, ArrayList<Bitmap> data){
             mContext = c;
             image_array = data;
+            WindowManager wm = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
+            Display display = wm.getDefaultDisplay();
+            DisplayMetrics metrics = new DisplayMetrics();
+            display.getMetrics(metrics);
+            width = metrics.widthPixels;
 //            Drawable myDrawable = c.getResources().getDrawable(R.drawable.default_profile_image);
 //            Bitmap defaultImg = ((BitmapDrawable) myDrawable).getBitmap();
 //            image_array.add(defaultImg);
@@ -48,7 +57,7 @@ public class ImageAdapter extends BaseAdapter {
         ImageView imageView;
         if (convertView == null){
             imageView = new ImageView(mContext);
-            imageView.setLayoutParams(new GridView.LayoutParams(400, 400));
+            imageView.setLayoutParams(new GridView.LayoutParams(width/3, width/3));
 
             imageView.setPadding(8, 8, 8, 8);
         } else {
