@@ -110,7 +110,7 @@ public class BrowseFragment extends Fragment {
             mListener.onFragmentInteraction(uri);
         }
     }
-    
+
 
     /**
      * This interface must be implemented by activities that contain this
@@ -195,17 +195,23 @@ public class BrowseFragment extends Fragment {
                                 //get likes content
                                 if (likesCount > 0) {
                                     ArrayList<String > likes = new ArrayList<>();
-                                    //get likes data
-                                    JSONArray likeArray = likesJSON.getJSONArray("data");
-                                    for (int k = 0; k < likeArray.length(); k++) {
-                                        JSONObject oneLike = likeArray.getJSONObject(k);
-                                        //get like name
-                                        String likeName = oneLike.getString("username");
-                                        likes.add(likeName);
-                                        //DEBUG
-                                        System.out.println("FEED: like = " + likeName);
+                                    if (likesCount <= 4) {
+                                        //get likes data
+                                        JSONArray likeArray = likesJSON.getJSONArray("data");
+                                        for (int k = 0; k < likeArray.length(); k++) {
+                                            JSONObject oneLike = likeArray.getJSONObject(k);
+                                            //get like name
+                                            String likeName = oneLike.getString("username");
+                                            likes.add(likeName);
+                                            //DEBUG
+                                            System.out.println("FEED: like = " + likeName);
+                                        }
+                                    }else {
+                                        String likedString = Integer.toString(likesCount) + " likes";
+                                        likes.add(likedString);
                                     }
                                     feedObj.setLike(likes);
+
                                 } else {
                                     feedObj.setLike(null);
                                 }
@@ -236,7 +242,9 @@ public class BrowseFragment extends Fragment {
                                             }
 
                                         });
-                                Volley.newRequestQueue(getActivity()).add(imgRequest);
+                                if (imgRequest != null) {
+                                    Volley.newRequestQueue(getActivity()).add(imgRequest);
+                                }
                                 //get the media id
                                 String mediaID = oneFeed.getString("id");
                                 feedObj.setMediaID(mediaID);
@@ -267,7 +275,9 @@ public class BrowseFragment extends Fragment {
                                             }
 
                                         });
-                                Volley.newRequestQueue(getActivity()).add(profileImgRequest);
+                                if (profileImgRequest != null) {
+                                    Volley.newRequestQueue(getActivity()).add(profileImgRequest);
+                                }
                                 //add feed object into arraylist
                                 feeds_array.add(feedObj);
 
@@ -285,7 +295,9 @@ public class BrowseFragment extends Fragment {
                         error.printStackTrace();
                     }
                 });
-        Volley.newRequestQueue(getActivity()).add(jsonRequest);
+        if (jsonRequest != null) {
+            Volley.newRequestQueue(getActivity()).add(jsonRequest);
+        }
     }
 
     public ArrayList<Feed> getData(){

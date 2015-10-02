@@ -24,7 +24,7 @@
         android:layout_marginLeft="20dp"/>
 
     <TextView
-        android:layout_width="150dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:id="@+id/locationTextView"
         android:layout_below="@+id/userNameTextView"
