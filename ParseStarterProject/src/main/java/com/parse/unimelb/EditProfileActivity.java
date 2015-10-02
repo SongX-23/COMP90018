@@ -35,6 +35,7 @@ public class EditProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit_profile);
         final ParseUser currentUser = ParseUser.getCurrentUser();
         updateProfile = (Button) this.findViewById(R.id.updateButton);
+        cancelUpdate = (Button) this.findViewById(R.id.cancelButton);
         genderSpinner = (Spinner) this.findViewById(R.id.genderSpinner);
         fullNameText = (EditText) this.findViewById(R.id.fullNameEditText);
         emailText = (EditText) this.findViewById(R.id.emailEditText);

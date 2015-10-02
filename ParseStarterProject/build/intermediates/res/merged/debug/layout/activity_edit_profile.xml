@@ -161,5 +161,13 @@
         android:layout_alignRight="@+id/cityEditText"
         android:layout_alignEnd="@+id/cityEditText"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:id="@+id/cancelButton"
+        android:layout_below="@+id/updateButton"
+        android:layout_centerHorizontal="true"/>
+
 </RelativeLayout>
 <!-- From: file:/Users/songxue/Documents/Mobile%20Dev/Instagram/ParseStarterProject/src/main/res/layout/activity_edit_profile.xml -->
