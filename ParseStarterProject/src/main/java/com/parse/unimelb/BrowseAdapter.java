@@ -1,6 +1,7 @@
 package com.parse.unimelb;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,7 +49,19 @@ public class BrowseAdapter extends BaseAdapter{
         ImageView photoImg = (ImageView) rowView.findViewById(R.id.photoImageView);
         TextView likedText = (TextView) rowView.findViewById(R.id.likedTextView);
         TextView commentText = (TextView) rowView.findViewById(R.id.commentTextView);
-
+        Button likeButton = (Button) rowView.findViewById(R.id.likeButton);
+        likeButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                
+            }
+        });
+        Button commentButton = (Button) rowView.findViewById(R.id.commentButton);
+       commentButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                Intent intent = new Intent(mContext, CommentActivity.class);
+                mContext.startActivity(intent);
+            }
+        });
         Feed oneFeed = feed_array.get(position);
 
         userProfileImg.setImageBitmap(oneFeed.getUserProfileImg());

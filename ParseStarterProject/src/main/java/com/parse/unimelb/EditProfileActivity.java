@@ -56,22 +56,24 @@ public class EditProfileActivity extends AppCompatActivity {
             genderSpinner.setSelection(spinnerPosition);
         }
         //set the spinner
-        genderSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
-        {
+        genderSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view1, int pos, long id)
-            {
+            public void onItemSelected(AdapterView<?> parent, View view1, int pos, long id) {
                 int loc;
                 loc = pos;
                 gender = parent.getItemAtPosition(pos).toString();
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> arg1)
-            {
+            public void onNothingSelected(AdapterView<?> arg1) {
             }
         });
-
+        //cancel button
+        cancelUpdate.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0){
+                onBackPressed();
+            }
+        });
         // update button
         updateProfile.setOnClickListener(new View.OnClickListener() {
 

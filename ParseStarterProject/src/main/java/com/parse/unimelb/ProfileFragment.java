@@ -132,9 +132,8 @@ public class ProfileFragment extends Fragment {
         //add listener to button
         editProfile.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                //Intent intent = new Intent(getActivity(), EditProfileActivity.class);
-                //startActivity(intent);
-
+                Intent intent = new Intent(getActivity(), EditProfileActivity.class);
+                startActivity(intent);
             }
         });
         //set profile image

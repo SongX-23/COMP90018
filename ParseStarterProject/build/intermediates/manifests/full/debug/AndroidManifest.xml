@@ -61,6 +61,10 @@
             android:name="com.parse.unimelb.EditProfileActivity"
             android:label="@string/title_activity_edit_profile" >
         </activity>
+        <activity
+            android:name="com.parse.unimelb.CommentActivity"
+            android:label="@string/title_activity_comment" >
+        </activity>
     </application>
 
 </manifest>
