@@ -9,6 +9,17 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 /**
@@ -42,7 +53,7 @@ public class BrowseAdapter extends BaseAdapter{
     public View getView(int position, View view, ViewGroup viewGroup) {
         LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.feed, null, true);
-
+        final Feed oneFeed = feed_array.get(position);
         ImageView userProfileImg = (ImageView) rowView.findViewById(R.id.userProfileImageView);
         TextView userName = (TextView) rowView.findViewById(R.id.userNameTextView);
         TextView locationName = (TextView) rowView.findViewById(R.id.locationTextView);
@@ -52,8 +63,41 @@ public class BrowseAdapter extends BaseAdapter{
         Button likeButton = (Button) rowView.findViewById(R.id.likeButton);
         likeButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                
-            }
+                String url = mContext.getResources().getString(R.string.instagram_api_url)
+                            + mContext.getResources().getString(R.string.instagram_api_media_method)
+                            + oneFeed.getMediaID().toString()
+                            + "/likes?access_token="
+                            + mContext.getResources().getString(R.string.instagram_access_token);
+
+                    JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.POST, url,
+                            new Response.Listener<JSONObject>() {
+                                @Override
+                                public void onResponse(JSONObject response) {
+                                    try {
+                                        JSONObject jsonResponse = response.getJSONObject("meta");
+                                        int code = jsonResponse.getInt("code");
+                                        if (code == 200){
+                                            Toast.makeText(mContext.getApplicationContext(),
+                                                    "You liked this photo!",
+                                                    Toast.LENGTH_LONG).show();
+                                            //update liked list
+                                            notifyDataSetChanged();
+                                        }
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                            },
+                            new Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+                                    error.printStackTrace();
+
+                                }
+                            });
+                    Volley.newRequestQueue(mContext.getApplicationContext()).add(postRequest);
+                }
+
         });
         Button commentButton = (Button) rowView.findViewById(R.id.commentButton);
        commentButton.setOnClickListener(new View.OnClickListener() {
@@ -62,7 +106,7 @@ public class BrowseAdapter extends BaseAdapter{
                 mContext.startActivity(intent);
             }
         });
-        Feed oneFeed = feed_array.get(position);
+
 
         userProfileImg.setImageBitmap(oneFeed.getUserProfileImg());
         userName.setText(oneFeed.getDisplayName());

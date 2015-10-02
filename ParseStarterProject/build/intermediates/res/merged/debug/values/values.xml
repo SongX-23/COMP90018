@@ -218,7 +218,7 @@
     <string name="gender_prompt">Choose a gender</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hello_world">Hello World!</string>
-    <string name="instagram_access_token">25846960.87eeeb7.0eb17cf15e70421ab0cca7330e8ce908</string>
+    <string name="instagram_access_token">25846960.1fb234f.1c7c1f3a4843498f88d0f559ff690eb2</string>
     <string name="instagram_api_location_method">locations/</string>
     <string name="instagram_api_media_method">media/</string>
     <string name="instagram_api_tag_method">tags/</string>
