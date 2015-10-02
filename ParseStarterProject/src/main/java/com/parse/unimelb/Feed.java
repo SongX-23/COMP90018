@@ -1,0 +1,94 @@
+package com.parse.unimelb;
+
+import android.graphics.Bitmap;
+import android.widget.ImageView;
+
+import java.util.ArrayList;
+
+/**
+ * Created by songxue on 2/10/2015.
+ */
+public class Feed {
+    private String displayName;
+    private String userProfileImgURL;
+    private String photoURL;
+    private ImageView userProfileImg;
+    private ImageView photo;
+    private String location;
+    private ArrayList<String> comment;
+    private ArrayList<String> like;
+
+    public Feed(String displayName, String userProfileImgURL, String photoURL, String location, ArrayList<String> comment, ArrayList<String> like) {
+        this.displayName = displayName;
+        this.userProfileImgURL = userProfileImgURL;
+        this.photoURL = photoURL;
+        this.location = location;
+        this.comment = comment;
+        this.like = like;
+    }
+
+    public String getDisplayName() {
+
+        return displayName;
+    }
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
+    }
+
+    public String getUserProfileImgURL() {
+        return userProfileImgURL;
+    }
+
+    public void setUserProfileImgURL(String userProfileImgURL) {
+        this.userProfileImgURL = userProfileImgURL;
+    }
+
+    public String getPhotoURL() {
+        return photoURL;
+    }
+
+    public void setPhotoURL(String photoURL) {
+        this.photoURL = photoURL;
+    }
+
+    public ImageView getUserProfileImg() {
+        return userProfileImg;
+    }
+
+    public void setUserProfileImg(ImageView userProfileImg) {
+        this.userProfileImg = userProfileImg;
+    }
+
+    public ImageView getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(ImageView photo) {
+        this.photo = photo;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public ArrayList<String> getComment() {
+        return comment;
+    }
+
+    public void setComment(ArrayList<String> comment) {
+        this.comment = comment;
+    }
+
+    public ArrayList<String> getLike() {
+        return like;
+    }
+
+    public void setLike(ArrayList<String> like) {
+        this.like = like;
+    }
+}
