@@ -10,4 +10,12 @@
         android:text="Photo"
         android:id="@+id/textView4"
         android:layout_gravity="center" />
+
+    <Button
+        android:id="@+id/button_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Take Photo"
+        android:layout_gravity="center_horizontal|bottom"
+        />
 </FrameLayout>

@@ -1,12 +1,14 @@
 package com.parse.unimelb;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.parse.unimelb.R;
 
@@ -29,6 +31,7 @@ public class PhotoFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+    private Button btnCamera = null;
 
     /**
      * Use this factory method to create a new instance of
@@ -59,13 +62,27 @@ public class PhotoFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+
+        View view = inflater.inflate(R.layout.fragment_photo, container, false);
+        btnCamera = (Button) view.findViewById(R.id.button_camera);
+        btnCamera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), CameraActivity.class);
+                startActivity(intent);
+            }
+        });
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_photo, container, false);
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

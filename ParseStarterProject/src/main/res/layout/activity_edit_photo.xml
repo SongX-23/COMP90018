@@ -1,0 +1,91 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context="com.parse.unimelb.EditPhotoActivity">
+
+    <TextView
+        android:id="@+id/text_contrast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contrast"/>
+
+    <SeekBar
+        android:id="@+id/seekbar_contrast"
+        android:layout_width="620px"
+        android:layout_height="wrap_content"
+        android:max="10"
+        android:progress="1"
+        android:layout_below="@+id/text_contrast"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:id="@+id/imageview_edit"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Crop"
+        android:id="@+id/button_crop"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Saturation"
+        android:id="@+id/button_saturation"
+        android:layout_alignTop="@+id/button_color"
+        android:layout_toLeftOf="@+id/button_engrave" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Engrave"
+        android:id="@+id/button_engrave"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ColorFilter"
+        android:id="@+id/button_color"
+        android:layout_alignTop="@+id/button_crop"
+        android:layout_toLeftOf="@+id/button_saturation" />
+
+    <Button
+        android:id="@+id/button_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/seekbar_contrast"
+        android:layout_toEndOf="@+id/seekbar_contrast" />
+
+    <TextView
+        android:id="@+id/textview_brightness"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Brightness"
+        android:layout_below="@+id/seekbar_contrast"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <SeekBar
+        android:id="@+id/seekbar_brightness"
+        android:layout_width="620px"
+        android:layout_height="wrap_content"
+        android:max="510"
+        android:progress="255"
+        android:layout_below="@+id/textview_brightness"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+</RelativeLayout>
