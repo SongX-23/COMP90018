@@ -28,9 +28,15 @@ public class LoginActivity extends AppCompatActivity {
         //link to Sign up
         setContentView(R.layout.activity_login);
         ParseUser currentUser = ParseUser.getCurrentUser();
-        if (currentUser != null) {
-            Intent indent = new Intent(LoginActivity.this, HomeActivity.class);
-            startActivity(indent);
+
+        Bundle bundle = getIntent().getExtras();
+        String flag = "";
+        if (bundle != null) {
+            flag = bundle.getString("currentUser");
+        }
+        System.out.println("Logout?" + currentUser.get("FullName"));
+
+        if (currentUser.get("FullName") != null && !flag.equals("Logout")) {
             TextView signupTextView = (TextView) this.findViewById(R.id.signupTextView);
             signupTextView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -39,7 +45,10 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
+            Intent indent = new Intent(LoginActivity.this, HomeActivity.class);
+            startActivity(indent);
         } else {
+            System.out.println("Logout?true");
             TextView signupTextView = (TextView) this.findViewById(R.id.signupTextView);
             signupTextView.setOnClickListener(new View.OnClickListener() {
                 @Override

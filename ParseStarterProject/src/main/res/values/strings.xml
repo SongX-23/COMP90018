@@ -8,11 +8,18 @@
   ~ of patent rights can be found in the PATENTS file in the same directory.
   -->
 <resources>
+    <string name="app_name">KiloGram</string>
     <string name="parse_app_id">ZBVTjeG5g4gqFsoP9ta7cZ9a3XbiSrM61ly7XqPl</string>
     <string name="parse_client_key">k2gpuWav8qnp6udvQHkROJXkZVWF4JWnH6Pe8reW</string>
-
-    <string name="app_name">KiloGram</string>
-
+    <string name="instagram_client_id">87eeeb7fb3cf483383804764844aa501</string>
+    <string name="instagram_client_key">f757bd921b184176b14ad02fcb58ea00</string>
+    <string name="instagram_access_token">25846960.1fb234f.1c7c1f3a4843498f88d0f559ff690eb2</string>
+    <string name="instagram_user_id">25846960</string>
+    <string name="instagram_api_url">https://api.instagram.com/v1/</string>
+    <string name="instagram_api_users_method">users/</string>
+    <string name="instagram_api_media_method">media/</string>
+    <string name="instagram_api_tag_method">tags/</string>
+    <string name="instagram_api_location_method">locations/</string>
     <string name="hello_world">Hello World!</string>
     <string name="action_settings">Settings</string>
     <string name="action_log_out">Log out</string>
@@ -36,7 +43,11 @@
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_edit_profile">EditProfileActivity</string>
+<<<<<<< HEAD
     <string name="title_activity_camera">CameraActivity</string>
     <string name="title_activity_edit_photo">EditPhotoActivity</string>
     <string name="title_activity_post">PostActivity</string>
+=======
+    <string name="title_activity_comment">CommentActivity</string>
+>>>>>>> Song
 </resources>

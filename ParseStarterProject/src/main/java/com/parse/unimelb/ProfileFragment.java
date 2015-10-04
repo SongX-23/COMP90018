@@ -1,7 +1,5 @@
 package com.parse.unimelb;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -11,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.LayoutInflater;
@@ -18,23 +17,34 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.ImageRequest;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.NetworkImageView;
+import com.android.volley.toolbox.Volley;
 import com.parse.GetDataCallback;
-import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
-import com.parse.unimelb.R;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -53,11 +63,16 @@ public class ProfileFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private TextView username;
+    private TextView username, postNum, followerNum, followingNum;
     private OnFragmentInteractionListener mListener;
     private ImageButton imageButton;
     private ParseUser currentUser;
+    static ArrayList<String> url_array;
+    static ArrayList<Bitmap> image_array;
+    int postNumber, followerNumber, followingNumber;
     static final int REQUEST_IMAGE_CAPTURE = 1;
+    ImageAdapter imgAdapter;
+    GridView gridView;
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -93,20 +108,35 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
-        currentUser = ParseUser.getCurrentUser();
         username = (TextView) view.findViewById(R.id.usernameTextView);
-        username.setText(currentUser.get("FullName").toString());
         editProfile = (Button) view.findViewById(R.id.editProfileButton);
+        imageButton = (ImageButton) view.findViewById(R.id.profileImageButton);
+        postNum = (TextView) view.findViewById(R.id.postNumTextView);
+        followerNum = (TextView) view.findViewById(R.id.followerNumTextView);
+        followingNum = (TextView) view.findViewById(R.id.followingNumTextView);
+        getUserCountResponse();
 
+        //
+        url_array = new ArrayList<String>();
+        image_array = new ArrayList<Bitmap>();
+
+        gridView = (GridView) view.findViewById(R.id.gridView);
+        imgAdapter = new ImageAdapter(getActivity(),getData());
+        gridView.setAdapter(imgAdapter);
+        //
+
+       // getUserPhoto();
+        //set the username
+        currentUser = ParseUser.getCurrentUser();
+        username.setText(currentUser.get("FullName").toString());
+        //add listener to button
         editProfile.setOnClickListener(new View.OnClickListener() {
-
             public void onClick(View arg0) {
                 Intent intent = new Intent(getActivity(), EditProfileActivity.class);
                 startActivity(intent);
             }
         });
-
-        imageButton = (ImageButton) view.findViewById(R.id.profileImageButton);
+        //set profile image
         ParseFile imageFile = (ParseFile) currentUser.get("Image");
         if (imageFile != null) {
             imageFile.getDataInBackground(new GetDataCallback() {
@@ -139,9 +169,18 @@ public class ProfileFragment extends Fragment {
                 v.showContextMenu();
             }
         });
+        //set up the grid view
+
+
         return view;
     }
 
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (isVisibleToUser) { getUserPhoto(); }
+        else {  }
+    }
 
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
@@ -227,7 +266,118 @@ public class ProfileFragment extends Fragment {
         }
     }
 
+    public void getUserCountResponse(){
+        // request url
+        String request_url = getResources().getString(R.string.instagram_api_url)
+                + getResources().getString(R.string.instagram_api_users_method)
+                + getResources().getString(R.string.instagram_user_id)
+                + "?access_token=" + getResources().getString(R.string.instagram_access_token);
+        //DEBUG
+        System.out.println("Requesting from: " + request_url);
+        // request a json response
 
+        JsonObjectRequest jsonRequest = new JsonObjectRequest
+                (Request.Method.GET, request_url, (String)null, new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        // the response is already constructed as a JSONObject!
+                        try {
+                            response = response.getJSONObject("data");
+                            JSONObject count = response.getJSONObject("counts");
+                            postNumber = count.getInt("media");
+                            followerNumber = count.getInt("followed_by");
+                            followingNumber = count.getInt("follows");
+                            postNum.setText(String.valueOf(postNumber));
+                            followerNum.setText(String.valueOf(followerNumber));
+                            followingNum.setText(String.valueOf(followingNumber));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        error.printStackTrace();
+                    }
+                });
+
+        Volley.newRequestQueue(getActivity()).add(jsonRequest);
+
+    }
+
+    public void getUserPhoto(){
+
+        // request url
+        String request_url = getResources().getString(R.string.instagram_api_url)
+                + getResources().getString(R.string.instagram_api_users_method)
+                + getResources().getString(R.string.instagram_user_id)
+                + "/" + getResources().getString(R.string.instagram_api_media_method)
+                + "recent?access_token="
+                + getResources().getString(R.string.instagram_access_token);
+        //DEBUG
+        System.out.println("Requesting from: " + request_url);
+        //request a json response
+        JsonObjectRequest jsonRequest = new JsonObjectRequest
+                (Request.Method.GET, request_url, (String)null, new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            //response = response.getJSONObject("data");
+                            JSONArray array = response.getJSONArray("data");
+                            for (int i = 0; i < array.length(); i++){
+                                JSONObject objectJSON = array.getJSONObject(i);
+                                JSONObject imageJSON = objectJSON.getJSONObject("images");
+                                JSONObject thumbnailJSON = imageJSON.getJSONObject("thumbnail");
+                                String thumbnail_url = thumbnailJSON.getString("url");
+                                System.out.println("JSON: " + thumbnail_url);
+                                url_array.add(thumbnail_url);
+                                ImageRequest imgRequest = new ImageRequest(thumbnail_url,
+                                        new Response.Listener<Bitmap>() {
+                                            @Override
+                                            public void onResponse(Bitmap response){
+                                                image_array.add(response);
+                                                System.out.println("Image old: " + response);
+                                                getData();
+
+                                                if(imgAdapter != null) {
+                                                    imgAdapter.notifyDataSetChanged();
+                                                }
+
+                                            }
+                                        },0,0, ImageView.ScaleType.FIT_XY, Bitmap.Config.ARGB_8888,
+                                        new Response.ErrorListener(){
+                                            @Override
+                                            public void onErrorResponse(VolleyError error) {
+                                                error.printStackTrace();
+                                            }
+                                        }
+                                );
+                                //imgAdapter.setImage_array(image_array);
+                              //  gridView.setAdapter(imgAdapter);
+        //                        imgAdapter.notifyDataSetChanged();
+          //                      gridView.notifyAll();
+                                System.out.println(imgAdapter.getImage_array());
+                                Volley.newRequestQueue(getActivity()).add(imgRequest);
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        error.printStackTrace();
+                    }
+                });
+        Volley.newRequestQueue(getActivity()).add(jsonRequest);
+        System.out.println("Image: "+getData());
+    }
+
+    private ArrayList<Bitmap> getData(){
+        System.out.println("Image new: " + image_array);
+        return image_array;
+    }
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated

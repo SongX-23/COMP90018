@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -16,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.util.Locale;
 
+import com.astuetz.PagerSlidingTabStrip;
 import com.parse.ParseUser;
 import com.parse.unimelb.R;
 
@@ -50,11 +52,11 @@ public class HomeActivity extends AppCompatActivity {
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
-
+        PagerSlidingTabStrip tabs = (PagerSlidingTabStrip) findViewById(R.id.tabs);
+        tabs.setViewPager(mViewPager);
     }
 
-
-    @Override
+        @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_home, menu);
@@ -78,10 +80,10 @@ public class HomeActivity extends AppCompatActivity {
     }
     public void logout(){
         ParseUser.logOut();
-        ParseUser currentUser = ParseUser.getCurrentUser();
-        currentUser = null;
         Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
+        intent.putExtra("currentUser","Logout");
         startActivity(intent);
+
     }
 
     /**
@@ -111,7 +113,9 @@ public class HomeActivity extends AppCompatActivity {
                 return new NotificationFragment();
             }
             else if(position == 4) {
-                return new ProfileFragment();
+               ProfileFragment profileFragment= new ProfileFragment();
+               // profileFragment.getUserPhoto();
+                return profileFragment;
             }
             return new BrowseFragment();
         }

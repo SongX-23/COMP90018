@@ -1,14 +1,34 @@
 package com.parse.unimelb;
 
 import android.app.Activity;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.ListView;
 
+import com.android.volley.Cache;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.BasicNetwork;
+import com.android.volley.toolbox.DiskBasedCache;
+import com.android.volley.toolbox.HurlStack;
+import com.android.volley.toolbox.ImageRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.parse.unimelb.R;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -29,6 +49,9 @@ public class BrowseFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+    private static ArrayList<Feed> feeds_array;
+    private ListView listView;
+    private BrowseAdapter browseAdapter;
 
     /**
      * Use this factory method to create a new instance of
@@ -59,13 +82,26 @@ public class BrowseFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        //getFeedResponse();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_browse, container, false);
+        View view = inflater.inflate(R.layout.fragment_browse, container, false);
+        listView = (ListView) view.findViewById(R.id.browseListView);
+        browseAdapter = new BrowseAdapter(getActivity(),getData());
+        listView.setAdapter(browseAdapter);
+
+        return view;
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (isVisibleToUser) { loadFeeds(); }
+        else {  }
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -75,22 +111,6 @@ public class BrowseFragment extends Fragment {
         }
     }
 
-//    @Override
-//    public void onAttach(Activity activity) {
-//        super.onAttach(activity);
-//        try {
-//            mListener = (OnFragmentInteractionListener) activity;
-//        } catch (ClassCastException e) {
-//            throw new ClassCastException(activity.toString()
-//                    + " must implement OnFragmentInteractionListener");
-//        }
-//    }
-//
-//    @Override
-//    public void onDetach() {
-//        super.onDetach();
-//        mListener = null;
-//    }
 
     /**
      * This interface must be implemented by activities that contain this
@@ -105,6 +125,183 @@ public class BrowseFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         public void onFragmentInteraction(Uri uri);
+    }
+    public void loadFeeds(){
+        //request url
+        //String request_url = FeedFragment.getResources().getString(R.string.instagram_api_url)
+        //        + FeedFragment.getResources().getString(R.string.instagram_api_users_method)
+        //        + "self/feed?access_token="
+        //        + FeedFragment.getResources().getString(R.string.instagram_access_token);
+        String request_url = "https://api.instagram.com/v1/users/self/feed?access_token=25846960.1fb234f.1c7c1f3a4843498f88d0f559ff690eb2";
+        //DEBUG
+        System.out.println("Requesting from: " + request_url);
+        //create a feed array list
+        feeds_array = new ArrayList<>();
+        //request a json response
+        JsonObjectRequest jsonRequest = new JsonObjectRequest
+                (Request.Method.GET, request_url, (String)null, new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            //get the feed array
+                            JSONArray array = response.getJSONArray("data");
+                            for (int i = 0; i < array.length(); i++) {
+                                //create one feed obj
+                                final Feed feedObj = new Feed();
+                                //get one feed
+                                JSONObject oneFeed = array.getJSONObject(i);
+                                //get the location block
+                                if (!oneFeed.isNull("location")) {
+                                    JSONObject locationJSON = oneFeed.getJSONObject("location");
+                                    //get the location string
+                                    if (locationJSON != null) {
+                                        String location = locationJSON.getString("name");
+                                        feedObj.setLocation(location);
+                                        //DEBUG
+                                        System.out.println("FEED: location = " + location);
+                                    }
+                                }else{
+                                    feedObj.setLocation("");
+                                }
+
+                                //get the comment block
+                                JSONObject commentsJSON = oneFeed.getJSONObject("comments");
+                                //get comment counts
+                                int commentsCount = commentsJSON.getInt("count");
+                                //get comment content
+                                if (commentsCount > 0){
+                                    ArrayList<String> comments = new ArrayList<>();
+                                    //get comment data
+                                    JSONArray commentArray = commentsJSON.getJSONArray("data");
+                                    for (int j = 0; j < commentArray.length(); j++){
+                                        JSONObject oneComment = commentArray.getJSONObject(j);
+                                        //get comment text
+                                        String commentText = oneComment.getString("text");
+                                        JSONObject commentFrom = oneComment.getJSONObject("from");
+                                        String commentName = commentFrom.getString("username");
+                                        String comment = commentName + ": " + commentText + "\n";
+                                        //DEBUG
+                                        System.out.println("FEED: comment = " + comment);
+                                        comments.add(comment);
+                                    }
+                                    feedObj.setComment(comments);
+                                } else {
+                                    feedObj.setComment(null);
+                                }
+                                //get the likes block
+                                JSONObject likesJSON = oneFeed.getJSONObject("likes");
+                                //get likes count
+                                int likesCount = likesJSON.getInt("count");
+                                //get likes content
+                                if (likesCount > 0) {
+                                    ArrayList<String > likes = new ArrayList<>();
+                                    if (likesCount <= 4) {
+                                        //get likes data
+                                        JSONArray likeArray = likesJSON.getJSONArray("data");
+                                        for (int k = 0; k < likeArray.length(); k++) {
+                                            JSONObject oneLike = likeArray.getJSONObject(k);
+                                            //get like name
+                                            String likeName = oneLike.getString("username");
+                                            likes.add(likeName);
+                                            //DEBUG
+                                            System.out.println("FEED: like = " + likeName);
+                                        }
+                                    }else {
+                                        String likedString = Integer.toString(likesCount) + " likes";
+                                        likes.add(likedString);
+                                    }
+                                    feedObj.setLike(likes);
+
+                                } else {
+                                    feedObj.setLike(null);
+                                }
+                                //get the image block
+                                JSONObject imageJSON = oneFeed.getJSONObject("images");
+                                //get the standard resoultion block
+                                JSONObject standardResolution = imageJSON.getJSONObject("standard_resolution");
+                                //get the image url
+                                String imageURL = standardResolution.getString("url");
+                                //DEBUG
+                                System.out.println("FEED: image = " + imageURL);
+                                feedObj.setPhotoURL(imageURL);
+                                //fetch the image
+                                ImageRequest imgRequest = new ImageRequest(imageURL, new Response.Listener<Bitmap>() {
+                                    @Override
+                                    public void onResponse(Bitmap response) {
+                                        //do something with the bitmap
+                                        feedObj.setPhoto(response);
+                                        if(browseAdapter != null) {
+                                            browseAdapter.notifyDataSetChanged();
+                                        }
+                                    }
+                                },0,0, ImageView.ScaleType.FIT_XY, Bitmap.Config.ARGB_8888,
+                                        new Response.ErrorListener(){
+                                            @Override
+                                            public void onErrorResponse(VolleyError error) {
+                                                error.printStackTrace();
+                                            }
+
+                                        });
+                                if (imgRequest != null) {
+                                    Volley.newRequestQueue(getActivity()).add(imgRequest);
+                                }
+                                //get the media id
+                                String mediaID = oneFeed.getString("id");
+                                feedObj.setMediaID(mediaID);
+                                //DEBUG
+                                System.out.println("FEED: id = " + mediaID);
+                                //get user name
+                                JSONObject userJSON = oneFeed.getJSONObject("user");
+                                String userName = userJSON.getString("username");
+                                String userProfileImageURL = userJSON.getString("profile_picture");
+                                feedObj.setDisplayName(userName);
+                                //DEBUG
+                                System.out.println("FEED: name = " + userName);
+                                ImageRequest profileImgRequest =
+                                        new ImageRequest(userProfileImageURL, new Response.Listener<Bitmap>() {
+                                    @Override
+                                    public void onResponse(Bitmap response) {
+                                        //do something with the bitmap
+                                        feedObj.setUserProfileImg(response);
+                                        if(browseAdapter != null) {
+                                            browseAdapter.notifyDataSetChanged();
+                                        }
+                                    }
+                                },0,0, ImageView.ScaleType.FIT_XY, Bitmap.Config.ARGB_8888,
+                                        new Response.ErrorListener(){
+                                            @Override
+                                            public void onErrorResponse(VolleyError error) {
+                                                error.printStackTrace();
+                                            }
+
+                                        });
+                                if (profileImgRequest != null) {
+                                    Volley.newRequestQueue(getActivity()).add(profileImgRequest);
+                                }
+                                //add feed object into arraylist
+                                feeds_array.add(feedObj);
+
+                                if(browseAdapter != null) {
+                                    browseAdapter.notifyDataSetChanged();
+                                }
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error){
+                        error.printStackTrace();
+                    }
+                });
+        if (jsonRequest != null) {
+            Volley.newRequestQueue(getActivity()).add(jsonRequest);
+        }
+    }
+
+    public ArrayList<Feed> getData(){
+        return feeds_array;
     }
 
 }
