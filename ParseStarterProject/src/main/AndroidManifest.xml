@@ -12,8 +12,6 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
-<<<<<<< HEAD
     <uses-permission android:name="android.permission.CAMERA" />
 
     // Permission to Writing to SD cards
@@ -28,8 +26,7 @@
     <uses-feature android:name="android.hardware.camera.autofocus" />
     <uses-feature android:name="android.hardware.camera.flash" />
 
-=======
->>>>>>> Song
+
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />
@@ -73,7 +70,7 @@
             android:label="@string/title_activity_edit_profile" >
         </activity>
         <activity
-<<<<<<< HEAD
+
             android:name=".CameraActivity"
             android:label="@string/title_activity_camera" >
         </activity>
@@ -84,10 +81,10 @@
         <activity
             android:name=".PostActivity"
             android:label="@string/title_activity_post" >
-=======
+
             android:name=".CommentActivity"
             android:label="@string/title_activity_comment" >
->>>>>>> Song
+
         </activity>
     </application>
 
