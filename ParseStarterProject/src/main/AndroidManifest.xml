@@ -81,7 +81,8 @@
         <activity
             android:name=".PostActivity"
             android:label="@string/title_activity_post" >
-
+        </activity>
+        <activity
             android:name=".CommentActivity"
             android:label="@string/title_activity_comment" >
 

@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.android.volley.Cache;
 import com.android.volley.Request;
@@ -291,12 +292,18 @@ public class BrowseFragment extends Fragment {
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
+                            Toast.makeText(getActivity(),
+                                    "Network failure",
+                                    Toast.LENGTH_LONG).show();
                         }
                     }
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error){
                         error.printStackTrace();
+                        Toast.makeText(getActivity(),
+                                "Network failure",
+                                Toast.LENGTH_LONG).show();
                     }
                 });
         if (jsonRequest != null) {

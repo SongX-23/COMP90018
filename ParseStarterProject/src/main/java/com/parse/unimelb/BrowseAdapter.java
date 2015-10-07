@@ -33,7 +33,11 @@ public class BrowseAdapter extends BaseAdapter{
         mContext = c;
         feed_array = data;
     }
-
+    @Override
+    public void notifyDataSetChanged() // Create this function in your adapter class
+    {
+        super.notifyDataSetChanged();
+    }
     @Override
     public int getCount() {
         return feed_array.size();
@@ -58,7 +62,7 @@ public class BrowseAdapter extends BaseAdapter{
         TextView userName = (TextView) rowView.findViewById(R.id.userNameTextView);
         TextView locationName = (TextView) rowView.findViewById(R.id.locationTextView);
         ImageView photoImg = (ImageView) rowView.findViewById(R.id.photoImageView);
-        TextView likedText = (TextView) rowView.findViewById(R.id.likedTextView);
+        final TextView likedText = (TextView) rowView.findViewById(R.id.likedTextView);
         TextView commentText = (TextView) rowView.findViewById(R.id.commentTextView);
         Button likeButton = (Button) rowView.findViewById(R.id.likeButton);
         likeButton.setOnClickListener(new View.OnClickListener() {
@@ -74,6 +78,7 @@ public class BrowseAdapter extends BaseAdapter{
                                 @Override
                                 public void onResponse(JSONObject response) {
                                     try {
+                                        String tmpLike = likedText.getText().toString();
                                         JSONObject jsonResponse = response.getJSONObject("meta");
                                         int code = jsonResponse.getInt("code");
                                         if (code == 200){
@@ -81,6 +86,11 @@ public class BrowseAdapter extends BaseAdapter{
                                                     "You liked this photo!",
                                                     Toast.LENGTH_LONG).show();
                                             //update liked list
+
+                                            int likeNum = Integer.parseInt(tmpLike.replaceAll("[^0-9]", "")) + 1;
+                                            String finalLikeText = String.valueOf(likeNum) + " likes";
+                                            likedText.setText(finalLikeText);
+                                            System.out.println("Like: " + finalLikeText);
                                             notifyDataSetChanged();
                                         }
                                     } catch (JSONException e) {
