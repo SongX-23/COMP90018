@@ -100,7 +100,8 @@ public class BrowseFragment extends Fragment {
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
-        if (isVisibleToUser) { loadFeeds(); }
+        if (isVisibleToUser) { loadFeeds();
+            }
         else {  }
     }
 
@@ -224,6 +225,9 @@ public class BrowseFragment extends Fragment {
                                 //DEBUG
                                 System.out.println("FEED: image = " + imageURL);
                                 feedObj.setPhotoURL(imageURL);
+                                if(browseAdapter != null) {
+                                    browseAdapter.notifyDataSetChanged();
+                                }
                                 //fetch the image
                                 ImageRequest imgRequest = new ImageRequest(imageURL, new Response.Listener<Bitmap>() {
                                     @Override
@@ -234,7 +238,7 @@ public class BrowseFragment extends Fragment {
                                             browseAdapter.notifyDataSetChanged();
                                         }
                                     }
-                                },0,0, ImageView.ScaleType.FIT_XY, Bitmap.Config.ARGB_8888,
+                                },0,0, ImageView.ScaleType.FIT_XY, Bitmap.Config.RGB_565,
                                         new Response.ErrorListener(){
                                             @Override
                                             public void onErrorResponse(VolleyError error) {
@@ -267,7 +271,7 @@ public class BrowseFragment extends Fragment {
                                             browseAdapter.notifyDataSetChanged();
                                         }
                                     }
-                                },0,0, ImageView.ScaleType.FIT_XY, Bitmap.Config.ARGB_8888,
+                                },0,0, ImageView.ScaleType.FIT_XY, Bitmap.Config.RGB_565,
                                         new Response.ErrorListener(){
                                             @Override
                                             public void onErrorResponse(VolleyError error) {

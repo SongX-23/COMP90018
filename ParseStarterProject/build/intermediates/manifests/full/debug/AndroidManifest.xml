@@ -18,7 +18,18 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    // Permission to Writing to SD cards
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    // Permission to record video
+    <uses-permission android:name="android.permission.RECORD_VIDEO" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    // Permission to use flashlight and auto-focus
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
 
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature android:name="android.hardware.camera.flash" />
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />
@@ -62,7 +73,17 @@
             android:label="@string/title_activity_edit_profile" >
         </activity>
         <activity
-            android:name="com.parse.unimelb.CommentActivity"
+            android:name="com.parse.unimelb.CameraActivity"
+            android:label="@string/title_activity_camera" >
+        </activity>
+        <activity
+            android:name="com.parse.unimelb.EditPhotoActivity"
+            android:label="@string/title_activity_edit_photo" >
+        </activity>
+        <activity
+            android:name="com.parse.unimelb.PostActivity"
+            android:label="@string/title_activity_post" >
+            android:name=".CommentActivity"
             android:label="@string/title_activity_comment" >
         </activity>
     </application>
