@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -91,10 +92,23 @@ public class BrowseFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_browse, container, false);
+        Button sortDate = (Button) view.findViewById(R.id.sortDateButton);
+        Button sortLoc = (Button) view.findViewById(R.id.sortLocButton);
         listView = (ListView) view.findViewById(R.id.browseListView);
         browseAdapter = new BrowseAdapter(getActivity(),getData());
         listView.setAdapter(browseAdapter);
+        sortDate.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                browseAdapter.setFeed_array(getData());
+                browseAdapter.notifyDataSetChanged();
+            }
+        });
+        sortLoc.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
 
+                browseAdapter.notifyDataSetChanged();
+            }
+        });
         return view;
     }
 

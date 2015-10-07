@@ -27,6 +27,11 @@ import java.util.ArrayList;
  */
 public class BrowseAdapter extends BaseAdapter{
     private Context mContext;
+
+    public void setFeed_array(ArrayList<Feed> feed_array) {
+        this.feed_array = feed_array;
+    }
+
     private ArrayList<Feed> feed_array;
     private String finalLikeText;
     private String tmpLike;

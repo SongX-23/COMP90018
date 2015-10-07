@@ -51,8 +51,8 @@
         android:layout_below="@+id/photoImageView"
         android:layout_alignLeft="@+id/userProfileImageView"
         android:layout_alignStart="@+id/userProfileImageView"
-        android:backgroundTint="@android:color/holo_green_light"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:background="#ff6262"/>
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -63,7 +63,10 @@
         android:layout_alignBottom="@+id/likeButton"
         android:layout_toRightOf="@+id/likeButton"
         android:layout_toEndOf="@+id/likeButton"
-        android:backgroundTint="@android:color/holo_blue_light"/>
+        android:background="#91eb67"
+        android:layout_marginLeft="20dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"/>
 
     <TextView
         android:layout_width="wrap_content"
