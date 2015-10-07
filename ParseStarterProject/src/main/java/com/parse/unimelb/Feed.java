@@ -8,7 +8,7 @@ import java.util.ArrayList;
 /**
  * Created by songxue on 2/10/2015.
  */
-public class Feed {
+public class Feed{
     private String displayName;
     private String userProfileImgURL;
     private String photoURL;

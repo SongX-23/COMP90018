@@ -32,6 +32,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -53,6 +55,7 @@ public class BrowseFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
     private static ArrayList<Feed> feeds_array;
+    private static ArrayList<Feed> new_feeds_array;
     private ListView listView;
     private BrowseAdapter browseAdapter;
     private double latitudeCurrent;
@@ -125,7 +128,8 @@ public class BrowseFragment extends Fragment {
         });
         sortLoc.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-
+                Collections.sort(getData(), new BeanComparator("distance"));
+                browseAdapter.setFeed_array(feeds_array);
                 browseAdapter.notifyDataSetChanged();
             }
         });
@@ -203,7 +207,7 @@ public class BrowseFragment extends Fragment {
                                     }
                                 }else{
                                     feedObj.setLocation("");
-                                    feedObj.setDistance(-1.0);
+                                    feedObj.setDistance(Math.pow((Math.pow(180.0,2) + Math.pow(360.0,2)),0.5));
                                 }
 
                                 //get the comment block
