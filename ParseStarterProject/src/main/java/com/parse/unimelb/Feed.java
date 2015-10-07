@@ -8,7 +8,7 @@ import java.util.ArrayList;
 /**
  * Created by songxue on 2/10/2015.
  */
-public class Feed {
+public class Feed{
     private String displayName;
     private String userProfileImgURL;
     private String photoURL;
@@ -18,6 +18,33 @@ public class Feed {
     private String mediaID;
     private ArrayList<String> comment;
     private ArrayList<String> like;
+    private double latitude;
+    private double longitude;
+    private double distance;
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    public double getDistance() {
+        return distance;
+    }
+
+    public void setDistance(double distance) {
+        this.distance = distance;
+    }
 
     public Feed(String displayName, String userProfileImgURL, String photoURL, String location, ArrayList<String> comment, ArrayList<String> like) {
         this.displayName = displayName;

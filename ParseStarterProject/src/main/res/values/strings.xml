@@ -48,5 +48,8 @@
     <string name="title_activity_edit_photo">EditPhotoActivity</string>
     <string name="title_activity_post">PostActivity</string>
     <string name="title_activity_comment">CommentActivity</string>
+    <string name="cancel">Cancel</string>
+    <string name="GPSAlertDialogTitle">GPS Enabling Alert</string>
+    <string name="GPSAlertDialogMessage">Please enable GPS to use this service</string>
 
 </resources>

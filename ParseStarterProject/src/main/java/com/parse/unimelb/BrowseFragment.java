@@ -8,8 +8,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Cache;
@@ -30,6 +32,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -51,8 +55,11 @@ public class BrowseFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
     private static ArrayList<Feed> feeds_array;
+    private static ArrayList<Feed> new_feeds_array;
     private ListView listView;
     private BrowseAdapter browseAdapter;
+    private double latitudeCurrent;
+    private double longitudeCurrent;
 
     /**
      * Use this factory method to create a new instance of
@@ -91,10 +98,41 @@ public class BrowseFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_browse, container, false);
+        //getting GPS location
+        // check if GPS enabled
+        GPSTracker gpsTracker = new GPSTracker(this.getActivity());
+
+        if (gpsTracker.getIsGPSTrackingEnabled())
+        {
+            latitudeCurrent = gpsTracker.latitude;
+            longitudeCurrent = gpsTracker.longitude;
+        }
+        else
+        {
+            // can't get location
+            // GPS or Network is not enabled
+            // Ask user to enable GPS/network in settings
+            gpsTracker.showSettingsAlert();
+        }
+        Button sortDate = (Button) view.findViewById(R.id.sortDateButton);
+        Button sortLoc = (Button) view.findViewById(R.id.sortLocButton);
         listView = (ListView) view.findViewById(R.id.browseListView);
         browseAdapter = new BrowseAdapter(getActivity(),getData());
         listView.setAdapter(browseAdapter);
-
+        sortDate.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                loadFeeds();
+                browseAdapter.setFeed_array(getData());
+                browseAdapter.notifyDataSetChanged();
+            }
+        });
+        sortLoc.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                Collections.sort(getData(), new BeanComparator("distance"));
+                browseAdapter.setFeed_array(feeds_array);
+                browseAdapter.notifyDataSetChanged();
+            }
+        });
         return view;
     }
 
@@ -112,7 +150,6 @@ public class BrowseFragment extends Fragment {
             mListener.onFragmentInteraction(uri);
         }
     }
-
 
     /**
      * This interface must be implemented by activities that contain this
@@ -159,11 +196,18 @@ public class BrowseFragment extends Fragment {
                                     if (locationJSON != null) {
                                         String location = locationJSON.getString("name");
                                         feedObj.setLocation(location);
+                                        double longitude = locationJSON.getDouble("longitude");
+                                        feedObj.setLongitude(longitude);
+                                        double latitude = locationJSON.getDouble("latitude");
+                                        feedObj.setLatitude(latitude);
+                                        double distance = Math.pow(Math.pow((latitude - latitudeCurrent),2) + Math.pow((longitude - longitudeCurrent),2),0.5);
+                                        feedObj.setDistance(distance);
                                         //DEBUG
-                                        System.out.println("FEED: location = " + location);
+                                        System.out.println("FEED: location = " + distance);
                                     }
                                 }else{
                                     feedObj.setLocation("");
+                                    feedObj.setDistance(Math.pow((Math.pow(180.0,2) + Math.pow(360.0,2)),0.5));
                                 }
 
                                 //get the comment block
