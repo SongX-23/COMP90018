@@ -28,6 +28,9 @@ import java.util.ArrayList;
 public class BrowseAdapter extends BaseAdapter{
     private Context mContext;
     private ArrayList<Feed> feed_array;
+    private String finalLikeText;
+    private String tmpLike;
+    private int likePosition;
 
     public BrowseAdapter(Context c, ArrayList<Feed> data) {
         mContext = c;
@@ -54,7 +57,7 @@ public class BrowseAdapter extends BaseAdapter{
     }
 
     @Override
-    public View getView(int position, View view, ViewGroup viewGroup) {
+    public View getView(final int position, View view, ViewGroup viewGroup) {
         LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.feed, null, true);
         final Feed oneFeed = feed_array.get(position);
@@ -64,9 +67,11 @@ public class BrowseAdapter extends BaseAdapter{
         ImageView photoImg = (ImageView) rowView.findViewById(R.id.photoImageView);
         final TextView likedText = (TextView) rowView.findViewById(R.id.likedTextView);
         TextView commentText = (TextView) rowView.findViewById(R.id.commentTextView);
-        Button likeButton = (Button) rowView.findViewById(R.id.likeButton);
+        final Button likeButton = (Button) rowView.findViewById(R.id.likeButton);
         likeButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
+                tmpLike = likedText.getText().toString();
+                likePosition = position;
                 String url = mContext.getResources().getString(R.string.instagram_api_url)
                             + mContext.getResources().getString(R.string.instagram_api_media_method)
                             + oneFeed.getMediaID().toString()
@@ -78,7 +83,6 @@ public class BrowseAdapter extends BaseAdapter{
                                 @Override
                                 public void onResponse(JSONObject response) {
                                     try {
-                                        String tmpLike = likedText.getText().toString();
                                         JSONObject jsonResponse = response.getJSONObject("meta");
                                         int code = jsonResponse.getInt("code");
                                         if (code == 200){
@@ -86,28 +90,38 @@ public class BrowseAdapter extends BaseAdapter{
                                                     "You liked this photo!",
                                                     Toast.LENGTH_LONG).show();
                                             //update liked list
-
-                                            int likeNum = Integer.parseInt(tmpLike.replaceAll("[^0-9]", "")) + 1;
-                                            String finalLikeText = String.valueOf(likeNum) + " likes";
-                                            likedText.setText(finalLikeText);
-                                            System.out.println("Like: " + finalLikeText);
-                                            notifyDataSetChanged();
                                         }
+                                        System.out.println("Like: " + tmpLike);
                                     } catch (JSONException e) {
                                         e.printStackTrace();
                                     }
+
                                 }
                             },
                             new Response.ErrorListener() {
                                 @Override
                                 public void onErrorResponse(VolleyError error) {
                                     error.printStackTrace();
-
+                                    Toast.makeText(mContext,
+                                            "Network failure",
+                                            Toast.LENGTH_LONG).show();
+                                    likedText.setText(oneFeed.getLike().toString());
                                 }
                             });
                     Volley.newRequestQueue(mContext.getApplicationContext()).add(postRequest);
+                    if (tmpLike.equals(oneFeed.getLike().toString())) {
+                        if (tmpLike.length() > 0) {
+                            if (Character.isDigit(tmpLike.charAt(1))) {
+                                int likeNum = Integer.parseInt(tmpLike.replaceAll("[^0-9]", "")) + 1;
+                                finalLikeText = "[" + String.valueOf(likeNum) + " likes]";
+                            } else {
+                                finalLikeText = tmpLike.replace("]", "") + ", carl_xs]";
+                            }
+                        }
+                        likedText.setText(finalLikeText);
+                    }
+                System.out.println("Like: " + finalLikeText);
                 }
-
         });
         Button commentButton = (Button) rowView.findViewById(R.id.commentButton);
        commentButton.setOnClickListener(new View.OnClickListener() {
@@ -123,11 +137,20 @@ public class BrowseAdapter extends BaseAdapter{
         locationName.setText(oneFeed.getLocation());
         photoImg.setImageBitmap(oneFeed.getPhoto());
         if (oneFeed.getLike() != null) {
-            likedText.setText(oneFeed.getLike().toString().replace(',',' '));
+            System.out.println("Like: " + likedText.getText());
+            if (tmpLike == null && finalLikeText == null) {
+                likedText.setText(oneFeed.getLike().toString().replace(',', ' '));
+            }else if(tmpLike != null && finalLikeText != null && position == likePosition){
+                likedText.setText(finalLikeText);
+            }else{
+                likedText.setText(oneFeed.getLike().toString().replace(',', ' '));
+            }
         }
         if (oneFeed.getComment() != null) {
-            commentText.setText(oneFeed.getComment().toString().replace(',',' '));
+            commentText.setText(oneFeed.getComment().toString().replace(',',' ').substring(1,
+                    oneFeed.getComment().toString().length()-1));
         }
         return rowView;
     }
+
 }
