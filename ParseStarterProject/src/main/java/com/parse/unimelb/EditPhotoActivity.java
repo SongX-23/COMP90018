@@ -38,7 +38,6 @@ public class EditPhotoActivity extends Activity {
     static int progress_brightness = 0;
     static int FILTER_STATIC = 0; // 0 represents no filters on, 1 one filter applied.
 
-    //TODO: add crop function
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -188,7 +187,7 @@ public class EditPhotoActivity extends Activity {
                     Log.d("In Saving File", e + "");
                 }
 
-                // Pass the new image to the next edit view
+                // Pass the new image to the next post view
                 Intent intent = new Intent();
                 intent.putExtra("post_img", myImage.toString());
                 intent.setClass(EditPhotoActivity.this, PostActivity.class);
