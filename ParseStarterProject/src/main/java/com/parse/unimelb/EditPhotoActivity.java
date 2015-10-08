@@ -4,21 +4,15 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Environment;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
-
 import com.parse.unimelb.Helper.BitmapStore;
 import com.parse.unimelb.Helper.ImageProcessing;
-import com.parse.unimelb.R;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -26,8 +20,9 @@ import java.io.IOException;
 
 public class EditPhotoActivity extends Activity {
     private ImageView imageView;
-    private Bitmap currentBitmap;
+    private Bitmap rawBitmap;
     private Bitmap newBitmap;
+    private Bitmap contrastBitmap;
 
     private Button btnColorFilter = null;
     private Button btnSaturation = null;
@@ -41,6 +36,7 @@ public class EditPhotoActivity extends Activity {
 
     static int progress_contrast = 0;
     static int progress_brightness = 0;
+    static int FILTER_STATIC = 0; // 0 represents no filters on, 1 one filter applied.
 
     //TODO: add crop function
     @Override
@@ -51,9 +47,10 @@ public class EditPhotoActivity extends Activity {
         imageView = (ImageView)findViewById(R.id.imageview_edit);
         Intent intent = getIntent();
         if (intent != null) {
-            currentBitmap = BitmapStore.getBitmap();
-            imageView.setImageBitmap(currentBitmap);
-            newBitmap = currentBitmap;
+            rawBitmap = BitmapStore.getBitmap();
+            imageView.setImageBitmap(rawBitmap);
+            newBitmap = BitmapStore.getBitmap();
+            if(rawBitmap.isRecycled()) System.out.print("ERRRRRRRRRRR" );
         }
 
         // Filters
@@ -66,26 +63,42 @@ public class EditPhotoActivity extends Activity {
         btnColorFilter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                newBitmap = ImageProcessing.doColorFilter(currentBitmap,
-                        0.5, 0.5, 0.5);
-                imageView.setImageBitmap(newBitmap);
+                if(FILTER_STATIC == 1) {
+                    newBitmap = ImageProcessing.doColorFilter(rawBitmap, 0.5, 0.5, 0.5);
+                    imageView.setImageBitmap(newBitmap);
+                } else {
+                    newBitmap = ImageProcessing.doColorFilter(newBitmap, 0.5, 0.5, 0.5);
+                    imageView.setImageBitmap(newBitmap);
+                    FILTER_STATIC = 1;
+                }
             }
         });
 
         btnSaturation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                newBitmap = ImageProcessing
-                        .applySaturationFilter(currentBitmap, 1);
-                imageView.setImageBitmap(newBitmap);
+                if(FILTER_STATIC == 1) {
+                    newBitmap = ImageProcessing.applySaturationFilter(rawBitmap, 1);
+                    imageView.setImageBitmap(newBitmap);
+                } else {
+                    newBitmap = ImageProcessing.applySaturationFilter(newBitmap, 1);
+                    imageView.setImageBitmap(newBitmap);
+                    FILTER_STATIC = 1;
+                }
             }
         });
 
         btnEngrave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                newBitmap = ImageProcessing.engrave(currentBitmap);
-                imageView.setImageBitmap(newBitmap);
+                if(FILTER_STATIC == 1) {
+                    newBitmap = ImageProcessing.engrave(rawBitmap);
+                    imageView.setImageBitmap(newBitmap);
+                } else {
+                    newBitmap = ImageProcessing.engrave(newBitmap);
+                    imageView.setImageBitmap(newBitmap);
+                    FILTER_STATIC = 1;
+                }
             }
         });
 
@@ -103,42 +116,46 @@ public class EditPhotoActivity extends Activity {
         seekBarContrast.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                textview_contrast.setText("Contrast: " + String.valueOf(progress_contrast));
+                if(rawBitmap.isRecycled()) System.out.print("ERRRRRRRRRRR2" );
+
+                textview_contrast.setText("Contrast: " + String.valueOf(progress));
+                newBitmap = ImageProcessing.changeBitmapContrastBrightness(rawBitmap,
+                        (float) progress/10f, (float) 5.12*(progress_brightness-50f));
+                imageView.setImageBitmap(newBitmap);
             }
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-                if (newBitmap != null) newBitmap.recycle();
-
+//                if (newBitmap != null) newBitmap.recycle();
             }
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                progress_contrast = seekBarBrightness.getProgress();
-                newBitmap = ImageProcessing.changeBitmapContrastBrightness(currentBitmap,
-                        (float) progress_contrast, (float) progress_brightness);
-                imageView.setImageBitmap(newBitmap);
+                progress_contrast = seekBarContrast.getProgress();
             }
         });
 
         seekBarBrightness.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                textview_brightness.setText("Brightness: " + String.valueOf(progress_brightness));
+                if(rawBitmap.isRecycled()) System.out.print("ERRRRRRRRRRR3" );
+
+                textview_brightness.setText("Brightness: " + String.valueOf(progress));
+
+                newBitmap = ImageProcessing.changeBitmapContrastBrightness(rawBitmap,
+                        (float) progress_contrast/10f, (float) 5.12*(progress -50f));
+                imageView.setImageBitmap(newBitmap);
             }
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-                if (newBitmap != null) newBitmap.recycle();
+//                if (newBitmap != null) newBitmap.recycle();
 
             }
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                progress_brightness = (seekBarBrightness.getProgress()) - 255;
-                newBitmap = ImageProcessing.changeBitmapContrastBrightness(currentBitmap,
-                        (float) progress_contrast, (float) progress_brightness);
-                imageView.setImageBitmap(newBitmap);
+                progress_brightness = (seekBarBrightness.getProgress());
             }
         });
 
