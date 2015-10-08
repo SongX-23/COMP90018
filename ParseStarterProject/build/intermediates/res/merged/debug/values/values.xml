@@ -245,6 +245,7 @@
     <eat-comment/>
     <string name="title_activity_camera">CameraActivity</string>
     <string name="title_activity_comment">CommentActivity</string>
+    <string name="title_activity_crop">CropActivity</string>
     <string name="title_activity_edit_photo">EditPhotoActivity</string>
     <string name="title_activity_edit_profile">EditProfileActivity</string>
     <string name="title_activity_home">HomeActivity</string>

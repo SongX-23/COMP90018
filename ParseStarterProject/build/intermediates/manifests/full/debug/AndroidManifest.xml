@@ -38,6 +38,9 @@
         android:name="android.hardware.camera"
         android:required="true" />
 
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:name="com.parse.unimelb.KiloGram"
         android:allowBackup="true"
@@ -91,6 +94,10 @@
         <activity
             android:name="com.parse.unimelb.CommentActivity"
             android:label="@string/title_activity_comment" >
+        </activity>
+        <activity
+            android:name="com.parse.unimelb.CropActivity"
+            android:label="@string/title_activity_crop" >
         </activity>
     </application>
 

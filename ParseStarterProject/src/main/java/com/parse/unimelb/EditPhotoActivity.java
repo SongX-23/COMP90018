@@ -50,7 +50,6 @@ public class EditPhotoActivity extends Activity {
             rawBitmap = BitmapStore.getBitmap();
             imageView.setImageBitmap(rawBitmap);
             newBitmap = BitmapStore.getBitmap();
-            if(rawBitmap.isRecycled()) System.out.print("ERRRRRRRRRRR" );
         }
 
         // Filters
@@ -116,8 +115,6 @@ public class EditPhotoActivity extends Activity {
         seekBarContrast.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                if(rawBitmap.isRecycled()) System.out.print("ERRRRRRRRRRR2" );
-
                 textview_contrast.setText("Contrast: " + String.valueOf(progress));
                 newBitmap = ImageProcessing.changeBitmapContrastBrightness(rawBitmap,
                         (float) progress/10f, (float) 5.12*(progress_brightness-50f));
@@ -138,8 +135,6 @@ public class EditPhotoActivity extends Activity {
         seekBarBrightness.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                if(rawBitmap.isRecycled()) System.out.print("ERRRRRRRRRRR3" );
-
                 textview_brightness.setText("Brightness: " + String.valueOf(progress));
 
                 newBitmap = ImageProcessing.changeBitmapContrastBrightness(rawBitmap,
@@ -150,12 +145,23 @@ public class EditPhotoActivity extends Activity {
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
 //                if (newBitmap != null) newBitmap.recycle();
-
             }
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
                 progress_brightness = (seekBarBrightness.getProgress());
+            }
+        });
+
+
+        //listen for crop butten
+        btnCrop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                BitmapStore.setBitmap(newBitmap);
+
+                Intent intent = new Intent(EditPhotoActivity.this, CropActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -194,8 +200,6 @@ public class EditPhotoActivity extends Activity {
     @Override
     public void onDestroy() {
         super.onDestroy();
-//        newBitmap.recycle();
-//        currentBitmap.recycle();
     }
 }
 
