@@ -1,12 +1,14 @@
 package com.parse.unimelb;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.parse.unimelb.R;
 
@@ -65,7 +67,16 @@ public class DiscoveryFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_discovery, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_discovery, container, false);
+        Button b = (Button) view.findViewById(R.id.button);
+        b.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                Intent indent = new Intent(getActivity(), SwipeActivity.class);
+                startActivity(indent);
+            }
+        });
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

@@ -251,6 +251,7 @@
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_post">PostActivity</string>
     <string name="title_activity_signup">SignupActivity</string>
+    <string name="title_activity_swipe">SwipeActivity</string>
     <string name="title_section1">Browse</string>
     <string name="title_section2">Discover</string>
     <string name="title_section3">Photo</string>

@@ -92,6 +92,10 @@
             android:name="com.parse.unimelb.CommentActivity"
             android:label="@string/title_activity_comment" >
         </activity>
+        <activity
+            android:name="com.parse.unimelb.SwipeActivity"
+            android:label="@string/title_activity_swipe" >
+        </activity>
     </application>
 
 </manifest>
