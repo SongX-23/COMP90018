@@ -1,26 +1,40 @@
 package com.parse.unimelb;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Environment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Switch;
 
 import com.astuetz.PagerSlidingTabStrip;
+import com.parse.unimelb.Helper.BitmapStore;
 
+import java.io.File;
 import java.util.Locale;
 
-public class PostActivity extends AppCompatActivity {
+public class PostActivity extends Activity {
 
-    private ImageView imageView;
-    private Bitmap currentBitmap;
-    ViewPager mViewPager;
-    PostTabsAdapter mTabsAdapter;
+    private ImageView imageview = null;
+    private Bitmap rawBitmap = null;
+    private Bitmap thumbnail = null;
+
+    private Button btnBluetooth = null;
+    private Button btnPost = null;
+    private Switch switchLocation = null;
+    private EditText caption = null;
+    private String strCaption;
+
 
     //TODO: garbage recycle: newBitMap, currentBitmap in the edit activity
     //TODO: use api to post new photos
@@ -31,56 +45,29 @@ public class PostActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post);
 
-        mTabsAdapter = new PostTabsAdapter(getSupportFragmentManager());
-        mViewPager = (ViewPager) findViewById(R.id.pager);
+        imageview = (ImageView) findViewById(R.id.thumbnail);
 
-        mViewPager.setAdapter(mTabsAdapter);
-
-        PagerSlidingTabStrip tabs = (PagerSlidingTabStrip) findViewById(R.id.tabs);
-        tabs.setViewPager(mViewPager);
-
-//        imageView = (ImageView) findViewById(R.id.imageview_post);
+        // get the bitmap from file
         Intent intent = getIntent();
-        if (intent != null) {
-            String filePath = intent.getStringExtra("post_img");
-            currentBitmap = BitmapFactory.decodeFile(filePath);
-//            imageView.setImageBitmap(currentBitmap);
-        }
-    }
+        String filePath = intent.getStringExtra("post_img");
 
-    public class PostTabsAdapter extends FragmentStatePagerAdapter {
-        public PostTabsAdapter(FragmentManager fm) {
-            super(fm);
-        }
+        rawBitmap = BitmapFactory.decodeFile(filePath);
 
-        @Override
-        public Fragment getItem(int i) {
-            switch (i) {
-                case 0:
-                    return new PostFragment();
-                case 1:
-                    return new BluetoothFragment();
-                default:
-                    return null;
+        thumbnail = rawBitmap;
+        imageview.setImageBitmap(thumbnail);
+
+        //TODO: bluetooth button, either to go to another activity, or show the list
+        btnBluetooth = (Button) findViewById(R.id.button_bluetooth);
+        btnBluetooth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
-        }
+        });
 
-        @Override
-        public int getCount() {
-            return 2;
-        }
+        
 
-        @Override
-        public CharSequence getPageTitle(int position) {
-            Locale l = Locale.getDefault();
-            switch (position) {
-                case 0:
-                    return "POST TO KILOGRAM";
-                case 1:
-                    return "SEND VIA BLUETOOTH";
-            }
-            return null;
-        }
+
     }
 }
 
