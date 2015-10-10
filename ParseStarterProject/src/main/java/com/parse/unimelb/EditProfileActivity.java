@@ -26,8 +26,8 @@ import com.parse.unimelb.R;
 
 public class EditProfileActivity extends AppCompatActivity {
     Button updateProfile, cancelUpdate;
-    Spinner genderSpinner;
-    EditText fullNameText, bioText, emailText, phoneText, cityText;
+    Spinner genderSpinner, citySpinner;
+    EditText fullNameText, bioText, emailText, phoneText;
     private String gender, fullName, email, phone, city, bio;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,15 +41,16 @@ public class EditProfileActivity extends AppCompatActivity {
         emailText = (EditText) this.findViewById(R.id.emailEditText);
         phoneText = (EditText) this.findViewById(R.id.phoneEditText);
         bioText = (EditText) this.findViewById(R.id.bioEditText);
-        cityText = (EditText) this.findViewById(R.id.cityEditText);
+        citySpinner = (Spinner) this.findViewById(R.id.citySpinner);
         // fetch the basic user info
         emailText.setText(currentUser.getEmail().toString());
         fullNameText.setText(currentUser.get("FullName").toString());
         phoneText.setText(currentUser.get("Phone").toString());
         bioText.setText(currentUser.get("Bio").toString());
-        cityText.setText(currentUser.get("City").toString());
+        String cityValue = currentUser.get("City").toString();
         String compareValue = currentUser.get("Gender").toString();
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.gender_arrays, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> cityAdapter = ArrayAdapter.createFromResource(this, R.array.city_arrays, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         genderSpinner.setAdapter(adapter);
         if (!compareValue.equals(null)) {
@@ -63,6 +64,24 @@ public class EditProfileActivity extends AppCompatActivity {
                 int loc;
                 loc = pos;
                 gender = parent.getItemAtPosition(pos).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> arg1) {
+            }
+        });
+        citySpinner.setAdapter(cityAdapter);
+        if (!cityValue.equals(null)) {
+            int spinnerPosition = cityAdapter.getPosition(cityValue);
+            citySpinner.setSelection(spinnerPosition);
+        }
+        //set the spinner
+        citySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view1, int pos, long id) {
+                int loc;
+                loc = pos;
+                city = parent.getItemAtPosition(pos).toString();
             }
 
             @Override
@@ -84,7 +103,7 @@ public class EditProfileActivity extends AppCompatActivity {
                 email = emailText.getText().toString();
                 bio = bioText.getText().toString();
                 phone = phoneText.getText().toString();
-                city = cityText.getText().toString();
+                //city = cityText.getText().toString();
                 if (fullName==null || email==null){
                     Toast.makeText(getApplicationContext(),
                             "Full name and Email can't be blank.",

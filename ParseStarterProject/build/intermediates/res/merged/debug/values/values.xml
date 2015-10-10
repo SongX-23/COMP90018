@@ -2,6 +2,15 @@
 <resources>
     <!-- From: file:/Users/songxue/Documents/Mobile%20Dev/Instagram/ParseStarterProject/src/main/res/values/strings.xml -->
     <eat-comment/>
+    <string-array name="city_arrays">
+        <item>Melbourne</item>
+        <item>Sydney</item>
+        <item>Darwin</item>
+        <item>Perth</item>
+        <item>Adelaide</item>
+        <item>Brisbane</item>
+        <item>Hobart</item>
+    </string-array>
     <string-array name="gender_arrays">
         <item>Choose</item>
         <item>Male</item>
@@ -222,6 +231,7 @@
     <string name="action_settings">Settings</string>
     <string name="app_name">KiloGram</string>
     <string name="cancel">Cancel</string>
+    <string name="city_prompt">Choose a city</string>
     <string name="gender_prompt">Choose a gender</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hello_world">Hello World!</string>

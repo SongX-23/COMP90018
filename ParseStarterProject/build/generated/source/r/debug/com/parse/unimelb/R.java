@@ -21,7 +21,8 @@ public final class R {
         public static final int abc_slide_out_top=0x7f050009;
     }
     public static final class array {
-        public static final int gender_arrays=0x7f0b0000;
+        public static final int city_arrays=0x7f0b0000;
+        public static final int gender_arrays=0x7f0b0001;
     }
     public static final class attr {
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
@@ -1735,7 +1736,7 @@ containing a value of this type.
         public static final int cancel_action=0x7f0d00a0;
         public static final int checkbox=0x7f0d003a;
         public static final int chronometer=0x7f0d00a6;
-        public static final int cityEditText=0x7f0d0072;
+        public static final int citySpinner=0x7f0d0072;
         public static final int collapseActionView=0x7f0d0017;
         public static final int commentButton=0x7f0d005a;
         public static final int commentEditText=0x7f0d0059;
@@ -1976,37 +1977,38 @@ containing a value of this type.
         public static final int action_settings=0x7f060014;
         public static final int app_name=0x7f060015;
         public static final int cancel=0x7f060016;
-        public static final int gender_prompt=0x7f060017;
-        public static final int hello_blank_fragment=0x7f060018;
-        public static final int hello_world=0x7f060019;
-        public static final int instagram_access_token=0x7f06001a;
-        public static final int instagram_api_location_method=0x7f06001b;
-        public static final int instagram_api_media_method=0x7f06001c;
-        public static final int instagram_api_tag_method=0x7f06001d;
-        public static final int instagram_api_url=0x7f06001e;
-        public static final int instagram_api_users_method=0x7f06001f;
-        public static final int instagram_client_id=0x7f060020;
-        public static final int instagram_client_key=0x7f060021;
-        public static final int instagram_user_id=0x7f060022;
-        public static final int parse_app_id=0x7f060023;
-        public static final int parse_client_key=0x7f060024;
-        public static final int profile_img_button_new=0x7f060025;
-        public static final int profile_img_button_remove=0x7f060026;
-        public static final int status_bar_notification_info_overflow=0x7f060027;
-        public static final int title_activity_camera=0x7f060028;
-        public static final int title_activity_comment=0x7f060029;
-        public static final int title_activity_edit_photo=0x7f06002a;
-        public static final int title_activity_edit_profile=0x7f06002b;
-        public static final int title_activity_home=0x7f06002c;
-        public static final int title_activity_login=0x7f06002d;
-        public static final int title_activity_post=0x7f06002e;
-        public static final int title_activity_signup=0x7f06002f;
-        public static final int title_activity_swipe=0x7f060030;
-        public static final int title_section1=0x7f060031;
-        public static final int title_section2=0x7f060032;
-        public static final int title_section3=0x7f060033;
-        public static final int title_section4=0x7f060034;
-        public static final int title_section5=0x7f060035;
+        public static final int city_prompt=0x7f060017;
+        public static final int gender_prompt=0x7f060018;
+        public static final int hello_blank_fragment=0x7f060019;
+        public static final int hello_world=0x7f06001a;
+        public static final int instagram_access_token=0x7f06001b;
+        public static final int instagram_api_location_method=0x7f06001c;
+        public static final int instagram_api_media_method=0x7f06001d;
+        public static final int instagram_api_tag_method=0x7f06001e;
+        public static final int instagram_api_url=0x7f06001f;
+        public static final int instagram_api_users_method=0x7f060020;
+        public static final int instagram_client_id=0x7f060021;
+        public static final int instagram_client_key=0x7f060022;
+        public static final int instagram_user_id=0x7f060023;
+        public static final int parse_app_id=0x7f060024;
+        public static final int parse_client_key=0x7f060025;
+        public static final int profile_img_button_new=0x7f060026;
+        public static final int profile_img_button_remove=0x7f060027;
+        public static final int status_bar_notification_info_overflow=0x7f060028;
+        public static final int title_activity_camera=0x7f060029;
+        public static final int title_activity_comment=0x7f06002a;
+        public static final int title_activity_edit_photo=0x7f06002b;
+        public static final int title_activity_edit_profile=0x7f06002c;
+        public static final int title_activity_home=0x7f06002d;
+        public static final int title_activity_login=0x7f06002e;
+        public static final int title_activity_post=0x7f06002f;
+        public static final int title_activity_signup=0x7f060030;
+        public static final int title_activity_swipe=0x7f060031;
+        public static final int title_section1=0x7f060032;
+        public static final int title_section2=0x7f060033;
+        public static final int title_section3=0x7f060034;
+        public static final int title_section4=0x7f060035;
+        public static final int title_section5=0x7f060036;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat=0x7f080073;
