@@ -22,7 +22,7 @@ public class EditPhotoActivity extends Activity {
     private ImageView imageView;
     private Bitmap rawBitmap;
     private Bitmap newBitmap;
-    private Bitmap contrastBitmap;
+    private Bitmap scaledBitmap;
 
     private Button btnColorFilter = null;
     private Button btnSaturation = null;
@@ -47,8 +47,9 @@ public class EditPhotoActivity extends Activity {
         Intent intent = getIntent();
         if (intent != null) {
             rawBitmap = BitmapStore.getBitmap();
+            rawBitmap = Bitmap.createScaledBitmap(rawBitmap, 640, 640, false);
             imageView.setImageBitmap(rawBitmap);
-            newBitmap = BitmapStore.getBitmap();
+            newBitmap = rawBitmap;
         }
 
         // Filters
@@ -110,7 +111,7 @@ public class EditPhotoActivity extends Activity {
 
         // Listener for seekbar object
         //Bug-fixed need to figure out how to change contrast of the picture on the fly
-        //TODO: Bug-fix 2nd time return to editing, it will throw an error
+        //Bug-fixed 2nd time return to editing, it will throw an error
         seekBarContrast.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -168,6 +169,8 @@ public class EditPhotoActivity extends Activity {
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
+                scaledBitmap = Bitmap.createScaledBitmap(newBitmap, 640, 640, false);
+
                 // save the modified picture
                 File storagePath = new File(Environment.getExternalStorageDirectory()
                         + "/DCIM/100ANDRO/");
@@ -177,7 +180,7 @@ public class EditPhotoActivity extends Activity {
                         + "_mod.jpg");
                 try {
                     FileOutputStream out = new FileOutputStream(myImage);
-                    newBitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
+                    scaledBitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
 
                     out.flush();
                     out.close();

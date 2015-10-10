@@ -18,11 +18,11 @@ import android.widget.Toast;
 import java.io.ByteArrayOutputStream;
 
 /**
- *
+ * Deals with crop image
  * Created by raymond on 10/8/15.
  */
 public class CropView extends ImageView {
-
+//TODO: need to fix the bug when cropping the image, the actual image size is smaller than it shows
     Paint paint = new Paint();
     private static Point leftTop, rightBottom, center, previous;
 
@@ -164,7 +164,7 @@ public class CropView extends ImageView {
             return DRAG;
     }
 
-    public Bitmap getCroppedImage() throws Exception{
+    public Bitmap getCroppedImage() {
         BitmapDrawable drawable = (BitmapDrawable)getDrawable();
         float x = leftTop.x-center.x+(drawable.getBitmap().getWidth()/2);
         float y = leftTop.y-center.y+(drawable.getBitmap().getHeight()/2);

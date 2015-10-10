@@ -40,13 +40,13 @@ public class CropActivity extends Activity {
         btnOK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
+//                try {
                     cropBitmap = cropview.getCroppedImage();
                     cropview.setImageBitmap(cropBitmap);
-                } catch (Exception e){
-                    Toast.makeText(getBaseContext(), "Please choose another area",
-                            Toast.LENGTH_LONG);
-                }
+//                } catch (Exception e){
+//                    Toast.makeText(getApplicationContext(), "Please choose another area",
+//                            Toast.LENGTH_LONG);
+//                }
             }
         });
 

@@ -12,42 +12,21 @@
         android:layout_centerHorizontal="true"
         />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/caption"
-        android:layout_gravity="center_horizontal"
-        android:text="Write a caption ..."
-        android:layout_marginTop="40dp"
-        android:layout_below="@+id/thumbnail"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"/>
-
-    <Switch
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add Location"
-        android:id="@+id/switch_location"
-        android:checked="true"
-        android:layout_below="@+id/caption"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"/>
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Post to Instagram"
-        android:id="@+id/button"
-        android:layout_below="@+id/switch_location"
+        android:id="@+id/button_post"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"/>
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/thumbnail"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Send via Bluetooth"
         android:id="@+id/button_bluetooth"
-        android:layout_alignTop="@+id/button"
+        android:layout_alignTop="@+id/button_post"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
 
