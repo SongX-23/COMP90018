@@ -10,11 +10,27 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.parse.unimelb.SwipeActivity">
 
+    <ImageView
+        android:id="@+id/swipeThumbnail"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Swipe"
-        android:id="@+id/swipeTextView"
-        android:layout_centerVertical="true"
+        android:text="Sending to"
+        android:id="@+id/textview_send"
+        android:layout_below="@+id/swipeThumbnail"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/device_name"
+        android:layout_below="@+id/textview_send"
+        android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"/>
 </RelativeLayout>

@@ -28,6 +28,8 @@ public class PostActivity extends Activity {
 
     private Button btnBluetooth = null;
     private Button btnPost = null;
+    private String filePath = "";
+    private BluetoothPair btPair;
 
 
     // temp arraylist
@@ -44,21 +46,23 @@ public class PostActivity extends Activity {
 
         // get the bitmap from file
         Intent intent = getIntent();
-        final String filePath = intent.getStringExtra("post_img");
+        filePath = intent.getStringExtra("post_img");
 
         rawBitmap = BitmapFactory.decodeFile(filePath);
 
         thumbnail = rawBitmap;
         imageview.setImageBitmap(thumbnail);
 
-        bluetoothPairs.add(new BluetoothPair("Mark", "Device_1"));
-        bluetoothPairs.add(new BluetoothPair("Drake", "Device_2"));
 
         //TODO: bluetooth button, either to go to another activity, or show the list
         btnBluetooth = (Button) findViewById(R.id.button_bluetooth);
         btnBluetooth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // add list of device info to the arraylist every time
+                bluetoothPairs.add(new BluetoothPair("Mark", "Device_1"));
+                bluetoothPairs.add(new BluetoothPair("Drake", "Device_2"));
+
                 showDialog();
             }
         });
@@ -70,8 +74,6 @@ public class PostActivity extends Activity {
                 createInstagramIntent(filePath);
             }
         });
-
-
     }
 
 
@@ -100,10 +102,16 @@ public class PostActivity extends Activity {
 
         lv.setAdapter(clad);
 
+        // action on item
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(PostActivity.this,  SwipeActivity.class);
+                intent.putExtra("post_img", filePath);
+                btPair = bluetoothPairs.get(position);
+                intent.putExtra("device_info", btPair.getDevice() + "  " + btPair.getName());
 
+                startActivity(intent);
             }
         });
 

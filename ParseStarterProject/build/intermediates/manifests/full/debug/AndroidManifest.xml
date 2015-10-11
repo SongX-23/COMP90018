@@ -103,8 +103,8 @@
         <activity
             android:name="com.parse.unimelb.SwipeActivity"
             android:label="@string/title_activity_swipe" >
-				</activity>
-				<activity
+        </activity>
+        <activity
             android:name="com.parse.unimelb.CropActivity"
             android:label="@string/title_activity_crop" >
         </activity>
