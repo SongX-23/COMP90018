@@ -16,11 +16,21 @@ public class Feed{
     private Bitmap photo;
     private String location;
     private String mediaID;
+    private String caption;
     private ArrayList<String> comment;
     private ArrayList<String> like;
     private double latitude;
     private double longitude;
     private double distance;
+
+
+    public String getCaption() {
+        return caption;
+    }
+
+    public void setCaption(String caption) {
+        this.caption = caption;
+    }
 
     public double getLatitude() {
         return latitude;
@@ -46,13 +56,14 @@ public class Feed{
         this.distance = distance;
     }
 
-    public Feed(String displayName, String userProfileImgURL, String photoURL, String location, ArrayList<String> comment, ArrayList<String> like) {
+    public Feed(String displayName, String userProfileImgURL, String photoURL, String location, ArrayList<String> comment, ArrayList<String> like, String caption) {
         this.displayName = displayName;
         this.userProfileImgURL = userProfileImgURL;
         this.photoURL = photoURL;
         this.location = location;
         this.comment = comment;
         this.like = like;
+        this.caption = caption;
     }
     public Feed(){
 

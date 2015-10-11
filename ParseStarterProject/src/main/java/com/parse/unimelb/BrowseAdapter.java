@@ -73,6 +73,7 @@ public class BrowseAdapter extends BaseAdapter{
         final TextView likedText = (TextView) rowView.findViewById(R.id.likedTextView);
         TextView commentText = (TextView) rowView.findViewById(R.id.commentTextView);
         final Button likeButton = (Button) rowView.findViewById(R.id.likeButton);
+        TextView captionText = (TextView) rowView.findViewById(R.id.captionTextView);
         likeButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 tmpLike = likedText.getText().toString();
@@ -141,6 +142,7 @@ public class BrowseAdapter extends BaseAdapter{
         userName.setText(oneFeed.getDisplayName());
         locationName.setText(oneFeed.getLocation());
         photoImg.setImageBitmap(oneFeed.getPhoto());
+        captionText.setText(oneFeed.getCaption());
         if (oneFeed.getLike() != null) {
             System.out.println("Like: " + likedText.getText());
             if (tmpLike == null && finalLikeText == null) {

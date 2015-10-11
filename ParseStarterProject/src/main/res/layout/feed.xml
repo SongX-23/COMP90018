@@ -108,4 +108,25 @@
         android:layout_alignStart="@+id/textView"
         android:layout_marginBottom="3dp"
         android:layout_marginTop="3dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Caption"
+        android:id="@+id/captionText"
+        android:layout_below="@+id/commentTextView"
+        android:layout_alignLeft="@+id/commentTextView"
+        android:layout_alignStart="@+id/commentTextView"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/captionTextView"
+        android:layout_below="@+id/captionText"
+        android:layout_alignLeft="@+id/captionText"
+        android:layout_alignStart="@+id/captionText"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"/>
 </RelativeLayout>

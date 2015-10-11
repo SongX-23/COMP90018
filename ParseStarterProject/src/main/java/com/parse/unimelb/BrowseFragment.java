@@ -209,7 +209,13 @@ public class BrowseFragment extends Fragment {
                                     feedObj.setLocation("");
                                     feedObj.setDistance(Math.pow((Math.pow(180.0,2) + Math.pow(360.0,2)),0.5));
                                 }
-
+                                //get caption block
+                                if (!oneFeed.isNull("caption")) {
+                                    JSONObject captionJSON = oneFeed.getJSONObject("caption");
+                                    //get the caption string
+                                    String caption = captionJSON.getString("text");
+                                    feedObj.setCaption(caption);
+                                }
                                 //get the comment block
                                 JSONObject commentsJSON = oneFeed.getJSONObject("comments");
                                 //get comment counts
