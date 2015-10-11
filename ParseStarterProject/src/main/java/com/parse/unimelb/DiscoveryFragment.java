@@ -5,12 +5,25 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.ListFragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 
+import com.parse.FindCallback;
+import com.parse.Parse;
+import com.parse.ParseException;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
+import com.parse.unimelb.Helper.DiscoveryAdapter;
 import com.parse.unimelb.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -20,7 +33,7 @@ import com.parse.unimelb.R;
  * Use the {@link DiscoveryFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class DiscoveryFragment extends Fragment {
+public class DiscoveryFragment extends ListFragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -29,6 +42,10 @@ public class DiscoveryFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private ListView listView;
+    private DiscoveryAdapter discoveryAdapter;
+    private List<ParseUser> users;
 
     private OnFragmentInteractionListener mListener;
 
@@ -61,7 +78,32 @@ public class DiscoveryFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        recommendPeople();
     }
+
+    public void recommendPeople(){
+        //query all female
+        ParseQuery<ParseUser> query = ParseUser.getQuery();
+        /***
+         replace "female" with user's gender
+         ***/
+        query.whereEqualTo("username", "a@j.com");
+        query.findInBackground(new FindCallback<ParseUser>() {
+            public void done(List<ParseUser> objects, ParseException e) {
+                if (e == null) {
+                    Log.e("Discovery", objects.toString());
+                    users = objects;
+                    // The query was successful.
+                    //showPeople(objects);
+                } else {
+                    // Something went wrong.
+                    Log.e("Discovery", "Exception thrown");
+                }
+            }
+        });
+    }
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -70,6 +112,11 @@ public class DiscoveryFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_discovery, container, false);
         Button b = (Button) view.findViewById(R.id.button);
+
+        listView = (ListView) view.findViewById(R.id.list);
+        discoveryAdapter = new DiscoveryAdapter(getActivity(), getData());
+        listView.setAdapter(discoveryAdapter);
+
         b.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 Intent indent = new Intent(getActivity(), SwipeActivity.class);
@@ -79,11 +126,19 @@ public class DiscoveryFragment extends Fragment {
         return view;
     }
 
+    public void showPeople(List<ParseUser> peopleInfo){
+
+    }
+
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
         }
+    }
+
+    public List getData(){
+        return users;
     }
 
 //    @Override
