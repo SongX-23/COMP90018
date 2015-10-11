@@ -38,6 +38,9 @@
         android:name="android.hardware.camera"
         android:required="true" />
 
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:name="com.parse.unimelb.KiloGram"
         android:allowBackup="true"
@@ -87,6 +90,11 @@
         <activity
             android:name="com.parse.unimelb.PostActivity"
             android:label="@string/title_activity_post" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name="com.parse.unimelb.CommentActivity"
@@ -95,6 +103,10 @@
         <activity
             android:name="com.parse.unimelb.SwipeActivity"
             android:label="@string/title_activity_swipe" >
+				</activity>
+				<activity
+            android:name="com.parse.unimelb.CropActivity"
+            android:label="@string/title_activity_crop" >
         </activity>
     </application>
 

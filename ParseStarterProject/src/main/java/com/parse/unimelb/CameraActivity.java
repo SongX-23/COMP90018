@@ -125,7 +125,6 @@ public class CameraActivity extends Activity implements SurfaceHolder.Callback {
     }
 
 
-    //TODO: Add location information at when taking the image
     Camera.ShutterCallback cameraShutterCallback = new Camera.ShutterCallback(){
         @Override
         public void onShutter(){

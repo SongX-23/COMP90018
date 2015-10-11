@@ -62,5 +62,6 @@
     <string name="GPSAlertDialogTitle">GPS Enabling Alert</string>
     <string name="GPSAlertDialogMessage">Please enable GPS to use this service</string>
     <string name="title_activity_swipe">SwipeActivity</string>
+    <string name="title_activity_crop">CropActivity</string>
 
 </resources>

@@ -1696,7 +1696,11 @@ containing a value of this type.
         public static final int psts_background_tab=0x7f02003f;
     }
     public static final class id {
+<<<<<<< HEAD
         public static final int action0=0x7f0d009f;
+=======
+        public static final int action0=0x7f0d00a6;
+>>>>>>> CameraImprovement
         public static final int action_bar=0x7f0d0042;
         public static final int action_bar_activity_content=0x7f0d0000;
         public static final int action_bar_container=0x7f0d0041;
@@ -1705,21 +1709,31 @@ containing a value of this type.
         public static final int action_bar_subtitle=0x7f0d0026;
         public static final int action_bar_title=0x7f0d0025;
         public static final int action_context_bar=0x7f0d0043;
+<<<<<<< HEAD
         public static final int action_divider=0x7f0d00a3;
         public static final int action_log_out=0x7f0d00ae;
+=======
+        public static final int action_divider=0x7f0d00aa;
+        public static final int action_log_out=0x7f0d00b5;
+>>>>>>> CameraImprovement
         public static final int action_menu_divider=0x7f0d0002;
         public static final int action_menu_presenter=0x7f0d0003;
         public static final int action_mode_bar=0x7f0d003f;
         public static final int action_mode_bar_stub=0x7f0d003e;
         public static final int action_mode_close_button=0x7f0d0027;
+<<<<<<< HEAD
         public static final int action_settings=0x7f0d00ad;
+=======
+        public static final int action_settings=0x7f0d00b4;
+>>>>>>> CameraImprovement
         public static final int activity_chooser_view_content=0x7f0d0028;
         public static final int alertTitle=0x7f0d0032;
         public static final int always=0x7f0d0016;
         public static final int beginning=0x7f0d0013;
-        public static final int bioEditText=0x7f0d0070;
-        public static final int bioTextView=0x7f0d0073;
+        public static final int bioEditText=0x7f0d0073;
+        public static final int bioTextView=0x7f0d0076;
         public static final int bold=0x7f0d001b;
+<<<<<<< HEAD
         public static final int browseListView=0x7f0d008c;
         public static final int button=0x7f0d0090;
         public static final int button1=0x7f0d0054;
@@ -1728,34 +1742,61 @@ containing a value of this type.
         public static final int button_color=0x7f0d0061;
         public static final int button_crop=0x7f0d005f;
         public static final int button_engrave=0x7f0d0062;
+=======
+        public static final int browseListView=0x7f0d0092;
+        public static final int button1=0x7f0d0054;
+        public static final int buttonPanel=0x7f0d0038;
+        public static final int button_bluetooth=0x7f0d0082;
+        public static final int button_camera=0x7f0d0099;
+        public static final int button_color=0x7f0d0064;
+        public static final int button_crop=0x7f0d0062;
+        public static final int button_engrave=0x7f0d0065;
+>>>>>>> CameraImprovement
         public static final int button_flash=0x7f0d0055;
         public static final int button_gallery=0x7f0d0057;
-        public static final int button_next=0x7f0d0063;
-        public static final int button_saturation=0x7f0d0060;
+        public static final int button_next=0x7f0d0066;
+        public static final int button_ok=0x7f0d005d;
+        public static final int button_post=0x7f0d0081;
+        public static final int button_return=0x7f0d005e;
+        public static final int button_saturation=0x7f0d0063;
         public static final int cancelButton=0x7f0d005b;
+<<<<<<< HEAD
         public static final int cancel_action=0x7f0d00a0;
         public static final int checkbox=0x7f0d003a;
         public static final int chronometer=0x7f0d00a6;
         public static final int citySpinner=0x7f0d0072;
+=======
+        public static final int cancel_action=0x7f0d00a7;
+        public static final int checkbox=0x7f0d003a;
+        public static final int chronometer=0x7f0d00ad;
+        public static final int cityEditText=0x7f0d0075;
+>>>>>>> CameraImprovement
         public static final int collapseActionView=0x7f0d0017;
         public static final int commentButton=0x7f0d005a;
         public static final int commentEditText=0x7f0d0059;
         public static final int commentTextView=0x7f0d0058;
         public static final int containerImg=0x7f0d0051;
         public static final int contentPanel=0x7f0d0033;
-        public static final int content_frame=0x7f0d0066;
+        public static final int content_frame=0x7f0d0069;
+        public static final int crop_view=0x7f0d005c;
         public static final int custom=0x7f0d0037;
         public static final int customPanel=0x7f0d0036;
         public static final int decor_content_parent=0x7f0d0040;
         public static final int default_activity_button=0x7f0d002b;
+        public static final int device=0x7f0d00a5;
         public static final int dialog=0x7f0d001d;
         public static final int disableHome=0x7f0d000c;
         public static final int dropdown=0x7f0d001e;
+<<<<<<< HEAD
         public static final int editProfileButton=0x7f0d0097;
+=======
+        public static final int editProfileButton=0x7f0d009c;
+>>>>>>> CameraImprovement
         public static final int edit_query=0x7f0d0044;
-        public static final int emailEditText=0x7f0d006a;
-        public static final int emailTextView=0x7f0d0069;
+        public static final int emailEditText=0x7f0d006d;
+        public static final int emailTextView=0x7f0d006c;
         public static final int end=0x7f0d0014;
+<<<<<<< HEAD
         public static final int end_padder=0x7f0d00ab;
         public static final int expand_activities_button=0x7f0d0029;
         public static final int expanded_menu=0x7f0d0039;
@@ -1770,12 +1811,29 @@ containing a value of this type.
         public static final int genderSpinner=0x7f0d006e;
         public static final int genderTextView=0x7f0d006d;
         public static final int gridView=0x7f0d009e;
+=======
+        public static final int end_padder=0x7f0d00b2;
+        public static final int expand_activities_button=0x7f0d0029;
+        public static final int expanded_menu=0x7f0d0039;
+        public static final int firstNameEditText=0x7f0d0084;
+        public static final int firstNameTextView=0x7f0d0083;
+        public static final int followerNumTextView=0x7f0d009e;
+        public static final int followersTextView=0x7f0d00a1;
+        public static final int followingNumTextView=0x7f0d009f;
+        public static final int followingTextView=0x7f0d00a2;
+        public static final int fullNameEditText=0x7f0d006b;
+        public static final int fullNameTextView=0x7f0d006a;
+        public static final int genderSpinner=0x7f0d0071;
+        public static final int genderTextView=0x7f0d0070;
+        public static final int gridView=0x7f0d00a3;
+>>>>>>> CameraImprovement
         public static final int home=0x7f0d0004;
         public static final int homeAsUp=0x7f0d000d;
         public static final int icon=0x7f0d002d;
         public static final int ifRoom=0x7f0d0018;
         public static final int image=0x7f0d002a;
         public static final int imageView1=0x7f0d0053;
+<<<<<<< HEAD
         public static final int imageview_edit=0x7f0d005e;
         public static final int imageview_post=0x7f0d007c;
         public static final int info=0x7f0d00aa;
@@ -1793,13 +1851,34 @@ containing a value of this type.
         public static final int loginButton=0x7f0d007b;
         public static final int loginTextView=0x7f0d0081;
         public static final int media_actions=0x7f0d00a2;
+=======
+        public static final int imageview_edit=0x7f0d0061;
+        public static final int info=0x7f0d00b1;
+        public static final int italic=0x7f0d001c;
+        public static final int lastNameEditText=0x7f0d0086;
+        public static final int lastNameTextView=0x7f0d0085;
+        public static final int likeButton=0x7f0d008e;
+        public static final int likedTextView=0x7f0d0090;
+        public static final int line1=0x7f0d00ab;
+        public static final int line3=0x7f0d00af;
+        public static final int listMode=0x7f0d0009;
+        public static final int list_item=0x7f0d002c;
+        public static final int liveInextView=0x7f0d0074;
+        public static final int locationTextView=0x7f0d008c;
+        public static final int loginButton=0x7f0d007e;
+        public static final int loginTextView=0x7f0d0087;
+        public static final int media_actions=0x7f0d00a9;
+>>>>>>> CameraImprovement
         public static final int middle=0x7f0d0015;
         public static final int multiply=0x7f0d0020;
+        public static final int name=0x7f0d00a4;
         public static final int never=0x7f0d0019;
         public static final int none=0x7f0d000e;
         public static final int normal=0x7f0d000a;
-        public static final int pager=0x7f0d0075;
+        public static final int pager=0x7f0d0078;
+        public static final int pair_list=0x7f0d0089;
         public static final int parentPanel=0x7f0d002f;
+<<<<<<< HEAD
         public static final int passwordEditText=0x7f0d0078;
         public static final int passwordTextView=0x7f0d0077;
         public static final int phoneEditText=0x7f0d006c;
@@ -1813,7 +1892,23 @@ containing a value of this type.
         public static final int progress_circular=0x7f0d0005;
         public static final int progress_horizontal=0x7f0d0006;
         public static final int psts_tab_title=0x7f0d00ac;
+=======
+        public static final int passwordEditText=0x7f0d007b;
+        public static final int passwordTextView=0x7f0d007a;
+        public static final int phoneEditText=0x7f0d006f;
+        public static final int phoneTextView=0x7f0d006e;
+        public static final int photoImageView=0x7f0d008d;
+        public static final int postNumTextView=0x7f0d009d;
+        public static final int postTextView=0x7f0d00a0;
+        public static final int profileImageButton=0x7f0d009a;
+        public static final int profile_img_button_new=0x7f0d00b7;
+        public static final int profile_img_button_remove=0x7f0d00b6;
+        public static final int progress_circular=0x7f0d0005;
+        public static final int progress_horizontal=0x7f0d0006;
+        public static final int psts_tab_title=0x7f0d00b3;
+>>>>>>> CameraImprovement
         public static final int radio=0x7f0d003c;
+        public static final int relativeLayout=0x7f0d007f;
         public static final int screen=0x7f0d0021;
         public static final int scrollView=0x7f0d0034;
         public static final int search_badge=0x7f0d0046;
@@ -1826,28 +1921,47 @@ containing a value of this type.
         public static final int search_plate=0x7f0d004a;
         public static final int search_src_text=0x7f0d004b;
         public static final int search_voice_btn=0x7f0d004f;
+<<<<<<< HEAD
         public static final int section_label=0x7f0d0091;
         public static final int seekbar_brightness=0x7f0d0065;
         public static final int seekbar_contrast=0x7f0d005d;
+=======
+        public static final int section_label=0x7f0d0096;
+        public static final int seekbar_brightness=0x7f0d0068;
+        public static final int seekbar_contrast=0x7f0d0060;
+>>>>>>> CameraImprovement
         public static final int select_dialog_listview=0x7f0d0050;
         public static final int shortcut=0x7f0d003b;
         public static final int showCustom=0x7f0d000f;
         public static final int showHome=0x7f0d0010;
         public static final int showTitle=0x7f0d0011;
+<<<<<<< HEAD
         public static final int signTextView=0x7f0d0079;
         public static final int signupButton=0x7f0d0082;
         public static final int signupTextView=0x7f0d007a;
         public static final int sortDateButton=0x7f0d008e;
         public static final int sortLocButton=0x7f0d008d;
+=======
+        public static final int signTextView=0x7f0d007c;
+        public static final int signupButton=0x7f0d0088;
+        public static final int signupTextView=0x7f0d007d;
+        public static final int sortDateButton=0x7f0d0094;
+        public static final int sortLocButton=0x7f0d0093;
+>>>>>>> CameraImprovement
         public static final int split_action_bar=0x7f0d0007;
         public static final int src_atop=0x7f0d0022;
         public static final int src_in=0x7f0d0023;
         public static final int src_over=0x7f0d0024;
+<<<<<<< HEAD
         public static final int status_bar_latest_event_content=0x7f0d00a1;
+=======
+        public static final int status_bar_latest_event_content=0x7f0d00a8;
+>>>>>>> CameraImprovement
         public static final int submit_area=0x7f0d004d;
         public static final int surfaceView1=0x7f0d0052;
         public static final int swipeTextView=0x7f0d0083;
         public static final int tabMode=0x7f0d000b;
+<<<<<<< HEAD
         public static final int tabs=0x7f0d0074;
         public static final int text=0x7f0d00a9;
         public static final int text2=0x7f0d00a7;
@@ -1861,16 +1975,38 @@ containing a value of this type.
         public static final int textview_brightness=0x7f0d0064;
         public static final int textview_flash=0x7f0d0056;
         public static final int time=0x7f0d00a5;
+=======
+        public static final int tabs=0x7f0d0077;
+        public static final int text=0x7f0d00b0;
+        public static final int text2=0x7f0d00ae;
+        public static final int textSpacerNoButtons=0x7f0d0035;
+        public static final int textView=0x7f0d0091;
+        public static final int textView1=0x7f0d008f;
+        public static final int textView2=0x7f0d0095;
+        public static final int textView3=0x7f0d0097;
+        public static final int textView4=0x7f0d0098;
+        public static final int text_contrast=0x7f0d005f;
+        public static final int textview_brightness=0x7f0d0067;
+        public static final int textview_flash=0x7f0d0056;
+        public static final int thumbnail=0x7f0d0080;
+        public static final int time=0x7f0d00ac;
+>>>>>>> CameraImprovement
         public static final int title=0x7f0d002e;
-        public static final int titleTextView=0x7f0d0076;
+        public static final int titleTextView=0x7f0d0079;
         public static final int title_template=0x7f0d0031;
         public static final int topPanel=0x7f0d0030;
         public static final int up=0x7f0d0008;
-        public static final int updateButton=0x7f0d006f;
+        public static final int updateButton=0x7f0d0072;
         public static final int useLogo=0x7f0d0012;
+<<<<<<< HEAD
         public static final int userNameTextView=0x7f0d0085;
         public static final int userProfileImageView=0x7f0d0084;
         public static final int usernameTextView=0x7f0d0096;
+=======
+        public static final int userNameTextView=0x7f0d008b;
+        public static final int userProfileImageView=0x7f0d008a;
+        public static final int usernameTextView=0x7f0d009b;
+>>>>>>> CameraImprovement
         public static final int withText=0x7f0d001a;
         public static final int wrap_content=0x7f0d001f;
     }
@@ -1909,6 +2045,7 @@ containing a value of this type.
         public static final int abc_simple_dropdown_hint=0x7f040018;
         public static final int activity_camera=0x7f040019;
         public static final int activity_comment=0x7f04001a;
+<<<<<<< HEAD
         public static final int activity_edit_photo=0x7f04001b;
         public static final int activity_edit_profile=0x7f04001c;
         public static final int activity_home=0x7f04001d;
@@ -1937,18 +2074,51 @@ containing a value of this type.
         public static final int select_dialog_multichoice_material=0x7f040034;
         public static final int select_dialog_singlechoice_material=0x7f040035;
         public static final int support_simple_spinner_dropdown_item=0x7f040036;
+=======
+        public static final int activity_crop=0x7f04001b;
+        public static final int activity_edit_photo=0x7f04001c;
+        public static final int activity_edit_profile=0x7f04001d;
+        public static final int activity_home=0x7f04001e;
+        public static final int activity_login=0x7f04001f;
+        public static final int activity_main=0x7f040020;
+        public static final int activity_post=0x7f040021;
+        public static final int activity_signup=0x7f040022;
+        public static final int bluetooth_dialog=0x7f040023;
+        public static final int feed=0x7f040024;
+        public static final int fragment_browse=0x7f040025;
+        public static final int fragment_discovery=0x7f040026;
+        public static final int fragment_home=0x7f040027;
+        public static final int fragment_notification=0x7f040028;
+        public static final int fragment_photo=0x7f040029;
+        public static final int fragment_profile=0x7f04002a;
+        public static final int list_row_dialog=0x7f04002b;
+        public static final int notification_media_action=0x7f04002c;
+        public static final int notification_media_cancel_action=0x7f04002d;
+        public static final int notification_template_big_media=0x7f04002e;
+        public static final int notification_template_big_media_narrow=0x7f04002f;
+        public static final int notification_template_lines=0x7f040030;
+        public static final int notification_template_media=0x7f040031;
+        public static final int notification_template_part_chronometer=0x7f040032;
+        public static final int notification_template_part_time=0x7f040033;
+        public static final int psts_tab=0x7f040034;
+        public static final int select_dialog_item_material=0x7f040035;
+        public static final int select_dialog_multichoice_material=0x7f040036;
+        public static final int select_dialog_singlechoice_material=0x7f040037;
+        public static final int support_simple_spinner_dropdown_item=0x7f040038;
+>>>>>>> CameraImprovement
     }
     public static final class menu {
         public static final int menu_camera=0x7f0e0000;
         public static final int menu_comment=0x7f0e0001;
-        public static final int menu_edit_photo=0x7f0e0002;
-        public static final int menu_edit_profile=0x7f0e0003;
-        public static final int menu_home=0x7f0e0004;
-        public static final int menu_login=0x7f0e0005;
-        public static final int menu_main=0x7f0e0006;
-        public static final int menu_post=0x7f0e0007;
-        public static final int menu_profile_img=0x7f0e0008;
-        public static final int menu_signup=0x7f0e0009;
+        public static final int menu_crop=0x7f0e0002;
+        public static final int menu_edit_photo=0x7f0e0003;
+        public static final int menu_edit_profile=0x7f0e0004;
+        public static final int menu_home=0x7f0e0005;
+        public static final int menu_login=0x7f0e0006;
+        public static final int menu_main=0x7f0e0007;
+        public static final int menu_post=0x7f0e0008;
+        public static final int menu_profile_img=0x7f0e0009;
+        public static final int menu_signup=0x7f0e000a;
     }
     public static final class mipmap {
         public static final int ic_launcher=0x7f030000;
@@ -1977,6 +2147,7 @@ containing a value of this type.
         public static final int action_settings=0x7f060014;
         public static final int app_name=0x7f060015;
         public static final int cancel=0x7f060016;
+<<<<<<< HEAD
         public static final int city_prompt=0x7f060017;
         public static final int gender_prompt=0x7f060018;
         public static final int hello_blank_fragment=0x7f060019;
@@ -1997,18 +2168,48 @@ containing a value of this type.
         public static final int status_bar_notification_info_overflow=0x7f060028;
         public static final int title_activity_camera=0x7f060029;
         public static final int title_activity_comment=0x7f06002a;
+=======
+        public static final int gender_prompt=0x7f060017;
+        public static final int hello_blank_fragment=0x7f060018;
+        public static final int hello_world=0x7f060019;
+        public static final int instagram_access_token=0x7f06001a;
+        public static final int instagram_api_location_method=0x7f06001b;
+        public static final int instagram_api_media_method=0x7f06001c;
+        public static final int instagram_api_tag_method=0x7f06001d;
+        public static final int instagram_api_url=0x7f06001e;
+        public static final int instagram_api_users_method=0x7f06001f;
+        public static final int instagram_client_id=0x7f060020;
+        public static final int instagram_client_key=0x7f060021;
+        public static final int instagram_user_id=0x7f060022;
+        public static final int parse_app_id=0x7f060023;
+        public static final int parse_client_key=0x7f060024;
+        public static final int profile_img_button_new=0x7f060025;
+        public static final int profile_img_button_remove=0x7f060026;
+        public static final int status_bar_notification_info_overflow=0x7f060027;
+        public static final int title_activity_camera=0x7f060028;
+        public static final int title_activity_comment=0x7f060029;
+        public static final int title_activity_crop=0x7f06002a;
+>>>>>>> CameraImprovement
         public static final int title_activity_edit_photo=0x7f06002b;
         public static final int title_activity_edit_profile=0x7f06002c;
         public static final int title_activity_home=0x7f06002d;
         public static final int title_activity_login=0x7f06002e;
         public static final int title_activity_post=0x7f06002f;
         public static final int title_activity_signup=0x7f060030;
+<<<<<<< HEAD
         public static final int title_activity_swipe=0x7f060031;
         public static final int title_section1=0x7f060032;
         public static final int title_section2=0x7f060033;
         public static final int title_section3=0x7f060034;
         public static final int title_section4=0x7f060035;
         public static final int title_section5=0x7f060036;
+=======
+        public static final int title_section1=0x7f060031;
+        public static final int title_section2=0x7f060032;
+        public static final int title_section3=0x7f060033;
+        public static final int title_section4=0x7f060034;
+        public static final int title_section5=0x7f060035;
+>>>>>>> CameraImprovement
     }
     public static final class style {
         public static final int AlertDialog_AppCompat=0x7f080073;

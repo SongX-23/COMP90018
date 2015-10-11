@@ -1,18 +1,37 @@
 package com.parse.unimelb;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.support.v7.app.AppCompatActivity;
+import android.net.Uri;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 
-public class PostActivity extends AppCompatActivity {
+import com.parse.unimelb.Helper.BluetoothPair;
 
-    private ImageView imageView;
-    private Bitmap currentBitmap;
+import java.io.File;
+import java.util.ArrayList;
+
+public class PostActivity extends Activity {
+
+    private ImageView imageview = null;
+    private Bitmap rawBitmap = null;
+    private Bitmap thumbnail = null;
+
+    private Button btnBluetooth = null;
+    private Button btnPost = null;
+
+
+    // temp arraylist
+    private ArrayList<BluetoothPair> bluetoothPairs = new ArrayList<>();
 
     //TODO: garbage recycle: newBitMap, currentBitmap in the edit activity
 
@@ -21,34 +40,79 @@ public class PostActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post);
 
-        imageView = (ImageView) findViewById(R.id.imageview_post);
+        imageview = (ImageView) findViewById(R.id.thumbnail);
+
+        // get the bitmap from file
         Intent intent = getIntent();
-        if (intent != null) {
-            String filePath = intent.getStringExtra("post_img");
-            currentBitmap = BitmapFactory.decodeFile(filePath);
-            imageView.setImageBitmap(currentBitmap);
-        }
+        final String filePath = intent.getStringExtra("post_img");
+
+        rawBitmap = BitmapFactory.decodeFile(filePath);
+
+        thumbnail = rawBitmap;
+        imageview.setImageBitmap(thumbnail);
+
+        bluetoothPairs.add(new BluetoothPair("Mark", "Device_1"));
+        bluetoothPairs.add(new BluetoothPair("Drake", "Device_2"));
+
+        //TODO: bluetooth button, either to go to another activity, or show the list
+        btnBluetooth = (Button) findViewById(R.id.button_bluetooth);
+        btnBluetooth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDialog();
+            }
+        });
+
+        btnPost = (Button) findViewById(R.id.button_post);
+        btnPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createInstagramIntent(filePath);
+            }
+        });
+
+
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_post, menu);
-        return true;
+
+    private void createInstagramIntent(String filePath){
+        Intent instagram = new Intent(android.content.Intent.ACTION_SEND);
+        instagram.setType("image/*");
+        File file = new File(filePath);
+        Uri uri = Uri.fromFile(file);
+        instagram.putExtra(Intent.EXTRA_STREAM, uri);
+        instagram.putExtra(Intent.EXTRA_TEXT, "YOUR TEXT TO SHARE IN INSTAGRAM");
+        instagram.setPackage("com.instagram.android");
+
+
+        startActivity(Intent.createChooser(instagram, "Share to"));
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+    private void showDialog() {
+        final Dialog dialog = new Dialog(this);
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+        View view = getLayoutInflater().inflate(R.layout.bluetooth_dialog, null);
 
-        return super.onOptionsItemSelected(item);
+        ListView lv = (ListView) view.findViewById(R.id.pair_list);
+
+        // Change MyActivity.this and myListOfItems to your own values
+        BluetoothDialog clad = new BluetoothDialog(PostActivity.this, bluetoothPairs);
+
+        lv.setAdapter(clad);
+
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+        });
+
+        dialog.setContentView(view);
+
+        dialog.show();
+
     }
 }
+
+
+

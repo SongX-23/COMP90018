@@ -8,14 +8,14 @@
         android:id="@+id/text_contrast"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Contrast"/>
+        android:text="Contrast: 10"/>
 
     <SeekBar
         android:id="@+id/seekbar_contrast"
         android:layout_width="620px"
         android:layout_height="wrap_content"
-        android:max="10"
-        android:progress="1"
+        android:max="100"
+        android:progress="10"
         android:layout_below="@+id/text_contrast"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -74,7 +74,7 @@
         android:id="@+id/textview_brightness"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Brightness"
+        android:text="Brightness: 50"
         android:layout_below="@+id/seekbar_contrast"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -83,8 +83,8 @@
         android:id="@+id/seekbar_brightness"
         android:layout_width="620px"
         android:layout_height="wrap_content"
-        android:max="510"
-        android:progress="255"
+        android:max="100"
+        android:progress="50"
         android:layout_below="@+id/textview_brightness"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
