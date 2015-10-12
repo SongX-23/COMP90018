@@ -36,6 +36,8 @@
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
     <application
         android:name=".KiloGram"
@@ -103,7 +105,10 @@
         <activity
             android:name=".CropActivity"
             android:label="@string/title_activity_crop" >
-
+        </activity>
+        <activity
+            android:name=".ReceivingActivity"
+            android:label="@string/title_activity_receiving" >
         </activity>
     </application>
 

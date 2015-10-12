@@ -28,6 +28,7 @@ public class PostActivity extends Activity {
 
     private Button btnBluetooth = null;
     private Button btnPost = null;
+    private Button btnReceive = null;
     private String filePath = "";
     private BluetoothPair btPair;
 
@@ -54,7 +55,7 @@ public class PostActivity extends Activity {
         imageview.setImageBitmap(thumbnail);
 
 
-        //TODO: bluetooth button, either to go to another activity, or show the list
+        // bluetooth button: show the dialog
         btnBluetooth = (Button) findViewById(R.id.button_bluetooth);
         btnBluetooth.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,6 +73,15 @@ public class PostActivity extends Activity {
             @Override
             public void onClick(View v) {
                 createInstagramIntent(filePath);
+            }
+        });
+
+        btnReceive = (Button) findViewById(R.id.button_receive);
+        btnReceive.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PostActivity.this, ReceivingActivity.class);
+                startActivity(intent);
             }
         });
     }
