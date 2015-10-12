@@ -2,7 +2,9 @@ package com.parse.unimelb;
 
 import java.util.Locale;
 
+import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -16,13 +18,22 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import java.util.Locale;
+import java.util.UUID;
 
 import com.astuetz.PagerSlidingTabStrip;
 import com.parse.ParseUser;
+import com.parse.unimelb.Helper.ServerThread;
 import com.parse.unimelb.R;
 
 public class HomeActivity extends AppCompatActivity {
 
+    private ServerThread myServer;
+    private static final UUID MY_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB"); //UUID for Bluetooth Connections
+    private final static int REQUEST_ENABLE_BT = 1;
+    private BluetoothAdapter mBluetoothAdapter;
+    private boolean isServer = true;
+
+    public Bitmap receivedBmp = null;
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
@@ -54,9 +65,15 @@ public class HomeActivity extends AppCompatActivity {
         mViewPager.setAdapter(mSectionsPagerAdapter);
         PagerSlidingTabStrip tabs = (PagerSlidingTabStrip) findViewById(R.id.tabs);
         tabs.setViewPager(mViewPager);
+
+
+        // Start the server thread in the ServerThread.class and pass on the UUID for communication
+        // as well as the instance for this activity to access the ImageView
+        myServer = new ServerThread(mBluetoothAdapter, MY_UUID, HomeActivity.this);
+        myServer.start();
     }
 
-        @Override
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_home, menu);
@@ -78,6 +95,7 @@ public class HomeActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+    
     public void logout(){
         ParseUser.logOut();
         Intent intent = new Intent(HomeActivity.this, LoginActivity.class);

@@ -1,22 +1,19 @@
 package com.parse.unimelb.Helper;
 
+import android.bluetooth.BluetoothDevice;
+import android.os.Parcelable;
+
 /**
  * Created by raymond on 10/11/15.
  */
 public class BluetoothPair {
-    private String name;
-    private String device;
+    private BluetoothDevice device;
 
-    public BluetoothPair(String name, String device) {
-        this.name = name;
+    public BluetoothPair(BluetoothDevice device) {
         this.device = device;
     }
 
-    public String getName() {
-        return this.name;
-    }
-
-    public String getDevice(){
+    public BluetoothDevice getDevice() {
         return this.device;
     }
 }

@@ -97,4 +97,4 @@
         android:layout_gravity="center_horizontal|bottom"
         android:numColumns="3" />
 </FrameLayout>
-<!-- From: file:/Users/songxue/Documents/Mobile%20Dev/Instagram/ParseStarterProject/src/main/res/layout/fragment_profile.xml -->
+<!-- From: file:/Users/raymond/Documents/WorkSpace/GitHub/COMP90018/ParseStarterProject/src/main/res/layout/fragment_profile.xml -->

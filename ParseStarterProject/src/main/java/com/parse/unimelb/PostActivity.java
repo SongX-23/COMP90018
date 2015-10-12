@@ -3,11 +3,17 @@ package com.parse.unimelb;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -15,14 +21,16 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 
-import com.parse.unimelb.Helper.BluetoothPair;
+import com.parse.unimelb.Helper.*;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Set;
+import java.util.UUID;
 
 public class PostActivity extends Activity {
 
-    private ImageView imageview = null;
+    public ImageView imageview = null;
     private Bitmap rawBitmap = null;
     private Bitmap thumbnail = null;
 
@@ -30,6 +38,11 @@ public class PostActivity extends Activity {
     private Button btnPost = null;
     private String filePath = "";
     private BluetoothPair btPair;
+
+    private final static int REQUEST_ENABLE_BT = 1;
+    private BluetoothAdapter mBluetoothAdapter;
+
+    Set<BluetoothDevice> pairedDevices;
 
 
     // temp arraylist
@@ -59,10 +72,6 @@ public class PostActivity extends Activity {
         btnBluetooth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // add list of device info to the arraylist every time
-                bluetoothPairs.add(new BluetoothPair("Mark", "Device_1"));
-                bluetoothPairs.add(new BluetoothPair("Drake", "Device_2"));
-
                 showDialog();
             }
         });
@@ -74,6 +83,58 @@ public class PostActivity extends Activity {
                 createInstagramIntent(filePath);
             }
         });
+
+        startBluetooth();
+    }
+
+
+    private void startBluetooth() {
+
+        /*
+         Check to see if Bluetooth Adapter is enabled or not. If its enabled, set
+         the request to enable it.
+         */
+        mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        if (!mBluetoothAdapter.isEnabled()) {
+            Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+            startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
+        }
+
+        // Start Intent for becoming discoverable. Set the Discoverable duration for 300 seconds.
+        Intent discoverableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
+        discoverableIntent.putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, 300);
+        startActivity(discoverableIntent);
+        IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
+
+        // Register the devices and start broadcast to get the name of the Devices.
+        // This registers the devices using BroadcastReceiver.
+        registerReceiver(mReceiver, filter);
+
+        // This code searches for all devices nearby which have their bluetooth on and are currently
+        // discoverable. Currently I have hardcoded this process to search for Aurora. If it finds
+        // Aurora, it will become the client and start the client thread. Else, the server thread will
+        // continue to function.
+        pairedDevices = mBluetoothAdapter.getBondedDevices();
+        if (pairedDevices.size() > 0) {
+            for (BluetoothDevice device : pairedDevices) {
+                bluetoothPairs.add(new BluetoothPair(device));
+            }
+        }
+//        if (pairedDevices.size() > 0) {
+//            for (BluetoothDevice device : pairedDevices) {
+//                String deviceName = device.getName();
+//                if (deviceName.equals("Aurora")) {
+//                    isServer = false;
+//                    Bitmap bitmap= BitmapFactory.decodeResource(this.getResources(),R.drawable.default_profile_image);
+//
+//                    ConnectThread myConnection = new ConnectThread(device, bitmap,mBluetoothAdapter, MY_UUID);
+//                    myConnection.start();
+//                    ct = myConnection;
+//                }
+//                Log.d("Bluetooth Device: ", deviceName);
+//            }
+//        }
+
     }
 
 
@@ -92,6 +153,7 @@ public class PostActivity extends Activity {
 
     private void showDialog() {
         final Dialog dialog = new Dialog(this);
+        dialog.setTitle("Choose a Bluetooth Pair");
 
         View view = getLayoutInflater().inflate(R.layout.bluetooth_dialog, null);
 
@@ -109,7 +171,7 @@ public class PostActivity extends Activity {
                 Intent intent = new Intent(PostActivity.this,  SwipeActivity.class);
                 intent.putExtra("post_img", filePath);
                 btPair = bluetoothPairs.get(position);
-                intent.putExtra("device_info", btPair.getDevice() + "  " + btPair.getName());
+                intent.putExtra("device", bluetoothPairs.get(position).getDevice());
 
                 startActivity(intent);
             }
@@ -120,6 +182,18 @@ public class PostActivity extends Activity {
         dialog.show();
 
     }
+
+    private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            if (BluetoothDevice.ACTION_FOUND.equals(action)) {
+                BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
+                String name = device.getName();
+                Log.d("Bluetooth Device : ", name);
+            }
+        }
+    };
 }
 
 
