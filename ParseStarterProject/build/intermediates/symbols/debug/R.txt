@@ -436,9 +436,10 @@ int drawable default_profile_image 0x7f02003d
 int drawable emptyheart 0x7f02003e
 int drawable filledheart 0x7f02003f
 int drawable grid 0x7f020040
-int drawable mark3 0x7f020041
-int drawable notification_template_icon_bg 0x7f020043
-int drawable psts_background_tab 0x7f020042
+int drawable icon 0x7f020041
+int drawable mark3 0x7f020042
+int drawable notification_template_icon_bg 0x7f020044
+int drawable psts_background_tab 0x7f020043
 int id action0 0x7f0d00ad
 int id action_bar 0x7f0d0042
 int id action_bar_activity_content 0x7f0d0000
