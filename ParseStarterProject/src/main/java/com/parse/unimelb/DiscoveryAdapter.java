@@ -69,11 +69,11 @@ public class DiscoveryAdapter extends BaseAdapter{
            userProfileImg = (ImageView) rowView.findViewById(R.id.ProfilePic);
            userName = (TextView) rowView.findViewById(R.id.UserName);
           gender = (TextView) rowView.findViewById(R.id.Gender);
-           userName.setText(userDetails.getUsername().toString());
+        String[] userNameParts = userDetails.getUsername().toString().split("@");
+           userName.setText(userNameParts[0]);
            String userGender = userDetails.getLocation().toString();
 
-        if((userGender != null) || (userGender != "Blank"))
-        {
+        if((userGender != null) || (userGender != "Blank")) {
             gender.setText(userGender);
         }
         Bitmap profileImage = userDetails.getProfileImage();
