@@ -33,7 +33,7 @@ import java.util.List;
  * Use the {@link DiscoveryFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class DiscoveryFragment extends ListFragment {
+public class DiscoveryFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -87,12 +87,14 @@ public class DiscoveryFragment extends ListFragment {
         /***
          replace "female" with user's gender
          ***/
-        query.whereEqualTo("username", "a@j.com");
+        query.whereEqualTo("Gender", "Male");
         query.findInBackground(new FindCallback<ParseUser>() {
             public void done(List<ParseUser> objects, ParseException e) {
                 if (e == null) {
                     Log.e("Discovery", objects.toString());
                     users = objects;
+                    discoveryAdapter.setUsers(users);
+                    discoveryAdapter.notifyDataSetChanged();
                     // The query was successful.
                     //showPeople(objects);
                 } else {
@@ -172,5 +174,11 @@ public class DiscoveryFragment extends ListFragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
-
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (isVisibleToUser) { recommendPeople();
+        }
+        else {  }
+    }
 }

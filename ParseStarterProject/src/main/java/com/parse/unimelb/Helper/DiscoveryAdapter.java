@@ -29,7 +29,8 @@ public class DiscoveryAdapter extends BaseAdapter{
 
     private List<ParseUser> users;
     private Context mContext;
-
+    private ImageView userProfileImg;
+    private TextView userName;
     public DiscoveryAdapter (Context c, List<ParseUser> data){
         mContext = c;
         users = data;
@@ -41,7 +42,7 @@ public class DiscoveryAdapter extends BaseAdapter{
 
     @Override
     public int getCount() {
-        return 0;
+        return 2;
     }
 
     @Override
@@ -58,10 +59,10 @@ public class DiscoveryAdapter extends BaseAdapter{
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.discovery, null, true);
-        //ParseUser userDetails = users.get(position);
-        final ImageView userProfileImg = (ImageView) rowView.findViewById(R.id.ProfilePic);
-        TextView userName = (TextView) rowView.findViewById(R.id.UserName);
-
+        ParseUser userDetails = users.get(position);
+        userProfileImg = (ImageView) rowView.findViewById(R.id.ProfilePic);
+        userName = (TextView) rowView.findViewById(R.id.UserName);
+        userName.setText(userDetails.get("username").toString());
         ParseFile imageFile = (ParseFile) users.get(0).get("Image");
         if (imageFile != null) {
             imageFile.getDataInBackground(new GetDataCallback() {
@@ -80,7 +81,7 @@ public class DiscoveryAdapter extends BaseAdapter{
        // userName.setText(users.getDisplayName());
 
 
-        return null;
+        return rowView;
     }
 
 
