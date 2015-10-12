@@ -33,7 +33,7 @@
     <string name="title_section4">Notification</string>
     <string name="title_section5">Profile</string>
     <string-array name="gender_arrays">
-        <item>Choose</item>
+        <item>Secret</item>
         <item>Male</item>
         <item>Female</item>
     </string-array>

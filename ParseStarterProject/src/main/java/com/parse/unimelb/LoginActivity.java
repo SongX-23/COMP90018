@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.parse.LogInCallback;
+import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.unimelb.R;
@@ -27,8 +28,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //link to Sign up
         setContentView(R.layout.activity_login);
-        ParseUser currentUser = ParseUser.getCurrentUser();
-
+        final ParseUser currentUser = ParseUser.getCurrentUser();
         Bundle bundle = getIntent().getExtras();
         String flag = "";
         if (bundle != null) {

@@ -29,19 +29,19 @@ import java.util.List;
  */
 public class DiscoveryAdapter extends BaseAdapter{
 
-    private ArrayList<ParseUser> users;
+    private ArrayList<DiscoverUser> users;
     private Context mContext;
     private ImageView userProfileImg;
     private TextView userName;
     private TextView gender;
     private ParseFile imageFile;
 
-    public DiscoveryAdapter (Context c, ArrayList<ParseUser> data){
+    public DiscoveryAdapter (Context c, ArrayList<DiscoverUser> data){
         mContext = c;
         users = data;
     }
 
-    public void setUsers(ArrayList<ParseUser> users) {
+    public void setUsers(ArrayList<DiscoverUser> users) {
         this.users = users;
     }
 
@@ -65,40 +65,25 @@ public class DiscoveryAdapter extends BaseAdapter{
         LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
            View rowView = inflater.inflate(R.layout.discovery, null, true);
-           ParseUser userDetails = users.get(position);
+           DiscoverUser userDetails = users.get(position);
            userProfileImg = (ImageView) rowView.findViewById(R.id.ProfilePic);
            userName = (TextView) rowView.findViewById(R.id.UserName);
           gender = (TextView) rowView.findViewById(R.id.Gender);
-           userName.setText(userDetails.get("username").toString());
-           String userGender = userDetails.get("Gender").toString();
+           userName.setText(userDetails.getUsername().toString());
+           String userGender = userDetails.getLocation().toString();
 
         if((userGender != null) || (userGender != "Blank"))
         {
             gender.setText(userGender);
         }
-        imageFile = (ParseFile) userDetails.get("Image");
-
-           if (imageFile != null) {
-
-               byte[] bitmapdata = new byte[0];
-               try {
-                   bitmapdata = imageFile.getData();
-               } catch (ParseException e) {
-                   e.printStackTrace();
-               }
-               Bitmap bitmap = BitmapFactory.decodeByteArray(bitmapdata , 0, bitmapdata.length);
-               userProfileImg.setImageBitmap(bitmap);
-           }else {
-               Drawable myDrawable = rowView.getResources().getDrawable(R.drawable.default_profile_image);
-               Bitmap defaultImage = ((BitmapDrawable) myDrawable).getBitmap();
-               userProfileImg.setImageBitmap(defaultImage);
-
-
+        Bitmap profileImage = userDetails.getProfileImage();
+        if (profileImage != null) {
+            userProfileImg.setImageBitmap(profileImage);
+        }else{
+            Drawable myDrawable = rowView.getResources().getDrawable(R.drawable.default_profile_image);
+            Bitmap defaultImage = ((BitmapDrawable) myDrawable).getBitmap();
+            userProfileImg.setImageBitmap(defaultImage);
         }
-
-      //  userProfileImg.setImageBitmap(users.getUserProfileImg());
-       // userName.setText(users.getDisplayName());
-
 
         return rowView;
     }

@@ -9,25 +9,39 @@
         android:layout_height="wrap_content"
         android:id="@+id/list"
         android:layout_gravity="center"
-        android:layout_below="@+id/searchView"
+        android:layout_below="@+id/searchEditText"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="50dp" />
 
-    <SearchView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/searchView"
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:id="@+id/searchEditText"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Recommended Users"
-        android:id="@+id/textView2"
-        android:layout_below="@+id/searchView"
-        android:layout_centerHorizontal="true" />
+        android:id="@+id/recommendTextView"
+        android:layout_below="@+id/searchEditText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="search"
+        android:id="@+id/searchButton"
+        android:layout_alignTop="@+id/searchEditText"
+        android:layout_toRightOf="@+id/searchEditText"
+        android:layout_toEndOf="@+id/searchEditText"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="0dp"/>
 
 </RelativeLayout>
