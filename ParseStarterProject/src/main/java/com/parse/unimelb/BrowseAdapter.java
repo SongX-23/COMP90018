@@ -77,10 +77,12 @@ public class BrowseAdapter extends BaseAdapter{
         TextView captionText = (TextView) rowView.findViewById(R.id.captionTextView);
         likeButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                likeButton.setBackground(rowView.getResources().getDrawable(R.drawable.filledheart));
-                tmpLike = likedText.getText().toString();
-                likePosition = position;
-                String url = mContext.getResources().getString(R.string.instagram_api_url)
+                if (!oneFeed.getUser_has_liked()){
+                    likeButton.setBackground(rowView.getResources().getDrawable(R.drawable.filledheart));
+                    oneFeed.setUser_has_liked(true);
+                    tmpLike = likedText.getText().toString();
+                    likePosition = position;
+                    String url = mContext.getResources().getString(R.string.instagram_api_url)
                             + mContext.getResources().getString(R.string.instagram_api_media_method)
                             + oneFeed.getMediaID().toString()
                             + "/likes?access_token="
@@ -128,8 +130,15 @@ public class BrowseAdapter extends BaseAdapter{
                         }
                         likedText.setText(finalLikeText);
                     }
-                System.out.println("Like: " + finalLikeText);
+                    System.out.println("Like: " + finalLikeText);
+                }else{
+                    Toast.makeText(mContext,
+                            "You have already liked this photo",
+                            Toast.LENGTH_LONG).show();
                 }
+            }
+
+
         });
         ImageButton commentButton = (ImageButton) rowView.findViewById(R.id.commentButton);
        commentButton.setOnClickListener(new View.OnClickListener() {
@@ -148,16 +157,23 @@ public class BrowseAdapter extends BaseAdapter{
         if (oneFeed.getLike() != null) {
             System.out.println("Like: " + likedText.getText());
             if (tmpLike == null && finalLikeText == null) {
+                if (oneFeed.getUser_has_liked()){
+                    likeButton.setBackground(rowView.getResources().getDrawable(R.drawable.filledheart));
+                }
                 likedText.setText(oneFeed.getLike().toString().replace(',', ' '));
             }else if(tmpLike != null && finalLikeText != null && position == likePosition){
                 likedText.setText(finalLikeText);
+                likeButton.setBackground(rowView.getResources().getDrawable(R.drawable.filledheart));
             }else{
+                if (oneFeed.getUser_has_liked()){
+                    likeButton.setBackground(rowView.getResources().getDrawable(R.drawable.filledheart));
+                }
                 likedText.setText(oneFeed.getLike().toString().replace(',', ' '));
             }
         }
         if (oneFeed.getComment() != null) {
-            commentText.setText(oneFeed.getComment().toString().replace(',',' ').substring(1,
-                    oneFeed.getComment().toString().length()-1));
+            commentText.setText(oneFeed.getComment().toString().replace(',', ' ').substring(1,
+                    oneFeed.getComment().toString().length() - 1));
         }
         return rowView;
     }

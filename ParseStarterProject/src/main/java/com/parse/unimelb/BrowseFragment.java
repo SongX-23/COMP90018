@@ -267,6 +267,9 @@ public class BrowseFragment extends Fragment {
                                 } else {
                                     feedObj.setLike(null);
                                 }
+                                //get user like bool
+                                Boolean user_has_liked = oneFeed.getBoolean("user_has_liked");
+                                feedObj.setUser_has_liked(user_has_liked);
                                 //get the image block
                                 JSONObject imageJSON = oneFeed.getJSONObject("images");
                                 //get the standard resoultion block

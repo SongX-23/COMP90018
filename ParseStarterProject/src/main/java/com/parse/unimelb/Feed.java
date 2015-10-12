@@ -17,6 +17,7 @@ public class Feed{
     private String location;
     private String mediaID;
     private String caption;
+    private Boolean user_has_liked;
     private ArrayList<String> comment;
     private ArrayList<String> like;
     private double latitude;
@@ -56,7 +57,7 @@ public class Feed{
         this.distance = distance;
     }
 
-    public Feed(String displayName, String userProfileImgURL, String photoURL, String location, ArrayList<String> comment, ArrayList<String> like, String caption) {
+    public Feed(String displayName, String userProfileImgURL, String photoURL, String location, ArrayList<String> comment, ArrayList<String> like, String caption, Boolean user_has_liked) {
         this.displayName = displayName;
         this.userProfileImgURL = userProfileImgURL;
         this.photoURL = photoURL;
@@ -64,11 +65,20 @@ public class Feed{
         this.comment = comment;
         this.like = like;
         this.caption = caption;
+        this.user_has_liked = user_has_liked;
+
     }
     public Feed(){
 
     }
 
+    public Boolean getUser_has_liked() {
+        return user_has_liked;
+    }
+
+    public void setUser_has_liked(Boolean user_has_liked) {
+        this.user_has_liked = user_has_liked;
+    }
     public String getDisplayName() {
 
         return displayName;
