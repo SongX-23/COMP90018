@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -64,7 +65,7 @@ public class BrowseAdapter extends BaseAdapter{
     @Override
     public View getView(final int position, View view, ViewGroup viewGroup) {
         LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View rowView = inflater.inflate(R.layout.feed, null, true);
+        final View rowView = inflater.inflate(R.layout.feed, null, true);
         final Feed oneFeed = feed_array.get(position);
         ImageView userProfileImg = (ImageView) rowView.findViewById(R.id.userProfileImageView);
         TextView userName = (TextView) rowView.findViewById(R.id.userNameTextView);
@@ -72,10 +73,11 @@ public class BrowseAdapter extends BaseAdapter{
         ImageView photoImg = (ImageView) rowView.findViewById(R.id.photoImageView);
         final TextView likedText = (TextView) rowView.findViewById(R.id.likedTextView);
         TextView commentText = (TextView) rowView.findViewById(R.id.commentTextView);
-        final Button likeButton = (Button) rowView.findViewById(R.id.likeButton);
+        final ImageButton likeButton = (ImageButton) rowView.findViewById(R.id.likeButton);
         TextView captionText = (TextView) rowView.findViewById(R.id.captionTextView);
         likeButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
+                likeButton.setImageDrawable(rowView.getResources().getDrawable(R.drawable.filledheart));
                 tmpLike = likedText.getText().toString();
                 likePosition = position;
                 String url = mContext.getResources().getString(R.string.instagram_api_url)
@@ -129,7 +131,7 @@ public class BrowseAdapter extends BaseAdapter{
                 System.out.println("Like: " + finalLikeText);
                 }
         });
-        Button commentButton = (Button) rowView.findViewById(R.id.commentButton);
+        ImageButton commentButton = (ImageButton) rowView.findViewById(R.id.commentButton);
        commentButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 Intent intent = new Intent(mContext, CommentActivity.class);
