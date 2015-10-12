@@ -1,29 +1,27 @@
 package com.parse.unimelb;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.ListFragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
 import com.parse.FindCallback;
-import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
-import com.parse.unimelb.Helper.DiscoveryAdapter;
-import com.parse.unimelb.R;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -45,7 +43,7 @@ public class DiscoveryFragment extends Fragment {
 
     private ListView listView;
     private DiscoveryAdapter discoveryAdapter;
-    private List<ParseUser> users;
+    private ArrayList<ParseUser> users;
 
     private OnFragmentInteractionListener mListener;
 
@@ -82,6 +80,9 @@ public class DiscoveryFragment extends Fragment {
     }
 
     public void recommendPeople(){
+
+
+        users = new ArrayList<ParseUser>();
         //query all female
         ParseQuery<ParseUser> query = ParseUser.getQuery();
         /***
@@ -92,7 +93,7 @@ public class DiscoveryFragment extends Fragment {
             public void done(List<ParseUser> objects, ParseException e) {
                 if (e == null) {
                     Log.e("Discovery", objects.toString());
-                    users = objects;
+                    users = (ArrayList<ParseUser>) objects;
                     discoveryAdapter.setUsers(users);
                     discoveryAdapter.notifyDataSetChanged();
                     // The query was successful.
@@ -113,24 +114,24 @@ public class DiscoveryFragment extends Fragment {
         // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.fragment_discovery, container, false);
-        Button b = (Button) view.findViewById(R.id.button);
+//        Button b = (Button) view.findViewById(R.id.button);
 
         listView = (ListView) view.findViewById(R.id.list);
         discoveryAdapter = new DiscoveryAdapter(getActivity(), getData());
         listView.setAdapter(discoveryAdapter);
 
-        b.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-                Intent indent = new Intent(getActivity(), SwipeActivity.class);
-                startActivity(indent);
-            }
-        });
+//        b.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View arg0) {
+//                Intent indent = new Intent(getActivity(), SwipeActivity.class);
+//                startActivity(indent);
+//            }
+//        });
         return view;
     }
 
-    public void showPeople(List<ParseUser> peopleInfo){
-
-    }
+//    public void showPeople(List<ParseUser> peopleInfo){
+//
+//    }
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
@@ -139,7 +140,7 @@ public class DiscoveryFragment extends Fragment {
         }
     }
 
-    public List getData(){
+    public ArrayList<ParseUser> getData(){
         return users;
     }
 
