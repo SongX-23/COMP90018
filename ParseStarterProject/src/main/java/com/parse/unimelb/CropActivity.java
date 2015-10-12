@@ -1,11 +1,12 @@
 package com.parse.unimelb;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.CrossProcessCursor;
 import android.graphics.Bitmap;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,7 +16,7 @@ import android.widget.Toast;
 import com.parse.unimelb.Helper.BitmapStore;
 import com.parse.unimelb.R;
 
-public class CropActivity extends Activity {
+public class CropActivity extends ActionBarActivity {
 
     private Bitmap rawBitmap = null;
     private Bitmap cropBitmap = null;

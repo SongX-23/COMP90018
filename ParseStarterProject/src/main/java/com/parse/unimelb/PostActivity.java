@@ -1,5 +1,6 @@
 package com.parse.unimelb;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -8,6 +9,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -20,7 +22,7 @@ import com.parse.unimelb.Helper.BluetoothPair;
 import java.io.File;
 import java.util.ArrayList;
 
-public class PostActivity extends Activity {
+public class PostActivity extends ActionBarActivity {
 
     private ImageView imageview = null;
     private Bitmap rawBitmap = null;

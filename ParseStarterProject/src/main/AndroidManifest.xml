@@ -61,31 +61,31 @@
         </activity>
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_login" >
+            android:label="Login" >
         </activity>
         <activity
             android:name=".SignupActivity"
-            android:label="@string/title_activity_signup" >
+            android:label="Signup" >
         </activity>
         <activity
             android:name=".HomeActivity"
-            android:label="@string/title_activity_home" >
+            android:label="KiloGram" >
         </activity>
         <activity
             android:name=".EditProfileActivity"
-            android:label="@string/title_activity_edit_profile" >
+            android:label="Edit Photo" >
         </activity>
         <activity
             android:name=".CameraActivity"
-            android:label="@string/title_activity_camera" >
+            android:label="Camera" >
         </activity>
         <activity
             android:name=".EditPhotoActivity"
-            android:label="@string/title_activity_edit_photo" >
+            android:label="Edit Photo" >
         </activity>
         <activity
             android:name=".PostActivity"
-            android:label="@string/title_activity_post" >
+            android:label="Post Photo" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -98,11 +98,11 @@
         </activity>
         <activity
             android:name=".SwipeActivity"
-            android:label="@string/title_activity_swipe" >
+            android:label="Send via Bluetooth" >
         </activity>
         <activity
             android:name=".CropActivity"
-            android:label="@string/title_activity_crop" >
+            android:label="Crop Photo" >
 
         </activity>
     </application>

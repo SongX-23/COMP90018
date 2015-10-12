@@ -1,10 +1,12 @@
 package com.parse.unimelb;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Environment;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -18,7 +20,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class EditPhotoActivity extends Activity {
+public class EditPhotoActivity extends ActionBarActivity {
     private ImageView imageView;
     private Bitmap rawBitmap;
     private Bitmap newBitmap;

@@ -65,31 +65,31 @@
         </activity>
         <activity
             android:name="com.parse.unimelb.LoginActivity"
-            android:label="@string/title_activity_login" >
+            android:label="Login" >
         </activity>
         <activity
             android:name="com.parse.unimelb.SignupActivity"
-            android:label="@string/title_activity_signup" >
+            android:label="Signup" >
         </activity>
         <activity
             android:name="com.parse.unimelb.HomeActivity"
-            android:label="@string/title_activity_home" >
+            android:label="KiloGram" >
         </activity>
         <activity
             android:name="com.parse.unimelb.EditProfileActivity"
-            android:label="@string/title_activity_edit_profile" >
+            android:label="Edit Photo" >
         </activity>
         <activity
             android:name="com.parse.unimelb.CameraActivity"
-            android:label="@string/title_activity_camera" >
+            android:label="Camera" >
         </activity>
         <activity
             android:name="com.parse.unimelb.EditPhotoActivity"
-            android:label="@string/title_activity_edit_photo" >
+            android:label="Edit Photo" >
         </activity>
         <activity
             android:name="com.parse.unimelb.PostActivity"
-            android:label="@string/title_activity_post" >
+            android:label="Post Photo" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -102,11 +102,11 @@
         </activity>
         <activity
             android:name="com.parse.unimelb.SwipeActivity"
-            android:label="@string/title_activity_swipe" >
+            android:label="Send via Bluetooth" >
         </activity>
         <activity
             android:name="com.parse.unimelb.CropActivity"
-            android:label="@string/title_activity_crop" >
+            android:label="Crop Photo" >
         </activity>
     </application>
 

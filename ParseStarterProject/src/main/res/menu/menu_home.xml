@@ -1,6 +1,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools" tools:context="com.parse.unimelb.HomeActivity">
+    <item android:id="@+id/action_camera"
+          android:icon="@drawable/camera2"
+          android:title="@string/action_camera"
+          app:showAsAction="ifRoom"/>
     <item android:id="@+id/action_log_out"
           android:title="@string/action_log_out"
           android:orderInCategory="100"

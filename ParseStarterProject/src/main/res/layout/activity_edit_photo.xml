@@ -8,7 +8,8 @@
         android:id="@+id/text_contrast"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Contrast: 10"/>
+        android:text="Contrast: 10"
+        android:layout_marginTop="10dp"/>
 
     <SeekBar
         android:id="@+id/seekbar_contrast"
@@ -18,12 +19,15 @@
         android:progress="10"
         android:layout_below="@+id/text_contrast"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        />
 
     <ImageView
         android:id="@+id/imageview_edit"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"/>
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="720px"
+        android:layout_height="720px"/>
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -67,8 +71,11 @@
         android:layout_height="wrap_content"
         android:text="Next"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/seekbar_contrast"
-        android:layout_toEndOf="@+id/seekbar_contrast" />
+        android:layout_toEndOf="@+id/seekbar_contrast"
+        android:layout_alignBottom="@+id/textview_brightness"
+        android:layout_alignLeft="@+id/button_engrave"
+        android:layout_alignStart="@+id/button_engrave"
+        android:layout_marginTop="10dp"/>
 
     <TextView
         android:id="@+id/textview_brightness"

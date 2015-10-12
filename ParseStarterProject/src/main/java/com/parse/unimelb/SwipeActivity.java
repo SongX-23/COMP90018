@@ -1,10 +1,12 @@
 package com.parse.unimelb;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.app.Activity;
+import android.support.v7.app.ActionBarActivity;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
@@ -17,7 +19,7 @@ import com.parse.unimelb.R;
 
 import java.io.File;
 
-public class SwipeActivity extends Activity implements View.OnClickListener {
+public class SwipeActivity extends ActionBarActivity implements View.OnClickListener {
     private static final int SWIPE_MIN_DISTANCE = 120;
     private static final int SWIPE_MAX_OFF_PATH = 250;
     private static final int SWIPE_THRESHOLD_VELOCITY = 200;
