@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:10:1-110:12
+ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:10:1-105:12
 	package
 		ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:11:5-32
 		INJECTED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml
@@ -89,7 +89,7 @@ ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src
 	android:name
 		ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:38:22-77
 application
-ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:40:5-108:19
+ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:40:5-103:19
 MERGED from [com.android.support:appcompat-v7:22.2.0] /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:22.2.0] /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/AndroidManifest.xml:22:5-20
 MERGED from [com.jpardogo.materialtabstrip:library:1.1.0] /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/build/intermediates/exploded-aar/com.jpardogo.materialtabstrip/library/1.1.0/AndroidManifest.xml:9:5-20
@@ -169,26 +169,26 @@ ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src
 	android:name
 		ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:83:13-46
 activity#com.parse.unimelb.PostActivity
-ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:86:9-94:20
+ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:86:9-89:20
 	android:label
 		ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:88:13-56
 	android:name
 		ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:87:13-41
 activity#com.parse.unimelb.CommentActivity
-ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:95:9-98:20
+ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:90:9-93:20
 	android:label
-		ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:97:13-59
+		ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:92:13-59
 	android:name
-		ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:96:13-44
+		ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:91:13-44
 activity#com.parse.unimelb.SwipeActivity
-ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:99:9-102:20
+ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:94:9-97:20
 	android:label
-		ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:101:13-57
+		ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:96:13-57
 	android:name
-		ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:100:13-42
+		ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:95:13-42
 activity#com.parse.unimelb.CropActivity
-ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:103:9-107:20
+ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:98:9-102:20
 	android:label
-		ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:105:13-56
+		ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:100:13-56
 	android:name
-		ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:104:13-41
+		ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:99:13-41
