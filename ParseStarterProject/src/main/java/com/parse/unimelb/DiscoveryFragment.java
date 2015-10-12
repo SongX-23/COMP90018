@@ -41,9 +41,16 @@ import org.w3c.dom.Text;
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -72,50 +79,16 @@ public class DiscoveryFragment extends Fragment {
     final private int SEARCH_COUNT = 10;
     private OnFragmentInteractionListener mListener;
     private ParseUser currentUser = ParseUser.getCurrentUser();
-    private String currentUserLocation;
+   // private String currentUserLocation;
     private ArrayList<ParseUser> weightedUsers;
-    private ArrayList<Integer> userWeights;
+    //private ArrayList<Integer> userWeights;
     private ParseUser userToWeigh;
     private int weight;
-
-
-//    private int melbourne = 0;
-//    private int hobart = 1;
-//    private int sydney = 2;
-//    private int darwin = 3;
-//    private int perth = 4;
-//    private int adelaide = 5;
-//    private int brisbane = 6;
-    private int[][] weightOfCities;
+    HashMap<ParseUser, Integer> usersMap;
+    private int[][] weightOfCities = new int[][]{{7,5,4,1,3,6,2}, {6,7,4,1,2,5,3}, {6,3,7,2,1,4,5},
+        {5,1,4,7,3,6,2},{6,2,4,3,7,5,1},{6,4,5,1,2,7,3},{4,3,6,1,2,5,7}};;
     private String [] listOfCitites = new String[]{"Melbourne", "Hobart", "Sydney", "Darwin",
             "Perth", "Adelaide", "Brisbane"};;
-
-    private int[][] arrayOfCities(){
-        weightOfCities = new int[][]{{7,5,4,1,3,6,2}, {6,7,4,1,2,5,3}, {6,3,7,2,1,4,5},
-                {5,1,4,7,3,6,2},{6,2,4,3,7,5,1},{6,4,5,1,2,7,3},{4,3,6,1,2,5,7}};
-        return weightOfCities;
-    }
-
-    private int checkCity(String scrapedUserCity){
-        int city = 1;
-//        listOfCitites = new String[]{"Melbourne", "Hobart", "Sydney", "Darwin",
-//                "Perth", "Adelaide", "Brisbane"};
-        for(int i = 0; i<listOfCitites.length; i++){
-            if (scrapedUserCity.equals(listOfCitites[i])){
-                city = i;
-            }
-        }
-        return city;
-    }
-
-    private boolean verifyCity(String scrapedUserCity){
-        for(int i=0;i<listOfCitites.length;i++) {
-            if(scrapedUserCity.equals(listOfCitites[i])) {
-                return true;
-            }
-        }
-        return false;
-    }
 
 
     /**
@@ -151,53 +124,63 @@ public class DiscoveryFragment extends Fragment {
     }
 
     public void recommendPeople(){
-        users = new ArrayList<DiscoverUser>();
-        ParseQuery<ParseUser> query = ParseUser.getQuery();
-        query.whereEqualTo("Gender", "Male");
-        query.findInBackground(new FindCallback<ParseUser>() {
-            public void done(List<ParseUser> objects, ParseException e) {
-                if (e == null) {
-                    Log.e("Discovery", objects.toString());
-                    calculateWeight((ArrayList<ParseUser>) objects);
-                    ArrayList<ParseUser> parseUserDB = weightedUsers;
-                    //pass the data into discovery user array list
-                    for (int i = 0; i < parseUserDB.size(); i++) {
-                        ParseUser tmpUser = parseUserDB.get(i);
-                        String username = tmpUser.getUsername();
-                        String gender = tmpUser.get("Gender").toString();
-                        String location = tmpUser.get("City").toString();
-                        ParseFile imageFile = (ParseFile) tmpUser.get("Image");
-                        Bitmap profileImage;
-                        if (imageFile != null) {
-                            byte[] bitmapdata = new byte[0];
-                            try {
-                                bitmapdata = imageFile.getData();
-                            } catch (ParseException eg) {
-                                eg.printStackTrace();
-                            }
-                            Bitmap bitmap = BitmapFactory.decodeByteArray(bitmapdata, 0, bitmapdata.length);
-                            profileImage = bitmap;
-                        } else {
-                            Drawable myDrawable = getResources().getDrawable(R.drawable.default_profile_image);
-                            Bitmap defaultImage = ((BitmapDrawable) myDrawable).getBitmap();
-                            profileImage = defaultImage;
-                        }
-                        DiscoverUser discoverUser = new DiscoverUser();
-                        discoverUser.setProfileImage(profileImage);
-                        discoverUser.setUsername(username);
-                        discoverUser.setGender(gender);
-                        discoverUser.setLocation(location);
 
-                        users.add(discoverUser);
+        // ISSUE 1: Need to filter this for only showing recommendations when the currentUser themself
+        // update their location.
+        //if(currentUser.get("City").toString() != "Blank") {
+            users = new ArrayList<DiscoverUser>();
+            ParseQuery<ParseUser> query = ParseUser.getQuery();
+
+        // ISSUE 2: How to get ensure that you do not get the current user, without deleting them from
+        // the list obtained from parse ?
+            //query.whereNotEqualTo("username", currentUser.getUsername());
+
+            query.whereEqualTo("City", currentUser.get("City").toString());
+            query.findInBackground(new FindCallback<ParseUser>() {
+                public void done(List<ParseUser> objects, ParseException e) {
+                    if (e == null) {
+                        Log.e("Discovery", objects.toString());
+                        calculateWeight((ArrayList<ParseUser>) objects);
+                        ArrayList<ParseUser> parseUserDB = weightedUsers;
+                        //pass the data into discovery user array list
+                        for (int i = 0; i < parseUserDB.size(); i++) {
+                            ParseUser tmpUser = parseUserDB.get(i);
+                            String username = tmpUser.getUsername();
+                            String gender = tmpUser.get("Gender").toString();
+                            String location = tmpUser.get("City").toString();
+                            ParseFile imageFile = (ParseFile) tmpUser.get("Image");
+                            Bitmap profileImage;
+                            if (imageFile != null) {
+                                byte[] bitmapdata = new byte[0];
+                                try {
+                                    bitmapdata = imageFile.getData();
+                                } catch (ParseException eg) {
+                                    eg.printStackTrace();
+                                }
+                                Bitmap bitmap = BitmapFactory.decodeByteArray(bitmapdata, 0, bitmapdata.length);
+                                profileImage = bitmap;
+                            } else {
+                                Drawable myDrawable = getResources().getDrawable(R.drawable.default_profile_image);
+                                Bitmap defaultImage = ((BitmapDrawable) myDrawable).getBitmap();
+                                profileImage = defaultImage;
+                            }
+                            DiscoverUser discoverUser = new DiscoverUser();
+                            discoverUser.setProfileImage(profileImage);
+                            discoverUser.setUsername(username);
+                            discoverUser.setGender(gender);
+                            discoverUser.setLocation(location);
+
+                            users.add(discoverUser);
+                        }
+                        discoveryAdapter.setUsers(users);
+                        discoveryAdapter.notifyDataSetChanged();
+                    } else {
+                        // Something went wrong.
+                        Log.e("Discovery", "Exception thrown");
                     }
-                    discoveryAdapter.setUsers(users);
-                    discoveryAdapter.notifyDataSetChanged();
-                } else {
-                    // Something went wrong.
-                    Log.e("Discovery", "Exception thrown");
                 }
-            }
-        });
+            });
+       // }
     }
 
 
@@ -318,14 +301,31 @@ public class DiscoveryFragment extends Fragment {
         return false;
     }
 
+    private int checkCity(String scrapedUserCity){
+        int city = 1;
+        for(int i = 0; i<listOfCitites.length; i++){
+            if (scrapedUserCity.equals(listOfCitites[i])){
+                city = i;
+            }
+        }
+        return city;
+    }
 
-//    private void discoveryAlgorithm(ArrayList<ParseUser> listOfUsers){
-//        for(int i = 0; i< listOfUsers.size();i++){
-//            calculateWeight(listOfUsers.get(i));
-//        }
-//    }
+    private boolean verifyCity(String scrapedUserCity){
+        for(int i=0;i<listOfCitites.length;i++) {
+            if(scrapedUserCity.equals(listOfCitites[i])) {
+                return true;
+            }
+        }
+        return false;
+    }
 
+    /* This method is used to calculate the weights assigned to each factor such as : Users city
+       and Gender
+      */
     private void calculateWeight(ArrayList<ParseUser> listOfUsers){
+        usersMap = new HashMap<>();
+        weightedUsers = new ArrayList<>();
         for(int i = 0; i< listOfUsers.size();i++) {
             userToWeigh = listOfUsers.get(i);
             weight = 1;
@@ -341,11 +341,11 @@ public class DiscoveryFragment extends Fragment {
                     weight = weightOfCities[userLoc][recommendedUserCity];
                 }
             }
-            if (verifyGender(currentUserGender)) {
-                if (verifyGender(recommendedUserGender)) {
-                    boolean currentUserPresent = verifyGender(currentUserGender);
-                    boolean weighedUserPresent = verifyGender(recommendedUserGender);
+            boolean currentUserPresent = verifyGender(currentUserGender);
+            boolean weighedUserPresent = verifyGender(recommendedUserGender);
 
+            if (currentUserPresent) {
+                if (weighedUserPresent) {
                     if (currentUserPresent && weighedUserPresent) {
                         if (currentUserGender.equals(recommendedUserGender)) {
                             weight += 5;
@@ -353,9 +353,30 @@ public class DiscoveryFragment extends Fragment {
                     }
                 }
             }
-            weightedUsers.add(userToWeigh);
-            userWeights.add(weight);
+            if(verifyCity(scrapedUserCity)) {
+                usersMap.put(userToWeigh, weight);
+            }
         }
+        sortbyWeights();
+    }
+
+    // This method is used to sort the Users based on the weights granted to them by verifying their
+    // City and gender.
+    private void sortbyWeights(){
+        List<Map.Entry<ParseUser,Integer>> list = new LinkedList<Map.Entry<ParseUser, Integer>>(usersMap.entrySet());
+
+        Collections.sort(list, new Comparator<Map.Entry<ParseUser, Integer>>() {
+            @Override
+            public int compare(Map.Entry<ParseUser, Integer> lhs, Map.Entry<ParseUser, Integer> rhs) {
+                return (rhs.getValue()).compareTo(lhs.getValue());
+            }
+        });
+        Map<ParseUser,Integer> sortedUserList = new LinkedHashMap<ParseUser, Integer>();
+        for(Map.Entry<ParseUser, Integer> entry : list){
+            sortedUserList.put(entry.getKey(), entry.getValue());
+            weightedUsers.add(entry.getKey());
+        }
+        Collections.reverse(weightedUsers);
     }
 
 
