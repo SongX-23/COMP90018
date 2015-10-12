@@ -77,7 +77,7 @@ public class BrowseAdapter extends BaseAdapter{
         TextView captionText = (TextView) rowView.findViewById(R.id.captionTextView);
         likeButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                likeButton.setImageDrawable(rowView.getResources().getDrawable(R.drawable.filledheart));
+                likeButton.setBackground(rowView.getResources().getDrawable(R.drawable.filledheart));
                 tmpLike = likedText.getText().toString();
                 likePosition = position;
                 String url = mContext.getResources().getString(R.string.instagram_api_url)
