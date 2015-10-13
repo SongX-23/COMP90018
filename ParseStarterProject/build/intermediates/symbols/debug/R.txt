@@ -431,6 +431,7 @@ int drawable abc_textfield_search_activated_mtrl_alpha 0x7f020038
 int drawable abc_textfield_search_default_mtrl_alpha 0x7f020039
 int drawable abc_textfield_search_material 0x7f02003a
 int drawable camera 0x7f02003b
+<<<<<<< HEAD
 int drawable comment 0x7f02003c
 int drawable default_profile_image 0x7f02003d
 int drawable emptyheart 0x7f02003e
@@ -441,6 +442,17 @@ int drawable mark3 0x7f020042
 int drawable notification_template_icon_bg 0x7f020044
 int drawable psts_background_tab 0x7f020043
 int id action0 0x7f0d00ad
+=======
+int drawable default_profile_image 0x7f02003c
+int drawable grid 0x7f02003d
+int drawable mark3 0x7f02003e
+int drawable notification_template_icon_bg 0x7f020040
+int drawable psts_background_tab 0x7f02003f
+int id Gender 0x7f0d0086
+int id ProfilePic 0x7f0d0084
+int id UserName 0x7f0d0085
+int id action0 0x7f0d00a4
+>>>>>>> Rahul
 int id action_bar 0x7f0d0042
 int id action_bar_activity_content 0x7f0d0000
 int id action_bar_container 0x7f0d0041
@@ -449,14 +461,23 @@ int id action_bar_spinner 0x7f0d0001
 int id action_bar_subtitle 0x7f0d0026
 int id action_bar_title 0x7f0d0025
 int id action_context_bar 0x7f0d0043
+<<<<<<< HEAD
 int id action_divider 0x7f0d00b1
 int id action_log_out 0x7f0d00bc
+=======
+int id action_divider 0x7f0d00a8
+int id action_log_out 0x7f0d00b3
+>>>>>>> Rahul
 int id action_menu_divider 0x7f0d0002
 int id action_menu_presenter 0x7f0d0003
 int id action_mode_bar 0x7f0d003f
 int id action_mode_bar_stub 0x7f0d003e
 int id action_mode_close_button 0x7f0d0027
+<<<<<<< HEAD
 int id action_settings 0x7f0d00bb
+=======
+int id action_settings 0x7f0d00b2
+>>>>>>> Rahul
 int id activity_chooser_view_content 0x7f0d0028
 int id alertTitle 0x7f0d0032
 int id always 0x7f0d0016
@@ -464,16 +485,27 @@ int id beginning 0x7f0d0013
 int id bioEditText 0x7f0d0073
 int id bioTextView 0x7f0d0076
 int id bold 0x7f0d001b
+<<<<<<< HEAD
 int id browseListView 0x7f0d0097
 int id button 0x7f0d009c
+=======
+int id browseListView 0x7f0d008f
+>>>>>>> Rahul
 int id button1 0x7f0d0054
 int id buttonGroup 0x7f0d0098
 int id buttonPanel 0x7f0d0038
+<<<<<<< HEAD
 int id button_bluetooth 0x7f0d0082
 int id button_camera 0x7f0d00a0
 int id button_color 0x7f0d0064
 int id button_crop 0x7f0d0062
 int id button_engrave 0x7f0d0065
+=======
+int id button_camera 0x7f0d0099
+int id button_color 0x7f0d0061
+int id button_crop 0x7f0d005f
+int id button_engrave 0x7f0d0062
+>>>>>>> Rahul
 int id button_flash 0x7f0d0055
 int id button_gallery 0x7f0d0057
 int id button_next 0x7f0d0066
@@ -482,12 +514,19 @@ int id button_post 0x7f0d0081
 int id button_return 0x7f0d005e
 int id button_saturation 0x7f0d0063
 int id cancelButton 0x7f0d005b
+<<<<<<< HEAD
 int id cancel_action 0x7f0d00ae
 int id captionText 0x7f0d0095
 int id captionTextView 0x7f0d0096
 int id checkbox 0x7f0d003a
 int id chronometer 0x7f0d00b4
 int id citySpinner 0x7f0d0075
+=======
+int id cancel_action 0x7f0d00a5
+int id checkbox 0x7f0d003a
+int id chronometer 0x7f0d00ab
+int id citySpinner 0x7f0d0072
+>>>>>>> Rahul
 int id collapseActionView 0x7f0d0017
 int id commentButton 0x7f0d005a
 int id commentEditText 0x7f0d0059
@@ -505,11 +544,16 @@ int id device_name 0x7f0d008b
 int id dialog 0x7f0d001d
 int id disableHome 0x7f0d000c
 int id dropdown 0x7f0d001e
+<<<<<<< HEAD
 int id editProfileButton 0x7f0d00a3
+=======
+int id editProfileButton 0x7f0d009c
+>>>>>>> Rahul
 int id edit_query 0x7f0d0044
 int id emailEditText 0x7f0d006d
 int id emailTextView 0x7f0d006c
 int id end 0x7f0d0014
+<<<<<<< HEAD
 int id end_padder 0x7f0d00b9
 int id expand_activities_button 0x7f0d0029
 int id expanded_menu 0x7f0d0039
@@ -524,12 +568,29 @@ int id fullNameTextView 0x7f0d006a
 int id genderSpinner 0x7f0d0071
 int id genderTextView 0x7f0d0070
 int id gridView 0x7f0d00aa
+=======
+int id end_padder 0x7f0d00b0
+int id expand_activities_button 0x7f0d0029
+int id expanded_menu 0x7f0d0039
+int id firstNameEditText 0x7f0d007e
+int id firstNameTextView 0x7f0d007d
+int id followerNumTextView 0x7f0d009e
+int id followersTextView 0x7f0d00a1
+int id followingNumTextView 0x7f0d009f
+int id followingTextView 0x7f0d00a2
+int id fullNameEditText 0x7f0d0068
+int id fullNameTextView 0x7f0d0067
+int id genderSpinner 0x7f0d006e
+int id genderTextView 0x7f0d006d
+int id gridView 0x7f0d00a3
+>>>>>>> Rahul
 int id home 0x7f0d0004
 int id homeAsUp 0x7f0d000d
 int id icon 0x7f0d002d
 int id ifRoom 0x7f0d0018
 int id image 0x7f0d002a
 int id imageView1 0x7f0d0053
+<<<<<<< HEAD
 int id imageview_edit 0x7f0d0061
 int id info 0x7f0d00b8
 int id italic 0x7f0d001c
@@ -546,6 +607,26 @@ int id locationTextView 0x7f0d008f
 int id loginButton 0x7f0d007e
 int id loginTextView 0x7f0d0087
 int id media_actions 0x7f0d00b0
+=======
+int id imageview_edit 0x7f0d005e
+int id imageview_post 0x7f0d007c
+int id info 0x7f0d00af
+int id italic 0x7f0d001c
+int id lastNameEditText 0x7f0d0080
+int id lastNameTextView 0x7f0d007f
+int id likeButton 0x7f0d008b
+int id likedTextView 0x7f0d008d
+int id line1 0x7f0d00a9
+int id line3 0x7f0d00ad
+int id list 0x7f0d0092
+int id listMode 0x7f0d0009
+int id list_item 0x7f0d002c
+int id liveInextView 0x7f0d0071
+int id locationTextView 0x7f0d0089
+int id loginButton 0x7f0d007b
+int id loginTextView 0x7f0d0081
+int id media_actions 0x7f0d00a7
+>>>>>>> Rahul
 int id middle 0x7f0d0015
 int id multiply 0x7f0d0020
 int id name 0x7f0d00ab
@@ -555,6 +636,7 @@ int id normal 0x7f0d000a
 int id pager 0x7f0d0078
 int id pair_list 0x7f0d008c
 int id parentPanel 0x7f0d002f
+<<<<<<< HEAD
 int id passwordEditText 0x7f0d007b
 int id passwordTextView 0x7f0d007a
 int id phoneEditText 0x7f0d006f
@@ -570,8 +652,27 @@ int id progress_horizontal 0x7f0d0006
 int id psts_tab_title 0x7f0d00ba
 int id radio 0x7f0d003c
 int id relativeLayout 0x7f0d007f
+=======
+int id passwordEditText 0x7f0d0078
+int id passwordTextView 0x7f0d0077
+int id phoneEditText 0x7f0d006c
+int id phoneTextView 0x7f0d006b
+int id photoImageView 0x7f0d008a
+int id postNumTextView 0x7f0d009d
+int id postTextView 0x7f0d00a0
+int id profileImageButton 0x7f0d009a
+int id profile_img_button_new 0x7f0d00b5
+int id profile_img_button_remove 0x7f0d00b4
+int id progress_circular 0x7f0d0005
+int id progress_horizontal 0x7f0d0006
+int id psts_tab_title 0x7f0d00b1
+int id radio 0x7f0d003c
+int id recommendTextView 0x7f0d0094
+>>>>>>> Rahul
 int id screen 0x7f0d0021
 int id scrollView 0x7f0d0034
+int id searchButton 0x7f0d0095
+int id searchEditText 0x7f0d0093
 int id search_badge 0x7f0d0046
 int id search_bar 0x7f0d0045
 int id search_button 0x7f0d0047
@@ -582,28 +683,47 @@ int id search_mag_icon 0x7f0d0049
 int id search_plate 0x7f0d004a
 int id search_src_text 0x7f0d004b
 int id search_voice_btn 0x7f0d004f
+<<<<<<< HEAD
 int id section_label 0x7f0d009d
 int id seekbar_brightness 0x7f0d0068
 int id seekbar_contrast 0x7f0d0060
+=======
+int id section_label 0x7f0d0096
+int id seekbar_brightness 0x7f0d0065
+int id seekbar_contrast 0x7f0d005d
+>>>>>>> Rahul
 int id select_dialog_listview 0x7f0d0050
 int id shortcut 0x7f0d003b
 int id showCustom 0x7f0d000f
 int id showHome 0x7f0d0010
 int id showTitle 0x7f0d0011
+<<<<<<< HEAD
 int id signTextView 0x7f0d007c
 int id signupButton 0x7f0d0088
 int id signupTextView 0x7f0d007d
 int id sortDateButton 0x7f0d009a
 int id sortLocButton 0x7f0d0099
+=======
+int id signTextView 0x7f0d0079
+int id signupButton 0x7f0d0082
+int id signupTextView 0x7f0d007a
+int id sortDateButton 0x7f0d0091
+int id sortLocButton 0x7f0d0090
+>>>>>>> Rahul
 int id split_action_bar 0x7f0d0007
 int id src_atop 0x7f0d0022
 int id src_in 0x7f0d0023
 int id src_over 0x7f0d0024
+<<<<<<< HEAD
 int id status_bar_latest_event_content 0x7f0d00af
+=======
+int id status_bar_latest_event_content 0x7f0d00a6
+>>>>>>> Rahul
 int id submit_area 0x7f0d004d
 int id surfaceView1 0x7f0d0052
 int id swipeThumbnail 0x7f0d0089
 int id tabMode 0x7f0d000b
+<<<<<<< HEAD
 int id tabs 0x7f0d0077
 int id text 0x7f0d00b7
 int id text2 0x7f0d00b5
@@ -619,6 +739,20 @@ int id textview_flash 0x7f0d0056
 int id textview_send 0x7f0d008a
 int id thumbnail 0x7f0d0080
 int id time 0x7f0d00b3
+=======
+int id tabs 0x7f0d0074
+int id text 0x7f0d00ae
+int id text2 0x7f0d00ac
+int id textSpacerNoButtons 0x7f0d0035
+int id textView 0x7f0d008e
+int id textView1 0x7f0d008c
+int id textView3 0x7f0d0097
+int id textView4 0x7f0d0098
+int id text_contrast 0x7f0d005c
+int id textview_brightness 0x7f0d0064
+int id textview_flash 0x7f0d0056
+int id time 0x7f0d00aa
+>>>>>>> Rahul
 int id title 0x7f0d002e
 int id titleTextView 0x7f0d0079
 int id title_template 0x7f0d0031
@@ -626,9 +760,15 @@ int id topPanel 0x7f0d0030
 int id up 0x7f0d0008
 int id updateButton 0x7f0d0072
 int id useLogo 0x7f0d0012
+<<<<<<< HEAD
 int id userNameTextView 0x7f0d008e
 int id userProfileImageView 0x7f0d008d
 int id usernameTextView 0x7f0d00a2
+=======
+int id userNameTextView 0x7f0d0088
+int id userProfileImageView 0x7f0d0087
+int id usernameTextView 0x7f0d009b
+>>>>>>> Rahul
 int id withText 0x7f0d001a
 int id wrap_content 0x7f0d001f
 int integer abc_config_activityDefaultDur 0x7f0a0001
@@ -663,6 +803,7 @@ int layout abc_select_dialog_material 0x7f040017
 int layout abc_simple_dropdown_hint 0x7f040018
 int layout activity_camera 0x7f040019
 int layout activity_comment 0x7f04001a
+<<<<<<< HEAD
 int layout activity_crop 0x7f04001b
 int layout activity_edit_photo 0x7f04001c
 int layout activity_edit_profile 0x7f04001d
@@ -694,6 +835,37 @@ int layout select_dialog_item_material 0x7f040036
 int layout select_dialog_multichoice_material 0x7f040037
 int layout select_dialog_singlechoice_material 0x7f040038
 int layout support_simple_spinner_dropdown_item 0x7f040039
+=======
+int layout activity_edit_photo 0x7f04001b
+int layout activity_edit_profile 0x7f04001c
+int layout activity_home 0x7f04001d
+int layout activity_login 0x7f04001e
+int layout activity_main 0x7f04001f
+int layout activity_post 0x7f040020
+int layout activity_signup 0x7f040021
+int layout activity_swipe 0x7f040022
+int layout discovery 0x7f040023
+int layout feed 0x7f040024
+int layout fragment_browse 0x7f040025
+int layout fragment_discovery 0x7f040026
+int layout fragment_home 0x7f040027
+int layout fragment_notification 0x7f040028
+int layout fragment_photo 0x7f040029
+int layout fragment_profile 0x7f04002a
+int layout notification_media_action 0x7f04002b
+int layout notification_media_cancel_action 0x7f04002c
+int layout notification_template_big_media 0x7f04002d
+int layout notification_template_big_media_narrow 0x7f04002e
+int layout notification_template_lines 0x7f04002f
+int layout notification_template_media 0x7f040030
+int layout notification_template_part_chronometer 0x7f040031
+int layout notification_template_part_time 0x7f040032
+int layout psts_tab 0x7f040033
+int layout select_dialog_item_material 0x7f040034
+int layout select_dialog_multichoice_material 0x7f040035
+int layout select_dialog_singlechoice_material 0x7f040036
+int layout support_simple_spinner_dropdown_item 0x7f040037
+>>>>>>> Rahul
 int menu menu_camera 0x7f0e0000
 int menu menu_comment 0x7f0e0001
 int menu menu_crop 0x7f0e0002

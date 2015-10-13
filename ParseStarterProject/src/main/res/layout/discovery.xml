@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/ProfilePic"
+        android:layout_gravity="left|top"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="18dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/UserName"
+        android:layout_gravity="center_horizontal|top"
+        android:textSize="15dp"
+        android:layout_alignTop="@+id/ProfilePic"
+        android:layout_toRightOf="@+id/ProfilePic"
+        android:layout_toEndOf="@+id/ProfilePic"
+        android:layout_marginLeft="40dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/Gender"
+        android:layout_gravity="center_horizontal|top"
+        android:textSize="13dp"
+        android:layout_alignBottom="@+id/ProfilePic"
+        android:layout_toRightOf="@+id/ProfilePic"
+        android:layout_toEndOf="@+id/ProfilePic"
+        android:layout_marginLeft="40dp" />
+</RelativeLayout>
