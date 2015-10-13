@@ -1,13 +1,59 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context="com.parse.unimelb.NotificationFragment">
+    android:layout_height="match_parent" tools:context="com.parse.unimelb.BrowseFragment"
+    android:id="@+id/content_frame"
+    android:weightSum="1">
 
-    <!-- TODO: Update blank fragment layout -->
+    <ListView
+        android:id="@+id/listViewFollow"
+        android:layout_width="fill_parent"
+        android:layout_height="480dp"
+        android:divider="#b5b5b5"
+        android:dividerHeight="1dp"
+        android:layout_weight="0.8"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/buttonGroup"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentStart="false" />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Notification"
-        android:id="@+id/textView3"
-        android:layout_gravity="center" />
-</FrameLayout>
+        android:id="@+id/buttonGroup"
+        android:layout_alignParentBottom="true">
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="FOLLOWING"
+        android:id="@+id/btnFollowing"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:background="#33b5e5"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/btnFollower"
+        android:layout_toEndOf="@+id/btnFollower"
+        android:layout_alignParentRight="true"
+        android:textColor="#FFFFFF"/>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="YOU"
+        android:id="@+id/btnFollower"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:background="#ffffff"
+        android:clickable="false"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#33b5e5"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

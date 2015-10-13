@@ -18,4 +18,8 @@
     android:layout_height="match_parent"
     tools:context="com.parse.unimelb.HomeActivity" />
 
+<<<<<<< HEAD
 </LinearLayout><!-- From: file:/Users/songxue/Documents/Mobile%20Dev/Instagram/ParseStarterProject/src/main/res/layout/activity_home.xml -->
+=======
+</LinearLayout><!-- From: file:/D:/GitHub/COMP90018/ParseStarterProject/src/main/res/layout/activity_home.xml -->
+>>>>>>> 52b66061e61927849c9af39e3da99dbf3b00ffa4
