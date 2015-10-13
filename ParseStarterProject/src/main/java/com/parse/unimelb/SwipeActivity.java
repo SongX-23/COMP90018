@@ -6,6 +6,7 @@ import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.app.Activity;
 import android.support.v7.app.ActionBarActivity;
@@ -66,7 +67,8 @@ public class SwipeActivity extends ActionBarActivity implements View.OnClickList
                 return gestureDetector.onTouchEvent(event);
             }
         };
-
+        TextView deviceText = (TextView) this.findViewById(R.id.device_name);
+        deviceText.setTypeface(deviceText.getTypeface(), Typeface.BOLD);
         ImageView imageView = (ImageView) findViewById(R.id.swipeThumbnail);
         imageView.setImageBitmap(thumbnail);
 
