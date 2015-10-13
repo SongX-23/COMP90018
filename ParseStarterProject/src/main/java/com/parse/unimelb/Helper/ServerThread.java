@@ -5,11 +5,16 @@ import android.bluetooth.BluetoothServerSocket;
 import android.bluetooth.BluetoothSocket;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Environment;
 import android.util.Log;
 import android.widget.Toast;
 
 import com.parse.unimelb.HomeActivity;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.OutputStream;
@@ -86,6 +91,25 @@ public class ServerThread extends Thread {
 //                            activity.imageview.setImageBitmap(receivedBitmap);
 //                            activity.imageview.refreshDrawableState();
                             BitmapStore.setReceivedBitmap(receivedBitmap);
+
+                            File storagePath = new File(Environment.getExternalStorageDirectory()
+                                    + "/DCIM/100ANDRO/");
+                            storagePath.mkdirs();
+
+                            File myImage = new File(storagePath, Long.toString(System.currentTimeMillis()) + ".jpg");
+                            try {
+                                FileOutputStream out = new FileOutputStream(myImage);
+                                receivedBitmap.compress(Bitmap.CompressFormat.JPEG, 40, out);
+
+                                out.flush();
+                                out.close();
+                            } catch(FileNotFoundException e) {
+                                Log.d("In Saving File", e + "");
+                            } catch(IOException e) {
+                                Log.d("In Saving File", e + "");
+                            }
+
+                            BluetoothImageTempStore.bits.add(myImage.getPath());
                             Toast.makeText(activity, "You have received a photo, please refresh", Toast.LENGTH_LONG).show();
                         }
                     });

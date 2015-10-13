@@ -9,18 +9,5 @@ import java.util.ArrayList;
  * Created by raymond on 10/13/15.
  */
 public class BluetoothImageTempStore {
-    private static ArrayList<String> bits = new ArrayList<>();
-    private static int counter = 0;
-
-    public ArrayList<String> getArrayList() {
-        return bits;
-    }
-
-    public int getCounter(){
-        return counter;
-    }
-
-    public void addCounter() {
-        counter ++;
-    }
+    public static ArrayList<String> bits = new ArrayList<>();
 }

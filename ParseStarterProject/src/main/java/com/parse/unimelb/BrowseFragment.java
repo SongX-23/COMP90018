@@ -66,11 +66,7 @@ public class BrowseFragment extends Fragment {
     private BrowseAdapter browseAdapter;
     private double latitudeCurrent;
     private double longitudeCurrent;
-    private MediaScannerConnection mediaScanner = null;
 
-
-    BluetoothImageTempStore bitsObj = new BluetoothImageTempStore();
-    ArrayList<String> tempArrayList = bitsObj.getArrayList();
 
     /**
      * Use this factory method to create a new instance of
@@ -187,39 +183,17 @@ public class BrowseFragment extends Fragment {
         System.out.println("Requesting from: " + request_url);
         //create a feed array list
         feeds_array = new ArrayList<>();
-        // check if the received bitmap is null
-        if (BitmapStore.getReceivedBitmap() != null) {
-            Bitmap receivedBitmap = BitmapStore.getReceivedBitmap();
 
-            // take the received Bitmap and put image into Gallary
-            File storagePath = new File(Environment.getExternalStorageDirectory()
-                    + "/DCIM/100ANDRO/");
-            storagePath.mkdirs();
 
-            File myImage = new File(storagePath, Long.toString(System.currentTimeMillis()) + ".jpg");
-            try {
-                FileOutputStream out = new FileOutputStream(myImage);
-                receivedBitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
-
-                out.flush();
-                out.close();
-            } catch(FileNotFoundException e) {
-                Log.d("In Saving File", e + "");
-            } catch(IOException e) {
-                Log.d("In Saving File", e + "");
-            }
-            // Save the file path into BITS
-            tempArrayList.add(0, myImage.getPath());
-
-            for(int i = 0; i < tempArrayList.size(); i ++) {
-            // Read from File
-            Bitmap newBitmap = BitmapFactory.decodeFile(tempArrayList.get(i));
+        for(int i = 0; i < BluetoothImageTempStore.bits.size(); i ++) {
+            String filePath = BluetoothImageTempStore.bits.get(i);
+            Bitmap receivedBitmap = BitmapFactory.decodeFile(filePath);
 
             Feed receivedFeed = new Feed();
             receivedFeed.setCaption("#In Range");
-            receivedFeed.setPhoto(newBitmap);
+            receivedFeed.setPhoto(receivedBitmap);
             feeds_array.add(0, receivedFeed);
-            }
+//            Toast.makeText(getActivity(), i + " ", Toast.LENGTH_LONG).show();
         }
         
         //request a json response
