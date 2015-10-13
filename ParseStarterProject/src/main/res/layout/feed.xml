@@ -108,7 +108,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/likeTextView"
+        android:id="@+id/likedTextView"
         android:layout_below="@+id/textView"
         android:layout_alignLeft="@+id/textView"
         android:layout_alignStart="@+id/textView"
@@ -120,9 +120,9 @@
         android:layout_height="wrap_content"
         android:text="Comments"
         android:id="@+id/commentText"
-        android:layout_below="@+id/likeTextView"
-        android:layout_alignLeft="@+id/likeTextView"
-        android:layout_alignStart="@+id/likeTextView"
+        android:layout_below="@+id/likedTextView"
+        android:layout_alignLeft="@+id/likedTextView"
+        android:layout_alignStart="@+id/likedTextView"
         android:layout_marginTop="3dp"
         android:layout_marginBottom="3dp"/>
 
