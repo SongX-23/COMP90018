@@ -1340,6 +1340,7 @@
         <item>Male</item>
         <item>Female</item>
     </string-array><string-array name="city_arrays">
+        <item>Blank</item>
         <item>Melbourne</item>
         <item>Sydney</item>
         <item>Darwin</item>

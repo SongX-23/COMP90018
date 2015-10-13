@@ -3,6 +3,7 @@
     <!-- From: file:/C:/Users/Rahul/Documents/COMP90018/ParseStarterProject/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string-array name="city_arrays">
+        <item>Blank</item>
         <item>Melbourne</item>
         <item>Sydney</item>
         <item>Darwin</item>
