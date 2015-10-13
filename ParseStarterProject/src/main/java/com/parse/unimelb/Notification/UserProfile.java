@@ -1,4 +1,4 @@
-package com.parse.unimelb;
+package com.parse.unimelb.notification;
 
 import android.graphics.Bitmap;
 import android.text.format.DateFormat;

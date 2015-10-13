@@ -1,7 +1,6 @@
-package com.parse.unimelb;
+package com.parse.unimelb.notification;
 
 import android.graphics.Bitmap;
-import android.graphics.YuvImage;
 
 /**
  * Created by JOHANESG1508 on 10/13/2015.
