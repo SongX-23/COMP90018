@@ -2,17 +2,9 @@ package com.parse.unimelb;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +12,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
-
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -29,15 +20,9 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.parse.unimelb.Helper.BitmapStore;
 import com.parse.unimelb.Helper.BluetoothImageTempStore;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -106,9 +91,8 @@ public class BrowseFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_browse, container, false);
         //getting GPS location
-        // check if GPS enabled
         GPSTracker gpsTracker = new GPSTracker(this.getActivity());
-
+        // check if GPS enabled
         if (gpsTracker.getIsGPSTrackingEnabled())
         {
             latitudeCurrent = gpsTracker.latitude;
@@ -122,11 +106,13 @@ public class BrowseFragment extends Fragment {
             // Ask user to enable GPS/network in settings
             gpsTracker.showSettingsAlert();
         }
+        //get all the UI components
         Button sortDate = (Button) view.findViewById(R.id.sortDateButton);
         Button sortLoc = (Button) view.findViewById(R.id.sortLocButton);
         listView = (ListView) view.findViewById(R.id.browseListView);
         browseAdapter = new BrowseAdapter(getActivity(),getData());
         listView.setAdapter(browseAdapter);
+        //implement sorting function
         sortDate.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 loadFeeds();
@@ -134,6 +120,7 @@ public class BrowseFragment extends Fragment {
                 browseAdapter.notifyDataSetChanged();
             }
         });
+        //calculate the distance and implement sorting function
         sortLoc.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 Collections.sort(getData(), new BeanComparator("distance"));
@@ -143,7 +130,7 @@ public class BrowseFragment extends Fragment {
         });
         return view;
     }
-
+    //do load feeds when view is visible to user
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
@@ -173,30 +160,22 @@ public class BrowseFragment extends Fragment {
         // TODO: Update argument type and name
         public void onFragmentInteraction(Uri uri);
     }
+    //main requesting data method
     public void loadFeeds(){
-        //request url
-        //String request_url = FeedFragment.getResources().getString(R.string.instagram_api_url)
-        //        + FeedFragment.getResources().getString(R.string.instagram_api_users_method)
-        //        + "self/feed?access_token="
-        //        + FeedFragment.getResources().getString(R.string.instagram_access_token);
         String request_url = "https://api.instagram.com/v1/users/self/feed?access_token=25846960.1fb234f.1c7c1f3a4843498f88d0f559ff690eb2";
         //DEBUG
         System.out.println("Requesting from: " + request_url);
         //create a feed array list
         feeds_array = new ArrayList<>();
-
-
+        //iterate through the bluetooth feed
         for(int i = 0; i < BluetoothImageTempStore.bits.size(); i ++) {
             String filePath = BluetoothImageTempStore.bits.get(i);
             Bitmap receivedBitmap = BitmapFactory.decodeFile(filePath);
-
             Feed receivedFeed = new Feed();
             receivedFeed.setCaption("#In Range");
             receivedFeed.setPhoto(receivedBitmap);
             feeds_array.add(0, receivedFeed);
-//            Toast.makeText(getActivity(), i + " ", Toast.LENGTH_LONG).show();
         }
-        
         //request a json response
         JsonObjectRequest jsonRequest = new JsonObjectRequest
                 (Request.Method.GET, request_url, (String)null, new Response.Listener<JSONObject>() {

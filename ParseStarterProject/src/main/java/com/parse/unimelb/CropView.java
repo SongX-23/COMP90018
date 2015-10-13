@@ -13,9 +13,6 @@ import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.ImageView;
-import android.widget.Toast;
-
-import java.io.ByteArrayOutputStream;
 
 /**
  * Deals with crop image
@@ -170,8 +167,6 @@ public class CropView extends ImageView {
         float y = leftTop.y-center.y+(drawable.getBitmap().getHeight()/2);
             Bitmap cropped = Bitmap.createBitmap(drawable.getBitmap(), (int) x, (int) y, (int) rightBottom.x -
                     leftTop.x, (int) rightBottom.y - (int) leftTop.y);
-//        ByteArrayOutputStream stream = new ByteArrayOutputStream();
-//        cropped.compress(Bitmap.CompressFormat.PNG, 100, stream);
         return cropped;
     }
 }

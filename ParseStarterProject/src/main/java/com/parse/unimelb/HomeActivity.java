@@ -1,34 +1,25 @@
 package com.parse.unimelb;
 
-import java.util.Locale;
-
-import android.app.ActionBar;
 import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import java.util.Locale;
-import java.util.UUID;
-
 import com.astuetz.PagerSlidingTabStrip;
 import com.parse.ParseUser;
 import com.parse.unimelb.Helper.ServerThread;
-import com.parse.unimelb.R;
+import java.util.Locale;
+import java.util.UUID;
 
 public class HomeActivity extends ActionBarActivity {
 

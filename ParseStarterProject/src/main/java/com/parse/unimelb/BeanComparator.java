@@ -4,6 +4,9 @@ import java.util.Comparator;
 
 /**
  * Created by songxue on 8/10/2015.
+ * This class provides a universal comparing service. It can compare any formatted objects by some
+ * attributes of themselves. For example, it can sort feeds by the location or date.
+ * It has been used in sorting feeds.
  */
 public class BeanComparator implements Comparator<Object> {
 

@@ -8,9 +8,7 @@ import android.graphics.BitmapFactory;
 import android.os.Environment;
 import android.util.Log;
 import android.widget.Toast;
-
 import com.parse.unimelb.HomeActivity;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -22,6 +20,7 @@ import java.util.UUID;
 
 /**
  * Created by Rahul on 10/10/2015.
+ * This class provides a server thread for users who are receiving image from other users
  */
 public class ServerThread extends Thread {
 

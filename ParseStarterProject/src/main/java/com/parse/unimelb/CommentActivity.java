@@ -8,17 +8,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.parse.unimelb.R;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
+/* Comment Activity implements the comment functionality of the app. */
 public class CommentActivity extends ActionBarActivity {
 
     @Override
@@ -28,14 +26,18 @@ public class CommentActivity extends ActionBarActivity {
         EditText comments = (EditText) findViewById(R.id.commentEditText);
         String commentText = comments.getText().toString();
         Button cancel = (Button) findViewById(R.id.cancelButton);
+        //cancel button to go back
         cancel.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 onBackPressed();
             }
         });
+        //implement the comment requesting here. Although it always return HTTP400, we are still
+        //requesting/.
         Button comment = (Button) findViewById(R.id.commentButton);
         comment.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
+                //request url
                 String url = getResources().getString(R.string.instagram_api_url)
                         + getResources().getString(R.string.instagram_api_media_method)
                         + "id/comments?access_token="

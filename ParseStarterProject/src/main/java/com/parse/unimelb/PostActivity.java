@@ -1,8 +1,5 @@
 package com.parse.unimelb;
 
-import android.app.ActionBar;
-import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.Dialog;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -18,17 +15,13 @@ import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
-
-import com.parse.unimelb.Helper.*;
-
+import com.parse.unimelb.Helper.BluetoothPair;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Set;
-import java.util.UUID;
 
 public class PostActivity extends ActionBarActivity {
 

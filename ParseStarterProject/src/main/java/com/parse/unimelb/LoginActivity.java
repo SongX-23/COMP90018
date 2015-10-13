@@ -1,8 +1,8 @@
 package com.parse.unimelb;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -10,13 +10,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.parse.LogInCallback;
-import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseUser;
-import com.parse.unimelb.R;
 
+/**
+ * Created by songxue on 29/09/2015.
+ * This class is providing login service for users
+ */
 public class LoginActivity extends AppCompatActivity {
     Button loginbutton;
     EditText email_str;
@@ -35,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
             flag = bundle.getString("currentUser");
         }
         System.out.println("Logout?" + currentUser.get("FullName"));
-
+        //if no current logged in user then login user
         if (currentUser.get("FullName") != null && !flag.equals("Logout")) {
             TextView signupTextView = (TextView) this.findViewById(R.id.signupTextView);
             signupTextView.setOnClickListener(new View.OnClickListener() {

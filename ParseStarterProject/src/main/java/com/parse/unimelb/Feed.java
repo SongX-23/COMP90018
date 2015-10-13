@@ -7,6 +7,8 @@ import java.util.ArrayList;
 
 /**
  * Created by songxue on 2/10/2015.
+ * This is a class for the feeds which are fetched from instagram. It provides all the necessary
+ * attributes and their getter and setter
  */
 public class Feed{
     private String displayName;
@@ -24,6 +26,21 @@ public class Feed{
     private double longitude;
     private double distance;
 
+    public Feed(String displayName, String userProfileImgURL, String photoURL, String location, ArrayList<String> comment, ArrayList<String> like, String caption, Boolean user_has_liked) {
+        this.displayName = displayName;
+        this.userProfileImgURL = userProfileImgURL;
+        this.photoURL = photoURL;
+        this.location = location;
+        this.comment = comment;
+        this.like = like;
+        this.caption = caption;
+        this.user_has_liked = user_has_liked;
+
+    }
+
+    public Feed(){
+
+    }
 
     public String getCaption() {
         return caption;
@@ -57,21 +74,6 @@ public class Feed{
         this.distance = distance;
     }
 
-    public Feed(String displayName, String userProfileImgURL, String photoURL, String location, ArrayList<String> comment, ArrayList<String> like, String caption, Boolean user_has_liked) {
-        this.displayName = displayName;
-        this.userProfileImgURL = userProfileImgURL;
-        this.photoURL = photoURL;
-        this.location = location;
-        this.comment = comment;
-        this.like = like;
-        this.caption = caption;
-        this.user_has_liked = user_has_liked;
-
-    }
-    public Feed(){
-
-    }
-
     public Boolean getUser_has_liked() {
         return user_has_liked;
     }
@@ -79,6 +81,7 @@ public class Feed{
     public void setUser_has_liked(Boolean user_has_liked) {
         this.user_has_liked = user_has_liked;
     }
+
     public String getDisplayName() {
 
         return displayName;

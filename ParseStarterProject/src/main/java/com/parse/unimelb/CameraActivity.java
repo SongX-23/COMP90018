@@ -1,6 +1,5 @@
 package com.parse.unimelb;
 
-import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -13,7 +12,6 @@ import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -26,9 +24,7 @@ import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 import android.widget.ToggleButton;
-
 import com.parse.unimelb.Helper.BitmapStore;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;

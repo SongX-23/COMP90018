@@ -9,7 +9,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.LayoutInflater;
@@ -23,26 +22,20 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.ImageRequest;
-import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.NetworkImageView;
 import com.android.volley.toolbox.Volley;
 import com.parse.GetDataCallback;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
@@ -115,17 +108,11 @@ public class ProfileFragment extends Fragment {
         followerNum = (TextView) view.findViewById(R.id.followerNumTextView);
         followingNum = (TextView) view.findViewById(R.id.followingNumTextView);
         getUserCountResponse();
-
-        //
-        url_array = new ArrayList<String>();
-        image_array = new ArrayList<Bitmap>();
-
+        url_array = new ArrayList<>();
+        image_array = new ArrayList<>();
         gridView = (GridView) view.findViewById(R.id.gridView);
         imgAdapter = new ImageAdapter(getActivity(),getData());
         gridView.setAdapter(imgAdapter);
-        //
-
-       // getUserPhoto();
         //set the username
         currentUser = ParseUser.getCurrentUser();
         username.setText(currentUser.get("FullName").toString());
@@ -169,9 +156,6 @@ public class ProfileFragment extends Fragment {
                 v.showContextMenu();
             }
         });
-        //set up the grid view
-
-
         return view;
     }
 
@@ -307,7 +291,6 @@ public class ProfileFragment extends Fragment {
     }
 
     public void getUserPhoto(){
-
         // request url
         String request_url = getResources().getString(R.string.instagram_api_url)
                 + getResources().getString(R.string.instagram_api_users_method)
@@ -353,10 +336,7 @@ public class ProfileFragment extends Fragment {
                                             }
                                         }
                                 );
-                                //imgAdapter.setImage_array(image_array);
-                              //  gridView.setAdapter(imgAdapter);
-        //                        imgAdapter.notifyDataSetChanged();
-          //                      gridView.notifyAll();
+
                                 System.out.println(imgAdapter.getImage_array());
                                 Volley.newRequestQueue(getActivity()).add(imgRequest);
                             }

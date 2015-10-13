@@ -5,9 +5,6 @@ import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.graphics.Bitmap;
 import android.util.Log;
-
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
@@ -15,6 +12,7 @@ import java.util.UUID;
 
 /**
  * Created by Rahul on 10/10/2015.
+ * This class provides connection thread for transferring bitmap image.
  */
 public class ConnectThread extends Thread {
 
@@ -28,7 +26,7 @@ public class ConnectThread extends Thread {
     ObjectOutputStream objectOutputStream;
 
     // Set the instance variables including the UUID to set the code to enable communication.
-    public ConnectThread(BluetoothDevice device, Bitmap bitmap,BluetoothAdapter adapter, UUID uuid) {
+    public ConnectThread(BluetoothDevice device, Bitmap bitmap,BluetoothAdapter adapter, UUID uuid){
         this.bitmap=bitmap;
         mBluetoothAdapter = adapter;
         MY_UUID = uuid;

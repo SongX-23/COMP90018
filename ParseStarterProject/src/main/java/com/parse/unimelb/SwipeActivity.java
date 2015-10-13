@@ -1,6 +1,5 @@
 package com.parse.unimelb;
 
-import android.app.ActionBar;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
@@ -8,22 +7,16 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.app.Activity;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Filter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.parse.unimelb.Helper.ConnectThread;
 import com.parse.unimelb.Helper.ServerThread;
-import com.parse.unimelb.R;
-
-import java.io.File;
 import java.util.UUID;
 
 public class SwipeActivity extends ActionBarActivity implements View.OnClickListener {

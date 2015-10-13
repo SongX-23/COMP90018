@@ -9,7 +9,10 @@ import android.graphics.Rect;
 
 /**
  * Created by raymond on 9/25/15.
+ * This class provides global static methods handling Bitmap object storage and cropping the bitmap from square
+ * circle.
  */
+
 public class BitmapStore {
     static private Bitmap bmp = null;
     static private Bitmap rbmp = null;
@@ -29,6 +32,8 @@ public class BitmapStore {
     public static Bitmap getReceivedBitmap () {
         return rbmp;
     }
+
+    // universal method of cropping bitmap to circle
     public static Bitmap getCroppedBitmap(Bitmap bitmap) {
         Bitmap output = Bitmap.createBitmap(bitmap.getWidth(),
                 bitmap.getHeight(), Bitmap.Config.ARGB_8888);

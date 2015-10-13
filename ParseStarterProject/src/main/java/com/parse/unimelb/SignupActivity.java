@@ -1,12 +1,8 @@
 package com.parse.unimelb;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,17 +10,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.parse.ParseACL;
 import com.parse.ParseException;
-import com.parse.ParseFile;
 import com.parse.ParseUser;
-import com.parse.SaveCallback;
 import com.parse.SignUpCallback;
-import com.parse.unimelb.R;
 
-import java.io.ByteArrayOutputStream;
-
+/**
+ * Created by songxue on 29/09/2015.
+ * This class is providing sign up service for users
+ */
 public class SignupActivity extends AppCompatActivity {
     Button signupButton;
     EditText first_name, last_name, email, password;

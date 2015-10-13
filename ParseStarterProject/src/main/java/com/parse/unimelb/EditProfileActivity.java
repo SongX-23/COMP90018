@@ -1,14 +1,8 @@
 package com.parse.unimelb;
 
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.content.Intent;
-import android.provider.ContactsContract;
-import android.support.v7.app.ActionBarActivity;
+
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,12 +12,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
-
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
-import com.parse.unimelb.R;
 
+/* Edit Profile Activity implements the updating profile functionality of the app. */
 public class EditProfileActivity extends AppCompatActivity {
     Button updateProfile, cancelUpdate;
     Spinner genderSpinner, citySpinner;

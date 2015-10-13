@@ -2,23 +2,19 @@ package com.parse.unimelb;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.BaseAdapter;
-import android.widget.GridLayout;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.ListAdapter;
-
 import java.util.ArrayList;
 
 /**
  * Created by songxue on 29/09/2015.
+ * This class is providing the grid view adapter for showing user updated photos in profile fragment
  */
 public class ImageAdapter extends BaseAdapter {
     private Context mContext;
@@ -33,9 +29,6 @@ public class ImageAdapter extends BaseAdapter {
             DisplayMetrics metrics = new DisplayMetrics();
             display.getMetrics(metrics);
             width = metrics.widthPixels;
-//            Drawable myDrawable = c.getResources().getDrawable(R.drawable.default_profile_image);
-//            Bitmap defaultImg = ((BitmapDrawable) myDrawable).getBitmap();
-//            image_array.add(defaultImg);
     }
 
     public int getCount(){

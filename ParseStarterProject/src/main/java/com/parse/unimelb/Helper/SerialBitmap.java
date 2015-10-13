@@ -2,11 +2,15 @@ package com.parse.unimelb.Helper;
 
 
 import android.graphics.Bitmap;
-
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.Serializable;
 
+/**
+ * Created by Rahul on 10/13/15.
+ * This class provides service for serializing bitmap object for the purpose of transferring them
+ * via bluetooth
+ */
 
 public class SerialBitmap implements Serializable {
 
