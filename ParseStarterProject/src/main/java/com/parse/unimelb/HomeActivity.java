@@ -69,6 +69,8 @@ public class HomeActivity extends ActionBarActivity {
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
         PagerSlidingTabStrip tabs = (PagerSlidingTabStrip) findViewById(R.id.tabs);
+        tabs.setIndicatorColor(Color.parseColor("#33b5e5"));
+        tabs.setTextColor(Color.parseColor("#33b5e5"));
         tabs.setViewPager(mViewPager);
 
 
