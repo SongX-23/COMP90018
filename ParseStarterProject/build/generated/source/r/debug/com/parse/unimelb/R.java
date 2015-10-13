@@ -1698,13 +1698,15 @@ containing a value of this type.
         public static final int default_profile_image=0x7f02003f;
         public static final int empty_heart=0x7f020040;
         public static final int filled_heart=0x7f020041;
-        public static final int grid=0x7f020042;
-        public static final int icon=0x7f020043;
-        public static final int mark3=0x7f020044;
-        public static final int next=0x7f020045;
-        public static final int notification_template_icon_bg=0x7f020048;
-        public static final int psts_background_tab=0x7f020046;
-        public static final int scale=0x7f020047;
+        public static final int gallery=0x7f020042;
+        public static final int grid=0x7f020043;
+        public static final int icon=0x7f020044;
+        public static final int mark3=0x7f020045;
+        public static final int next=0x7f020046;
+        public static final int notification_template_icon_bg=0x7f02004a;
+        public static final int psts_background_tab=0x7f020047;
+        public static final int scale=0x7f020048;
+        public static final int take_photo=0x7f020049;
     }
     public static final class id {
         public static final int Gender=0x7f0d0090;
@@ -1741,9 +1743,9 @@ containing a value of this type.
         public static final int buttonGroup=0x7f0d0075;
         public static final int buttonPanel=0x7f0d0038;
         public static final int button_bluetooth=0x7f0d0082;
-        public static final int button_color=0x7f0d0066;
+        public static final int button_color=0x7f0d0067;
         public static final int button_crop=0x7f0d0064;
-        public static final int button_engrave=0x7f0d0067;
+        public static final int button_engrave=0x7f0d0066;
         public static final int button_flash=0x7f0d0055;
         public static final int button_gallery=0x7f0d0057;
         public static final int button_ok=0x7f0d005d;

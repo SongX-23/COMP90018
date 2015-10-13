@@ -6,8 +6,8 @@
 
     <com.parse.unimelb.CropView
         android:id="@+id/crop_view"
-        android:layout_width="720px"
-        android:layout_height="720px"
+        android:layout_width="640px"
+        android:layout_height="640px"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"/>
 <LinearLayout
