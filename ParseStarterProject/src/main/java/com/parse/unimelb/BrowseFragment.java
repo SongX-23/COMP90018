@@ -1,9 +1,12 @@
 package com.parse.unimelb;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Bundle;
@@ -16,23 +19,16 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.Cache;
 import com.android.volley.Request;
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.BasicNetwork;
-import com.android.volley.toolbox.DiskBasedCache;
-import com.android.volley.toolbox.HurlStack;
 import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.parse.unimelb.Helper.BitmapStore;
 import com.parse.unimelb.Helper.BluetoothImageTempStore;
-import com.parse.unimelb.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -43,7 +39,6 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 
 /**
@@ -371,7 +366,8 @@ public class BrowseFragment extends Fragment {
                                     @Override
                                     public void onResponse(Bitmap response) {
                                         //do something with the bitmap
-                                        feedObj.setUserProfileImg(response);
+                                        Bitmap croppedBitmap = BitmapStore.getCroppedBitmap(response);
+                                        feedObj.setUserProfileImg(croppedBitmap);
                                         if(browseAdapter != null) {
                                             browseAdapter.notifyDataSetChanged();
                                         }
