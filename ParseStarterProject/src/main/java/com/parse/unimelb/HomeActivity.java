@@ -67,6 +67,7 @@ public class HomeActivity extends AppCompatActivity {
         tabs.setViewPager(mViewPager);
 
 
+        mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         // Start the server thread in the ServerThread.class and pass on the UUID for communication
         // as well as the instance for this activity to access the ImageView
         myServer = new ServerThread(mBluetoothAdapter, MY_UUID, HomeActivity.this);

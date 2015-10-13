@@ -23,7 +23,7 @@ public class ServerThread extends Thread {
     private final BluetoothServerSocket myServSocket;
     BluetoothAdapter mBluetoothAdapter;
     UUID MY_UUID;
-    Bitmap bitmap ;
+    public Bitmap receivedBitmap = null;
     SerialBitmap serialBitmap;
     private HomeActivity activity;
 
@@ -77,7 +77,7 @@ public class ServerThread extends Thread {
                     // The data received is cast into the appropriate format, namely: SerialBitmap as
                     // the Bitmap object is not directly Serializable.
                     SerialBitmap receivedSerialBitmap = (SerialBitmap) received;
-                    final Bitmap receivedBitmap = BitmapFactory.decodeByteArray(receivedSerialBitmap.blob, 0, receivedSerialBitmap.blob.length);
+                    receivedBitmap = BitmapFactory.decodeByteArray(receivedSerialBitmap.blob, 0, receivedSerialBitmap.blob.length);
 
                     // This runs another thread to refresh the UI after getting the image from the client.
                     activity.runOnUiThread(new Runnable() {
@@ -85,6 +85,7 @@ public class ServerThread extends Thread {
                         public void run() {
 //                            activity.imageview.setImageBitmap(receivedBitmap);
 //                            activity.imageview.refreshDrawableState();
+                            BitmapStore.setReceivedBitmap(receivedBitmap);
                             Toast.makeText(activity, "You have received a photo, please refresh", Toast.LENGTH_LONG).show();
                         }
                     });

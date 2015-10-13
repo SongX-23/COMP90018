@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
  */
 public class BitmapStore {
     static private Bitmap bmp = null;
+    static private Bitmap rbmp = null;
 
     public static void setBitmap (Bitmap myBmp) {
         bmp = myBmp;
@@ -14,5 +15,13 @@ public class BitmapStore {
 
     public static Bitmap getBitmap() {
         return bmp;
+    }
+
+    public static void setReceivedBitmap (Bitmap receivedBitmap) {
+        rbmp = receivedBitmap;
+    }
+
+    public static Bitmap getReceivedBitmap () {
+        return rbmp;
     }
 }

@@ -92,14 +92,8 @@ public class ConnectThread extends Thread {
 
             // To transmit the data continuously after every 10 seconds.
             // TODO: how to end the client thread after transmission
-            while(true) {
-                sendText();
-                try {
-                    Thread.sleep(10000);
-                } catch(Exception e) {
-                    e.printStackTrace();
-                }
-            }
+
+            sendText();
         } catch (Exception e3){
             Log.e("Bluetooth", "Disconnected");
         }
