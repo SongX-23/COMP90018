@@ -1689,18 +1689,17 @@ containing a value of this type.
         public static final int abc_textfield_search_default_mtrl_alpha=0x7f020039;
         public static final int abc_textfield_search_material=0x7f02003a;
         public static final int camera=0x7f02003b;
-
-        public static final int comment=0x7f02003c;
-        public static final int default_profile_image=0x7f02003d;
-        public static final int emptyheart=0x7f02003e;
-        public static final int filledheart=0x7f02003f;
-        public static final int grid=0x7f020040;
-        public static final int icon=0x7f020041;
-        public static final int mark3=0x7f020042;
-        public static final int notification_template_icon_bg=0x7f020044;
-        public static final int psts_background_tab=0x7f020043;
         public static final int camera2=0x7f02003c;
-        public static final int scale=0x7f020041;
+        public static final int comment=0x7f02003d;
+        public static final int default_profile_image=0x7f02003e;
+        public static final int empty_heart=0x7f02003f;
+        public static final int filled_heart=0x7f020040;
+        public static final int grid=0x7f020041;
+        public static final int icon=0x7f020042;
+        public static final int mark3=0x7f020043;
+        public static final int notification_template_icon_bg=0x7f020046;
+        public static final int psts_background_tab=0x7f020044;
+        public static final int scale=0x7f020045;
     }
     public static final class id {
         public static final int Gender=0x7f0d008f;
@@ -1714,7 +1713,7 @@ containing a value of this type.
         public static final int action_bar_spinner=0x7f0d0001;
         public static final int action_bar_subtitle=0x7f0d0026;
         public static final int action_bar_title=0x7f0d0025;
-        public static final int action_camera=0x7f0d00bc;
+        public static final int action_camera=0x7f0d00c2;
         public static final int action_context_bar=0x7f0d0043;
         public static final int action_divider=0x7f0d00b6;
         public static final int action_log_out=0x7f0d00c1;
@@ -1830,9 +1829,8 @@ containing a value of this type.
         public static final int postNumTextView=0x7f0d00a9;
         public static final int postTextView=0x7f0d00ac;
         public static final int profileImageButton=0x7f0d00a6;
-        public static final int profile_img_button_new=0x7f0d00c3;
-        public static final int profile_img_button_remove=0x7f0d00c2;
-
+        public static final int profile_img_button_new=0x7f0d00c4;
+        public static final int profile_img_button_remove=0x7f0d00c3;
         public static final int progress_circular=0x7f0d0005;
         public static final int progress_horizontal=0x7f0d0006;
         public static final int psts_tab_title=0x7f0d00bf;

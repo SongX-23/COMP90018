@@ -78,7 +78,7 @@ public class BrowseAdapter extends BaseAdapter{
         likeButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 if (!oneFeed.getUser_has_liked()){
-                    likeButton.setBackground(rowView.getResources().getDrawable(R.drawable.filledheart));
+                    likeButton.setBackground(rowView.getResources().getDrawable(R.drawable.filled_heart));
                     oneFeed.setUser_has_liked(true);
                     tmpLike = likedText.getText().toString();
                     likePosition = position;
@@ -158,15 +158,15 @@ public class BrowseAdapter extends BaseAdapter{
             System.out.println("Like: " + likedText.getText());
             if (tmpLike == null && finalLikeText == null) {
                 if (oneFeed.getUser_has_liked()){
-                    likeButton.setBackground(rowView.getResources().getDrawable(R.drawable.filledheart));
+                    likeButton.setBackground(rowView.getResources().getDrawable(R.drawable.filled_heart));
                 }
                 likedText.setText(oneFeed.getLike().toString().replace(',', ' '));
             }else if(tmpLike != null && finalLikeText != null && position == likePosition){
                 likedText.setText(finalLikeText);
-                likeButton.setBackground(rowView.getResources().getDrawable(R.drawable.filledheart));
+                likeButton.setBackground(rowView.getResources().getDrawable(R.drawable.filled_heart));
             }else{
                 if (oneFeed.getUser_has_liked()){
-                    likeButton.setBackground(rowView.getResources().getDrawable(R.drawable.filledheart));
+                    likeButton.setBackground(rowView.getResources().getDrawable(R.drawable.filled_heart));
                 }
                 likedText.setText(oneFeed.getLike().toString().replace(',', ' '));
             }

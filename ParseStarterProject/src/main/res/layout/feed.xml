@@ -56,7 +56,7 @@
         android:adjustViewBounds="true"
         android:cropToPadding="false"
         android:scaleType="fitXY"
-        android:background="@drawable/emptyheart"/>
+        android:background="@drawable/empty_heart"/>
 
     <ImageButton
         style="?android:attr/buttonStyleSmall"
