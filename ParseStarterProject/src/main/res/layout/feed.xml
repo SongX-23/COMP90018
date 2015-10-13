@@ -77,7 +77,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Liked"
+        android:text="Caption"
         android:id="@+id/textView1"
         android:layout_below="@+id/likeButton"
         android:layout_alignLeft="@+id/likeButton"
@@ -87,7 +87,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/likedTextView"
+        android:id="@+id/captionTextView"
         android:layout_below="@+id/textView1"
         android:layout_alignLeft="@+id/textView1"
         android:layout_alignStart="@+id/textView1"
@@ -97,18 +97,18 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Comments"
+        android:text="Likes"
         android:id="@+id/textView"
-        android:layout_below="@+id/likedTextView"
-        android:layout_alignLeft="@+id/likedTextView"
-        android:layout_alignStart="@+id/likedTextView"
+        android:layout_below="@+id/captionTextView"
+        android:layout_alignLeft="@+id/captionTextView"
+        android:layout_alignStart="@+id/captionTextView"
         android:layout_marginTop="2dp"
         android:layout_marginBottom="5dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/commentTextView"
+        android:id="@+id/likeTextView"
         android:layout_below="@+id/textView"
         android:layout_alignLeft="@+id/textView"
         android:layout_alignStart="@+id/textView"
@@ -118,21 +118,21 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Caption"
-        android:id="@+id/captionText"
-        android:layout_below="@+id/commentTextView"
-        android:layout_alignLeft="@+id/commentTextView"
-        android:layout_alignStart="@+id/commentTextView"
+        android:text="Comments"
+        android:id="@+id/commentText"
+        android:layout_below="@+id/likeTextView"
+        android:layout_alignLeft="@+id/likeTextView"
+        android:layout_alignStart="@+id/likeTextView"
         android:layout_marginTop="3dp"
         android:layout_marginBottom="3dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/captionTextView"
-        android:layout_below="@+id/captionText"
-        android:layout_alignLeft="@+id/captionText"
-        android:layout_alignStart="@+id/captionText"
+        android:id="@+id/commentTextView"
+        android:layout_below="@+id/commentText"
+        android:layout_alignLeft="@+id/commentText"
+        android:layout_alignStart="@+id/commentText"
         android:layout_marginTop="3dp"
         android:layout_marginBottom="3dp"/>
 </RelativeLayout>

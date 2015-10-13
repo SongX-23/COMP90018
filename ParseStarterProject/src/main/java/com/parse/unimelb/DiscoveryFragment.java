@@ -126,12 +126,12 @@ public class DiscoveryFragment extends Fragment {
     public void recommendPeople(){
 
         if(currentUser.get("City").toString() != "Blank") {
-            users = new ArrayList<DiscoverUser>();
+            users = new ArrayList<>();
             ParseQuery<ParseUser> query = ParseUser.getQuery();
 
         // ISSUE 2: How to get ensure that you do not get the current user, without deleting them from
         // the list obtained from parse ?
-            query.whereNotEqualTo("username", currentUser.getUsername());
+            query.whereNotEqualTo("username", currentUser.getUsername().toString());
 
             //query.whereEqualTo("City", currentUser.get("City").toString());
             query.findInBackground(new FindCallback<ParseUser>() {
