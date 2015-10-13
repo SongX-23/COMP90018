@@ -1,5 +1,6 @@
 package com.parse.unimelb;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -12,6 +13,7 @@ import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -31,6 +33,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.List;
 
 
 /* Camera Activity implements the camera functionality of the app. */
@@ -198,6 +201,13 @@ public class CameraActivity extends Activity implements SurfaceHolder.Callback {
         }
         try {
             Camera.Parameters parameters = camera.getParameters();
+            List<Camera.Size> previewSizes = parameters.getSupportedPreviewSizes();
+            List<Camera.Size> pictureSizes = parameters.getSupportedPictureSizes();
+            Camera.Size previewSize = previewSizes.get(0);
+            Camera.Size pictureSize = pictureSizes.get(0);
+
+//            parameters.setPreviewSize(previewSize.width, previewSize.height);
+//            parameters.setPictureSize(pictureSize.width, pictureSize.height);
             parameters.setPreviewSize(640, 480);
             parameters.setPictureSize(640, 480);
             if(this.getResources().getConfiguration().orientation

@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -21,7 +22,7 @@ import com.astuetz.PagerSlidingTabStrip;
 import com.parse.ParseUser;
 import com.parse.unimelb.R;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends ActionBarActivity {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -74,6 +75,9 @@ public class HomeActivity extends AppCompatActivity {
         if (id == R.id.action_log_out) {
             logout();
             return true;
+        } else if (id == R.id.action_camera) {
+            Intent cameraIntent = new Intent(HomeActivity.this, CameraActivity.class);
+            startActivity(cameraIntent);
         }
 
         return super.onOptionsItemSelected(item);
@@ -107,12 +111,9 @@ public class HomeActivity extends AppCompatActivity {
                 return new DiscoveryFragment();
             }
             else if(position == 2) {
-                return new PhotoFragment();
-            }
-            else if(position == 3) {
                 return new NotificationFragment();
             }
-            else if(position == 4) {
+            else if(position == 3) {
                ProfileFragment profileFragment= new ProfileFragment();
                // profileFragment.getUserPhoto();
                 return profileFragment;
@@ -123,7 +124,7 @@ public class HomeActivity extends AppCompatActivity {
         @Override
         public int getCount() {
             // Show 5 total pages.
-            return 5;
+            return 4;
         }
 
         @Override
@@ -135,10 +136,8 @@ public class HomeActivity extends AppCompatActivity {
                 case 1:
                     return getString(R.string.title_section2).toUpperCase(l);
                 case 2:
-                    return getString(R.string.title_section3).toUpperCase(l);
-                case 3:
                     return getString(R.string.title_section4).toUpperCase(l);
-                case 4:
+                case 3:
                     return getString(R.string.title_section5).toUpperCase(l);
             }
             return null;

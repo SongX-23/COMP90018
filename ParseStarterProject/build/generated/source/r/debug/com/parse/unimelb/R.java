@@ -1689,6 +1689,7 @@ containing a value of this type.
         public static final int abc_textfield_search_default_mtrl_alpha=0x7f020039;
         public static final int abc_textfield_search_material=0x7f02003a;
         public static final int camera=0x7f02003b;
+
         public static final int comment=0x7f02003c;
         public static final int default_profile_image=0x7f02003d;
         public static final int emptyheart=0x7f02003e;
@@ -1698,6 +1699,8 @@ containing a value of this type.
         public static final int mark3=0x7f020042;
         public static final int notification_template_icon_bg=0x7f020044;
         public static final int psts_background_tab=0x7f020043;
+        public static final int camera2=0x7f02003c;
+        public static final int scale=0x7f020041;
     }
     public static final class id {
         public static final int Gender=0x7f0d008f;
@@ -1711,6 +1714,7 @@ containing a value of this type.
         public static final int action_bar_spinner=0x7f0d0001;
         public static final int action_bar_subtitle=0x7f0d0026;
         public static final int action_bar_title=0x7f0d0025;
+        public static final int action_camera=0x7f0d00bc;
         public static final int action_context_bar=0x7f0d0043;
         public static final int action_divider=0x7f0d00b6;
         public static final int action_log_out=0x7f0d00c1;
@@ -1828,6 +1832,7 @@ containing a value of this type.
         public static final int profileImageButton=0x7f0d00a6;
         public static final int profile_img_button_new=0x7f0d00c3;
         public static final int profile_img_button_remove=0x7f0d00c2;
+
         public static final int progress_circular=0x7f0d0005;
         public static final int progress_horizontal=0x7f0d0006;
         public static final int psts_tab_title=0x7f0d00bf;
@@ -2001,43 +2006,44 @@ containing a value of this type.
         public static final int abc_shareactionprovider_share_with=0x7f06000b;
         public static final int abc_shareactionprovider_share_with_application=0x7f06000c;
         public static final int abc_toolbar_collapse_description=0x7f060012;
-        public static final int action_log_out=0x7f060013;
-        public static final int action_settings=0x7f060014;
-        public static final int app_name=0x7f060015;
-        public static final int cancel=0x7f060016;
-        public static final int city_prompt=0x7f060017;
-        public static final int gender_prompt=0x7f060018;
-        public static final int hello_blank_fragment=0x7f060019;
-        public static final int hello_world=0x7f06001a;
-        public static final int instagram_access_token=0x7f06001b;
-        public static final int instagram_api_location_method=0x7f06001c;
-        public static final int instagram_api_media_method=0x7f06001d;
-        public static final int instagram_api_tag_method=0x7f06001e;
-        public static final int instagram_api_url=0x7f06001f;
-        public static final int instagram_api_users_method=0x7f060020;
-        public static final int instagram_client_id=0x7f060021;
-        public static final int instagram_client_key=0x7f060022;
-        public static final int instagram_user_id=0x7f060023;
-        public static final int parse_app_id=0x7f060024;
-        public static final int parse_client_key=0x7f060025;
-        public static final int profile_img_button_new=0x7f060026;
-        public static final int profile_img_button_remove=0x7f060027;
-        public static final int status_bar_notification_info_overflow=0x7f060028;
-        public static final int title_activity_camera=0x7f060029;
-        public static final int title_activity_comment=0x7f06002a;
-        public static final int title_activity_crop=0x7f06002b;
-        public static final int title_activity_edit_photo=0x7f06002c;
-        public static final int title_activity_edit_profile=0x7f06002d;
-        public static final int title_activity_home=0x7f06002e;
-        public static final int title_activity_login=0x7f06002f;
-        public static final int title_activity_post=0x7f060030;
-        public static final int title_activity_signup=0x7f060031;
-        public static final int title_activity_swipe=0x7f060032;
-        public static final int title_section1=0x7f060033;
-        public static final int title_section2=0x7f060034;
-        public static final int title_section3=0x7f060035;
-        public static final int title_section4=0x7f060036;
-        public static final int title_section5=0x7f060037;
+        public static final int action_camera=0x7f060013;
+        public static final int action_log_out=0x7f060014;
+        public static final int action_settings=0x7f060015;
+        public static final int app_name=0x7f060016;
+        public static final int cancel=0x7f060017;
+        public static final int city_prompt=0x7f060018;
+        public static final int gender_prompt=0x7f060019;
+        public static final int hello_blank_fragment=0x7f06001a;
+        public static final int hello_world=0x7f06001b;
+        public static final int instagram_access_token=0x7f06001c;
+        public static final int instagram_api_location_method=0x7f06001d;
+        public static final int instagram_api_media_method=0x7f06001e;
+        public static final int instagram_api_tag_method=0x7f06001f;
+        public static final int instagram_api_url=0x7f060020;
+        public static final int instagram_api_users_method=0x7f060021;
+        public static final int instagram_client_id=0x7f060022;
+        public static final int instagram_client_key=0x7f060023;
+        public static final int instagram_user_id=0x7f060024;
+        public static final int parse_app_id=0x7f060025;
+        public static final int parse_client_key=0x7f060026;
+        public static final int profile_img_button_new=0x7f060027;
+        public static final int profile_img_button_remove=0x7f060028;
+        public static final int status_bar_notification_info_overflow=0x7f060029;
+        public static final int title_activity_camera=0x7f06002a;
+        public static final int title_activity_comment=0x7f06002b;
+        public static final int title_activity_crop=0x7f06002c;
+        public static final int title_activity_edit_photo=0x7f06002d;
+        public static final int title_activity_edit_profile=0x7f06002e;
+        public static final int title_activity_home=0x7f06002f;
+        public static final int title_activity_login=0x7f060030;
+        public static final int title_activity_post=0x7f060031;
+        public static final int title_activity_signup=0x7f060032;
+        public static final int title_activity_swipe=0x7f060033;
+        public static final int title_section1=0x7f060034;
+        public static final int title_section2=0x7f060035;
+        public static final int title_section3=0x7f060036;
+        public static final int title_section4=0x7f060037;
+        public static final int title_section5=0x7f060038;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat=0x7f080073;
