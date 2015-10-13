@@ -22,7 +22,8 @@
         android:layout_alignTop="@+id/ProfilePic"
         android:layout_toRightOf="@+id/ProfilePic"
         android:layout_toEndOf="@+id/ProfilePic"
-        android:layout_marginLeft="40dp" />
+        android:layout_marginLeft="40dp"
+        android:textColor="#ff33b5e5"/>
 
     <TextView
         android:layout_width="wrap_content"

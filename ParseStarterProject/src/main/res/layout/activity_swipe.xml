@@ -20,7 +20,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sending to"
+        android:text="Swipe this image to right!"
         android:id="@+id/textview_send"
         android:layout_below="@+id/swipeThumbnail"
         android:layout_marginTop="10dp"
@@ -30,7 +30,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/device_name"
-        android:layout_below="@+id/textview_send"
+        android:layout_below="@+id/textView2"
         android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ff33b5e5"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="And wait for the magic happens"
+        android:id="@+id/textView2"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/textview_send"
         android:layout_centerHorizontal="true"/>
 </RelativeLayout>

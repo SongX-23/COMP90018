@@ -17,7 +17,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:textSize="40dp"
-        android:textColor="#000000" />
+        android:textColor="#ff33b5e5" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -25,7 +25,7 @@
         android:inputType="textEmailAddress"
         android:ems="10"
         android:id="@+id/emailEditText"
-        android:background="#e0e0e0"
+        android:background="#8C33B5E6"
         android:height="40dp"
         android:layout_below="@+id/emailTextView"
         android:layout_centerHorizontal="true"
@@ -41,7 +41,7 @@
         android:ems="10"
         android:id="@+id/passwordEditText"
         android:height="40dp"
-        android:background="#e0e0e0"
+        android:background="#8C33B5E6"
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
         android:layout_below="@+id/passwordTextView"
@@ -60,7 +60,8 @@
         android:layout_below="@+id/titleTextView"
         android:layout_alignLeft="@+id/emailEditText"
         android:layout_alignStart="@+id/emailEditText"
-        android:layout_marginTop="30dp" />
+        android:layout_marginTop="30dp"
+        android:textColor="#ff33b5e5"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -69,7 +70,8 @@
         android:id="@+id/passwordTextView"
         android:layout_below="@+id/emailEditText"
         android:layout_alignLeft="@+id/passwordEditText"
-        android:layout_alignStart="@+id/passwordEditText" />
+        android:layout_alignStart="@+id/passwordEditText"
+        android:textColor="#ff33b5e5"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -78,7 +80,8 @@
         android:id="@+id/firstNameTextView"
         android:layout_below="@+id/passwordEditText"
         android:layout_alignLeft="@+id/passwordEditText"
-        android:layout_alignStart="@+id/passwordEditText" />
+        android:layout_alignStart="@+id/passwordEditText"
+        android:textColor="#ff33b5e5"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -86,7 +89,7 @@
         android:ems="10"
         android:id="@+id/firstNameEditText"
         android:height="40dp"
-        android:background="#e0e0e0"
+        android:background="#8C33B5E6"
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
         android:layout_below="@+id/firstNameTextView"
@@ -103,7 +106,8 @@
         android:id="@+id/lastNameTextView"
         android:layout_below="@+id/firstNameEditText"
         android:layout_alignLeft="@+id/firstNameEditText"
-        android:layout_alignStart="@+id/firstNameEditText" />
+        android:layout_alignStart="@+id/firstNameEditText"
+        android:textColor="#ff33b5e5"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -111,7 +115,7 @@
         android:ems="10"
         android:id="@+id/lastNameEditText"
         android:height="40dp"
-        android:background="#e0e0e0"
+        android:background="#8C33B5E6"
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
         android:layout_below="@+id/lastNameTextView"
@@ -151,5 +155,7 @@
         android:layout_centerHorizontal="true"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:layout_marginTop="30dp" />
+        android:layout_marginTop="30dp"
+        android:textColor="#ffffff"
+        android:background="#ff33b5e5"/>
 </RelativeLayout>

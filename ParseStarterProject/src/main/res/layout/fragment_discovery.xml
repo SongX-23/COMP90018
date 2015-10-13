@@ -22,7 +22,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        />
 
     <TextView
         android:layout_width="wrap_content"
@@ -31,17 +32,20 @@
         android:id="@+id/recommendTextView"
         android:layout_below="@+id/searchEditText"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:textColor="#ff33b5e5"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="search"
         android:id="@+id/searchButton"
+        android:background="#ff33b5e5"
+        android:textColor="#ffffff"
+        android:minHeight="30dp"
         android:layout_alignTop="@+id/searchEditText"
         android:layout_toRightOf="@+id/searchEditText"
         android:layout_toEndOf="@+id/searchEditText"
-        android:layout_marginTop="0dp"
-        android:layout_marginLeft="0dp"/>
+        android:layout_marginLeft="5dp"/>
 
 </RelativeLayout>
