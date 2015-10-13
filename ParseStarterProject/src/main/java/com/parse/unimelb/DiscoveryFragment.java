@@ -125,17 +125,15 @@ public class DiscoveryFragment extends Fragment {
 
     public void recommendPeople(){
 
-        // ISSUE 1: Need to filter this for only showing recommendations when the currentUser themself
-        // update their location.
-        //if(currentUser.get("City").toString() != "Blank") {
+        if(currentUser.get("City").toString() != "Blank") {
             users = new ArrayList<DiscoverUser>();
             ParseQuery<ParseUser> query = ParseUser.getQuery();
 
         // ISSUE 2: How to get ensure that you do not get the current user, without deleting them from
         // the list obtained from parse ?
-            //query.whereNotEqualTo("username", currentUser.getUsername());
+            query.whereNotEqualTo("username", currentUser.getUsername());
 
-            query.whereEqualTo("City", currentUser.get("City").toString());
+            //query.whereEqualTo("City", currentUser.get("City").toString());
             query.findInBackground(new FindCallback<ParseUser>() {
                 public void done(List<ParseUser> objects, ParseException e) {
                     if (e == null) {
@@ -169,8 +167,9 @@ public class DiscoveryFragment extends Fragment {
                             discoverUser.setUsername(username);
                             discoverUser.setGender(gender);
                             discoverUser.setLocation(location);
-
-                            users.add(discoverUser);
+                            if(!currentUser.getUsername().equals(discoverUser.getUsername())) {
+                                users.add(discoverUser);
+                            }
                         }
                         discoveryAdapter.setUsers(users);
                         discoveryAdapter.notifyDataSetChanged();
@@ -180,7 +179,7 @@ public class DiscoveryFragment extends Fragment {
                     }
                 }
             });
-       // }
+        }
     }
 
 
@@ -194,8 +193,10 @@ public class DiscoveryFragment extends Fragment {
         searchInput = (EditText) view.findViewById(R.id.searchEditText);
         recommendText = (TextView) view.findViewById(R.id.recommendTextView);
         listView = (ListView) view.findViewById(R.id.list);
-        discoveryAdapter = new DiscoveryAdapter(getActivity(), getData());
-        listView.setAdapter(discoveryAdapter);
+        if(users != null) {
+            discoveryAdapter = new DiscoveryAdapter(getActivity(), getData());
+            listView.setAdapter(discoveryAdapter);
+        }
 
         search.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
@@ -376,7 +377,7 @@ public class DiscoveryFragment extends Fragment {
             sortedUserList.put(entry.getKey(), entry.getValue());
             weightedUsers.add(entry.getKey());
         }
-        Collections.reverse(weightedUsers);
+        //Collections.reverse(weightedUsers);
     }
 
 
