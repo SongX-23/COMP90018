@@ -53,8 +53,8 @@ public class BluetoothDialog extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        holder.nameView.setText(listData.get(position).getName().toString());
-        holder.deviceView.setText(listData.get(position).getDevice().toString());
+        holder.nameView.setText(listData.get(position).getDevice().getName());
+        holder.deviceView.setText(listData.get(position).getDevice().getAddress());
 
         return convertView;
     }

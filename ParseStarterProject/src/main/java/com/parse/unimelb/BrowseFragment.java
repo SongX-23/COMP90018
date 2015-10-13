@@ -25,6 +25,7 @@ import com.android.volley.toolbox.HurlStack;
 import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.parse.unimelb.Helper.BitmapStore;
 import com.parse.unimelb.R;
 
 import org.json.JSONArray;
@@ -176,6 +177,15 @@ public class BrowseFragment extends Fragment {
         System.out.println("Requesting from: " + request_url);
         //create a feed array list
         feeds_array = new ArrayList<>();
+        // check if the received bitmap is null
+        if (BitmapStore.getReceivedBitmap() != null) {
+            Bitmap receivedBitmap = BitmapStore.getReceivedBitmap();
+            Feed receivedFeed = new Feed();
+            receivedFeed.setCaption("In Range");
+            receivedFeed.setPhoto(receivedBitmap);
+            feeds_array.add(0, receivedFeed);
+        }
+        
         //request a json response
         JsonObjectRequest jsonRequest = new JsonObjectRequest
                 (Request.Method.GET, request_url, (String)null, new Response.Listener<JSONObject>() {
@@ -336,6 +346,8 @@ public class BrowseFragment extends Fragment {
                                 if (profileImgRequest != null) {
                                     Volley.newRequestQueue(getActivity()).add(profileImgRequest);
                                 }
+
+
                                 //add feed object into arraylist
                                 feeds_array.add(feedObj);
 
