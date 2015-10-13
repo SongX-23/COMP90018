@@ -195,8 +195,8 @@ public class DiscoveryFragment extends Fragment {
         searchInput.getBackground().setColorFilter(getResources().getColor(R.color.actionbar_background), PorterDuff.Mode.SRC_ATOP);
         recommendText = (TextView) view.findViewById(R.id.recommendTextView);
         listView = (ListView) view.findViewById(R.id.list);
+        discoveryAdapter = new DiscoveryAdapter(getActivity(), getData());
         if(users != null) {
-            discoveryAdapter = new DiscoveryAdapter(getActivity(), getData());
             listView.setAdapter(discoveryAdapter);
         }
 
