@@ -86,6 +86,7 @@ public class BrowseAdapter extends BaseAdapter{
         final TextView likedText = (TextView) rowView.findViewById(R.id.likedTextView);
         TextView commentText = (TextView) rowView.findViewById(R.id.commentTextView);
         final ImageButton likeButton = (ImageButton) rowView.findViewById(R.id.likeButton);
+        final ImageButton commentButton = (ImageButton) rowView.findViewById(R.id.commentButton);
         TextView captionText = (TextView) rowView.findViewById(R.id.captionTextView);
 
         //Set fixed text view
@@ -95,6 +96,16 @@ public class BrowseAdapter extends BaseAdapter{
         likesFixText.setTypeface(likesFixText.getTypeface(), Typeface.BOLD);
         TextView commentFixText = (TextView) rowView.findViewById(R.id.commentText);
         commentFixText.setTypeface(commentFixText.getTypeface(), Typeface.BOLD);
+        //set visibility for button
+        if (oneFeed.getCaption().equals("#In range")){
+            likeButton.setVisibility(View.GONE);
+            commentButton.setVisibility(View.GONE);
+            likesFixText.setVisibility(View.GONE);
+            commentFixText.setVisibility(View.GONE);
+            likedText.setVisibility(View.GONE);
+            commentText.setVisibility(View.GONE);
+        }
+
         likeButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 if (!oneFeed.getUser_has_liked()) {
@@ -160,7 +171,7 @@ public class BrowseAdapter extends BaseAdapter{
 
 
         });
-        ImageButton commentButton = (ImageButton) rowView.findViewById(R.id.commentButton);
+
        commentButton.setOnClickListener(new View.OnClickListener() {
            public void onClick(View arg0) {
                Intent intent = new Intent(mContext, CommentActivity.class);
