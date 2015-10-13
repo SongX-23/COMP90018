@@ -2,7 +2,6 @@ package com.parse.unimelb;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
@@ -10,25 +9,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.parse.GetDataCallback;
-import com.parse.Parse;
-import com.parse.ParseException;
 import com.parse.ParseFile;
-import com.parse.ParseUser;
-import com.parse.unimelb.Feed;
 import com.parse.unimelb.Helper.BitmapStore;
-import com.parse.unimelb.R;
-
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Rahul on 10/11/2015.
  */
+
+/*
+This adapter class is used to display the recommended users in the list View. It takes in the
+incoming data from DiscoveryFragment and positions itself on the UI for Discovery.
+    */
 public class DiscoveryAdapter extends BaseAdapter{
 
     private ArrayList<DiscoverUser> users;
@@ -61,20 +55,23 @@ public class DiscoveryAdapter extends BaseAdapter{
     public long getItemId(int position) {
         return 0;
     }
-
+    /*
+    This class sets the listview. It sets the Profile image of the recommended users, their username
+    and current City registered on our application.
+     */
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-           View rowView = inflater.inflate(R.layout.discovery, null, true);
-           DiscoverUser userDetails = users.get(position);
-           userProfileImg = (ImageView) rowView.findViewById(R.id.ProfilePic);
-           userName = (TextView) rowView.findViewById(R.id.UserName);
+        View rowView = inflater.inflate(R.layout.discovery, null, true);
+        DiscoverUser userDetails = users.get(position);
+        userProfileImg = (ImageView) rowView.findViewById(R.id.ProfilePic);
+        userName = (TextView) rowView.findViewById(R.id.UserName);
         userName.setTypeface(userName.getTypeface(), Typeface.BOLD);
-          gender = (TextView) rowView.findViewById(R.id.Gender);
+        gender = (TextView) rowView.findViewById(R.id.Gender);
         String[] userNameParts = userDetails.getUsername().toString().split("@");
-           userName.setText(userNameParts[0]);
-           String userGender = userDetails.getLocation().toString();
+        userName.setText(userNameParts[0]);
+        String userGender = userDetails.getLocation().toString();
 
         if((userGender != null) || (userGender != "Blank")) {
             gender.setText(userGender);

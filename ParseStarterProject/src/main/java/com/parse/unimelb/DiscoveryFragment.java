@@ -1,6 +1,5 @@
 package com.parse.unimelb;
 
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.PorterDuff;
@@ -8,7 +7,6 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,7 +18,6 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -32,26 +29,17 @@ import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
-import com.parse.SignUpCallback;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
-
-import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.ListIterator;
 import java.util.Map;
-import java.util.TreeMap;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -60,6 +48,16 @@ import java.util.TreeMap;
  * to handle interaction events.
  * Use the {@link DiscoveryFragment#newInstance} factory method to
  * create an instance of this fragment.
+ */
+
+/*
+This class is used to provide recommendations for users. The algorithm used here has assigned
+weights for each city from the other and depending on the closeness of the city, we have granted
+the cities a weight between 1 to 7. Where 7 means that the recommended users are from the same
+city and as the weights go down to 1 the proximity of the cities decreases. If the weight is 1
+then either the User has not provided any City to our application or the City is the farthest one
+from the current users city. Apart from that we have provided weights for gender as well where the
+same gender is assigned a weight and the opposite none.
  */
 public class DiscoveryFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
@@ -80,14 +78,12 @@ public class DiscoveryFragment extends Fragment {
     final private int SEARCH_COUNT = 10;
     private OnFragmentInteractionListener mListener;
     private ParseUser currentUser = ParseUser.getCurrentUser();
-   // private String currentUserLocation;
     private ArrayList<ParseUser> weightedUsers;
-    //private ArrayList<Integer> userWeights;
     private ParseUser userToWeigh;
     private int weight;
     HashMap<ParseUser, Integer> usersMap;
     private int[][] weightOfCities = new int[][]{{7,5,4,1,3,6,2}, {6,7,4,1,2,5,3}, {6,3,7,2,1,4,5},
-        {5,1,4,7,3,6,2},{6,2,4,3,7,5,1},{6,4,5,1,2,7,3},{4,3,6,1,2,5,7}};;
+            {5,1,4,7,3,6,2},{6,2,4,3,7,5,1},{6,4,5,1,2,7,3},{4,3,6,1,2,5,7}};;
     private String [] listOfCitites = new String[]{"Melbourne", "Hobart", "Sydney", "Darwin",
             "Perth", "Adelaide", "Brisbane"};;
 
@@ -124,17 +120,17 @@ public class DiscoveryFragment extends Fragment {
         recommendPeople();
     }
 
+    /*
+    This method queries the data stored in the parse database and passes on the list obtained
+    to process the data to assign weights and determine priority. Once the sorted list of users
+    is returned, it passes the list to the adapter to display on the list view for discovery page.
+     */
     public void recommendPeople(){
 
         if(currentUser.get("City").toString() != "Blank") {
             users = new ArrayList<>();
             ParseQuery<ParseUser> query = ParseUser.getQuery();
-
-        // ISSUE 2: How to get ensure that you do not get the current user, without deleting them from
-        // the list obtained from parse ?
             query.whereNotEqualTo("username", currentUser.getUsername().toString());
-
-            //query.whereEqualTo("City", currentUser.get("City").toString());
             query.findInBackground(new FindCallback<ParseUser>() {
                 public void done(List<ParseUser> objects, ParseException e) {
                     if (e == null) {
@@ -195,10 +191,10 @@ public class DiscoveryFragment extends Fragment {
         searchInput.getBackground().setColorFilter(getResources().getColor(R.color.actionbar_background), PorterDuff.Mode.SRC_ATOP);
         recommendText = (TextView) view.findViewById(R.id.recommendTextView);
         listView = (ListView) view.findViewById(R.id.list);
+        //if(users != null) {
         discoveryAdapter = new DiscoveryAdapter(getActivity(), getData());
-        if(users != null) {
-            listView.setAdapter(discoveryAdapter);
-        }
+        listView.setAdapter(discoveryAdapter);
+        //}
 
         search.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
@@ -297,6 +293,9 @@ public class DiscoveryFragment extends Fragment {
         return view;
     }
 
+    /*
+    This method is used to verify whether the person has specified a valid gender
+     */
     private boolean verifyGender(String userGender){
         if((userGender.equals("Male")) || (userGender.equals("Female"))) {
             return true;
@@ -304,6 +303,10 @@ public class DiscoveryFragment extends Fragment {
         return false;
     }
 
+    /*
+    This method is used to verify the city of the users lie within the ones specified in the list
+    incase a user with an invalid city arrives.
+     */
     private int checkCity(String scrapedUserCity){
         int city = 1;
         for(int i = 0; i<listOfCitites.length; i++){
@@ -314,6 +317,10 @@ public class DiscoveryFragment extends Fragment {
         return city;
     }
 
+    /*
+    This method is used to verify that the cities lie in the list. If yes, it returns true else it
+    returns false.
+     */
     private boolean verifyCity(String scrapedUserCity){
         for(int i=0;i<listOfCitites.length;i++) {
             if(scrapedUserCity.equals(listOfCitites[i])) {
