@@ -113,6 +113,7 @@ public class BrowseFragment extends Fragment {
         {
             latitudeCurrent = gpsTracker.latitude;
             longitudeCurrent = gpsTracker.longitude;
+            System.out.println("Location: " + latitudeCurrent + ", " + longitudeCurrent);
         }
         else
         {

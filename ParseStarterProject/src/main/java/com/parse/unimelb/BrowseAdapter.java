@@ -10,6 +10,8 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.Typeface;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -96,14 +98,23 @@ public class BrowseAdapter extends BaseAdapter{
         likesFixText.setTypeface(likesFixText.getTypeface(), Typeface.BOLD);
         TextView commentFixText = (TextView) rowView.findViewById(R.id.commentText);
         commentFixText.setTypeface(commentFixText.getTypeface(), Typeface.BOLD);
+
+        userProfileImg.setImageBitmap(oneFeed.getUserProfileImg());
+        userName.setText(oneFeed.getDisplayName());
+        locationName.setText(oneFeed.getLocation());
+        photoImg.setImageBitmap(oneFeed.getPhoto());
         //set visibility for button
-        if (oneFeed.getCaption().equals("#In range")){
+        if (oneFeed.getCaption() != null && oneFeed.getCaption().equals("#In Range")){
             likeButton.setVisibility(View.GONE);
             commentButton.setVisibility(View.GONE);
             likesFixText.setVisibility(View.GONE);
             commentFixText.setVisibility(View.GONE);
             likedText.setVisibility(View.GONE);
             commentText.setVisibility(View.GONE);
+            Drawable myDrawable = rowView.getResources().getDrawable(R.drawable.bluetooth_icon);
+            Bitmap btImg = ((BitmapDrawable) myDrawable).getBitmap();
+            userProfileImg.setImageBitmap(btImg);
+            userName.setText("Photo sent via bluetooth");
         }
 
         likeButton.setOnClickListener(new View.OnClickListener() {
@@ -172,18 +183,13 @@ public class BrowseAdapter extends BaseAdapter{
 
         });
 
-       commentButton.setOnClickListener(new View.OnClickListener() {
+        commentButton.setOnClickListener(new View.OnClickListener() {
            public void onClick(View arg0) {
                Intent intent = new Intent(mContext, CommentActivity.class);
                mContext.startActivity(intent);
            }
        });
 
-
-        userProfileImg.setImageBitmap(oneFeed.getUserProfileImg());
-        userName.setText(oneFeed.getDisplayName());
-        locationName.setText(oneFeed.getLocation());
-        photoImg.setImageBitmap(oneFeed.getPhoto());
         if (oneFeed.getCaption() != null) {
             captionText.setText(oneFeed.getCaption());
         } else {
