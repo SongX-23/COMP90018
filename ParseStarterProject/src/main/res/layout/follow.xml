@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/userProfileImageView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/userNameTextView"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/userProfileImageView"
+        android:layout_toEndOf="@+id/userProfileImageView"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"/>
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/locationTextView"
+        android:layout_below="@+id/userNameTextView"
+        android:layout_alignLeft="@+id/userNameTextView"
+        android:layout_alignStart="@+id/userNameTextView"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="5dp"/>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/photoImageView"
+        android:layout_below="@+id/userProfileImageView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/photoImageView"
+        android:layout_alignLeft="@+id/userProfileImageView"
+        android:layout_alignStart="@+id/userProfileImageView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/likedTextView"
+        android:layout_below="@+id/textView1"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignStart="@+id/textView1"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comments"
+        android:id="@+id/textView"
+        android:layout_below="@+id/likedTextView"
+        android:layout_alignLeft="@+id/likedTextView"
+        android:layout_alignStart="@+id/likedTextView"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="5dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/commentTextView"
+        android:layout_below="@+id/textView"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:layout_marginBottom="3dp"
+        android:layout_marginTop="3dp"/>
+
+
+</RelativeLayout>

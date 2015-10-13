@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/Users/raymond/Documents/WorkSpace/GitHub/COMP90018/ParseStarterProject/src/main/res/values/strings.xml -->
+    <!-- From: file:/D:/GitHub/COMP90018/ParseStarterProject/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string-array name="city_arrays">
         <item>Blank</item>
@@ -17,7 +17,7 @@
         <item>Male</item>
         <item>Female</item>
     </string-array>
-    <!-- From: file:/Users/raymond/Documents/WorkSpace/GitHub/COMP90018/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
+    <!-- From: file:/D:/GitHub/COMP90018/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <attr format="reference" name="drawerArrowStyle"/>
     <attr format="dimension" name="height"/>
@@ -36,12 +36,12 @@
     <color name="abc_search_url_text_selected">@android:color/black</color>
     <color name="accent_material_dark">@color/material_deep_teal_200</color>
     <color name="accent_material_light">@color/material_deep_teal_500</color>
-    <!-- From: file:/Users/raymond/Documents/WorkSpace/GitHub/COMP90018/ParseStarterProject/src/main/res/values/color.xml -->
+    <!-- From: file:/D:/GitHub/COMP90018/ParseStarterProject/src/main/res/values/color.xml -->
     <eat-comment/>
     <color name="actionbar_background">#33b5e5</color>
     <color name="actionbar_text">#ffffff</color>
     <color name="actiontab_bar_text">#33b5e5</color>
-    <!-- From: file:/Users/raymond/Documents/WorkSpace/GitHub/COMP90018/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
+    <!-- From: file:/D:/GitHub/COMP90018/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <color name="background_floating_material_dark">#ff424242</color>
     <color name="background_floating_material_light">#ffeeeeee</color>
@@ -78,11 +78,11 @@
     <color name="primary_text_default_material_light">#de000000</color>
     <color name="primary_text_disabled_material_dark">#4Dffffff</color>
     <color name="primary_text_disabled_material_light">#39000000</color>
-    <!-- From: file:/Users/raymond/Documents/WorkSpace/GitHub/COMP90018/ParseStarterProject/build/intermediates/exploded-aar/com.jpardogo.materialtabstrip/library/1.1.0/res/values/values.xml -->
+    <!-- From: file:/D:/GitHub/COMP90018/ParseStarterProject/build/intermediates/exploded-aar/com.jpardogo.materialtabstrip/library/1.1.0/res/values/values.xml -->
     <eat-comment/>
     <color name="psts_background_tab_pressed">#1AFFFFFF</color>
     <color name="psts_background_tab_pressed_ripple">#AAFFFFFF</color>
-    <!-- From: file:/Users/raymond/Documents/WorkSpace/GitHub/COMP90018/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
+    <!-- From: file:/D:/GitHub/COMP90018/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <color name="ripple_material_dark">#4dffffff</color>
     <color name="ripple_material_light">#1f000000</color>
@@ -180,11 +180,11 @@
     <dimen name="abc_text_size_subtitle_material_toolbar">16dp</dimen>
     <dimen name="abc_text_size_title_material">20sp</dimen>
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
-    <!-- From: file:/Users/raymond/Documents/WorkSpace/GitHub/COMP90018/ParseStarterProject/src/main/res/values/dimens.xml -->
+    <!-- From: file:/D:/GitHub/COMP90018/ParseStarterProject/src/main/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <!-- From: file:/Users/raymond/Documents/WorkSpace/GitHub/COMP90018/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
+    <!-- From: file:/D:/GitHub/COMP90018/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <item name="dialog_fixed_height_major" type="dimen">80%</item>
     <item name="dialog_fixed_height_minor" type="dimen">100%</item>
@@ -210,11 +210,11 @@
     <integer name="abc_max_action_buttons">2</integer>
     <integer name="cancel_button_image_alpha">127</integer>
     <integer name="status_bar_notification_info_maxnum">999</integer>
-    <!-- From: file:/Users/raymond/Documents/WorkSpace/GitHub/COMP90018/ParseStarterProject/src/main/res/values/strings.xml -->
+    <!-- From: file:/D:/GitHub/COMP90018/ParseStarterProject/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="GPSAlertDialogMessage">Please enable GPS to use this service</string>
     <string name="GPSAlertDialogTitle">GPS Enabling Alert</string>
-    <!-- From: file:/Users/raymond/Documents/WorkSpace/GitHub/COMP90018/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
+    <!-- From: file:/D:/GitHub/COMP90018/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <string name="abc_action_bar_home_description">Navigate home</string>
     <string name="abc_action_bar_home_description_format">%1$s, %2$s</string>
@@ -233,7 +233,7 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
-    <!-- From: file:/Users/raymond/Documents/WorkSpace/GitHub/COMP90018/ParseStarterProject/src/main/res/values/strings.xml -->
+    <!-- From: file:/D:/GitHub/COMP90018/ParseStarterProject/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="action_camera">take photo</string>
     <string name="action_log_out">Log out</string>
@@ -257,10 +257,10 @@
     <string name="parse_client_key">k2gpuWav8qnp6udvQHkROJXkZVWF4JWnH6Pe8reW</string>
     <string name="profile_img_button_new">Take photo</string>
     <string name="profile_img_button_remove">Remove current photo</string>
-    <!-- From: file:/Users/raymond/Documents/WorkSpace/GitHub/COMP90018/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
+    <!-- From: file:/D:/GitHub/COMP90018/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <string name="status_bar_notification_info_overflow">999+</string>
-    <!-- From: file:/Users/raymond/Documents/WorkSpace/GitHub/COMP90018/ParseStarterProject/src/main/res/values/strings.xml -->
+    <!-- From: file:/D:/GitHub/COMP90018/ParseStarterProject/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="title_activity_camera">CameraActivity</string>
     <string name="title_activity_comment">CommentActivity</string>
@@ -277,18 +277,18 @@
     <string name="title_section3">Photo</string>
     <string name="title_section4">Notification</string>
     <string name="title_section5">Profile</string>
-    <!-- From: file:/Users/raymond/Documents/WorkSpace/GitHub/COMP90018/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
+    <!-- From: file:/D:/GitHub/COMP90018/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>
     <style name="Animation.AppCompat.DropDownUp" parent="Base.Animation.AppCompat.DropDownUp"/>
-    <!-- From: file:/Users/raymond/Documents/WorkSpace/GitHub/COMP90018/ParseStarterProject/src/main/res/values/styles.xml -->
+    <!-- From: file:/D:/GitHub/COMP90018/ParseStarterProject/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
     </style>
-    <!-- From: file:/Users/raymond/Documents/WorkSpace/GitHub/COMP90018/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
+    <!-- From: file:/D:/GitHub/COMP90018/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <style name="Base.AlertDialog.AppCompat" parent="android:Widget">
         <item name="android:layout">@layout/abc_alert_dialog_material</item>
@@ -1204,7 +1204,7 @@
         <item name="android:scaleType">center</item>
         <item name="android:background">?attr/selectableItemBackground</item>
     </style>
-    <!-- From: file:/Users/raymond/Documents/WorkSpace/GitHub/COMP90018/ParseStarterProject/src/main/res/values/styles.xml -->
+    <!-- From: file:/D:/GitHub/COMP90018/ParseStarterProject/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="CustomActionBarTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
         <item name="android:actionBarStyle">@style/MyActionBar</item>
@@ -1230,7 +1230,7 @@
     <style name="MyActionBarTitleText" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
         <item name="android:textColor">@color/actionbar_text</item>
     </style>
-    <!-- From: file:/Users/raymond/Documents/WorkSpace/GitHub/COMP90018/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
+    <!-- From: file:/D:/GitHub/COMP90018/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <style name="Platform.AppCompat" parent="android:Theme">
         <item name="android:windowNoTitle">true</item>
