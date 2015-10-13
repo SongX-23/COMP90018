@@ -54,49 +54,49 @@ public class ServerThread extends Thread {
         int byteNo;
 
 
-        try {
-            // this is a blocking call which waits till it gets a connection from a client.
-            connectSocket = myServSocket.accept();
-            inStream = connectSocket.getInputStream();
+            try {
+                // this is a blocking call which waits till it gets a connection from a client.
+                connectSocket = myServSocket.accept();
+                inStream = connectSocket.getInputStream();
 
-            // Once a connection has been achieved, it stops discovery for new devices.
-            mBluetoothAdapter.cancelDiscovery();
+                // Once a connection has been achieved, it stops discovery for new devices.
+                mBluetoothAdapter.cancelDiscovery();
 
-            // The image is trasnferred after conversion into an object. Hence we require
-            // ObjectOutputStream for receiving the data.
-            ObjectInputStream objInStream = new ObjectInputStream(inStream);
-            Object received = null;
+                // The image is trasnferred after conversion into an object. Hence we require
+                // ObjectOutputStream for receiving the data.
+                ObjectInputStream objInStream = new ObjectInputStream(inStream);
+                Object received = null;
 
-            // This will continuously accept the incoming data from the client.
-            while(true) {
-                try {
+                // This will continuously accept the incoming data from the client.
+                while (true) {
+                    try {
 
-                    // The object is received from the client.
-                    received = objInStream.readObject();
+                        // The object is received from the client.
+                        received = objInStream.readObject();
 
-                    // The data received is cast into the appropriate format, namely: SerialBitmap as
-                    // the Bitmap object is not directly Serializable.
-                    SerialBitmap receivedSerialBitmap = (SerialBitmap) received;
-                    receivedBitmap = BitmapFactory.decodeByteArray(receivedSerialBitmap.blob, 0, receivedSerialBitmap.blob.length);
+                        // The data received is cast into the appropriate format, namely: SerialBitmap as
+                        // the Bitmap object is not directly Serializable.
+                        SerialBitmap receivedSerialBitmap = (SerialBitmap) received;
+                        receivedBitmap = BitmapFactory.decodeByteArray(receivedSerialBitmap.blob, 0, receivedSerialBitmap.blob.length);
 
-                    // This runs another thread to refresh the UI after getting the image from the client.
-                    activity.runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
+                        // This runs another thread to refresh the UI after getting the image from the client.
+                        activity.runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
 //                            activity.imageview.setImageBitmap(receivedBitmap);
 //                            activity.imageview.refreshDrawableState();
-                            BitmapStore.setReceivedBitmap(receivedBitmap);
-                            Toast.makeText(activity, "You have received a photo, please refresh", Toast.LENGTH_LONG).show();
-                        }
-                    });
-                    Log.e("Bluetooth", "Received Something");
-                }catch(Exception e) {
-                    e.printStackTrace();
-                }
+                                BitmapStore.setReceivedBitmap(receivedBitmap);
+                                Toast.makeText(activity, "You have received a photo, please refresh", Toast.LENGTH_LONG).show();
+                            }
+                        });
+                        Log.e("Bluetooth", "Received Something");
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
 
+                }
+            } catch (Exception e) {
+                Log.e("Bluetooth", "Connection Failed");
             }
-        } catch (Exception e){
-            Log.e("Bluetooth", "Connection Failed");
-        }
     }
 }

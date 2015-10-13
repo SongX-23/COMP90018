@@ -250,18 +250,6 @@ public class CameraActivity extends Activity implements SurfaceHolder.Callback {
         if(resultCode == RESULT_OK){
             Uri selectedImage = data.getData();
 
-
-//            String[] filePathColumn = {MediaStore.Images.Media.DATA};
-//
-//            Cursor cursor = getContentResolver().query(selectedImage,
-//                    filePathColumn, null, null, null);
-//            cursor.moveToFirst();
-//
-//            int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-//            String filePath = cursor.getString(columnIndex);
-//            cursor.close();
-
-
             try{
                 Bitmap yourSelectedImage = BitmapFactory.decodeStream(
                         getContentResolver().openInputStream(selectedImage));
@@ -278,4 +266,3 @@ public class CameraActivity extends Activity implements SurfaceHolder.Callback {
         }
     }
 }
-

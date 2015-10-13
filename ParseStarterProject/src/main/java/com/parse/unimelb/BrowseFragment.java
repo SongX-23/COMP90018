@@ -2,9 +2,12 @@ package com.parse.unimelb;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,6 +35,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -180,9 +187,33 @@ public class BrowseFragment extends Fragment {
         // check if the received bitmap is null
         if (BitmapStore.getReceivedBitmap() != null) {
             Bitmap receivedBitmap = BitmapStore.getReceivedBitmap();
+
+            // store the bitmap into a file and recycle the bitmap
+            File storagePath = new File(Environment.getExternalStorageDirectory()
+                    + "/DCIM/100ANDRO/");
+            storagePath.mkdirs();
+
+            File myImage = new File(storagePath, Long.toString(System.currentTimeMillis())
+                    + "_mod.jpg");
+            try {
+                FileOutputStream out = new FileOutputStream(myImage);
+                receivedBitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
+
+                out.flush();
+                out.close();
+            } catch(FileNotFoundException e) {
+                Log.d("In Saving File", e + "");
+            } catch(IOException e) {
+                Log.d("In Saving File", e + "");
+            }
+            receivedBitmap.recycle();
+
+            // read the file
+            Bitmap newBitmap = BitmapFactory.decodeFile(myImage.getPath());
+
             Feed receivedFeed = new Feed();
             receivedFeed.setCaption("In Range");
-            receivedFeed.setPhoto(receivedBitmap);
+            receivedFeed.setPhoto(newBitmap);
             feeds_array.add(0, receivedFeed);
         }
         
@@ -217,7 +248,7 @@ public class BrowseFragment extends Fragment {
                                     }
                                 }else{
                                     feedObj.setLocation("");
-                                    feedObj.setDistance(Math.pow((Math.pow(180.0,2) + Math.pow(360.0,2)),0.5));
+                                    feedObj.setDistance(Math.pow((Math.pow(180.0, 2) + Math.pow(360.0, 2)), 0.5));
                                 }
                                 //get caption block
                                 if (!oneFeed.isNull("caption")) {
