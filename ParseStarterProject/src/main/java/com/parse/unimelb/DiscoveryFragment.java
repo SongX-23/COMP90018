@@ -349,7 +349,7 @@ public class DiscoveryFragment extends Fragment {
                 if (weighedUserPresent) {
                     if (currentUserPresent && weighedUserPresent) {
                         if (currentUserGender.equals(recommendedUserGender)) {
-                            weight += 5;
+                            weight += 3;
                         }
                     }
                 }
