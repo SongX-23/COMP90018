@@ -1,8 +1,10 @@
 package com.parse.unimelb;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -29,6 +31,7 @@ import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.parse.unimelb.Helper.BitmapStore;
+import com.parse.unimelb.Helper.BluetoothImageTempStore;
 import com.parse.unimelb.R;
 
 import org.json.JSONArray;
@@ -68,6 +71,11 @@ public class BrowseFragment extends Fragment {
     private BrowseAdapter browseAdapter;
     private double latitudeCurrent;
     private double longitudeCurrent;
+    private MediaScannerConnection mediaScanner = null;
+
+
+    BluetoothImageTempStore bitsObj = new BluetoothImageTempStore();
+    ArrayList<String> tempArrayList = bitsObj.getArrayList();
 
     /**
      * Use this factory method to create a new instance of
@@ -188,13 +196,12 @@ public class BrowseFragment extends Fragment {
         if (BitmapStore.getReceivedBitmap() != null) {
             Bitmap receivedBitmap = BitmapStore.getReceivedBitmap();
 
-            // store the bitmap into a file and recycle the bitmap
+            // take the received Bitmap and put image into Gallary
             File storagePath = new File(Environment.getExternalStorageDirectory()
                     + "/DCIM/100ANDRO/");
             storagePath.mkdirs();
 
-            File myImage = new File(storagePath, Long.toString(System.currentTimeMillis())
-                    + "_mod.jpg");
+            File myImage = new File(storagePath, Long.toString(System.currentTimeMillis()) + ".jpg");
             try {
                 FileOutputStream out = new FileOutputStream(myImage);
                 receivedBitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
@@ -206,15 +213,18 @@ public class BrowseFragment extends Fragment {
             } catch(IOException e) {
                 Log.d("In Saving File", e + "");
             }
-            receivedBitmap.recycle();
+            // Save the file path into BITS
+            tempArrayList.add(0, myImage.getPath());
 
-            // read the file
-            Bitmap newBitmap = BitmapFactory.decodeFile(myImage.getPath());
+            for(int i = 0; i < tempArrayList.size(); i ++) {
+            // Read from File
+            Bitmap newBitmap = BitmapFactory.decodeFile(tempArrayList.get(i));
 
             Feed receivedFeed = new Feed();
-            receivedFeed.setCaption("In Range");
+            receivedFeed.setCaption("#In Range");
             receivedFeed.setPhoto(newBitmap);
             feeds_array.add(0, receivedFeed);
+            }
         }
         
         //request a json response
