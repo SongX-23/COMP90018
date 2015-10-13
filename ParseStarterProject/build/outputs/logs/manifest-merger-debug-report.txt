@@ -111,7 +111,7 @@ MERGED from [com.android.support:support-v4:22.2.0] /Users/songxue/Documents/Mob
 	android:largeHeap
 		ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:49:9-33
 	android:theme
-		ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:48:9-40
+		ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:48:9-52
 	android:name
 		ADDED from /Users/songxue/Documents/Mobile Dev/Instagram/ParseStarterProject/src/main/AndroidManifest.xml:44:9-33
 meta-data#com.parse.APPLICATION_ID

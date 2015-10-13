@@ -36,6 +36,13 @@
     <color name="abc_search_url_text_selected">@android:color/black</color>
     <color name="accent_material_dark">@color/material_deep_teal_200</color>
     <color name="accent_material_light">@color/material_deep_teal_500</color>
+    <!-- From: file:/Users/songxue/Documents/Mobile%20Dev/Instagram/ParseStarterProject/src/main/res/values/color.xml -->
+    <eat-comment/>
+    <color name="actionbar_background">#33b5e5</color>
+    <color name="actionbar_text">#ffffff</color>
+    <color name="actiontab_bar_text">#33b5e5</color>
+    <!-- From: file:/Users/songxue/Documents/Mobile%20Dev/Instagram/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
+    <eat-comment/>
     <color name="background_floating_material_dark">#ff424242</color>
     <color name="background_floating_material_light">#ffeeeeee</color>
     <color name="background_material_dark">#ff303030</color>
@@ -1199,8 +1206,29 @@
     </style>
     <!-- From: file:/Users/songxue/Documents/Mobile%20Dev/Instagram/ParseStarterProject/src/main/res/values/styles.xml -->
     <eat-comment/>
-    <style name="MyActionBarTheme" parent="@android:style/Widget.Holo.Light.ActionBar">
-        <item name="android:background">#33b5e5</item>
+    <style name="CustomActionBarTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+        <item name="android:actionBarTabTextStyle">@style/MyActionBarTabText</item>
+        <item name="android:actionMenuTextColor">@color/actionbar_text</item>
+
+        <!-- Support library compatibility -->
+        <item name="actionBarStyle">@style/MyActionBar</item>
+        <item name="actionBarTabTextStyle">@style/MyActionBarTabText</item>
+        <item name="actionMenuTextColor">@color/actionbar_text</item>
+    </style>
+    <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@color/actionbar_background</item>
+        <item name="android:titleTextStyle">@style/MyActionBarTitleText</item>
+
+        <!-- Support library compatibility -->
+        <item name="background">@color/actionbar_background</item>
+        <item name="titleTextStyle">@style/MyActionBarTitleText</item>
+    </style>
+    <style name="MyActionBarTabText" parent="@style/Widget.AppCompat.ActionBar.TabText">
+        <item name="android:textColor">@color/actiontab_bar_text</item>
+    </style>
+    <style name="MyActionBarTitleText" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/actionbar_text</item>
     </style>
     <!-- From: file:/Users/songxue/Documents/Mobile%20Dev/Instagram/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
