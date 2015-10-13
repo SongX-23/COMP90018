@@ -1,4 +1,4 @@
-package com.parse.unimelb.notification;
+package com.parse.unimelb;
 
 import android.graphics.Bitmap;
 

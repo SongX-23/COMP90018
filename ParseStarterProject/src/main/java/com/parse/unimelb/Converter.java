@@ -1,4 +1,4 @@
-package com.parse.unimelb.notification;
+package com.parse.unimelb;
 
 import java.util.Date;
 import java.util.Random;

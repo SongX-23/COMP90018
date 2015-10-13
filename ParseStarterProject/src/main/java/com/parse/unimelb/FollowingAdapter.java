@@ -1,4 +1,4 @@
-package com.parse.unimelb.notification;
+package com.parse.unimelb;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,8 +7,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.parse.unimelb.R;
 
 import java.util.ArrayList;
 
@@ -38,6 +36,9 @@ public class FollowingAdapter extends BaseAdapter {
     }
     @Override
     public int getCount() {
+        if(follow_array == null) {
+            return 0;
+        }
         return follow_array.size();
     }
 
