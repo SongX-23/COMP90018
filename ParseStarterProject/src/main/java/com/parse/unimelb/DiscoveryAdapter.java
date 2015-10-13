@@ -3,6 +3,7 @@ package com.parse.unimelb;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
@@ -19,6 +20,7 @@ import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseUser;
 import com.parse.unimelb.Feed;
+import com.parse.unimelb.Helper.BitmapStore;
 import com.parse.unimelb.R;
 
 import java.util.ArrayList;
@@ -68,6 +70,7 @@ public class DiscoveryAdapter extends BaseAdapter{
            DiscoverUser userDetails = users.get(position);
            userProfileImg = (ImageView) rowView.findViewById(R.id.ProfilePic);
            userName = (TextView) rowView.findViewById(R.id.UserName);
+        userName.setTypeface(userName.getTypeface(), Typeface.BOLD);
           gender = (TextView) rowView.findViewById(R.id.Gender);
         String[] userNameParts = userDetails.getUsername().toString().split("@");
            userName.setText(userNameParts[0]);
@@ -78,7 +81,7 @@ public class DiscoveryAdapter extends BaseAdapter{
         }
         Bitmap profileImage = userDetails.getProfileImage();
         if (profileImage != null) {
-            userProfileImg.setImageBitmap(profileImage);
+            userProfileImg.setImageBitmap(BitmapStore.getCroppedBitmap(profileImage));
         }else{
             Drawable myDrawable = rowView.getResources().getDrawable(R.drawable.default_profile_image);
             Bitmap defaultImage = ((BitmapDrawable) myDrawable).getBitmap();

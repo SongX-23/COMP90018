@@ -3,6 +3,7 @@ package com.parse.unimelb;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -191,6 +192,7 @@ public class DiscoveryFragment extends Fragment {
         final View view = inflater.inflate(R.layout.fragment_discovery, container, false);
         search = (Button) view.findViewById(R.id.searchButton);
         searchInput = (EditText) view.findViewById(R.id.searchEditText);
+        searchInput.getBackground().setColorFilter(getResources().getColor(R.color.actionbar_background), PorterDuff.Mode.SRC_ATOP);
         recommendText = (TextView) view.findViewById(R.id.recommendTextView);
         listView = (ListView) view.findViewById(R.id.list);
         if(users != null) {
