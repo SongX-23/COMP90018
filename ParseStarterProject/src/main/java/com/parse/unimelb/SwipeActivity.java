@@ -19,6 +19,10 @@ import com.parse.unimelb.Helper.ConnectThread;
 import com.parse.unimelb.Helper.ServerThread;
 import java.util.UUID;
 
+/*
+ * This activity provides a page with gesture detector to monitor users' swipe action
+ * on swipe it starts the transmission
+ */
 public class SwipeActivity extends ActionBarActivity implements View.OnClickListener {
     private static final int SWIPE_MIN_DISTANCE = 120;
     private static final int SWIPE_MAX_OFF_PATH = 250;
@@ -95,7 +99,7 @@ public class SwipeActivity extends ActionBarActivity implements View.OnClickList
                     startActivity(indent);
                 }
             } catch (Exception e) {
-                // nothing
+                e.printStackTrace();
             }
             return false;
         }

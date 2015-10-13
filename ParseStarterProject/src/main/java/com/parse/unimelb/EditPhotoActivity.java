@@ -22,6 +22,10 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+/*
+ * This class implements all the photo editing related functions, including the contrast and
+ * brightness, filters, and crop
+ */
 public class EditPhotoActivity extends ActionBarActivity {
     private ImageView imageView;
     private Bitmap rawBitmap;

@@ -9,8 +9,8 @@ import android.graphics.Rect;
 
 /**
  * Created by raymond on 9/25/15.
- * This class provides global static methods handling Bitmap object storage and cropping the bitmap from square
- * circle.
+ * This class provides global static methods handling Bitmap object storage and cropping the bitmap
+ * from square circle.
  */
 
 public class BitmapStore {
