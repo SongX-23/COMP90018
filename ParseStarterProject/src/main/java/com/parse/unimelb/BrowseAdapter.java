@@ -3,6 +3,7 @@ package com.parse.unimelb;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +23,7 @@ import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -78,6 +80,14 @@ public class BrowseAdapter extends BaseAdapter{
         TextView commentText = (TextView) rowView.findViewById(R.id.commentTextView);
         final ImageButton likeButton = (ImageButton) rowView.findViewById(R.id.likeButton);
         TextView captionText = (TextView) rowView.findViewById(R.id.captionTextView);
+
+        //Set fixed text view
+        TextView captionFixText = (TextView) rowView.findViewById(R.id.textView1);
+        captionFixText.setTypeface(captionFixText.getTypeface(), Typeface.BOLD);
+        TextView likesFixText = (TextView) rowView.findViewById(R.id.textView);
+        likesFixText.setTypeface(likesFixText.getTypeface(), Typeface.BOLD);
+        TextView commentFixText = (TextView) rowView.findViewById(R.id.commentText);
+        commentFixText.setTypeface(commentFixText.getTypeface(), Typeface.BOLD);
         likeButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 if (!oneFeed.getUser_has_liked()){

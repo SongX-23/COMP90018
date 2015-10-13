@@ -82,7 +82,10 @@
         android:layout_below="@+id/likeButton"
         android:layout_alignLeft="@+id/likeButton"
         android:layout_alignStart="@+id/likeButton"
-        android:layout_marginTop="5dp"/>
+        android:layout_marginTop="5dp"
+        android:textSize="16dp"
+        android:textColor="#ff33b5e5"
+        android:singleLine="false"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -103,7 +106,9 @@
         android:layout_alignLeft="@+id/captionTextView"
         android:layout_alignStart="@+id/captionTextView"
         android:layout_marginTop="2dp"
-        android:layout_marginBottom="5dp"/>
+        android:layout_marginBottom="5dp"
+        android:textSize="16dp"
+        android:textColor="#ff33b5e5"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -124,7 +129,9 @@
         android:layout_alignLeft="@+id/likedTextView"
         android:layout_alignStart="@+id/likedTextView"
         android:layout_marginTop="3dp"
-        android:layout_marginBottom="3dp"/>
+        android:layout_marginBottom="3dp"
+        android:textSize="16dp"
+        android:textColor="#ff33b5e5"/>
 
     <TextView
         android:layout_width="wrap_content"
