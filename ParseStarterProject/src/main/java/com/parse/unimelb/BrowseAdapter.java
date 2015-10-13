@@ -145,11 +145,11 @@ public class BrowseAdapter extends BaseAdapter{
         });
         ImageButton commentButton = (ImageButton) rowView.findViewById(R.id.commentButton);
        commentButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-                Intent intent = new Intent(mContext, CommentActivity.class);
-                mContext.startActivity(intent);
-            }
-        });
+           public void onClick(View arg0) {
+               Intent intent = new Intent(mContext, CommentActivity.class);
+               mContext.startActivity(intent);
+           }
+       });
 
 
         userProfileImg.setImageBitmap(oneFeed.getUserProfileImg());
@@ -173,10 +173,14 @@ public class BrowseAdapter extends BaseAdapter{
                 }
                 likedText.setText(oneFeed.getLike().toString().replace(',', ' '));
             }
+        } else {
+            likedText.setText("Nobody has liked this photo yet.");
         }
         if (oneFeed.getComment() != null) {
             commentText.setText(oneFeed.getComment().toString().replace(',', ' ').substring(1,
                     oneFeed.getComment().toString().length() - 1));
+        } else {
+            likedText.setText("Nobody has commented on this photo yet.");
         }
         return rowView;
     }
