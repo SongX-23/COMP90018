@@ -36,7 +36,9 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="50dp"
-        android:layout_marginLeft="50dp"/>
+        android:layout_marginLeft="50dp"
+        android:background="#ff33b5e5"
+        android:textColor="#ffffff"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -45,5 +47,7 @@
         android:id="@+id/cancelButton"
         android:layout_alignTop="@+id/commentButton"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="50dp"/>
+        android:layout_marginRight="50dp"
+        android:background="#ff33b5e5"
+        android:textColor="#ffffff"/>
 </RelativeLayout>

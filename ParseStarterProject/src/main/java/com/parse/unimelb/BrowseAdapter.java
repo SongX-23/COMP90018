@@ -3,6 +3,13 @@ package com.parse.unimelb;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,9 +26,11 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.parse.unimelb.Helper.BitmapStore;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -78,9 +87,17 @@ public class BrowseAdapter extends BaseAdapter{
         TextView commentText = (TextView) rowView.findViewById(R.id.commentTextView);
         final ImageButton likeButton = (ImageButton) rowView.findViewById(R.id.likeButton);
         TextView captionText = (TextView) rowView.findViewById(R.id.captionTextView);
+
+        //Set fixed text view
+        TextView captionFixText = (TextView) rowView.findViewById(R.id.textView1);
+        captionFixText.setTypeface(captionFixText.getTypeface(), Typeface.BOLD);
+        TextView likesFixText = (TextView) rowView.findViewById(R.id.textView);
+        likesFixText.setTypeface(likesFixText.getTypeface(), Typeface.BOLD);
+        TextView commentFixText = (TextView) rowView.findViewById(R.id.commentText);
+        commentFixText.setTypeface(commentFixText.getTypeface(), Typeface.BOLD);
         likeButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                if (!oneFeed.getUser_has_liked()){
+                if (!oneFeed.getUser_has_liked()) {
                     likeButton.setBackground(rowView.getResources().getDrawable(R.drawable.filled_heart));
                     oneFeed.setUser_has_liked(true);
                     tmpLike = likedText.getText().toString();
@@ -98,7 +115,7 @@ public class BrowseAdapter extends BaseAdapter{
                                     try {
                                         JSONObject jsonResponse = response.getJSONObject("meta");
                                         int code = jsonResponse.getInt("code");
-                                        if (code == 200){
+                                        if (code == 200) {
                                             Toast.makeText(mContext.getApplicationContext(),
                                                     "You liked this photo!",
                                                     Toast.LENGTH_LONG).show();
@@ -134,7 +151,7 @@ public class BrowseAdapter extends BaseAdapter{
                         likedText.setText(finalLikeText);
                     }
                     System.out.println("Like: " + finalLikeText);
-                }else{
+                } else {
                     Toast.makeText(mContext,
                             "You have already liked this photo",
                             Toast.LENGTH_LONG).show();
@@ -145,18 +162,22 @@ public class BrowseAdapter extends BaseAdapter{
         });
         ImageButton commentButton = (ImageButton) rowView.findViewById(R.id.commentButton);
        commentButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-                Intent intent = new Intent(mContext, CommentActivity.class);
-                mContext.startActivity(intent);
-            }
-        });
+           public void onClick(View arg0) {
+               Intent intent = new Intent(mContext, CommentActivity.class);
+               mContext.startActivity(intent);
+           }
+       });
 
 
         userProfileImg.setImageBitmap(oneFeed.getUserProfileImg());
         userName.setText(oneFeed.getDisplayName());
         locationName.setText(oneFeed.getLocation());
         photoImg.setImageBitmap(oneFeed.getPhoto());
-        captionText.setText(oneFeed.getCaption());
+        if (oneFeed.getCaption() != null) {
+            captionText.setText(oneFeed.getCaption());
+        } else {
+            captionText.setText("There is no caption for this photo.");
+        }
         if (oneFeed.getLike() != null) {
             System.out.println("Like: " + likedText.getText());
             if (tmpLike == null && finalLikeText == null) {
@@ -173,10 +194,14 @@ public class BrowseAdapter extends BaseAdapter{
                 }
                 likedText.setText(oneFeed.getLike().toString().replace(',', ' '));
             }
+        } else {
+            likedText.setText("Nobody has liked this photo yet.");
         }
         if (oneFeed.getComment() != null) {
             commentText.setText(oneFeed.getComment().toString().replace(',', ' ').substring(1,
                     oneFeed.getComment().toString().length() - 1));
+        } else {
+            commentText.setText("Nobody has commented on this photo yet.");
         }
         return rowView;
     }

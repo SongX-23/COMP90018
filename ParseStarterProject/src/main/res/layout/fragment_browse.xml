@@ -8,9 +8,9 @@
         android:id="@+id/browseListView"
         android:layout_width="fill_parent"
         android:layout_height="480dp"
-        android:divider="#b5b5b5"
+        android:divider="#33b5e5"
         android:dividerHeight="1dp"
-        android:layout_weight="0.8"
+        android:layout_weight="1"
         android:layout_above="@+id/buttonGroup"
         android:layout_alignParentTop="true"
         android:layout_marginBottom="5dp"/>

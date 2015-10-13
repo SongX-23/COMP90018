@@ -16,7 +16,8 @@
         android:layout_marginTop="10dp"
         android:layout_alignParentTop="true"
         android:layout_alignLeft="@+id/fullNameEditText"
-        android:layout_alignStart="@+id/fullNameEditText" />
+        android:layout_alignStart="@+id/fullNameEditText"
+        android:textColor="#33b5e5"/>
 
     <EditText
         android:layout_width="275dp"
@@ -24,7 +25,7 @@
         android:id="@+id/fullNameEditText"
         android:layout_below="@+id/fullNameTextView"
         android:layout_centerHorizontal="true"
-        android:background="#e0e0e0"
+        android:background="#8c33b5e6"
         android:height="40dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
@@ -39,13 +40,14 @@
         android:id="@+id/emailTextView"
         android:layout_below="@+id/fullNameEditText"
         android:layout_alignLeft="@+id/fullNameEditText"
-        android:layout_alignStart="@+id/fullNameEditText" />
+        android:layout_alignStart="@+id/fullNameEditText"
+        android:textColor="#33b5e5"/>
 
     <EditText
         android:layout_width="275dp"
         android:layout_height="wrap_content"
         android:id="@+id/emailEditText"
-        android:background="#e0e0e0"
+        android:background="#8C33B5E6"
         android:height="40dp"
         android:layout_below="@+id/emailTextView"
         android:layout_alignLeft="@+id/emailTextView"
@@ -63,13 +65,14 @@
         android:id="@+id/phoneTextView"
         android:layout_below="@+id/emailEditText"
         android:layout_alignLeft="@+id/emailEditText"
-        android:layout_alignStart="@+id/emailEditText" />
+        android:layout_alignStart="@+id/emailEditText"
+        android:textColor="#33b5e5"/>
 
     <EditText
         android:layout_width="275dp"
         android:layout_height="wrap_content"
         android:id="@+id/phoneEditText"
-        android:background="#e0e0e0"
+        android:background="#8C33B5E6"
         android:height="40dp"
         android:layout_below="@+id/phoneTextView"
         android:layout_alignLeft="@+id/phoneTextView"
@@ -87,7 +90,8 @@
         android:id="@+id/genderTextView"
         android:layout_below="@+id/phoneEditText"
         android:layout_alignLeft="@+id/phoneEditText"
-        android:layout_alignStart="@+id/phoneEditText" />
+        android:layout_alignStart="@+id/phoneEditText"
+        android:textColor="#33b5e5"/>
 
     <Spinner
         android:layout_width="wrap_content"
@@ -98,7 +102,7 @@
         android:layout_alignStart="@+id/genderTextView"
         android:layout_alignRight="@+id/phoneEditText"
         android:layout_alignEnd="@+id/phoneEditText"
-        android:background="#e0e0e0"
+        android:background="#8C33B5E6"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         android:spinnerMode="dropdown"
@@ -107,15 +111,6 @@
         android:paddingTop="3dp"
         android:paddingBottom="3dp"/>
 
-    <Button
-        android:layout_width="140dp"
-        android:layout_height="wrap_content"
-        android:text="Update Profile"
-        android:id="@+id/updateButton"
-        android:layout_below="@+id/bioEditText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"/>
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -123,13 +118,14 @@
         android:id="@+id/liveInextView"
         android:layout_below="@+id/genderSpinner"
         android:layout_alignLeft="@+id/genderSpinner"
-        android:layout_alignStart="@+id/genderSpinner"/>
+        android:layout_alignStart="@+id/genderSpinner"
+        android:textColor="#33b5e5"/>
 
     <Spinner
         android:layout_width="275dp"
         android:layout_height="wrap_content"
         android:id="@+id/citySpinner"
-        android:background="#e0e0e0"
+        android:background="#8C33B5E6"
         android:height="40dp"
         android:inputType="text"
         android:paddingBottom="5dp"
@@ -148,7 +144,8 @@
         android:id="@+id/bioTextView"
         android:layout_below="@+id/citySpinner"
         android:layout_alignLeft="@+id/citySpinner"
-        android:layout_alignStart="@+id/citySpinner"/>
+        android:layout_alignStart="@+id/citySpinner"
+        android:textColor="#33b5e5"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -156,20 +153,53 @@
         android:inputType="textMultiLine"
         android:ems="10"
         android:id="@+id/bioEditText"
-        android:background="#e0e0e0"
+        android:background="#8C33B5E6"
         android:height="50dp"
         android:layout_below="@+id/bioTextView"
         android:layout_alignLeft="@+id/bioTextView"
         android:layout_alignStart="@+id/bioTextView"
         android:layout_alignRight="@+id/citySpinner"
         android:layout_alignEnd="@+id/citySpinner"/>
-
-    <Button
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Cancel"
-        android:id="@+id/cancelButton"
-        android:layout_below="@+id/updateButton"
-        android:layout_centerHorizontal="true"/>
+        android:id="@+id/buttonGroup"
+        android:layout_alignParentBottom="true"
+        >
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Update Profile"
+            android:id="@+id/updateButton"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/cancelButton"
+            android:layout_toEndOf="@+id/cancelButton"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_horizontal"
+            android:background="#33b5e5"
+            android:textColor="#FFFFFF"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:id="@+id/cancelButton"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="center_horizontal"
+            android:background="#ffffff"
+            android:clickable="false"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:textColor="#33b5e5"
+            />
+    </LinearLayout>
+
 
 </RelativeLayout>

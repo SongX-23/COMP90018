@@ -2,9 +2,13 @@ package com.parse.unimelb;
 
 import java.util.Locale;
 
+import android.app.ActionBar;
 import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -65,6 +69,8 @@ public class HomeActivity extends ActionBarActivity {
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
         PagerSlidingTabStrip tabs = (PagerSlidingTabStrip) findViewById(R.id.tabs);
+        tabs.setIndicatorColor(Color.parseColor("#33b5e5"));
+        tabs.setTextColor(Color.parseColor("#33b5e5"));
         tabs.setViewPager(mViewPager);
 
 
