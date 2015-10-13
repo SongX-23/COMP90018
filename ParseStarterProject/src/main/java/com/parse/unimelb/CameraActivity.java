@@ -35,19 +35,17 @@ import java.util.List;
 /* Camera Activity implements the camera functionality of the app. */
 public class CameraActivity extends Activity implements SurfaceHolder.Callback {
 
-    private static final String TAG = "Camera";
     private Camera camera = null;
     private SurfaceView cameraSurfaceView = null;
     private SurfaceHolder cameraSurfaceHolder = null;
     private boolean previewing = false;
     RelativeLayout relativeLayout;
-    private MediaScannerConnection mediaScanner = null;
 
     private Button btnCapture = null;
     private ToggleButton btnFlash = null;
     private ImageButton btnGallery = null;
 
-    // TODO: Improve Camera Quality
+    // On create, first initialize the view elements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getWindow().setFormat(PixelFormat.TRANSLUCENT);
@@ -77,7 +75,6 @@ public class CameraActivity extends Activity implements SurfaceHolder.Callback {
                         cameraPictureCallbackJpeg);
             }
         });
-
 
         // Button to Control FlashLight
         btnFlash = (ToggleButton) findViewById(R.id.button_flash);
@@ -143,18 +140,6 @@ public class CameraActivity extends Activity implements SurfaceHolder.Callback {
         public void onPictureTaken(byte[] data, Camera camera){
             Bitmap cameraBitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
 
-            int wid = cameraBitmap.getWidth();
-            int hgt = cameraBitmap.getHeight();
-
-            Bitmap newImage = Bitmap.createBitmap(wid, hgt, Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(newImage);
-//            canvas.drawBitmap(cameraBitmap, 0f, 0f, null);
-//            Drawable drawable = getResources().getDrawable(R.drawable.mark3);
-//            drawable.setBounds(20, 30, drawable.getIntrinsicWidth() + 20,
-//                    drawable.getIntrinsicHeight() + 30);
-//            drawable.draw(canvas);
-
-
             File storagePath = new File(Environment.getExternalStorageDirectory()
                     + "/DCIM/100ANDRO/");
             storagePath.mkdirs();
@@ -171,14 +156,7 @@ public class CameraActivity extends Activity implements SurfaceHolder.Callback {
             } catch(IOException e) {
                 Log.d("In Saving File", e + "");
             }
-
-//            sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED,
-//                    Uri.parse("file://"+ Environment.getExternalStorageDirectory())));
-
-            // parse the image to the gallery
-//            MediaScannerConnection.scanFile(MainActivity.this, new String[] {
-//                    myImage.getPath() }, new String[] { "image/jpeg" }, null);
-
+            // Send the image file to the gallery
             sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(myImage)));
 
             // Pass the new image to the next edit view
@@ -196,14 +174,8 @@ public class CameraActivity extends Activity implements SurfaceHolder.Callback {
             previewing = false;
         }
         try {
+            // set camera and preview size
             Camera.Parameters parameters = camera.getParameters();
-            List<Camera.Size> previewSizes = parameters.getSupportedPreviewSizes();
-            List<Camera.Size> pictureSizes = parameters.getSupportedPictureSizes();
-            Camera.Size previewSize = previewSizes.get(0);
-            Camera.Size pictureSize = pictureSizes.get(0);
-
-//            parameters.setPreviewSize(previewSize.width, previewSize.height);
-//            parameters.setPictureSize(pictureSize.width, pictureSize.height);
             parameters.setPreviewSize(640, 480);
             parameters.setPictureSize(640, 480);
             if(this.getResources().getConfiguration().orientation
@@ -255,7 +227,6 @@ public class CameraActivity extends Activity implements SurfaceHolder.Callback {
             }
 
             // Pass the new image to the next edit view
-
             Intent intent = new Intent();
             intent.setClass(CameraActivity.this, EditPhotoActivity.class);
             startActivity(intent);

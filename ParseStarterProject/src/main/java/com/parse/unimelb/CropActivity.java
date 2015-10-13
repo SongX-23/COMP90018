@@ -9,6 +9,7 @@ import android.widget.Button;
 
 import com.parse.unimelb.Helper.BitmapStore;
 
+/* This activity deals with the crop image function */
 public class CropActivity extends ActionBarActivity {
 
     private Bitmap rawBitmap = null;

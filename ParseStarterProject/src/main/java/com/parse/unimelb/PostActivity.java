@@ -38,12 +38,8 @@ public class PostActivity extends ActionBarActivity {
     private BluetoothAdapter mBluetoothAdapter;
 
     Set<BluetoothDevice> pairedDevices;
-
-
     // temp arraylist
     private ArrayList<BluetoothPair> bluetoothPairs = new ArrayList<>();
-
-    //TODO: garbage recycle: newBitMap, currentBitmap in the edit activity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,8 +57,6 @@ public class PostActivity extends ActionBarActivity {
         thumbnail = rawBitmap;
         imageview.setImageBitmap(thumbnail);
 
-
-        //TODO: bluetooth button, either to go to another activity, or show the list
         btnBluetooth = (Button) findViewById(R.id.button_bluetooth);
         btnBluetooth.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,7 +78,6 @@ public class PostActivity extends ActionBarActivity {
 
 
     private void startBluetooth() {
-
         /*
          Check to see if Bluetooth Adapter is enabled or not. If its enabled, set
          the request to enable it.
@@ -115,21 +108,6 @@ public class PostActivity extends ActionBarActivity {
                 bluetoothPairs.add(new BluetoothPair(device));
             }
         }
-//        if (pairedDevices.size() > 0) {
-//            for (BluetoothDevice device : pairedDevices) {
-//                String deviceName = device.getName();
-//                if (deviceName.equals("Aurora")) {
-//                    isServer = false;
-//                    Bitmap bitmap= BitmapFactory.decodeResource(this.getResources(),R.drawable.default_profile_image);
-//
-//                    ConnectThread myConnection = new ConnectThread(device, bitmap,mBluetoothAdapter, MY_UUID);
-//                    myConnection.start();
-//                    ct = myConnection;
-//                }
-//                Log.d("Bluetooth Device: ", deviceName);
-//            }
-//        }
-
     }
 
 
