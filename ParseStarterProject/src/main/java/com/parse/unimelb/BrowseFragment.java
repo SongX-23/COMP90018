@@ -177,6 +177,15 @@ public class BrowseFragment extends Fragment {
         System.out.println("Requesting from: " + request_url);
         //create a feed array list
         feeds_array = new ArrayList<>();
+        // check if the received bitmap is null
+        if (BitmapStore.getReceivedBitmap() != null) {
+            Bitmap receivedBitmap = BitmapStore.getReceivedBitmap();
+            Feed receivedFeed = new Feed();
+            receivedFeed.setCaption("In Range");
+            receivedFeed.setPhoto(receivedBitmap);
+            feeds_array.add(0, receivedFeed);
+        }
+        
         //request a json response
         JsonObjectRequest jsonRequest = new JsonObjectRequest
                 (Request.Method.GET, request_url, (String)null, new Response.Listener<JSONObject>() {
@@ -335,13 +344,7 @@ public class BrowseFragment extends Fragment {
                                     Volley.newRequestQueue(getActivity()).add(profileImgRequest);
                                 }
 
-                                // check if the received bitmap is null
-                                if (BitmapStore.getReceivedBitmap() != null) {
-                                    Bitmap receivedBitmap = BitmapStore.getReceivedBitmap();
-                                    Feed receivedFeed = new Feed();
-                                    receivedFeed.setCaption("In Range");
-                                    receivedFeed.setPhoto(receivedBitmap);
-                                }
+
                                 //add feed object into arraylist
                                 feeds_array.add(feedObj);
 
