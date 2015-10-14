@@ -109,6 +109,7 @@ public class BrowseFragment extends Fragment {
         //get all the UI components
         Button sortDate = (Button) view.findViewById(R.id.sortDateButton);
         Button sortLoc = (Button) view.findViewById(R.id.sortLocButton);
+        loadFeeds();
         listView = (ListView) view.findViewById(R.id.browseListView);
         browseAdapter = new BrowseAdapter(getActivity(),getData());
         listView.setAdapter(browseAdapter);
@@ -134,7 +135,7 @@ public class BrowseFragment extends Fragment {
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
-        if (isVisibleToUser) { loadFeeds();
+        if (isVisibleToUser) {
             }
         else {  }
     }

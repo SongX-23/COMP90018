@@ -43,6 +43,9 @@ public class DiscoveryAdapter extends BaseAdapter{
 
     @Override
     public int getCount() {
+        if(users == null) {
+            return 0;
+        }
         return users.size();
     }
 

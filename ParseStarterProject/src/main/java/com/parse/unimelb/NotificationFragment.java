@@ -18,6 +18,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.parse.unimelb.Helper.BitmapStore;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -87,7 +88,7 @@ public class NotificationFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_notification, container, false);
         Button following = (Button) view.findViewById(R.id.btnFollowing);
         Button follower = (Button) view.findViewById(R.id.btnFollower);
-
+        getFollows(true, 5);
         listView = (ListView) view.findViewById(R.id.listViewFollow);
         adapter = new FollowingAdapter(getActivity(), getData());
         listView.setAdapter(adapter);
@@ -121,7 +122,7 @@ public class NotificationFragment extends Fragment {
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
         if (isVisibleToUser) {
-            getFollows(true, 5);
+
         } else {
         }
     }
@@ -170,18 +171,12 @@ public class NotificationFragment extends Fragment {
             followerList = new ArrayList<>();
         }
 
-        JsonObjectRequest activityRequest =
-
-                new JsonObjectRequest(
-                        Request.Method.GET,
-                        followUrl(isFollowing, size),
-                        (String) null,
-
+        JsonObjectRequest activityRequest = new JsonObjectRequest(
+                Request.Method.GET, followUrl(isFollowing, size), (String) null,
                         new Response.Listener<JSONObject>() {
 
                             @Override
                             public void onResponse(JSONObject response) {
-
                                 try {
 
                                     //get the data array
@@ -223,40 +218,6 @@ public class NotificationFragment extends Fragment {
 
                                                                     //get follow object
                                                                     JSONObject oneFollow = array.getJSONObject(0);
-
-                                                                    /*//get the location block
-                                                                    if (!oneFollow.isNull("location")) {
-
-                                                                        JSONObject locationJSON = oneFollow.getJSONObject("location");
-
-                                                                        //get the location string
-                                                                        if (locationJSON != null) {
-                                                                            String location = locationJSON.getString("name");
-                                                                            follow.setLocation(location);
-                                                                            double longitude = locationJSON.getDouble("longitude");
-                                                                            follow.setLongitude(longitude);
-                                                                            double latitude = locationJSON.getDouble("latitude");
-                                                                            follow.setLatitude(latitude);
-                                                                            double distance =
-                                                                                    Math.pow(
-                                                                                            Math.pow((latitude - latitudeCurrent), 2)
-                                                                                                    + Math.pow((longitude - longitudeCurrent), 2)
-                                                                                            , 0.5);
-
-                                                                            follow.setDistance(distance);
-
-                                                                            //DEBUG
-                                                                            System.out.println("FEED: location = " + distance);
-                                                                        }
-                                                                    } else {
-                                                                        follow.setLocation("");
-                                                                        follow.setDistance(
-                                                                                Math.pow((
-                                                                                        Math.pow(180.0, 2)
-                                                                                                + Math.pow(360.0, 2)
-                                                                                ), 0.5));
-                                                                    }
-*/
                                                                     //get the comment block
                                                                     JSONObject commentsJSON = oneFollow.getJSONObject("comments");
 
@@ -340,7 +301,7 @@ public class NotificationFragment extends Fragment {
                                                                         @Override
                                                                         public void onResponse(Bitmap response) {
                                                                             //do something with the bitmap
-                                                                            follow.setPhoto(response);
+                                                                            follow.setPhoto(BitmapStore.getCroppedBitmap(response));
                                                                             if (adapter != null) {
                                                                                 adapter.notifyDataSetChanged();
                                                                             }
@@ -385,7 +346,7 @@ public class NotificationFragment extends Fragment {
                                                                                         @Override
                                                                                         public void onResponse(Bitmap response) {
                                                                                             //do something with the bitmap
-                                                                                            follow.setUserProfileImg(response);
+                                                                                            follow.setUserProfileImg(BitmapStore.getCroppedBitmap(response));
                                                                                             if (adapter != null) {
                                                                                                 adapter.notifyDataSetChanged();
                                                                                             }
