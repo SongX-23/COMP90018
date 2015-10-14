@@ -58,7 +58,11 @@ public class BrowseAdapter extends BaseAdapter{
 
     @Override
     public int getCount() {
-        return feed_array.size();
+        if(feed_array != null) {
+            return feed_array.size();
+        } else {
+            return 0;
+        }
     }
 
     @Override

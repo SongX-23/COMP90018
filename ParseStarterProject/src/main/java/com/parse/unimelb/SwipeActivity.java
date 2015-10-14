@@ -2,6 +2,7 @@ package com.parse.unimelb;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -90,7 +91,7 @@ public class SwipeActivity extends ActionBarActivity implements View.OnClickList
 
                     //do something after detected as right swipe
                     Bitmap bitmap = BitmapFactory.decodeFile(filePath);
-                    ConnectThread myConnection = new ConnectThread(device, bitmap, mBluetoothAdapter, MY_UUID);
+                    ConnectThread myConnection = new ConnectThread(device, bitmap, mBluetoothAdapter, MY_UUID, SwipeActivity.this);
                     myConnection.start();
                     ct = myConnection;
                     Log.d("Bluetooth Device: ", deviceName);

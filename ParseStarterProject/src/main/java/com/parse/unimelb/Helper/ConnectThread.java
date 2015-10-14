@@ -1,10 +1,16 @@
 package com.parse.unimelb.Helper;
 
+import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.util.Log;
+import android.widget.Toast;
+
+import com.parse.unimelb.SwipeActivity;
+
 import java.io.InputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
@@ -24,13 +30,16 @@ public class ConnectThread extends Thread {
     Bitmap bitmap;
     private byte[] imgBuffer = new byte[8192];
     ObjectOutputStream objectOutputStream;
+    Activity activity;
 
     // Set the instance variables including the UUID to set the code to enable communication.
-    public ConnectThread(BluetoothDevice device, Bitmap bitmap,BluetoothAdapter adapter, UUID uuid){
+    public ConnectThread(BluetoothDevice device, Bitmap bitmap,BluetoothAdapter adapter, UUID uuid,
+                         Activity activity){
         this.bitmap=bitmap;
         mBluetoothAdapter = adapter;
         MY_UUID = uuid;
         BluetoothSocket tmp = null;
+        this.activity = activity;
 
         // Create an RF connection socket using the UUID, similar to a normal Java socket for TCP.
         // RfcommnSocket is the part which actually establishes the connection with the server.
@@ -74,6 +83,13 @@ public class ConnectThread extends Thread {
             mySocket.connect();
         } catch (Exception e){
             Log.e("Bluetooth", this.getName() + ": Could not establish connection with device");
+            activity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Toast.makeText(activity, "Bluetooth Could not establish connection with device",
+                            Toast.LENGTH_LONG).show();
+                }
+            });
             try{
                 mySocket.close();
             } catch (Exception e1){
